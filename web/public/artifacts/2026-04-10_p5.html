@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hermes — day-2026-04-10</title>
+<script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.min.js"></script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{margin:0;overflow:hidden;background:#fafafa;min-height:100vh}
+canvas{display:block}
+</style>
+</head>
+<body>
+<script>
+
+var SEED=3888133091;var D={"files": [{"n": "cli/main.py", "a": 23, "d": 8, "c": 31, "t": 0.079}, {"n": "cli/output.py", "a": 24, "d": 11, "c": 35, "t": 0.09}, {"n": "cli/commands.py", "a": 38, "d": 3, "c": 41, "t": 0.105}, {"n": "src/main.py", "a": 177, "d": 65, "c": 242, "t": 0.621}, {"n": "lib/helpers.py", "a": 231, "d": 143, "c": 374, "t": 0.959}, {"n": "src/utils.py", "a": 287, "d": 103, "c": 390, "t": 1.0}, {"n": "src/core.py", "a": 156, "d": 74, "c": 230, "t": 0.59}, {"n": "tools/search.py", "a": 85, "d": 0, "c": 85, "t": 0.218}, {"n": "tools/shell.py", "a": 41, "d": 0, "c": 41, "t": 0.105}, {"n": "gateway/proxy.py", "a": 27, "d": 0, "c": 27, "t": 0.069}, {"n": "gateway/server.py", "a": 17, "d": 0, "c": 17, "t": 0.044}, {"n": "tools/browser.py", "a": 39, "d": 0, "c": 39, "t": 0.1}, {"n": "tools/file.py", "a": 13, "d": 0, "c": 13, "t": 0.033}], "dirs": [{"name": "src", "count": 3, "churn": 862}, {"name": "lib", "count": 1, "churn": 374}, {"name": "tools", "count": 4, "churn": 178}, {"name": "cli", "count": 3, "churn": 107}, {"name": "gateway", "count": 2, "churn": 44}], "commits": ["fix(cli): strip leaked bracketed-paste wrappers", "fix(gateway,cron): activate fallback_model when primary provider auth fails", "feat(hindsight): optional bank_id_template for per-agent / per-user banks", "docs: add GMI Cloud to compatible providers list", "fix: skip non-API-key auth providers in env-var credential detection", "fix(telegram): handle parentheses in URLs during MarkdownV2 link conversion", "Update SKILL.md", "Update duckduckgo.sh", "fix(model-switch): normalize Unicode dashes from Telegram/iOS input", "docs: add HermesClaw to community ecosystem", "fix: enable Matrix Reactions in platform comparison table", "docs: fix ASCII diagram width mismatch in architecture.md", "test(tools): add unit tests for budget_config module", "test(tools): add unit tests for tool_backend_helpers module", "test(approval): clear leaked bypass state", "test(gateway): isolate blocking approval env", "test(tools): isolate approval and audio gateway env", "fix(vision): reject oversized images before API call, handle file:// URIs, impro", "fix: cap image download size at 50 MB, validate tool call parser fields", "fix: prevent zombie processes, redact cron stderr, skip symlinks in skill enumer", "fix: normalize numeric MCP server names to str (fixes #6901)", "feat(skin): make all CLI colors skin-aware", "fix(setup): relaunch chat in a fresh process", "fix(skills): read name from SKILL.md frontmatter in skills_sync", "fix: align MiniMax provider with official API docs", "feat(plugins): pass sender_id to pre_llm_call hook", "fix(gateway): address restart review feedback", "fix(gateway): self-request service restarts when invoked in-process", "fix(gateway): tolerate partial runner construction", "fix(gateway): drain in-flight work before restart"], "authors": ["Moris Chao", "Fran Fitzpatrick", "aaronagent", "xinpengdr", "jamesarch", "jacob-wang", "Swift42", "Tranquil-Flow", "aquaright1", "kshitijk4poor", "Roque", "Long Hao", "luyao618", "isaachuangGMICLOUD", "konsisumer", "Nicol\u00f2 Boschi", "kagura-agent", "Dylan Socolobsky", "AaronWong1999", "romanornr", "Kenny Xie"], "filenames": ["main.py", "output.py", "commands.py", "main.py", "helpers.py", "utils.py", "core.py", "search.py", "shell.py", "proxy.py", "server.py", "browser.py", "file.py"], "tag": "day-2026-04-10", "total_files": 13, "total_adds": 1158, "total_dels": 407, "is_release": false};var PAL={"bg": "#fafafa", "fg": "#1a1a1a", "acc": ["#ff0000", "#0000ff", "#000000", "#00aa00"]};
+var W,H;
+function sr(i){return fract(sin(i*127.1+SEED*311.7)*43758.5453)}
+function fract(x){return x-floor(x)}
+function setup(){W=windowWidth||1200;H=windowHeight||900;createCanvas(W,H);randomSeed(SEED);noiseSeed(SEED);textFont('monospace');noLoop()}
+function draw(){
+  background(255);
+  var words=[];
+  for(var i=0;i<D.commits.length;i++){
+    var parts=D.commits[i].split(' ');
+    for(var j=0;j<parts.length;j++)if(parts[j].length>2)words.push(parts[j]);
+  }
+  for(var i=0;i<D.filenames.length;i++)words.push(D.filenames[i]);
+  for(var i=0;i<D.authors.length;i++)words.push(D.authors[i]);
+  words.push(D.tag,'+'+D.total_adds,'-'+D.total_dels,D.total_files+' files');
+  var syms=['&&','&&&','**','****','""','\u00b0','\u00b7\u00b7','\u2022','***',
+    '\u2206\u2206','\u221e','\u00a7','\u00b6','\u00ab','\u00bb'];
+  fill(15);noStroke();
+  for(var i=0;i<55;i++){
+    var txt=words[i%words.length];
+    var sz=txt.length>15?random(6,9):(random()<0.2?random(14,22):random(8,13));
+    textSize(sz);textAlign(LEFT,TOP);
+    text(txt,sr(i*9)*W*0.9+W*0.03,sr(i*9+1)*H*0.94+H*0.02);
+  }
+  textSize(8);
+  var py=H*0.65;
+  for(var i=0;i<min(D.commits.length,12);i++){
+    var cx=sr(i+200)<0.5?W*0.15:W*0.35;
+    fill(15);text(D.commits[i].substring(0,65),cx,py+i*13);
+  }
+  for(var i=0;i<20;i++){
+    fill(15);textSize(8+sr(i+300)*6);textAlign(LEFT,TOP);
+    text(syms[floor(sr(i+301)*syms.length)],sr(i+302)*W*0.9+W*0.05,sr(i+303)*H*0.9+H*0.03);
+  }
+  var deco=['\u2206\u2206 \u00b7\u00b7\u00b7\u00b7\u00b7 \u00b0',
+    '\u221e \u2206\u2206\u2206','+++\u2206\u2206\u2206\u2206',
+    '\u2206 .... ]]','\u00b6__ ]]]]]\u00ab',
+    '||-------\u00b0 \u00b6\u00b6','______ \u221e\u221e\u221e\u221e \u00ab',
+    '\u00b0\u00b0\u00b0\u00b0 ___---___'];
+  for(var i=0;i<8;i++){
+    fill(15);textSize(9+sr(i+400)*4);textAlign(LEFT,TOP);
+    text(deco[i],sr(i+401)*W*0.7+W*0.03,sr(i+402)*H*0.9+H*0.05);
+  }
+  noStroke();fill(15);
+  for(var i=0;i<8;i++){
+    var bw=60+sr(i+500)*290,bh=sr(i+501)<0.5?3+sr(i+502)*5:10+sr(i+503)*15;
+    rect(sr(i+504)*W*0.7+W*0.02,sr(i+505)*H*0.87+H*0.05,bw,bh);
+  }
+  stroke(15);
+  for(var i=0;i<12;i++){
+    strokeWeight(0.5+sr(i+600)*1.5);
+    var lx=sr(i+601)*W*0.3;
+    line(lx,sr(i+602)*H*0.9+H*0.05,lx+80+sr(i+603)*W*0.5,sr(i+602)*H*0.9+H*0.05);
+  }
+  noStroke();fill(15);
+  for(var i=0;i<8;i++){
+    var dx=sr(i+700)*W*0.4+W*0.02,dy=sr(i+701)*H*0.9+H*0.05;
+    var dlen=60+sr(i+702)*W*0.4,dw=3+sr(i+703)*9,gap=2+sr(i+704)*3;
+    var xd=dx;while(xd<dx+dlen){rect(xd,dy,dw,1+sr(i+705)*1.5);xd+=dw+gap}
+  }
+  for(var i=0;i<6;i++){
+    var nd=4+floor(sr(i+800)*8),dots='';for(var d=0;d<nd;d++)dots+='\u25cf';
+    fill(15);textSize(8+sr(i+801)*6);textAlign(LEFT,TOP);
+    text(dots,sr(i+802)*W*0.8+W*0.03,sr(i+803)*H*0.85+H*0.1);
+  }
+  for(var i=0;i<8;i++){
+    fill(15);noStroke();var sq=4+sr(i+900)*10;
+    rect(sr(i+901)*W*0.92+W*0.03,sr(i+902)*H*0.92+H*0.03,sq,sq);
+  }
+}
+
+</script>
+</body>
+</html>

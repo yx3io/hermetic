@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hermes — day-2026-03-14</title>
+<script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.min.js"></script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{margin:0;overflow:hidden;background:#2b2d42;min-height:100vh}
+canvas{display:block}
+</style>
+</head>
+<body>
+<script>
+
+var SEED=1587450942;var D={"files": [], "dirs": [], "commits": [], "authors": [], "filenames": [], "tag": "day-2026-03-14", "total_files": 0, "total_adds": 0, "total_dels": 0, "is_release": false};var PAL={"bg": "#2b2d42", "fg": "#edf2f4", "acc": ["#ef233c", "#d90429", "#ffb703", "#8d99ae"]};
+var W,H;
+function sr(i){return fract(sin(i*127.1+SEED*311.7)*43758.5453)}
+function fract(x){return x-floor(x)}
+var FONT={'0':[0x3E,0x51,0x49,0x45,0x3E],'1':[0x00,0x42,0x7F,0x40,0x00],
+'2':[0x42,0x61,0x51,0x49,0x46],'3':[0x21,0x41,0x45,0x4B,0x31],
+'4':[0x18,0x14,0x12,0x7F,0x10],'5':[0x27,0x45,0x45,0x45,0x39],
+'6':[0x3C,0x4A,0x49,0x49,0x30],'7':[0x01,0x71,0x09,0x05,0x03],
+'8':[0x36,0x49,0x49,0x49,0x36],'9':[0x06,0x49,0x49,0x29,0x1E]};
+function setup(){W=windowWidth||1200;H=windowHeight||900;createCanvas(W,H);randomSeed(SEED);noiseSeed(SEED);textFont('monospace');noLoop()}
+function draw(){
+  background(26);
+  var bigWords=[];
+  if(D.commits.length>0){
+    var parts=D.commits[0].split(' ');
+    for(var i=0;i<min(parts.length,3);i++)if(parts[i].length>2)bigWords.push(parts[i].toUpperCase());
+  }
+  bigWords.push(D.tag.toUpperCase());
+  if(D.authors.length>0)bigWords.push(D.authors[0].toUpperCase());
+  bigWords.push('+'+D.total_adds);bigWords.push(D.total_files+' FILES');
+  var positions=[[0.02,0.18,65],[0.05,0.30,55],[0.38,0.52,80],[0.1,0.72,60],[0.55,0.08,90],[0.58,0.82,55]];
+  var colors=[[230,230,225],[220,220,215],[50,50,220],[180,180,175],[100,240,80],[50,50,220]];
+  textStyle(BOLD);textAlign(LEFT,TOP);
+  for(var i=0;i<min(bigWords.length,positions.length);i++){
+    var p=positions[i],c=colors[i];
+    fill(c[0],c[1],c[2],200);textSize(p[2]);
+    text(bigWords[i].substring(0,12),W*p[0],H*p[1]);
+  }
+  textStyle(NORMAL);
+  var lbls=[];
+  for(var i=0;i<D.filenames.length;i++)lbls.push('['+D.filenames[i]+']');
+  for(var i=0;i<D.dirs.length;i++)lbls.push(D.dirs[i].name+'/');
+  for(var i=0;i<min(lbls.length,16);i++){
+    var c=sr(i+100)>0.6?[50,50,220]:[180,180,175];
+    fill(c[0],c[1],c[2],170);textSize(11+sr(i+101)*11);textAlign(LEFT,TOP);
+    text(lbls[i].substring(0,25),sr(i+102)*W*0.85+W*0.05,sr(i+103)*H*0.85+H*0.05);
+  }
+  var chars='CP68+(<)XMWN';
+  var pals=[[50,50,220],[240,80,130],[255,200,0],[100,240,80]];
+  noStroke();
+  for(var i=0;i<20;i++){
+    var pc=pals[floor(sr(i+200)*pals.length)];
+    var sz=25+sr(i+201)*55;
+    if(sr(i+202)>0.3){
+      fill(pc[0],pc[1],pc[2],60+sr(i+203)*80);
+      rect(sr(i+204)*W-4,sr(i+205)*H-sz*0.7,sz*0.8,sz);
+    }
+    fill(255,255,255,120+sr(i+206)*100);textSize(sz);textAlign(CENTER,CENTER);
+    text(chars[floor(sr(i+207)*chars.length)],sr(i+204)*W,sr(i+205)*H);
+  }
+  noStroke();
+  var bigNums=[['5',0.02,0.4,22],['0',0.8,0.2,18],['8',0.35,0.6,25],['1',0.7,0.45,20],['3',0.15,0.85,16]];
+  for(var bi=0;bi<bigNums.length;bi++){
+    var bn=bigNums[bi];var glyph=FONT[bn[0]];if(!glyph)continue;
+    var gc=sr(bn[1]*10+bn[2]*10)>0.5?[220,220,215]:[100,240,80];
+    fill(gc[0],gc[1],gc[2],200);
+    for(var col=0;col<5;col++){
+      var cd=glyph[col];
+      for(var row=0;row<7;row++){if((cd>>row)&1)rect(W*bn[1]+col*bn[3],H*bn[2]+row*bn[3],bn[3]-1,bn[3]-1)}
+    }
+  }
+  for(var i=0;i<30;i++){
+    var ch=String(floor(sr(i+400)*10));var glyph=FONT[ch];if(!glyph)continue;
+    var sc=4+sr(i+401)*6;
+    var gc=sr(i+402)>0.7?[100,240,80]:[180,180,175];
+    fill(gc[0],gc[1],gc[2],200);
+    for(var col=0;col<5;col++){
+      var cd=glyph[col];
+      for(var row=0;row<7;row++){if((cd>>row)&1)rect(sr(i+403)*W+col*sc,sr(i+404)*H+row*sc,sc-1,sc-1)}
+    }
+  }
+  for(var i=0;i<12;i++){
+    stroke(120,120,120,40+sr(i+501)*60);strokeWeight(0.3+sr(i+500)*1.2);
+    line(sr(i+502)*W,sr(i+503)*H,sr(i+504)*W,sr(i+505)*H);
+  }
+  noStroke();
+  var brTypes=[',','[',']','(',')','<','>'];
+  for(var i=0;i<8;i++){
+    fill(50,50,220,60+sr(i+600)*80);textSize(30+sr(i+601)*50);textAlign(CENTER,CENTER);
+    text(brTypes[i],sr(i+602)*W*0.85+W*0.07,sr(i+603)*H*0.85+H*0.07);
+  }
+}
+
+</script>
+</body>
+</html>

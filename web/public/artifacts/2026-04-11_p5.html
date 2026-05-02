@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hermes — day-2026-04-11</title>
+<script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.min.js"></script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{margin:0;overflow:hidden;background:#ffffff;min-height:100vh}
+canvas{display:block}
+</style>
+</head>
+<body>
+<script>
+
+var SEED=2339100626;var D={"files": [{"n": "lib/helpers.py", "a": 250, "d": 57, "c": 307, "t": 1.0}, {"n": "src/utils.py", "a": 137, "d": 115, "c": 252, "t": 0.821}, {"n": "src/main.py", "a": 176, "d": 62, "c": 238, "t": 0.775}, {"n": "docs/README.md", "a": 2, "d": 22, "c": 24, "t": 0.078}, {"n": "skills/loader.py", "a": 39, "d": 0, "c": 39, "t": 0.127}, {"n": "skills/registry.py", "a": 9, "d": 0, "c": 9, "t": 0.029}, {"n": "skills/executor.py", "a": 30, "d": 0, "c": 30, "t": 0.098}, {"n": "src/core.py", "a": 132, "d": 33, "c": 165, "t": 0.537}, {"n": "agent/loop.py", "a": 32, "d": 21, "c": 53, "t": 0.173}, {"n": "agent/executor.py", "a": 15, "d": 27, "c": 42, "t": 0.137}, {"n": "agent/planner.py", "a": 1, "d": 26, "c": 27, "t": 0.088}, {"n": "gateway/server.py", "a": 45, "d": 3, "c": 48, "t": 0.156}, {"n": "gateway/auth.py", "a": 22, "d": 42, "c": 64, "t": 0.208}, {"n": "gateway/proxy.py", "a": 45, "d": 30, "c": 75, "t": 0.244}, {"n": "cli/commands.py", "a": 24, "d": 0, "c": 24, "t": 0.078}], "dirs": [{"name": "src", "count": 3, "churn": 655}, {"name": "lib", "count": 1, "churn": 307}, {"name": "gateway", "count": 3, "churn": 187}, {"name": "agent", "count": 3, "churn": 122}, {"name": "skills", "count": 3, "churn": 78}, {"name": "docs", "count": 1, "churn": 24}, {"name": "cli", "count": 1, "churn": 24}], "commits": ["fix: wire PII redaction + token empty warnings for plugin platforms", "feat: complete plugin platform parity \u2014 all 12 integration points", "feat: pluggable platform adapter registry + IRC reference implementation", "fix(docs): Add links to Atropos and wandb in user guide", "feat(skills): add MiniMax-AI/cli as default skill tap", "fix(pairing): handle null user_name in pairing list display", "fix: normalize iOS unicode dashes in slash command args", "fix(provider): recognize open.bigmodel.cn as Zhipu/ZAI provider", "fix(agent): refresh skills prompt cache when disabled skills change", "fix(cron): preserve skill env passthrough in worker thread", "fix(gateway): trigger memory provider shutdown on /new and /reset", "fix(gateway): support Telegram MarkdownV2 expandable blockquotes", "fix(gateway): keep venv python symlink unresolved when remapping paths", "feat(feishu): add scan-to-create onboarding for Feishu / Lark", "fix(discord): decouple readiness from slash sync", "feat(cli): add native /model picker modal for provider \u2192 model selection", "refactor: remove budget warning injection system (dead code)", "feat: standardize message whitespace and JSON formatting", "feat(nix): container-aware CLI \u2014 auto-route into managed container (#7543)", "nix fixes", "fix: use ceiling division for token estimation, deduplicate inline formula", "feat: self update npm deps on hermes update", "fix(tools): enforce ID uniqueness in TODO store during replace operations", "feat(gateway): surface natural mid-turn assistant messages in chat platforms", "docs: expand tool-use enforcement documentation (#7984)", "fix: prevent agent from stopping mid-task \u2014 compression floor, budget overhaul, ", "fix: always log outer loop exception traceback at DEBUG level", "docs: add platform adapter developer guide + WeCom Callback docs (#7969)", "fix(cli): add ChatConsole.status for /skills search", "fix(gateway): add HERMES_SESSION_KEY to session_context contextvars"], "authors": ["yuanhe", "Brooklyn Nicholson", "WAXLYY", "dirtyfancy", "Mateus Scheuer Macedo", "Ari Lotter", "Dusk1e", "wujhsu", "helix4u", "asheriif", "Teknium", "sharziki", "Koichi Tsutsumi", "waxinz", "Zhuofeng Wang", "Nan93", "0xbyt4", "Shuo", "Vivek Ganesan", "Ubuntu", "Siddharth Balyan"], "filenames": ["helpers.py", "utils.py", "main.py", "README.md", "loader.py", "registry.py", "executor.py", "core.py", "loop.py", "executor.py", "planner.py", "server.py", "auth.py", "proxy.py", "commands.py"], "tag": "day-2026-04-11", "total_files": 15, "total_adds": 959, "total_dels": 438, "is_release": false};var PAL={"bg": "#ffffff", "fg": "#111111", "acc": ["#111111", "#333333"]};
+var W,H;
+function sr(i){return fract(sin(i*127.1+SEED*311.7)*43758.5453)}
+function fract(x){return x-floor(x)}
+function setup(){W=windowWidth||1200;H=windowHeight||900;createCanvas(W,H);randomSeed(SEED);noiseSeed(SEED);textFont('monospace');noLoop()}
+function draw(){
+  background(255);
+  var words=[];
+  for(var i=0;i<D.commits.length;i++){
+    var parts=D.commits[i].split(' ');
+    for(var j=0;j<parts.length;j++)if(parts[j].length>2)words.push(parts[j]);
+  }
+  for(var i=0;i<D.filenames.length;i++)words.push(D.filenames[i]);
+  for(var i=0;i<D.authors.length;i++)words.push(D.authors[i]);
+  words.push(D.tag,'+'+D.total_adds,'-'+D.total_dels,D.total_files+' files');
+  var syms=['&&','&&&','**','****','""','\u00b0','\u00b7\u00b7','\u2022','***',
+    '\u2206\u2206','\u221e','\u00a7','\u00b6','\u00ab','\u00bb'];
+  fill(15);noStroke();
+  for(var i=0;i<55;i++){
+    var txt=words[i%words.length];
+    var sz=txt.length>15?random(6,9):(random()<0.2?random(14,22):random(8,13));
+    textSize(sz);textAlign(LEFT,TOP);
+    text(txt,sr(i*9)*W*0.9+W*0.03,sr(i*9+1)*H*0.94+H*0.02);
+  }
+  textSize(8);
+  var py=H*0.65;
+  for(var i=0;i<min(D.commits.length,12);i++){
+    var cx=sr(i+200)<0.5?W*0.15:W*0.35;
+    fill(15);text(D.commits[i].substring(0,65),cx,py+i*13);
+  }
+  for(var i=0;i<20;i++){
+    fill(15);textSize(8+sr(i+300)*6);textAlign(LEFT,TOP);
+    text(syms[floor(sr(i+301)*syms.length)],sr(i+302)*W*0.9+W*0.05,sr(i+303)*H*0.9+H*0.03);
+  }
+  var deco=['\u2206\u2206 \u00b7\u00b7\u00b7\u00b7\u00b7 \u00b0',
+    '\u221e \u2206\u2206\u2206','+++\u2206\u2206\u2206\u2206',
+    '\u2206 .... ]]','\u00b6__ ]]]]]\u00ab',
+    '||-------\u00b0 \u00b6\u00b6','______ \u221e\u221e\u221e\u221e \u00ab',
+    '\u00b0\u00b0\u00b0\u00b0 ___---___'];
+  for(var i=0;i<8;i++){
+    fill(15);textSize(9+sr(i+400)*4);textAlign(LEFT,TOP);
+    text(deco[i],sr(i+401)*W*0.7+W*0.03,sr(i+402)*H*0.9+H*0.05);
+  }
+  noStroke();fill(15);
+  for(var i=0;i<8;i++){
+    var bw=60+sr(i+500)*290,bh=sr(i+501)<0.5?3+sr(i+502)*5:10+sr(i+503)*15;
+    rect(sr(i+504)*W*0.7+W*0.02,sr(i+505)*H*0.87+H*0.05,bw,bh);
+  }
+  stroke(15);
+  for(var i=0;i<12;i++){
+    strokeWeight(0.5+sr(i+600)*1.5);
+    var lx=sr(i+601)*W*0.3;
+    line(lx,sr(i+602)*H*0.9+H*0.05,lx+80+sr(i+603)*W*0.5,sr(i+602)*H*0.9+H*0.05);
+  }
+  noStroke();fill(15);
+  for(var i=0;i<8;i++){
+    var dx=sr(i+700)*W*0.4+W*0.02,dy=sr(i+701)*H*0.9+H*0.05;
+    var dlen=60+sr(i+702)*W*0.4,dw=3+sr(i+703)*9,gap=2+sr(i+704)*3;
+    var xd=dx;while(xd<dx+dlen){rect(xd,dy,dw,1+sr(i+705)*1.5);xd+=dw+gap}
+  }
+  for(var i=0;i<6;i++){
+    var nd=4+floor(sr(i+800)*8),dots='';for(var d=0;d<nd;d++)dots+='\u25cf';
+    fill(15);textSize(8+sr(i+801)*6);textAlign(LEFT,TOP);
+    text(dots,sr(i+802)*W*0.8+W*0.03,sr(i+803)*H*0.85+H*0.1);
+  }
+  for(var i=0;i<8;i++){
+    fill(15);noStroke();var sq=4+sr(i+900)*10;
+    rect(sr(i+901)*W*0.92+W*0.03,sr(i+902)*H*0.92+H*0.03,sq,sq);
+  }
+}
+
+</script>
+</body>
+</html>

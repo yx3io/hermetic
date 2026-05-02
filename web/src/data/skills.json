@@ -1,0 +1,292 @@
+{
+  "categories": [
+    {
+      "category": "apple",
+      "skills": [
+        "apple-notes",
+        "apple-reminders",
+        "findmy",
+        "imessage"
+      ],
+      "firstDay": 6,
+      "firstDate": "2026-03-17"
+    },
+    {
+      "category": "autonomous-ai-agents",
+      "skills": [
+        "claude-code",
+        "hermes-agent",
+        "honcho",
+        "opencode"
+      ],
+      "firstDay": 6,
+      "firstDate": "2026-03-17"
+    },
+    {
+      "category": "creative",
+      "skills": [
+        "architecture-diagram",
+        "ascii-art",
+        "ascii-video",
+        "baoyu-comic",
+        "baoyu-infographic",
+        "blender-mcp",
+        "claude-design",
+        "comfyui",
+        "concept-diagrams",
+        "creative-ideation",
+        "design-md",
+        "excalidraw",
+        "humanizer",
+        "manim-video",
+        "meme-generation",
+        "p5js",
+        "pixel-art",
+        "popular-web-designs",
+        "pretext",
+        "sketch",
+        "songwriting-and-ai-music",
+        "touchdesigner-mcp"
+      ],
+      "firstDay": 6,
+      "firstDate": "2026-03-17"
+    },
+    {
+      "category": "data-science",
+      "skills": [
+        "jupyter-live-kernel"
+      ],
+      "firstDay": 6,
+      "firstDate": "2026-03-17"
+    },
+    {
+      "category": "email",
+      "skills": [
+        "himalaya"
+      ],
+      "firstDay": 6,
+      "firstDate": "2026-03-17"
+    },
+    {
+      "category": "github",
+      "skills": [
+        "codebase-inspection",
+        "github-auth",
+        "github-code-review",
+        "github-issues",
+        "github-pr-workflow",
+        "github-repo-management"
+      ],
+      "firstDay": 6,
+      "firstDate": "2026-03-17"
+    },
+    {
+      "category": "health",
+      "skills": [
+        "fitness-nutrition",
+        "neuroskill-bci"
+      ],
+      "firstDay": 6,
+      "firstDate": "2026-03-17"
+    },
+    {
+      "category": "mcp",
+      "skills": [
+        "fastmcp",
+        "mcporter"
+      ],
+      "firstDay": 6,
+      "firstDate": "2026-03-17"
+    },
+    {
+      "category": "media",
+      "skills": [
+        "gif-search",
+        "songsee",
+        "youtube-content"
+      ],
+      "firstDay": 6,
+      "firstDate": "2026-03-17"
+    },
+    {
+      "category": "migration",
+      "skills": [
+        "openclaw-migration"
+      ],
+      "firstDay": 6,
+      "firstDate": "2026-03-17"
+    },
+    {
+      "category": "mlops",
+      "skills": [
+        "accelerate",
+        "chroma",
+        "clip",
+        "faiss",
+        "flash-attention",
+        "guidance",
+        "hermes-atropos-environments",
+        "huggingface-hub",
+        "huggingface-tokenizers",
+        "instructor",
+        "lambda-labs",
+        "llava",
+        "modal",
+        "nemo-curator",
+        "peft",
+        "pinecone",
+        "pytorch-fsdp",
+        "pytorch-lightning",
+        "qdrant",
+        "saelens",
+        "simpo",
+        "slime",
+        "stable-diffusion",
+        "tensorrt-llm",
+        "torchtitan",
+        "training",
+        "whisper"
+      ],
+      "firstDay": 6,
+      "firstDate": "2026-03-17"
+    },
+    {
+      "category": "productivity",
+      "skills": [
+        "canvas",
+        "google-workspace",
+        "linear",
+        "memento-flashcards",
+        "notion",
+        "ocr-and-documents",
+        "siyuan",
+        "telephony"
+      ],
+      "firstDay": 6,
+      "firstDate": "2026-03-17"
+    },
+    {
+      "category": "research",
+      "skills": [
+        "arxiv",
+        "bioinformatics",
+        "blogwatcher",
+        "domain-intel",
+        "drug-discovery",
+        "duckduckgo-search",
+        "gitnexus-explorer",
+        "llm-wiki",
+        "ml-paper-writing",
+        "parallel-cli",
+        "research-paper-writing",
+        "scrapling"
+      ],
+      "firstDay": 6,
+      "firstDate": "2026-03-17"
+    },
+    {
+      "category": "security",
+      "skills": [
+        "1password",
+        "oss-forensics",
+        "sherlock"
+      ],
+      "firstDay": 6,
+      "firstDate": "2026-03-17"
+    },
+    {
+      "category": "smart-home",
+      "skills": [
+        "openhue"
+      ],
+      "firstDay": 6,
+      "firstDate": "2026-03-17"
+    },
+    {
+      "category": "social-media",
+      "skills": [
+        "xitter"
+      ],
+      "firstDay": 6,
+      "firstDate": "2026-03-17"
+    },
+    {
+      "category": "software-development",
+      "skills": [
+        "code-review",
+        "plan",
+        "requesting-code-review"
+      ],
+      "firstDay": 6,
+      "firstDate": "2026-03-17"
+    },
+    {
+      "category": "blockchain",
+      "skills": [
+        "base"
+      ],
+      "firstDay": 13,
+      "firstDate": "2026-03-24"
+    },
+    {
+      "category": "dogfood",
+      "skills": [
+        "adversarial-ux-test",
+        "hermes-agent-setup"
+      ],
+      "firstDay": 13,
+      "firstDate": "2026-03-24"
+    },
+    {
+      "category": "inference-sh",
+      "skills": [
+        "cli"
+      ],
+      "firstDay": 13,
+      "firstDate": "2026-03-24"
+    },
+    {
+      "category": "devops",
+      "skills": [
+        "cli",
+        "docker-management",
+        "webhook-subscriptions"
+      ],
+      "firstDay": 17,
+      "firstDate": "2026-03-28"
+    },
+    {
+      "category": "red-teaming",
+      "skills": [
+        "godmode"
+      ],
+      "firstDay": 17,
+      "firstDate": "2026-03-28"
+    },
+    {
+      "category": "communication",
+      "skills": [
+        "one-three-one-rule"
+      ],
+      "firstDay": 19,
+      "firstDate": "2026-03-30"
+    },
+    {
+      "category": "leisure",
+      "skills": [
+        "find-nearby"
+      ],
+      "firstDay": 36,
+      "firstDate": "2026-04-16"
+    },
+    {
+      "category": "web-development",
+      "skills": [
+        "page-agent"
+      ],
+      "firstDay": 43,
+      "firstDate": "2026-04-23"
+    }
+  ],
+  "totalSkills": 113
+}

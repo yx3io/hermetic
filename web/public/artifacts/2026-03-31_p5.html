@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hermes — day-2026-03-31</title>
+<script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.min.js"></script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{margin:0;overflow:hidden;background:#0b0c10;min-height:100vh}
+canvas{display:block}
+</style>
+</head>
+<body>
+<script>
+
+var SEED=3358019263;var D={"files": [{"n": "src/core.py", "a": 0, "d": 19, "c": 19, "t": 1.0}, {"n": "src/main.py", "a": 0, "d": 19, "c": 19, "t": 1.0}], "dirs": [{"name": "src", "count": 2, "churn": 38}], "commits": ["Remove Discussions link from README"], "authors": ["Siz Long"], "filenames": ["core.py", "main.py"], "tag": "day-2026-03-31", "total_files": 2, "total_adds": 0, "total_dels": 38, "is_release": false};var PAL={"bg": "#0b0c10", "fg": "#66fcf1", "acc": ["#66fcf1", "#45a29e", "#c5c6c7", "#1f2833"]};
+var W,H;
+function sr(i){return fract(sin(i*127.1+SEED*311.7)*43758.5453)}
+function fract(x){return x-floor(x)}
+function makeBlob(cx,cy,radius,numPts,wobble){
+  wobble=wobble||0.5;var pts=[];var sd=sr(cx*0.01+cy*0.01)*1000;
+  for(var i=0;i<numPts;i++){
+    var angle=(i/numPts)*TWO_PI;
+    var n=noise(sd+cos(angle)*2,sin(angle)*2);
+    var r=radius*(0.6+n*wobble*1.5);
+    r+=sin(angle*3+sd)*radius*0.1;r+=cos(angle*5+sd*2)*radius*0.06;
+    pts.push({x:cx+cos(angle)*r,y:cy+sin(angle)*r});
+  }
+  return pts;
+}
+function setup(){W=windowWidth||1200;H=windowHeight||900;createCanvas(W,H);randomSeed(SEED);noiseSeed(SEED);textFont('monospace');noLoop()}
+function draw(){
+  background(252,250,245);
+  var peaks=[];
+  for(var i=0;i<floor(8+sr(50)*8);i++){
+    peaks.push({x:sr(i*3+100)*W*0.9+W*0.05,y:sr(i*3+101)*H*0.9+H*0.05,
+      strength:60+sr(i*3+102)*80,radius:40+sr(i*3+103)*110});
+  }
+  var levels=[20,40,60,80,100,120];
+  noFill();stroke(30);strokeWeight(0.7);
+  for(var li=0;li<levels.length;li++){
+    var level=levels[li];
+    for(var pi=0;pi<peaks.length;pi++){
+      var pk=peaks[pi];if(pk.strength<level)continue;
+      var numRings=floor((pk.strength-level)/25)+1;
+      for(var ring=0;ring<min(numRings,3);ring++){
+        var r=pk.radius*(1-level/pk.strength)*(1-ring*0.25);
+        if(r<8)continue;
+        var pts=makeBlob(pk.x,pk.y,r,30+floor(sr(pi*7+ring*3+li)*20));
+        beginShape();
+        for(var k=0;k<pts.length;k++)curveVertex(pts[k].x,pts[k].y);
+        curveVertex(pts[0].x,pts[0].y);curveVertex(pts[1].x,pts[1].y);
+        if(pts.length>2)curveVertex(pts[2].x,pts[2].y);
+        endShape();
+        var lp=pts[floor(pts.length*0.25)];
+        if(lp.x>10&&lp.x<W-30&&lp.y>10&&lp.y<H-10){
+          noStroke();fill(30);textSize(7);textAlign(LEFT,CENTER);text(level,lp.x+2,lp.y);
+          noFill();stroke(30);strokeWeight(0.7);
+        }
+      }
+    }
+  }
+  for(var i=0;i<floor(5+sr(200)*5);i++){
+    var cx=sr(i*5+210)*W*0.8+W*0.1,cy=sr(i*5+211)*H*0.7+H*0.15;
+    var r=60+sr(i*5+212)*190;
+    var pts=makeBlob(cx,cy,r,40+floor(sr(i*5+213)*30),0.4+sr(i*5+214)*0.6);
+    noFill();stroke(30);strokeWeight(sr(i+215)<0.3?random(1.5,2.5):random(0.6,1.2));
+    beginShape();
+    for(var k=0;k<pts.length;k++)curveVertex(pts[k].x,pts[k].y);
+    curveVertex(pts[0].x,pts[0].y);curveVertex(pts[1].x,pts[1].y);
+    if(pts.length>2)curveVertex(pts[2].x,pts[2].y);
+    endShape();
+  }
+  var gw=sr(300)*W*0.15+W*0.2,gh=sr(301)*H*0.1+H*0.12;
+  var gx=sr(302)*W*0.4+W*0.15,gy=sr(303)*H*0.3+H*0.2;
+  var gCols=floor(3+sr(304)*3),gRows=floor(2+sr(305)*2);
+  push();translate(gx+gw/2,gy+gh/2);rotate((sr(306)-0.5)*0.3);
+  noFill();stroke(30);strokeWeight(0.5);rect(-gw/2,-gh/2,gw,gh);
+  for(var c=1;c<gCols;c++){var xg=-gw/2+(gw/gCols)*c;line(xg,-gh/2,xg,gh/2)}
+  for(var r=1;r<gRows;r++){var yg=-gh/2+(gh/gRows)*r;line(-gw/2,yg,gw/2,yg)}
+  pop();
+  stroke(30);strokeWeight(1);
+  line(gx+gw+5,gy+gh*0.5,gx+gw+35,gy+gh*0.5+15);
+  var compassX=W*0.3,compassY=H*0.88;
+  stroke(30);strokeWeight(1);
+  line(compassX,compassY,compassX+50,compassY);
+  line(compassX+50,compassY,compassX+44,compassY-4);
+  line(compassX+50,compassY,compassX+44,compassY+4);
+  noStroke();fill(30);textSize(10);textAlign(LEFT,CENTER);text('N',compassX+55,compassY);
+  var sbx=W*0.05,sby=H*0.91;
+  stroke(30);strokeWeight(1);line(sbx,sby,sbx+90,sby);
+  for(var i=0;i<4;i++){
+    if(i%2===0)fill(30);else fill(252,250,245);
+    stroke(30);strokeWeight(0.5);rect(sbx+i*22.5,sby-4,22.5,8);
+  }
+  noStroke();fill(30);textFont('monospace');
+  textSize(9);textAlign(LEFT,TOP);
+  text('HERMETIC   '+D.tag,W*0.05,H*0.02);
+  textAlign(RIGHT,TOP);text(D.total_files+' FILES  +'+D.total_adds+'/-'+D.total_dels,W*0.95,H*0.02);
+  textSize(8);textAlign(LEFT,TOP);
+  text('TOPOGRAPHY [n.]',W*0.05,H*0.97);
+  if(D.commits.length>0)text(D.commits[0].substring(0,30),W*0.35,H*0.97);
+  textSize(7);
+  text('0',sbx,sby+6);text('10',sbx+40,sby+6);text('20 M.',sbx+80,sby+6);
+}
+
+</script>
+</body>
+</html>

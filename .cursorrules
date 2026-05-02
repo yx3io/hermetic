@@ -1,0 +1,31 @@
+# Project Conventions
+
+## Architecture
+
+- Backend pipeline: Python generators produce data, Hermes Agent generates reflections
+- Frontend: Next.js static site reading from SQLite (better-sqlite3)
+- AI: All AI calls go through Hermes Agent CLI (`hermes chat`), never direct API
+- Skill: `archaeology-museum` defines the agent's voice and persona
+- Data flow: daily.json → generators → hermes_output.json → seed_db.py → museum.db → web
+
+## Key Commands
+
+```bash
+# Generate reflections for all days
+python generators/hermes_reflect_agent.py
+
+# Retry any bad outputs
+python generators/hermes_reflect_agent.py --retry-garbage
+
+# Seed the database from generated data
+cd web && python pipeline/seed_db.py
+
+# Run the web frontend
+cd web && npm run dev
+```
+
+## Style
+
+- The agent writes in lowercase, minimal punctuation, dry wit
+- Frontend is dark, monospace, museum-like
+- See `hermes-skill/SKILL.md` for the full voice specification

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hermes — day-2026-04-07</title>
+<script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.min.js"></script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{margin:0;overflow:hidden;background:#000000;min-height:100vh}
+canvas{display:block}
+</style>
+</head>
+<body>
+<script>
+
+var SEED=1912971215;var D={"files": [{"n": "src/core.py", "a": 240, "d": 93, "c": 333, "t": 0.738}, {"n": "src/utils.py", "a": 136, "d": 32, "c": 168, "t": 0.373}, {"n": "src/main.py", "a": 294, "d": 157, "c": 451, "t": 1.0}, {"n": "lib/helpers.py", "a": 11, "d": 5, "c": 16, "t": 0.035}], "dirs": [{"name": "src", "count": 3, "churn": 952}, {"name": "lib", "count": 1, "churn": 16}], "commits": ["fix(openviking): normalize summary pseudo-URIs to prevent v0.3.3 500s", "fix: serialize Pydantic AnyUrl fields when persisting MCP OAuth state", "fix(codex): route auth failures to fallback provider chain", "fix: guard against None tirith path in security scanner", "docs(cron): clarify default model/provider setup for scheduled jobs", "docs(cron): explain runtime resolution for null model/provider", "fix: drop incompatible model slugs on auxiliary client cache hit", "feat: wire context engine tools, session lifecycle, and tool dispatch", "feat: wire context engine plugin slot into agent and plugin system", "feat: add ContextEngine ABC, refactor ContextCompressor to inherit from it", "test(e2e): add Slack to parametrized e2e platform tests", "refactor(e2e): unify Telegram and Discord e2e tests into parametrized platform f"], "authors": ["Stephen Schoettler", "wenhao7", "Devzo", "Amanuel Tilahun Bogale", "Hitesh Aidasani", "Dylan Socolobsky", "MikeFac", "ran"], "filenames": ["core.py", "utils.py", "main.py", "helpers.py"], "tag": "day-2026-04-07", "total_files": 4, "total_adds": 681, "total_dels": 287, "is_release": false};var PAL={"bg": "#000000", "fg": "#64f050", "acc": ["#64f050", "#ffc800", "#f05082", "#3264ff"]};
+var W,H;
+function sr(i){return fract(sin(i*127.1+SEED*311.7)*43758.5453)}
+function fract(x){return x-floor(x)}
+function setup(){W=windowWidth||1200;H=windowHeight||900;createCanvas(W,H);randomSeed(SEED);noiseSeed(SEED);textFont('monospace');noLoop()}
+function draw(){
+  background(0);
+  stroke(30,30,35,25);strokeWeight(0.5);
+  for(var x=0;x<W;x+=40)line(x,0,x,H);
+  for(var y=0;y<H;y+=40)line(0,y,W,y);
+  noStroke();
+  for(var x=0;x<W;x+=40)for(var y=0;y<H;y+=40){
+    if(sr(x*7+y*13+100)<0.08){fill(100,240,80,5+sr(x+y)*15);rect(x,y,40,40)}
+  }
+  var labels=[];
+  for(var i=0;i<D.commits.length;i++)labels.push(D.commits[i].split(' ').slice(0,2).join(' ').substring(0,15).toUpperCase());
+  for(var i=0;i<D.filenames.length;i++)labels.push(D.filenames[i].toUpperCase());
+  if(labels.length===0)labels.push('UNKNOWN');
+  var nb=constrain(floor(D.total_files/8)+10,10,35);
+  for(var i=0;i<nb;i++){
+    var bw=40+sr(i*7)*140,bh=50+sr(i*7+1)*170;
+    var bx=sr(i*7+2)*(W-bw-20)+10,by=sr(i*7+3)*(H-bh-40)+30;
+    var conf=floor(8+sr(i*7+4)*91);
+    var c=conf>70?[100,240,80]:(conf>40?[255,200,0]:[240,80,130]);
+    var a=180+sr(i*7+5)*70;
+    var isCorner=sr(i*7+6)>0.6;
+    noFill();strokeWeight(sr(i*7+8)<0.3?2.5:1.5);stroke(c[0],c[1],c[2],a);
+    if(!isCorner){rect(bx,by,bw,bh)}
+    else{
+      var cl=min(bw,bh)*0.25;
+      line(bx,by,bx+cl,by);line(bx,by,bx,by+cl);
+      line(bx+bw,by,bx+bw-cl,by);line(bx+bw,by,bx+bw,by+cl);
+      line(bx,by+bh,bx+cl,by+bh);line(bx,by+bh,bx,by+bh-cl);
+      line(bx+bw,by+bh,bx+bw-cl,by+bh);line(bx+bw,by+bh,bx+bw,by+bh-cl);
+    }
+    var lbl=labels[i%labels.length]+'  '+conf+'%';
+    textSize(10);textAlign(LEFT,TOP);
+    var tw=textWidth(lbl)+8,ly=by<16?by+2:by-16;
+    noStroke();fill(c[0],c[1],c[2],a*0.9);rect(bx,ly,tw,14);
+    fill(0,0,0,a+30);text(lbl,bx+4,ly+2);
+    fill(c[0],c[1],c[2],a*0.5);textSize(7);
+    text('ID:'+floor(1000+sr(i*7+9)*8999),bx+bw-35,by+bh+3);
+    noStroke();fill(60,65,75,a*0.5);rect(bx,by+bh+2,bw*0.6,3);
+    fill(c[0],c[1],c[2],a*0.8);rect(bx,by+bh+2,bw*0.6*conf/100,3);
+  }
+  stroke(255,200,0,25);strokeWeight(0.5);
+  for(var i=0;i<15;i++){
+    var x1=sr(i*11+300)*W,y1=sr(i*11+301)*H;
+    var x2=sr(i*11+302)*W,y2=sr(i*11+303)*H;
+    if(dist(x1,y1,x2,y2)<250){
+      for(var dd=0;dd<dist(x1,y1,x2,y2);dd+=9){
+        var tt=dd/max(1,dist(x1,y1,x2,y2));
+        if(floor(dd/5)%2===0)point(lerp(x1,x2,tt),lerp(y1,y2,tt));
+      }
+    }
+  }
+  stroke(255,200,0);strokeWeight(1);noFill();
+  for(var i=0;i<20;i++){
+    var cx=sr(i*5+500)*(W-60)+5,cy=sr(i*5+501)*(H-60)+5;
+    var cw=20+sr(i*5+502)*40,ch=20+sr(i*5+503)*40;
+    var cl2=5+sr(i*5+504)*10,ca=30+sr(i*5+505)*50;
+    stroke(255,200,0,ca);
+    line(cx,cy,cx+cl2,cy);line(cx,cy,cx,cy+cl2);
+    line(cx+cw,cy,cx+cw-cl2,cy);line(cx+cw,cy,cx+cw,cy+cl2);
+    line(cx,cy+ch,cx+cl2,cy+ch);line(cx,cy+ch,cx,cy+ch-cl2);
+    line(cx+cw,cy+ch,cx+cw-cl2,cy+ch);line(cx+cw,cy+ch,cx+cw,cy+ch-cl2);
+  }
+  var scanY=sr(777)*H;
+  stroke(100,240,80,60);strokeWeight(1);line(0,scanY,W,scanY);
+  for(var i=1;i<15;i++){stroke(100,240,80,60*(1-i/15));line(0,scanY-i*2,W,scanY-i*2)}
+  var dataTexts=['FILES: '+D.total_files,'ADDS: +'+D.total_adds,'DELS: -'+D.total_dels,
+    'TAG: '+D.tag,'AUTHORS: '+D.authors.join(', ').substring(0,40)];
+  for(var i=0;i<D.filenames.length;i++)dataTexts.push(D.filenames[i].toUpperCase());
+  noStroke();
+  for(var i=0;i<40;i++){
+    var dt=dataTexts[i%dataTexts.length];
+    var dx=sr(i*3+600)*(W-100)+5,dy=sr(i*3+601)*(H-10)+25;
+    fill(100,240,80,20+sr(i*3+602)*35);textSize(7+sr(i*3+603)*4);textAlign(LEFT,TOP);
+    if(sr(i*3+604)<0.1){push();translate(dx,dy);rotate(HALF_PI);text(dt,0,0);pop()}
+    else text(dt,dx,dy);
+  }
+  stroke(100,240,80,100);strokeWeight(2);noFill();
+  var m=15,cl3=50;
+  line(m,m,m+cl3,m);line(m,m,m,m+cl3);
+  line(W-m,m,W-m-cl3,m);line(W-m,m,W-m,m+cl3);
+  line(m,H-m,m+cl3,H-m);line(m,H-m,m,H-m-cl3);
+  line(W-m,H-m,W-m-cl3,H-m);line(W-m,H-m,W-m,H-m-cl3);
+  fill(100,240,80,100);noStroke();textSize(9);textAlign(LEFT,TOP);
+  text('HERMETIC  TAG:'+D.tag+'  FILES:'+D.total_files,m+5,m+8);
+  text('COMMITS: '+D.commits.length+'  |  +'+D.total_adds+' -'+D.total_dels,m+5,m+20);
+  textAlign(RIGHT,BOTTOM);fill(100,240,80,70);textSize(8);
+  text('DETECTIONS: '+nb+'  |  ANALYSIS COMPLETE',W-m-5,H-m-5);
+}
+
+</script>
+</body>
+</html>

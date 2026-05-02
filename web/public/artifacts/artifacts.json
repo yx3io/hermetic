@@ -1,0 +1,891 @@
+{
+  "generated_at": "2026-05-02",
+  "repo": "NousResearch/hermes-agent",
+  "total_artifacts": 50,
+  "artifacts": [
+    {
+      "id": "a6dc6e259f5a",
+      "tag": "v2026.3.12",
+      "type": "p5_composition",
+      "title": "Artifact v2026.3.12",
+      "date": "2026-03-12",
+      "release_name": "Hermes Agent v0.2.0 (2026.3.12)",
+      "themes": [
+        "bugfix",
+        "architecture",
+        "infrastructure",
+        "growth"
+      ],
+      "stats": {
+        "commits": 4,
+        "contributors": 63
+      },
+      "filename": "2026-03-12_p5.html",
+      "file_size": 4390,
+      "is_release": true,
+      "commit_count": 0
+    },
+    {
+      "id": "a0c9557b32bf",
+      "tag": "day-2026-03-13",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-03-13",
+      "date": "2026-03-13",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 0
+      },
+      "filename": "2026-03-13_p5.html",
+      "file_size": 4398,
+      "is_release": false,
+      "commit_count": 0
+    },
+    {
+      "id": "cfaf8f047fe1",
+      "tag": "day-2026-03-14",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-03-14",
+      "date": "2026-03-14",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 0
+      },
+      "filename": "2026-03-14_p5.html",
+      "file_size": 4398,
+      "is_release": false,
+      "commit_count": 0
+    },
+    {
+      "id": "4a45df210954",
+      "tag": "day-2026-03-15",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-03-15",
+      "date": "2026-03-15",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 0
+      },
+      "filename": "2026-03-15_p5.html",
+      "file_size": 5037,
+      "is_release": false,
+      "commit_count": 0
+    },
+    {
+      "id": "733b46ce27f8",
+      "tag": "day-2026-03-16",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-03-16",
+      "date": "2026-03-16",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 0
+      },
+      "filename": "2026-03-16_p5.html",
+      "file_size": 5036,
+      "is_release": false,
+      "commit_count": 0
+    },
+    {
+      "id": "4d582603b9b8",
+      "tag": "v2026.3.17",
+      "type": "p5_composition",
+      "title": "Artifact v2026.3.17",
+      "date": "2026-03-17",
+      "release_name": "Hermes Agent v0.3.0 (v2026.3.17)",
+      "themes": [
+        "new_modules",
+        "bugfix",
+        "architecture",
+        "high_churn",
+        "infrastructure",
+        "growth"
+      ],
+      "stats": {
+        "commits": 0
+      },
+      "filename": "2026-03-17_p5.html",
+      "file_size": 21128,
+      "is_release": true,
+      "commit_count": 0
+    },
+    {
+      "id": "52d6ef0709b9",
+      "tag": "day-2026-03-18",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-03-18",
+      "date": "2026-03-18",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 2
+      },
+      "filename": "2026-03-18_p5.html",
+      "file_size": 5319,
+      "is_release": false,
+      "commit_count": 2
+    },
+    {
+      "id": "03b455594f64",
+      "tag": "day-2026-03-19",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-03-19",
+      "date": "2026-03-19",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 0
+      },
+      "filename": "2026-03-19_p5.html",
+      "file_size": 3655,
+      "is_release": false,
+      "commit_count": 0
+    },
+    {
+      "id": "ac1f8150795a",
+      "tag": "day-2026-03-20",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-03-20",
+      "date": "2026-03-20",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 2
+      },
+      "filename": "2026-03-20_p5.html",
+      "file_size": 5356,
+      "is_release": false,
+      "commit_count": 2
+    },
+    {
+      "id": "3897795ab74d",
+      "tag": "day-2026-03-21",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-03-21",
+      "date": "2026-03-21",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 2
+      },
+      "filename": "2026-03-21_p5.html",
+      "file_size": 5390,
+      "is_release": false,
+      "commit_count": 2
+    },
+    {
+      "id": "38b62737b6ef",
+      "tag": "day-2026-03-22",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-03-22",
+      "date": "2026-03-22",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 2
+      },
+      "filename": "2026-03-22_p5.html",
+      "file_size": 5662,
+      "is_release": false,
+      "commit_count": 2
+    },
+    {
+      "id": "eeb113671f58",
+      "tag": "day-2026-03-23",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-03-23",
+      "date": "2026-03-23",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 2
+      },
+      "filename": "2026-03-23_p5.html",
+      "file_size": 4950,
+      "is_release": false,
+      "commit_count": 2
+    },
+    {
+      "id": "5254fa5645ef",
+      "tag": "v2026.3.23",
+      "type": "p5_composition",
+      "title": "Artifact v2026.3.23",
+      "date": "2026-03-24",
+      "release_name": "Hermes Agent v0.4.0 (v2026.3.23)",
+      "themes": [
+        "bugfix",
+        "architecture",
+        "high_churn",
+        "infrastructure",
+        "growth"
+      ],
+      "stats": {
+        "commits": 30
+      },
+      "filename": "2026-03-24_p5.html",
+      "file_size": 23923,
+      "is_release": true,
+      "commit_count": 30
+    },
+    {
+      "id": "bf95f678056a",
+      "tag": "day-2026-03-25",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-03-25",
+      "date": "2026-03-25",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 51
+      },
+      "filename": "2026-03-25_p5.html",
+      "file_size": 8654,
+      "is_release": false,
+      "commit_count": 51
+    },
+    {
+      "id": "cb15b989b2a5",
+      "tag": "day-2026-03-26",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-03-26",
+      "date": "2026-03-26",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 2
+      },
+      "filename": "2026-03-26_p5.html",
+      "file_size": 4110,
+      "is_release": false,
+      "commit_count": 2
+    },
+    {
+      "id": "d02100683d15",
+      "tag": "day-2026-03-27",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-03-27",
+      "date": "2026-03-27",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 40
+      },
+      "filename": "2026-03-27_p5.html",
+      "file_size": 7328,
+      "is_release": false,
+      "commit_count": 40
+    },
+    {
+      "id": "655ecd0e111b",
+      "tag": "v2026.3.28",
+      "type": "p5_composition",
+      "title": "Artifact v2026.3.28",
+      "date": "2026-03-28",
+      "release_name": "Hermes Agent v0.5.0 (v2026.3.28)",
+      "themes": [
+        "bugfix",
+        "architecture",
+        "high_churn",
+        "infrastructure",
+        "growth"
+      ],
+      "stats": {
+        "commits": 1
+      },
+      "filename": "2026-03-28_p5.html",
+      "file_size": 22025,
+      "is_release": true,
+      "commit_count": 1
+    },
+    {
+      "id": "d0b5dd157c99",
+      "tag": "day-2026-03-29",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-03-29",
+      "date": "2026-03-29",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 1
+      },
+      "filename": "2026-03-29_p5.html",
+      "file_size": 5295,
+      "is_release": false,
+      "commit_count": 1
+    },
+    {
+      "id": "9f5fdc10b6d7",
+      "tag": "v2026.3.30",
+      "type": "p5_composition",
+      "title": "Artifact v2026.3.30",
+      "date": "2026-03-30",
+      "release_name": "Hermes Agent v0.6.0 (v2026.3.30)",
+      "themes": [
+        "bugfix",
+        "architecture",
+        "high_churn",
+        "infrastructure",
+        "growth"
+      ],
+      "stats": {
+        "resolved_issues": 16,
+        "commits": 2
+      },
+      "filename": "2026-03-30_p5.html",
+      "file_size": 22224,
+      "is_release": true,
+      "commit_count": 2
+    },
+    {
+      "id": "43705e278fa9",
+      "tag": "day-2026-03-31",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-03-31",
+      "date": "2026-03-31",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 1
+      },
+      "filename": "2026-03-31_p5.html",
+      "file_size": 4924,
+      "is_release": false,
+      "commit_count": 1
+    },
+    {
+      "id": "89097cf92ced",
+      "tag": "day-2026-04-01",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-04-01",
+      "date": "2026-04-01",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 2
+      },
+      "filename": "2026-04-01_p5.html",
+      "file_size": 5010,
+      "is_release": false,
+      "commit_count": 2
+    },
+    {
+      "id": "1c5721dd9ffa",
+      "tag": "day-2026-04-02",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-04-02",
+      "date": "2026-04-02",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 4
+      },
+      "filename": "2026-04-02_p5.html",
+      "file_size": 5982,
+      "is_release": false,
+      "commit_count": 4
+    },
+    {
+      "id": "02ebaf256e63",
+      "tag": "v2026.4.3",
+      "type": "p5_composition",
+      "title": "Artifact v2026.4.3",
+      "date": "2026-04-03",
+      "release_name": "Hermes Agent v0.7.0 (v2026.4.3)",
+      "themes": [
+        "bugfix",
+        "architecture",
+        "high_churn",
+        "infrastructure",
+        "growth"
+      ],
+      "stats": {
+        "commits": 135,
+        "resolved_issues": 46
+      },
+      "filename": "2026-04-03_p5.html",
+      "file_size": 23655,
+      "is_release": true,
+      "commit_count": 1
+    },
+    {
+      "id": "1ffdc12cfb11",
+      "tag": "day-2026-04-04",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-04-04",
+      "date": "2026-04-04",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 4
+      },
+      "filename": "2026-04-04_p5.html",
+      "file_size": 4655,
+      "is_release": false,
+      "commit_count": 4
+    },
+    {
+      "id": "def50697ad36",
+      "tag": "day-2026-04-05",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-04-05",
+      "date": "2026-04-05",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 0
+      },
+      "filename": "2026-04-05_p5.html",
+      "file_size": 4928,
+      "is_release": false,
+      "commit_count": 0
+    },
+    {
+      "id": "86a6c42d4ffe",
+      "tag": "day-2026-04-06",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-04-06",
+      "date": "2026-04-06",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 3
+      },
+      "filename": "2026-04-06_p5.html",
+      "file_size": 5654,
+      "is_release": false,
+      "commit_count": 3
+    },
+    {
+      "id": "bbd3a0e4c904",
+      "tag": "day-2026-04-07",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-04-07",
+      "date": "2026-04-07",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 12
+      },
+      "filename": "2026-04-07_p5.html",
+      "file_size": 6377,
+      "is_release": false,
+      "commit_count": 12
+    },
+    {
+      "id": "ff5cc3d1faf7",
+      "tag": "v2026.4.8",
+      "type": "p5_composition",
+      "title": "Artifact v2026.4.8",
+      "date": "2026-04-08",
+      "release_name": "Hermes Agent v0.8.0 (v2026.4.8)",
+      "themes": [
+        "new_modules",
+        "bugfix",
+        "architecture",
+        "high_churn",
+        "infrastructure",
+        "growth"
+      ],
+      "stats": {
+        "merged_prs": 209,
+        "resolved_issues": 82,
+        "commits": 13
+      },
+      "filename": "2026-04-08_p5.html",
+      "file_size": 24253,
+      "is_release": true,
+      "commit_count": 13
+    },
+    {
+      "id": "c56ea3d7c919",
+      "tag": "day-2026-04-09",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-04-09",
+      "date": "2026-04-09",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 22
+      },
+      "filename": "2026-04-09_p5.html",
+      "file_size": 7046,
+      "is_release": false,
+      "commit_count": 22
+    },
+    {
+      "id": "110cce570973",
+      "tag": "day-2026-04-10",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-04-10",
+      "date": "2026-04-10",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 95
+      },
+      "filename": "2026-04-10_p5.html",
+      "file_size": 6937,
+      "is_release": false,
+      "commit_count": 95
+    },
+    {
+      "id": "45ce19e58995",
+      "tag": "day-2026-04-11",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-04-11",
+      "date": "2026-04-11",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 134
+      },
+      "filename": "2026-04-11_p5.html",
+      "file_size": 7368,
+      "is_release": false,
+      "commit_count": 134
+    },
+    {
+      "id": "7cd1a0734d11",
+      "tag": "day-2026-04-12",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-04-12",
+      "date": "2026-04-12",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 99
+      },
+      "filename": "2026-04-12_p5.html",
+      "file_size": 8576,
+      "is_release": false,
+      "commit_count": 99
+    },
+    {
+      "id": "b3539dddfaab",
+      "tag": "v2026.4.13",
+      "type": "p5_composition",
+      "title": "Artifact v2026.4.13",
+      "date": "2026-04-13",
+      "release_name": "Hermes Agent v0.9.0 (v2026.4.13)",
+      "themes": [
+        "bugfix",
+        "architecture",
+        "high_churn",
+        "infrastructure",
+        "growth"
+      ],
+      "stats": {
+        "commits": 487,
+        "merged_prs": 269,
+        "files_changed": 493,
+        "insertions": 63281,
+        "contributors": 24,
+        "resolved_issues": 167
+      },
+      "filename": "2026-04-13_p5.html",
+      "file_size": 24097,
+      "is_release": true,
+      "commit_count": 128
+    },
+    {
+      "id": "f265869b366a",
+      "tag": "day-2026-04-14",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-04-14",
+      "date": "2026-04-14",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 139
+      },
+      "filename": "2026-04-14_p5.html",
+      "file_size": 6778,
+      "is_release": false,
+      "commit_count": 139
+    },
+    {
+      "id": "1f4c03aa9869",
+      "tag": "day-2026-04-15",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-04-15",
+      "date": "2026-04-15",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 138
+      },
+      "filename": "2026-04-15_p5.html",
+      "file_size": 8134,
+      "is_release": false,
+      "commit_count": 138
+    },
+    {
+      "id": "832af2253b03",
+      "tag": "v2026.4.16",
+      "type": "p5_composition",
+      "title": "Artifact v2026.4.16",
+      "date": "2026-04-16",
+      "release_name": "Hermes Agent v0.10.0 (2026.4.16)",
+      "themes": [
+        "bugfix",
+        "high_churn",
+        "infrastructure",
+        "growth"
+      ],
+      "stats": {
+        "commits": 151
+      },
+      "filename": "2026-04-16_p5.html",
+      "file_size": 24341,
+      "is_release": true,
+      "commit_count": 151
+    },
+    {
+      "id": "cf13babe9caa",
+      "tag": "day-2026-04-17",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-04-17",
+      "date": "2026-04-17",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 143
+      },
+      "filename": "2026-04-17_p5.html",
+      "file_size": 8657,
+      "is_release": false,
+      "commit_count": 143
+    },
+    {
+      "id": "50b6f1f289ab",
+      "tag": "day-2026-04-18",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-04-18",
+      "date": "2026-04-18",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 138
+      },
+      "filename": "2026-04-18_p5.html",
+      "file_size": 6493,
+      "is_release": false,
+      "commit_count": 138
+    },
+    {
+      "id": "5c42ee9fa739",
+      "tag": "day-2026-04-19",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-04-19",
+      "date": "2026-04-19",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 106
+      },
+      "filename": "2026-04-19_p5.html",
+      "file_size": 8311,
+      "is_release": false,
+      "commit_count": 106
+    },
+    {
+      "id": "32343e4eb2bd",
+      "tag": "day-2026-04-20",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-04-20",
+      "date": "2026-04-20",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 163
+      },
+      "filename": "2026-04-20_p5.html",
+      "file_size": 7883,
+      "is_release": false,
+      "commit_count": 163
+    },
+    {
+      "id": "3a07bc6c1059",
+      "tag": "day-2026-04-21",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-04-21",
+      "date": "2026-04-21",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 153
+      },
+      "filename": "2026-04-21_p5.html",
+      "file_size": 7668,
+      "is_release": false,
+      "commit_count": 153
+    },
+    {
+      "id": "71a2d22f5119",
+      "tag": "day-2026-04-22",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-04-22",
+      "date": "2026-04-22",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 113
+      },
+      "filename": "2026-04-22_p5.html",
+      "file_size": 7009,
+      "is_release": false,
+      "commit_count": 113
+    },
+    {
+      "id": "278f0b23a546",
+      "tag": "v2026.4.23",
+      "type": "p5_composition",
+      "title": "Artifact v2026.4.23",
+      "date": "2026-04-23",
+      "release_name": "Hermes Agent v0.11.0 (2026.4.23)",
+      "themes": [
+        "new_modules",
+        "bugfix",
+        "architecture",
+        "high_churn",
+        "infrastructure",
+        "growth"
+      ],
+      "stats": {
+        "commits": 1556,
+        "merged_prs": 761,
+        "files_changed": 1314,
+        "insertions": 224174
+      },
+      "filename": "2026-04-23_p5.html",
+      "file_size": 24864,
+      "is_release": true,
+      "commit_count": 189
+    },
+    {
+      "id": "194c9bdd584d",
+      "tag": "day-2026-04-24",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-04-24",
+      "date": "2026-04-24",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 189
+      },
+      "filename": "2026-04-24_p5.html",
+      "file_size": 8132,
+      "is_release": false,
+      "commit_count": 189
+    },
+    {
+      "id": "a2887d24147d",
+      "tag": "day-2026-04-25",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-04-25",
+      "date": "2026-04-25",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 77
+      },
+      "filename": "2026-04-25_p5.html",
+      "file_size": 7885,
+      "is_release": false,
+      "commit_count": 77
+    },
+    {
+      "id": "4eeadcfbb6fb",
+      "tag": "day-2026-04-26",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-04-26",
+      "date": "2026-04-26",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 188
+      },
+      "filename": "2026-04-26_p5.html",
+      "file_size": 8270,
+      "is_release": false,
+      "commit_count": 188
+    },
+    {
+      "id": "00c956269f40",
+      "tag": "day-2026-04-27",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-04-27",
+      "date": "2026-04-27",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 159
+      },
+      "filename": "2026-04-27_p5.html",
+      "file_size": 7735,
+      "is_release": false,
+      "commit_count": 159
+    },
+    {
+      "id": "864148bcf3dd",
+      "tag": "day-2026-04-28",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-04-28",
+      "date": "2026-04-28",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 172
+      },
+      "filename": "2026-04-28_p5.html",
+      "file_size": 7980,
+      "is_release": false,
+      "commit_count": 172
+    },
+    {
+      "id": "8f887d541e97",
+      "tag": "day-2026-04-29",
+      "type": "p5_composition",
+      "title": "Artifact day-2026-04-29",
+      "date": "2026-04-29",
+      "release_name": "",
+      "themes": [],
+      "stats": {
+        "commits": 133
+      },
+      "filename": "2026-04-29_p5.html",
+      "file_size": 6724,
+      "is_release": false,
+      "commit_count": 133
+    },
+    {
+      "id": "4de538d95756",
+      "tag": "v2026.4.30",
+      "type": "p5_composition",
+      "title": "Artifact v2026.4.30",
+      "date": "2026-04-30",
+      "release_name": "Hermes Agent v0.12.0 (2026.4.30)",
+      "themes": [
+        "new_modules",
+        "bugfix",
+        "architecture",
+        "high_churn",
+        "infrastructure",
+        "growth"
+      ],
+      "stats": {
+        "commits": 1096,
+        "merged_prs": 550,
+        "files_changed": 1270,
+        "insertions": 217776
+      },
+      "filename": "2026-04-30_p5.html",
+      "file_size": 23671,
+      "is_release": true,
+      "commit_count": 117
+    }
+  ]
+}

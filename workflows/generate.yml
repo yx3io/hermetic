@@ -1,0 +1,41 @@
+name: Generate Artifacts
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate artifacts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python generators/orchestrator.py
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet website/artifacts/ || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit new artifacts
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "Hermes Archaeologist"
+          git config user.email "hermes@archaeology.museum"
+          git add website/artifacts/
+          git commit -m "artifact: generate new museum pieces $(date +%Y-%m-%d)"
+          git push

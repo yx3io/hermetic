@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hermes — v2026.3.30</title>
+<script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.min.js"></script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{margin:0;overflow:hidden;background:#f8f8f4;min-height:100vh}
+canvas{display:block}
+</style>
+</head>
+<body>
+<script>
+
+var SEED=3180101974;var D={"files": [{"n": ".dockerignore", "a": 13, "d": 0, "c": 13, "t": 0.004}, {"n": ".env.example", "a": 5, "d": 1, "c": 6, "t": 0.002}, {"n": ".github/workflows/docker-publish.yml", "a": 61, "d": 0, "c": 61, "t": 0.019}, {"n": "AGENTS.md", "a": 78, "d": 0, "c": 78, "t": 0.024}, {"n": "Dockerfile", "a": 20, "d": 0, "c": 20, "t": 0.006}, {"n": "RELEASE_v0.6.0.md", "a": 249, "d": 0, "c": 249, "t": 0.076}, {"n": "acp_adapter/entry.py", "a": 1, "d": 1, "c": 2, "t": 0.001}, {"n": "acp_adapter/server.py", "a": 46, "d": 3, "c": 49, "t": 0.015}, {"n": "agent/auxiliary_client.py", "a": 73, "d": 12, "c": 85, "t": 0.026}, {"n": "agent/context_compressor.py", "a": 2, "d": 2, "c": 4, "t": 0.001}, {"n": "agent/display.py", "a": 35, "d": 8, "c": 43, "t": 0.013}, {"n": "agent/model_metadata.py", "a": 1, "d": 0, "c": 1, "t": 0.0}, {"n": "agent/models_dev.py", "a": 4, "d": 4, "c": 8, "t": 0.002}, {"n": "agent/prompt_builder.py", "a": 59, "d": 1, "c": 60, "t": 0.018}, {"n": "agent/redact.py", "a": 3, "d": 0, "c": 3, "t": 0.001}, {"n": "agent/skill_commands.py", "a": 45, "d": 30, "c": 75, "t": 0.023}, {"n": "agent/skill_utils.py", "a": 67, "d": 0, "c": 67, "t": 0.021}, {"n": "agent/title_generator.py", "a": 1, "d": 1, "c": 2, "t": 0.001}, {"n": "cli-config.yaml.example", "a": 36, "d": 8, "c": 44, "t": 0.014}, {"n": "cli.py", "a": 207, "d": 79, "c": 286, "t": 0.088}, {"n": "cron/scheduler.py", "a": 48, "d": 17, "c": 65, "t": 0.02}, {"n": "docker/SOUL.md", "a": 15, "d": 0, "c": 15, "t": 0.005}, {"n": "docker/entrypoint.sh", "a": 34, "d": 0, "c": 34, "t": 0.01}, {"n": "environments/benchmarks/terminalbench_2/terminalbench2_env.py", "a": 446, "d": 3, "c": 449, "t": 0.138}, {"n": "gateway/builtin_hooks/__init__.py", "a": 1, "d": 0, "c": 1, "t": 0.0}, {"n": "gateway/builtin_hooks/boot_md.py", "a": 86, "d": 0, "c": 86, "t": 0.026}, {"n": "gateway/config.py", "a": 117, "d": 43, "c": 160, "t": 0.049}, {"n": "gateway/hooks.py", "a": 19, "d": 0, "c": 19, "t": 0.006}, {"n": "gateway/pairing.py", "a": 2, "d": 2, "c": 4, "t": 0.001}, {"n": "gateway/platforms/api_server.py", "a": 40, "d": 5, "c": 45, "t": 0.014}, {"n": "gateway/platforms/base.py", "a": 90, "d": 23, "c": 113, "t": 0.035}, {"n": "gateway/platforms/discord.py", "a": 88, "d": 12, "c": 100, "t": 0.031}, {"n": "gateway/platforms/email.py", "a": 103, "d": 56, "c": 159, "t": 0.049}, {"n": "gateway/platforms/feishu.py", "a": 3255, "d": 0, "c": 3255, "t": 1.0}, {"n": "gateway/platforms/matrix.py", "a": 58, "d": 9, "c": 67, "t": 0.021}, {"n": "gateway/platforms/mattermost.py", "a": 21, "d": 3, "c": 24, "t": 0.007}, {"n": "gateway/platforms/signal.py", "a": 36, "d": 3, "c": 39, "t": 0.012}, {"n": "gateway/platforms/slack.py", "a": 116, "d": 32, "c": 148, "t": 0.045}, {"n": "gateway/platforms/telegram.py", "a": 233, "d": 24, "c": 257, "t": 0.079}, {"n": "gateway/platforms/telegram_network.py", "a": 12, "d": 0, "c": 12, "t": 0.004}, {"n": "gateway/platforms/webhook.py", "a": 58, "d": 1, "c": 59, "t": 0.018}, {"n": "gateway/platforms/wecom.py", "a": 1338, "d": 0, "c": 1338, "t": 0.411}, {"n": "gateway/platforms/whatsapp.py", "a": 151, "d": 104, "c": 255, "t": 0.078}, {"n": "gateway/run.py", "a": 137, "d": 33, "c": 170, "t": 0.052}, {"n": "hermes", "a": 5, "d": 6, "c": 11, "t": 0.003}, {"n": "hermes_cli/__init__.py", "a": 2, "d": 2, "c": 4, "t": 0.001}, {"n": "hermes_cli/auth.py", "a": 18, "d": 9, "c": 27, "t": 0.008}, {"n": "hermes_cli/banner.py", "a": 25, "d": 2, "c": 27, "t": 0.008}, {"n": "hermes_cli/callbacks.py", "a": 7, "d": 3, "c": 10, "t": 0.003}, {"n": "hermes_cli/checklist.py", "a": 5, "d": 0, "c": 5, "t": 0.002}, {"n": "hermes_cli/claw.py", "a": 13, "d": 1, "c": 14, "t": 0.004}, {"n": "hermes_cli/codex_models.py", "a": 4, "d": 1, "c": 5, "t": 0.002}, {"n": "hermes_cli/config.py", "a": 51, "d": 2, "c": 53, "t": 0.016}, {"n": "hermes_cli/curses_ui.py", "a": 36, "d": 4, "c": 40, "t": 0.012}, {"n": "hermes_cli/doctor.py", "a": 76, "d": 27, "c": 103, "t": 0.032}, {"n": "hermes_cli/gateway.py", "a": 156, "d": 18, "c": 174, "t": 0.053}, {"n": "hermes_cli/main.py", "a": 620, "d": 37, "c": 657, "t": 0.202}, {"n": "hermes_cli/mcp_config.py", "a": 13, "d": 2, "c": 15, "t": 0.005}, {"n": "hermes_cli/models.py", "a": 4, "d": 0, "c": 4, "t": 0.001}, {"n": "hermes_cli/plugins.py", "a": 48, "d": 1, "c": 49, "t": 0.015}, {"n": "hermes_cli/plugins_cmd.py", "a": 153, "d": 2, "c": 155, "t": 0.048}, {"n": "hermes_cli/profiles.py", "a": 906, "d": 0, "c": 906, "t": 0.278}, {"n": "hermes_cli/runtime_provider.py", "a": 4, "d": 1, "c": 5, "t": 0.002}, {"n": "hermes_cli/setup.py", "a": 43, "d": 12, "c": 55, "t": 0.017}, {"n": "hermes_cli/skills_config.py", "a": 6, "d": 0, "c": 6, "t": 0.002}, {"n": "hermes_cli/skills_hub.py", "a": 51, "d": 28, "c": 79, "t": 0.024}, {"n": "hermes_cli/status.py", "a": 5, "d": 1, "c": 6, "t": 0.002}, {"n": "hermes_cli/tools_config.py", "a": 88, "d": 3, "c": 91, "t": 0.028}, {"n": "hermes_cli/webhook.py", "a": 260, "d": 0, "c": 260, "t": 0.08}, {"n": "hermes_constants.py", "a": 41, "d": 0, "c": 41, "t": 0.013}, {"n": "honcho_integration/cli.py", "a": 2, "d": 2, "c": 4, "t": 0.001}, {"n": "honcho_integration/client.py", "a": 10, "d": 1, "c": 11, "t": 0.003}, {"n": "mcp_serve.py", "a": 868, "d": 0, "c": 868, "t": 0.267}, {"n": "nix/nixosModules.nix", "a": 8, "d": 5, "c": 13, "t": 0.004}, {"n": "optional-skills/communication/DESCRIPTION.md", "a": 1, "d": 0, "c": 1, "t": 0.0}, {"n": "optional-skills/communication/one-three-one-rule/SKILL.md", "a": 103, "d": 0, "c": 103, "t": 0.032}, {"n": "optional-skills/migration/openclaw-migration/scripts/openclaw_to_hermes.py", "a": 203, "d": 62, "c": 265, "t": 0.081}, {"n": "optional-skills/productivity/canvas/SKILL.md", "a": 97, "d": 0, "c": 97, "t": 0.03}, {"n": "optional-skills/productivity/canvas/scripts/canvas_api.py", "a": 157, "d": 0, "c": 157, "t": 0.048}, {"n": "optional-skills/productivity/memento-flashcards/SKILL.md", "a": 324, "d": 0, "c": 324, "t": 0.1}, {"n": "optional-skills/productivity/memento-flashcards/scripts/memento_cards.py", "a": 353, "d": 0, "c": 353, "t": 0.108}, {"n": "optional-skills/productivity/memento-flashcards/scripts/youtube_quiz.py", "a": 88, "d": 0, "c": 88, "t": 0.027}, {"n": "optional-skills/productivity/siyuan/SKILL.md", "a": 297, "d": 0, "c": 297, "t": 0.091}, {"n": "optional-skills/research/parallel-cli/SKILL.md", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "optional-skills/research/scrapling/SKILL.md", "a": 335, "d": 0, "c": 335, "t": 0.103}, {"n": "pyproject.toml", "a": 5, "d": 1, "c": 6, "t": 0.002}, {"n": "run_agent.py", "a": 176, "d": 38, "c": 214, "t": 0.066}, {"n": "scripts/whatsapp-bridge/allowlist.js", "a": 79, "d": 0, "c": 79, "t": 0.024}, {"n": "scripts/whatsapp-bridge/allowlist.test.mjs", "a": 47, "d": 0, "c": 47, "t": 0.014}, {"n": "scripts/whatsapp-bridge/bridge.js", "a": 11, "d": 7, "c": 18, "t": 0.006}, {"n": "skills/creative/songwriting-and-ai-music/SKILL.md", "a": 289, "d": 0, "c": 289, "t": 0.089}, {"n": "skills/devops/webhook-subscriptions/SKILL.md", "a": 180, "d": 0, "c": 180, "t": 0.055}, {"n": "skills/github/github-auth/SKILL.md", "a": 3, "d": 0, "c": 3, "t": 0.001}, {"n": "skills/github/github-auth/scripts/gh-env.sh", "a": 5, "d": 0, "c": 5, "t": 0.002}, {"n": "skills/github/github-code-review/SKILL.md", "a": 5, "d": 1, "c": 6, "t": 0.002}, {"n": "skills/github/github-issues/SKILL.md", "a": 5, "d": 1, "c": 6, "t": 0.002}, {"n": "skills/github/github-pr-workflow/SKILL.md", "a": 5, "d": 1, "c": 6, "t": 0.002}, {"n": "skills/github/github-repo-management/SKILL.md", "a": 5, "d": 1, "c": 6, "t": 0.002}, {"n": "skills/music-creation/DESCRIPTION.md", "a": 0, "d": 3, "c": 3, "t": 0.001}, {"n": "skills/productivity/google-workspace/SKILL.md", "a": 5, "d": 0, "c": 5, "t": 0.002}, {"n": "skills/research/duckduckgo-search/SKILL.md", "a": 108, "d": 59, "c": 167, "t": 0.051}, {"n": "tests/acp/test_entry.py", "a": 20, "d": 0, "c": 20, "t": 0.006}, {"n": "tests/acp/test_server.py", "a": 71, "d": 0, "c": 71, "t": 0.022}, {"n": "tests/agent/test_auxiliary_client.py", "a": 11, "d": 8, "c": 19, "t": 0.006}, {"n": "tests/agent/test_external_skills.py", "a": 157, "d": 0, "c": 157, "t": 0.048}, {"n": "tests/agent/test_prompt_builder.py", "a": 8, "d": 5, "c": 13, "t": 0.004}, {"n": "tests/agent/test_redact.py", "a": 49, "d": 0, "c": 49, "t": 0.015}, {"n": "tests/agent/test_skill_commands.py", "a": 1, "d": 11, "c": 12, "t": 0.004}, {"n": "tests/cron/test_scheduler.py", "a": 68, "d": 0, "c": 68, "t": 0.021}, {"n": "tests/gateway/test_allowlist_startup_check.py", "a": 2, "d": 2, "c": 4, "t": 0.001}, {"n": "tests/gateway/test_api_server.py", "a": 40, "d": 1, "c": 41, "t": 0.013}, {"n": "tests/gateway/test_base_topic_sessions.py", "a": 87, "d": 0, "c": 87, "t": 0.027}, {"n": "tests/gateway/test_config.py", "a": 76, "d": 0, "c": 76, "t": 0.023}, {"n": "tests/gateway/test_discord_reactions.py", "a": 170, "d": 0, "c": 170, "t": 0.052}, {"n": "tests/gateway/test_dm_topics.py", "a": 5, "d": 2, "c": 7, "t": 0.002}, {"n": "tests/gateway/test_email.py", "a": 117, "d": 0, "c": 117, "t": 0.036}, {"n": "tests/gateway/test_feishu.py", "a": 2580, "d": 0, "c": 2580, "t": 0.793}, {"n": "tests/gateway/test_hooks.py", "a": 12, "d": 7, "c": 19, "t": 0.006}, {"n": "tests/gateway/test_matrix_voice.py", "a": 340, "d": 0, "c": 340, "t": 0.104}, {"n": "tests/gateway/test_mattermost.py", "a": 85, "d": 1, "c": 86, "t": 0.026}, {"n": "tests/gateway/test_media_download_retry.py", "a": 164, "d": 0, "c": 164, "t": 0.05}, {"n": "tests/gateway/test_platform_base.py", "a": 12, "d": 0, "c": 12, "t": 0.004}, {"n": "tests/gateway/test_platform_reconnect.py", "a": 29, "d": 3, "c": 32, "t": 0.01}, {"n": "tests/gateway/test_runner_fatal_adapter.py", "a": 3, "d": 2, "c": 5, "t": 0.002}, {"n": "tests/gateway/test_signal.py", "a": 102, "d": 30, "c": 132, "t": 0.041}, {"n": "tests/gateway/test_slack.py", "a": 11, "d": 0, "c": 11, "t": 0.003}, {"n": "tests/gateway/test_telegram_group_gating.py", "a": 110, "d": 0, "c": 110, "t": 0.034}, {"n": "tests/gateway/test_telegram_network.py", "a": 18, "d": 0, "c": 18, "t": 0.006}, {"n": "tests/gateway/test_unauthorized_dm_behavior.py", "a": 29, "d": 2, "c": 31, "t": 0.01}, {"n": "tests/gateway/test_webhook_dynamic_routes.py", "a": 87, "d": 0, "c": 87, "t": 0.027}, {"n": "tests/gateway/test_wecom.py", "a": 596, "d": 0, "c": 596, "t": 0.183}, {"n": "tests/gateway/test_whatsapp_connect.py", "a": 83, "d": 0, "c": 83, "t": 0.025}, {"n": "tests/hermes_cli/test_cmd_update.py", "a": 21, "d": 0, "c": 21, "t": 0.006}, {"n": "tests/hermes_cli/test_gateway_service.py", "a": 4, "d": 3, "c": 7, "t": 0.002}, {"n": "tests/hermes_cli/test_launcher.py", "a": 42, "d": 0, "c": 42, "t": 0.013}, {"n": "tests/hermes_cli/test_profiles.py", "a": 622, "d": 0, "c": 622, "t": 0.191}, {"n": "tests/hermes_cli/test_skills_skip_confirm.py", "a": 51, "d": 9, "c": 60, "t": 0.018}, {"n": "tests/hermes_cli/test_tool_token_estimation.py", "a": 283, "d": 0, "c": 283, "t": 0.087}, {"n": "tests/hermes_cli/test_tools_config.py", "a": 50, "d": 0, "c": 50, "t": 0.015}, {"n": "tests/hermes_cli/test_update_gateway_restart.py", "a": 90, "d": 0, "c": 90, "t": 0.028}, {"n": "tests/hermes_cli/test_webhook_cli.py", "a": 189, "d": 0, "c": 189, "t": 0.058}, {"n": "tests/skills/test_memento_cards.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/skills/test_youtube_quiz.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_api_key_providers.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_cli_status_bar.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_cli_tools_command.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_codex_models.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_compressor_fallback_update.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_mcp_serve.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_percentage_clamp.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_plugins_cmd.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_project_metadata.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_provider_fallback.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_run_agent.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_streaming.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_surrogate_sanitization.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/tools/test_approval.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/tools/test_browser_content_none_guard.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/tools/test_credential_files.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/tools/test_daytona_environment.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/tools/test_honcho_tools.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/tools/test_local_persistent.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/tools/test_mcp_dynamic_discovery.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/tools/test_send_message_missing_platforms.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/tools/test_skill_env_passthrough.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/tools/test_skill_manager_tool.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/tools/test_skills_tool.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/tools/test_terminal_timeout_output.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/tools/test_transcription_tools.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/tools/test_vision_tools.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/tools/test_website_policy.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tools/approval.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tools/browser_tool.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tools/credential_files.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tools/cronjob_tools.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tools/delegate_tool.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tools/environments/daytona.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tools/environments/docker.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tools/environments/local.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tools/environments/modal.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tools/environments/singularity.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tools/environments/ssh.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tools/file_operations.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tools/file_tools.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tools/honcho_tools.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tools/mcp_tool.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tools/memory_tool.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tools/registry.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tools/send_message_tool.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tools/skill_manager_tool.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tools/skills_hub.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tools/skills_tool.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tools/terminal_tool.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tools/transcription_tools.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tools/tts_tool.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tools/vision_tools.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tools/web_tools.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "toolsets.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "uv.lock", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "website/docs/developer-guide/contributing.md", "a": 0, "d": 0, "c": 0, "t": 0.0}], "dirs": [{"name": "tests", "count": 70, "churn": 6581}, {"name": "gateway", "count": 20, "churn": 6311}, {"name": "hermes_cli", "count": 24, "churn": 2750}, {"name": "optional-skills", "count": 11, "churn": 2020}, {"name": "root", "count": 14, "churn": 1836}, {"name": "skills", "count": 11, "churn": 676}, {"name": "environments", "count": 1, "churn": 449}, {"name": "agent", "count": 10, "churn": 348}, {"name": "scripts", "count": 3, "churn": 144}, {"name": "cron", "count": 1, "churn": 65}, {"name": ".github", "count": 1, "churn": 61}, {"name": "acp_adapter", "count": 2, "churn": 51}, {"name": "docker", "count": 2, "churn": 49}, {"name": "honcho_integration", "count": 2, "churn": 15}, {"name": "nix", "count": 1, "churn": 13}], "commits": ["chore: remove unit tests from maps skill", "feat: add maps skill (OpenStreetMap + Overpass + OSRM, no API key)"], "authors": ["Mibayy", "Teknium"], "filenames": [".dockerignore", ".env.example", "docker-publish.yml", "AGENTS.md", "Dockerfile", "RELEASE_v0.6.0.md", "entry.py", "server.py", "auxiliary_client.py", "context_compressor.p", "display.py", "model_metadata.py", "models_dev.py", "prompt_builder.py", "redact.py", "skill_commands.py", "skill_utils.py", "title_generator.py", "cli-config.yaml.exam", "cli.py", "scheduler.py", "SOUL.md", "entrypoint.sh", "terminalbench2_env.p", "__init__.py", "boot_md.py", "config.py", "hooks.py", "pairing.py", "api_server.py", "base.py", "discord.py", "email.py", "feishu.py", "matrix.py", "mattermost.py", "signal.py", "slack.py", "telegram.py", "telegram_network.py", "webhook.py", "wecom.py", "whatsapp.py", "run.py", "hermes", "__init__.py", "auth.py", "banner.py", "callbacks.py", "checklist.py", "claw.py", "codex_models.py", "config.py", "curses_ui.py", "doctor.py", "gateway.py", "main.py", "mcp_config.py", "models.py", "plugins.py"], "tag": "v2026.3.30", "total_files": 230, "total_adds": 20419, "total_dels": 950, "is_release": false};var PAL={"bg": "#f8f8f4", "fg": "#3232dc", "acc": ["#3232dc", "#5050b4", "#8080ff"]};
+var W,H;
+function sr(i){return fract(sin(i*127.1+SEED*311.7)*43758.5453)}
+function fract(x){return x-floor(x)}
+function drawHex(cx,cy,r){beginShape();for(var i=0;i<6;i++){var a=i*PI/3-PI/6;vertex(cx+cos(a)*r,cy+sin(a)*r)}endShape(CLOSE)}
+function setup(){W=windowWidth||1200;H=windowHeight||900;createCanvas(W,H);randomSeed(SEED);noiseSeed(SEED);textFont('monospace');noLoop()}
+function draw(){
+  background(248,248,244);
+  noFill();
+  for(var i=0;i<25;i++){
+    var path=[];var x=sr(i*20)*W,y=sr(i*20+1)*H;
+    path.push([x,y]);
+    var segs=floor(4+sr(i*20+2)*8);
+    for(var s=0;s<segs;s++){
+      if(s%2===0)x+=sr(i*20+3+s)*400-200;else y+=sr(i*20+3+s)*300-150;
+      x=constrain(x,5,W-5);y=constrain(y,5,H-5);path.push([x,y]);
+    }
+    var ca=sr(i+50)>0.6?[50,50,220]:[80,80,180];
+    stroke(ca[0],ca[1],ca[2],40+sr(i+51)*80);strokeWeight(0.5+sr(i+52)*1);
+    beginShape();for(var j=0;j<path.length;j++)vertex(path[j][0],path[j][1]);endShape();
+    if(sr(i+53)>0.3){
+      var last=path[path.length-1];
+      fill(ca[0],ca[1],ca[2],80+sr(i+54)*80);noStroke();ellipse(last[0],last[1],4,4);noFill();
+    }
+  }
+  for(var i=0;i<12;i++){
+    var x1=sr(i*6+200)*W,y1=sr(i*6+201)*H;
+    var x2=x1+sr(i*6+202)*600-300,y2=y1+sr(i*6+203)*400-200;
+    var cx1=x1+sr(i*6+204)*200-100,cy1=y1+sr(i*6+205)*200-100;
+    var cx2=x2+sr(i*6+206)*200-100,cy2=y2+sr(i*6+207)*200-100;
+    noFill();stroke(50,50,220,40);strokeWeight(0.6);
+    bezier(x1,y1,cx1,cy1,cx2,cy2,x2,y2);
+    var t=sr(i+250);
+    var px=bezierPoint(x1,cx1,cx2,x2,t),py=bezierPoint(y1,cy1,cy2,y2,t);
+    fill(80,80,255,150);noStroke();ellipse(px,py,4,4);
+  }
+  var wavePos=[[0.05,0.1],[0.4,0.08],[0.7,0.15],[0.1,0.4],[0.55,0.5],
+    [0.8,0.45],[0.2,0.7],[0.5,0.75],[0.85,0.8],[0.15,0.92],[0.6,0.9]];
+  noFill();stroke(50,50,220,90);strokeWeight(0.8);
+  for(var i=0;i<wavePos.length;i++){
+    var wp=wavePos[i],wx=W*wp[0],wy=H*wp[1];
+    var ww=80+sr(i+300)*120,freq=0.02+sr(i+301)*0.06,amp=8+sr(i+302)*17;
+    var isSine=sr(i+303)>0.5;
+    beginShape();
+    for(var x=0;x<ww;x+=2){
+      var val=isSine?sin(x*freq)*amp:(noise(sr(i+304)*1000+x*0.03)-0.5)*amp*2;
+      vertex(wx+x,wy+val);
+    }
+    endShape();
+    stroke(50,50,220,25);line(wx,wy,wx+ww,wy);stroke(50,50,220,90);
+  }
+  for(var i=0;i<8;i++){
+    var hcx=sr(i*4+400)*W*0.8+W*0.1,hcy=sr(i*4+401)*H*0.8+H*0.1;
+    var hexR=6+sr(i*4+402)*6,rings=floor(1+sr(i*4+403)*2);
+    stroke(40,40,200,80);strokeWeight(0.6);noFill();
+    drawHex(hcx,hcy,hexR);
+    for(var ring=1;ring<=rings;ring++){
+      for(var a=0;a<6;a++){
+        var angle=a*PI/3;
+        var cx=hcx+cos(angle)*hexR*1.8*ring,cy=hcy+sin(angle)*hexR*1.8*ring;
+        drawHex(cx,cy,hexR);
+        if(sr(i*6+a+500)>0.6){fill(40,40,200,50);noStroke();drawHex(cx,cy,hexR*0.6);noFill();stroke(40,40,200,80);strokeWeight(0.6)}
+      }
+    }
+  }
+  strokeWeight(0.8);
+  for(var i=0;i<18;i++){
+    var fx=sr(i*3+600)*W,fy=sr(i*3+601)*H;
+    var fa=sr(i*3+602)*TWO_PI,fl=20+sr(i*3+603)*40;
+    var ex=fx+cos(fa)*fl,ey=fy+sin(fa)*fl;
+    stroke(60,60,200,60);line(fx,fy,ex,ey);
+    line(ex,ey,ex-cos(fa-0.4)*6,ey-sin(fa-0.4)*6);
+    line(ex,ey,ex-cos(fa+0.4)*6,ey-sin(fa+0.4)*6);
+  }
+  var readouts=[];
+  readouts.push('TAG: '+D.tag,'FILES: '+D.total_files,'ADDS: +'+D.total_adds,'DELS: -'+D.total_dels);
+  for(var i=0;i<D.authors.length;i++)readouts.push('AUTH: '+D.authors[i]);
+  for(var i=0;i<D.dirs.length;i++)readouts.push('DIR: '+D.dirs[i].name+' ('+D.dirs[i].count+')');
+  for(var i=0;i<D.filenames.length&&readouts.length<20;i++)readouts.push(D.filenames[i].toUpperCase());
+  textFont('monospace');textSize(8);textAlign(LEFT);noStroke();fill(50,50,220,120);
+  for(var i=0;i<readouts.length;i++){
+    text(readouts[i],(i%5)/5*W+sr(i+700)*W*0.12+10,floor(i/5)/4*H+sr(i+701)*H*0.12+10);
+  }
+  noStroke();
+  for(var i=0;i<5;i++){
+    var rx=sr(i*3+800)*W*0.75+W*0.05,ry=sr(i*3+801)*H*0.75+H*0.05;
+    var cols=floor(10+sr(i*3+802)*15),rows=floor(5+sr(i*3+803)*7);
+    var sp=4+sr(i*3+804)*3;
+    for(var r=0;r<rows;r++)for(var c=0;c<cols;c++){
+      if(sr(i*100+r*cols+c+900)<0.4){
+        var b=sr(i*100+r*cols+c+950)*180;
+        fill(30,30,b+60,b);rect(rx+c*sp,ry+r*sp,sp-1,sp-1);
+      }
+    }
+  }
+}
+
+</script>
+</body>
+</html>

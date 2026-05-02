@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hermes — day-2026-04-26</title>
+<script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.min.js"></script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{margin:0;overflow:hidden;background:#fafafa;min-height:100vh}
+canvas{display:block}
+</style>
+</head>
+<body>
+<script>
+
+var SEED=1759189599;var D={"files": [{"n": "src/main.py", "a": 253, "d": 100, "c": 353, "t": 0.643}, {"n": "lib/helpers.py", "a": 392, "d": 157, "c": 549, "t": 1.0}, {"n": "src/core.py", "a": 211, "d": 119, "c": 330, "t": 0.601}, {"n": "src/utils.py", "a": 292, "d": 109, "c": 401, "t": 0.73}, {"n": "agent/loop.py", "a": 20, "d": 5, "c": 25, "t": 0.046}, {"n": "agent/planner.py", "a": 8, "d": 14, "c": 22, "t": 0.04}, {"n": "agent/executor.py", "a": 20, "d": 14, "c": 34, "t": 0.062}, {"n": "cli/output.py", "a": 50, "d": 1, "c": 51, "t": 0.093}, {"n": "cli/commands.py", "a": 26, "d": 13, "c": 39, "t": 0.071}, {"n": "gateway/auth.py", "a": 1, "d": 29, "c": 30, "t": 0.055}, {"n": "gateway/proxy.py", "a": 36, "d": 23, "c": 59, "t": 0.107}, {"n": "gateway/server.py", "a": 43, "d": 15, "c": 58, "t": 0.106}], "dirs": [{"name": "src", "count": 3, "churn": 1084}, {"name": "lib", "count": 1, "churn": 549}, {"name": "gateway", "count": 3, "churn": 147}, {"name": "cli", "count": 2, "churn": 90}, {"name": "agent", "count": 3, "churn": 81}], "commits": ["feat(curator): hook into the gateway\\'s cron-ticker thread", "fix(curator): default cycle is every 7 days, not 24 hours", "fix(curator): defense-in-depth gates against bundled/hub skills", "refactor(curator): point review prompt at existing tools", "feat(curator): background skill maintenance (issue #7816)", "fix(honcho): keep legacy schemeless baseUrl configs working", "compat(honcho): accept metadata kwarg on on_memory_write ABC bump", "fix(tui): report actual session on exit", "fix(copilot): send vision header for Copilot vision requests", "fix(agent): restrict background review agent to memory and skills toolsets", "fix(compressor): apply bare-string guard to protect-tail boundary scan", "fix(compressor): guard against bare-string items in multimodal content list", "fix(compressor): use text char sum for multimodal token estimation in _find_tail", "fix(discord_tool): coerce limit parameter to int before min() call", "fix(whatsapp_identity): guard against path traversal and silent mapping errors", "fix(timeouts): guard load_config() call against runtime exceptions", "fix(file-tools): keep read dedup status out of file content", "fix(session-search): exclude current lineage root deterministically in recent mo", "fix(cli): coerce use_gateway config flags in tool routing", "fix(gateway): clear stale pending model note on session reset", "fix(logging): attach gateway log after cli init", "Fix MessageDeduplicator max_size enforcement", "feat(skills): add bundled Airtable productivity skill", "fix(cli): check hermes_cli/web_dist/ not web/dist/ for build staleness", "fix(gateway): bypass slash commands during pending update prompts", "fix(gateway): avoid cross-user mirror writes in per-user group sessions", "fix(security): treat quoted false as false in browser SSRF guards", "feat(tui): HERMES_TUI_FPS=1 shows live fps counter", "feat(tui): port claude-code\\'s wheel accel state machine", "Promote debugging-hermes-tui-commands to in-repo skill"], "authors": ["Yoimex", "Sonoyunchu", "Brooklyn Nicholson", "helix4u", "johnncenae", "Teknium", "sprmn24", "Erosika", "hermes-agent-dhabibi", "hharry11", "briandevans", "Yukipukii1", "simbam99", "George Glessner", "luyao618"], "filenames": ["main.py", "helpers.py", "core.py", "utils.py", "loop.py", "planner.py", "executor.py", "output.py", "commands.py", "auth.py", "proxy.py", "server.py"], "tag": "day-2026-04-26", "total_files": 12, "total_adds": 1352, "total_dels": 599, "is_release": false};var PAL={"bg": "#fafafa", "fg": "#1a1a1a", "acc": ["#ff0000", "#0000ff", "#000000", "#00aa00"]};
+var W,H;
+function sr(i){return fract(sin(i*127.1+SEED*311.7)*43758.5453)}
+function fract(x){return x-floor(x)}
+function drawHex(cx,cy,r){beginShape();for(var i=0;i<6;i++){var a=i*PI/3-PI/6;vertex(cx+cos(a)*r,cy+sin(a)*r)}endShape(CLOSE)}
+function setup(){W=windowWidth||1200;H=windowHeight||900;createCanvas(W,H);randomSeed(SEED);noiseSeed(SEED);textFont('monospace');noLoop()}
+function draw(){
+  background(248,248,244);
+  noFill();
+  for(var i=0;i<25;i++){
+    var path=[];var x=sr(i*20)*W,y=sr(i*20+1)*H;
+    path.push([x,y]);
+    var segs=floor(4+sr(i*20+2)*8);
+    for(var s=0;s<segs;s++){
+      if(s%2===0)x+=sr(i*20+3+s)*400-200;else y+=sr(i*20+3+s)*300-150;
+      x=constrain(x,5,W-5);y=constrain(y,5,H-5);path.push([x,y]);
+    }
+    var ca=sr(i+50)>0.6?[50,50,220]:[80,80,180];
+    stroke(ca[0],ca[1],ca[2],40+sr(i+51)*80);strokeWeight(0.5+sr(i+52)*1);
+    beginShape();for(var j=0;j<path.length;j++)vertex(path[j][0],path[j][1]);endShape();
+    if(sr(i+53)>0.3){
+      var last=path[path.length-1];
+      fill(ca[0],ca[1],ca[2],80+sr(i+54)*80);noStroke();ellipse(last[0],last[1],4,4);noFill();
+    }
+  }
+  for(var i=0;i<12;i++){
+    var x1=sr(i*6+200)*W,y1=sr(i*6+201)*H;
+    var x2=x1+sr(i*6+202)*600-300,y2=y1+sr(i*6+203)*400-200;
+    var cx1=x1+sr(i*6+204)*200-100,cy1=y1+sr(i*6+205)*200-100;
+    var cx2=x2+sr(i*6+206)*200-100,cy2=y2+sr(i*6+207)*200-100;
+    noFill();stroke(50,50,220,40);strokeWeight(0.6);
+    bezier(x1,y1,cx1,cy1,cx2,cy2,x2,y2);
+    var t=sr(i+250);
+    var px=bezierPoint(x1,cx1,cx2,x2,t),py=bezierPoint(y1,cy1,cy2,y2,t);
+    fill(80,80,255,150);noStroke();ellipse(px,py,4,4);
+  }
+  var wavePos=[[0.05,0.1],[0.4,0.08],[0.7,0.15],[0.1,0.4],[0.55,0.5],
+    [0.8,0.45],[0.2,0.7],[0.5,0.75],[0.85,0.8],[0.15,0.92],[0.6,0.9]];
+  noFill();stroke(50,50,220,90);strokeWeight(0.8);
+  for(var i=0;i<wavePos.length;i++){
+    var wp=wavePos[i],wx=W*wp[0],wy=H*wp[1];
+    var ww=80+sr(i+300)*120,freq=0.02+sr(i+301)*0.06,amp=8+sr(i+302)*17;
+    var isSine=sr(i+303)>0.5;
+    beginShape();
+    for(var x=0;x<ww;x+=2){
+      var val=isSine?sin(x*freq)*amp:(noise(sr(i+304)*1000+x*0.03)-0.5)*amp*2;
+      vertex(wx+x,wy+val);
+    }
+    endShape();
+    stroke(50,50,220,25);line(wx,wy,wx+ww,wy);stroke(50,50,220,90);
+  }
+  for(var i=0;i<8;i++){
+    var hcx=sr(i*4+400)*W*0.8+W*0.1,hcy=sr(i*4+401)*H*0.8+H*0.1;
+    var hexR=6+sr(i*4+402)*6,rings=floor(1+sr(i*4+403)*2);
+    stroke(40,40,200,80);strokeWeight(0.6);noFill();
+    drawHex(hcx,hcy,hexR);
+    for(var ring=1;ring<=rings;ring++){
+      for(var a=0;a<6;a++){
+        var angle=a*PI/3;
+        var cx=hcx+cos(angle)*hexR*1.8*ring,cy=hcy+sin(angle)*hexR*1.8*ring;
+        drawHex(cx,cy,hexR);
+        if(sr(i*6+a+500)>0.6){fill(40,40,200,50);noStroke();drawHex(cx,cy,hexR*0.6);noFill();stroke(40,40,200,80);strokeWeight(0.6)}
+      }
+    }
+  }
+  strokeWeight(0.8);
+  for(var i=0;i<18;i++){
+    var fx=sr(i*3+600)*W,fy=sr(i*3+601)*H;
+    var fa=sr(i*3+602)*TWO_PI,fl=20+sr(i*3+603)*40;
+    var ex=fx+cos(fa)*fl,ey=fy+sin(fa)*fl;
+    stroke(60,60,200,60);line(fx,fy,ex,ey);
+    line(ex,ey,ex-cos(fa-0.4)*6,ey-sin(fa-0.4)*6);
+    line(ex,ey,ex-cos(fa+0.4)*6,ey-sin(fa+0.4)*6);
+  }
+  var readouts=[];
+  readouts.push('TAG: '+D.tag,'FILES: '+D.total_files,'ADDS: +'+D.total_adds,'DELS: -'+D.total_dels);
+  for(var i=0;i<D.authors.length;i++)readouts.push('AUTH: '+D.authors[i]);
+  for(var i=0;i<D.dirs.length;i++)readouts.push('DIR: '+D.dirs[i].name+' ('+D.dirs[i].count+')');
+  for(var i=0;i<D.filenames.length&&readouts.length<20;i++)readouts.push(D.filenames[i].toUpperCase());
+  textFont('monospace');textSize(8);textAlign(LEFT);noStroke();fill(50,50,220,120);
+  for(var i=0;i<readouts.length;i++){
+    text(readouts[i],(i%5)/5*W+sr(i+700)*W*0.12+10,floor(i/5)/4*H+sr(i+701)*H*0.12+10);
+  }
+  noStroke();
+  for(var i=0;i<5;i++){
+    var rx=sr(i*3+800)*W*0.75+W*0.05,ry=sr(i*3+801)*H*0.75+H*0.05;
+    var cols=floor(10+sr(i*3+802)*15),rows=floor(5+sr(i*3+803)*7);
+    var sp=4+sr(i*3+804)*3;
+    for(var r=0;r<rows;r++)for(var c=0;c<cols;c++){
+      if(sr(i*100+r*cols+c+900)<0.4){
+        var b=sr(i*100+r*cols+c+950)*180;
+        fill(30,30,b+60,b);rect(rx+c*sp,ry+r*sp,sp-1,sp-1);
+      }
+    }
+  }
+}
+
+</script>
+</body>
+</html>

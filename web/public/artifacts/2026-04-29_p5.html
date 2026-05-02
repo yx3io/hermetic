@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hermes — day-2026-04-29</title>
+<script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.min.js"></script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{margin:0;overflow:hidden;background:#0b0c10;min-height:100vh}
+canvas{display:block}
+</style>
+</head>
+<body>
+<script>
+
+var SEED=3292425496;var D={"files": [{"n": "skills/loader.py", "a": 51, "d": 9, "c": 60, "t": 0.178}, {"n": "skills/executor.py", "a": 42, "d": 9, "c": 51, "t": 0.151}, {"n": "skills/registry.py", "a": 68, "d": 1, "c": 69, "t": 0.205}, {"n": "src/utils.py", "a": 53, "d": 46, "c": 99, "t": 0.294}, {"n": "src/core.py", "a": 114, "d": 55, "c": 169, "t": 0.501}, {"n": "tools/file.py", "a": 10, "d": 30, "c": 40, "t": 0.119}, {"n": "lib/helpers.py", "a": 233, "d": 104, "c": 337, "t": 1.0}, {"n": "src/main.py", "a": 199, "d": 113, "c": 312, "t": 0.926}, {"n": "agent/executor.py", "a": 5, "d": 24, "c": 29, "t": 0.086}, {"n": "cli/commands.py", "a": 17, "d": 0, "c": 17, "t": 0.05}, {"n": "cli/main.py", "a": 31, "d": 0, "c": 31, "t": 0.092}], "dirs": [{"name": "src", "count": 3, "churn": 580}, {"name": "lib", "count": 1, "churn": 337}, {"name": "skills", "count": 3, "churn": 180}, {"name": "cli", "count": 2, "churn": 48}, {"name": "tools", "count": 1, "churn": 40}, {"name": "agent", "count": 1, "churn": 29}], "commits": ["fix(skills): exclude .archive from skill index walk", "fix: prevent bare \\'custom\\' slug in model.provider (#17478)", "fix(tools): isolate get_tool_definitions quiet_mode cache + dedup LCM injection ", "fix(transport): omit thinking_config for Gemma on the gemini provider (#17426)", "fix(acp): replay session history on load", "fix(agent): spawn OpenRouter pre-warm thread only once per process", "fix(cron): clear auto-delivery thread context between jobs", "fix(security): apply ACL checks to QQBot guild messages and guild DMs to prevent", "feat(skills): /reload-skills slash command + skills_reload agent tool", "remove relaunch_chat", "feat(cli): preserve --tui and other flags across internal relaunches", "fix(tui): word-wrap composer input (#17651)", "fix(tui): honor launch toolsets (#17623)", "Merge pull request #17638 from NousResearch/bb/tui-details-persist", "fix(tui): share detail section constants", "Merge pull request #17626 from NousResearch/bb/tui-prompt-gap", "Merge pull request #17625 from NousResearch/bb/tui-reasoning-hide", "fix(tui): persist global details mode sections", "chore: map hejuntt1014 in AUTHOR_MAP", "feat(skills): move comfyui from optional to built-in (#17631)", "fix(tui): remove unused prompt import", "fix(tui): refine reasoning visibility updates", "fix(tui): share composer prompt gap metric", "fix(tui): ignore hidden reasoning stream segments", "fix(tui): render explicit prompt gap", "fix(tui): hide reasoning panels immediately", "Merge pull request #17259 from NousResearch/bb/pretext-skill", "fix(plugins): stop firing pre_tool_call hook twice per tool execution (#17611)", "docs(comfyui): ask local vs cloud FIRST before hardware check (#17612)", "feat(comfyui): add hardware check + auto-gate local install on verdict"], "authors": ["Brooklyn Nicholson", "brooklyn!", "Vlad Ra", "Teknium", "Andy", "Leone Parise", "memosr", "ethernet", "Henkey", "briandevans", "simbam99", "teknium1", "Sanjays2402", "Shannon Sands"], "filenames": ["loader.py", "executor.py", "registry.py", "utils.py", "core.py", "file.py", "helpers.py", "main.py", "executor.py", "commands.py", "main.py"], "tag": "day-2026-04-29", "total_files": 11, "total_adds": 823, "total_dels": 391, "is_release": false};var PAL={"bg": "#0b0c10", "fg": "#66fcf1", "acc": ["#66fcf1", "#45a29e", "#c5c6c7", "#1f2833"]};
+var W,H;
+function sr(i){return fract(sin(i*127.1+SEED*311.7)*43758.5453)}
+function fract(x){return x-floor(x)}
+function setup(){W=windowWidth||1200;H=windowHeight||900;createCanvas(W,H);randomSeed(SEED);noiseSeed(SEED);textFont('monospace');noLoop()}
+function draw(){
+  background(255);
+  var words=[];
+  for(var i=0;i<D.commits.length;i++){
+    var parts=D.commits[i].split(' ');
+    for(var j=0;j<parts.length;j++)if(parts[j].length>2)words.push(parts[j]);
+  }
+  for(var i=0;i<D.filenames.length;i++)words.push(D.filenames[i]);
+  for(var i=0;i<D.authors.length;i++)words.push(D.authors[i]);
+  words.push(D.tag,'+'+D.total_adds,'-'+D.total_dels,D.total_files+' files');
+  var syms=['&&','&&&','**','****','""','\u00b0','\u00b7\u00b7','\u2022','***',
+    '\u2206\u2206','\u221e','\u00a7','\u00b6','\u00ab','\u00bb'];
+  fill(15);noStroke();
+  for(var i=0;i<55;i++){
+    var txt=words[i%words.length];
+    var sz=txt.length>15?random(6,9):(random()<0.2?random(14,22):random(8,13));
+    textSize(sz);textAlign(LEFT,TOP);
+    text(txt,sr(i*9)*W*0.9+W*0.03,sr(i*9+1)*H*0.94+H*0.02);
+  }
+  textSize(8);
+  var py=H*0.65;
+  for(var i=0;i<min(D.commits.length,12);i++){
+    var cx=sr(i+200)<0.5?W*0.15:W*0.35;
+    fill(15);text(D.commits[i].substring(0,65),cx,py+i*13);
+  }
+  for(var i=0;i<20;i++){
+    fill(15);textSize(8+sr(i+300)*6);textAlign(LEFT,TOP);
+    text(syms[floor(sr(i+301)*syms.length)],sr(i+302)*W*0.9+W*0.05,sr(i+303)*H*0.9+H*0.03);
+  }
+  var deco=['\u2206\u2206 \u00b7\u00b7\u00b7\u00b7\u00b7 \u00b0',
+    '\u221e \u2206\u2206\u2206','+++\u2206\u2206\u2206\u2206',
+    '\u2206 .... ]]','\u00b6__ ]]]]]\u00ab',
+    '||-------\u00b0 \u00b6\u00b6','______ \u221e\u221e\u221e\u221e \u00ab',
+    '\u00b0\u00b0\u00b0\u00b0 ___---___'];
+  for(var i=0;i<8;i++){
+    fill(15);textSize(9+sr(i+400)*4);textAlign(LEFT,TOP);
+    text(deco[i],sr(i+401)*W*0.7+W*0.03,sr(i+402)*H*0.9+H*0.05);
+  }
+  noStroke();fill(15);
+  for(var i=0;i<8;i++){
+    var bw=60+sr(i+500)*290,bh=sr(i+501)<0.5?3+sr(i+502)*5:10+sr(i+503)*15;
+    rect(sr(i+504)*W*0.7+W*0.02,sr(i+505)*H*0.87+H*0.05,bw,bh);
+  }
+  stroke(15);
+  for(var i=0;i<12;i++){
+    strokeWeight(0.5+sr(i+600)*1.5);
+    var lx=sr(i+601)*W*0.3;
+    line(lx,sr(i+602)*H*0.9+H*0.05,lx+80+sr(i+603)*W*0.5,sr(i+602)*H*0.9+H*0.05);
+  }
+  noStroke();fill(15);
+  for(var i=0;i<8;i++){
+    var dx=sr(i+700)*W*0.4+W*0.02,dy=sr(i+701)*H*0.9+H*0.05;
+    var dlen=60+sr(i+702)*W*0.4,dw=3+sr(i+703)*9,gap=2+sr(i+704)*3;
+    var xd=dx;while(xd<dx+dlen){rect(xd,dy,dw,1+sr(i+705)*1.5);xd+=dw+gap}
+  }
+  for(var i=0;i<6;i++){
+    var nd=4+floor(sr(i+800)*8),dots='';for(var d=0;d<nd;d++)dots+='\u25cf';
+    fill(15);textSize(8+sr(i+801)*6);textAlign(LEFT,TOP);
+    text(dots,sr(i+802)*W*0.8+W*0.03,sr(i+803)*H*0.85+H*0.1);
+  }
+  for(var i=0;i<8;i++){
+    fill(15);noStroke();var sq=4+sr(i+900)*10;
+    rect(sr(i+901)*W*0.92+W*0.03,sr(i+902)*H*0.92+H*0.03,sq,sq);
+  }
+}
+
+</script>
+</body>
+</html>

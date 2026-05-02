@@ -1,0 +1,2526 @@
+{
+  "2026-03-31": [
+    {
+      "sha": "c36aa5fe",
+      "message": "Merge pull request #4034 from bcross/docker-optimization",
+      "author": "Ben Barclay"
+    },
+    {
+      "sha": "f8cb54ba",
+      "message": "fix(cli): anchor input prompt near bottom of terminal after responses (#4359)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "b118f607",
+      "message": "feat(skills): unify hermes-agent and hermes-agent-setup into single skill (#4332)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "f0498602",
+      "message": "feat(file_tools): detect stale files on write and patch (#4345)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "f5cc597a",
+      "message": "fix: add CAMOFOX_PORT=9377 to Docker commands for camofox-browser (#4340)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "1b62ad9d",
+      "message": "fix: root-level provider in config.yaml no longer overrides model.provider",
+      "author": "Teknium"
+    },
+    {
+      "sha": "e3f8347b",
+      "message": "feat(file_tools): harden read_file with size guard, dedup, and device blocking (#4315)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "d3f1987a",
+      "message": "fix(security): add .config/gh to read protection for @file references (#4327)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "655eea2d",
+      "message": "fix(security): protect .docker, .azure, and .config/gh from read and write",
+      "author": "maymuneth"
+    },
+    {
+      "sha": "c94a5fa1",
+      "message": "fix(cli): use atomic write in save_config_value to prevent config loss on interrupt",
+      "author": "binhnt92"
+    },
+    {
+      "sha": "7f78deeb",
+      "message": "fix: apply same path traversal checks to config-based credential files",
+      "author": "Teknium"
+    },
+    {
+      "sha": "0f2ea206",
+      "message": "fix(profiles): validate tar archive member paths on import",
+      "author": "Gutslabs"
+    },
+    {
+      "sha": "7f670a06",
+      "message": "feat: add --max-turns CLI flag to hermes chat",
+      "author": "Teknium"
+    },
+    {
+      "sha": "cac9d20c",
+      "message": "test: add codex transport drop regression",
+      "author": "curtitoo"
+    },
+    {
+      "sha": "e75964d4",
+      "message": "fix: harden codex responses transport handling",
+      "author": "curtitoo"
+    },
+    {
+      "sha": "161acb00",
+      "message": "fix: credential pool 401 recovery rotates to next credential after failed refresh (#4300)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "143b74ec",
+      "message": "fix: first-run guard stuck in loop when provider configured via config.yaml (#4298)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "57625329",
+      "message": "docs+feat: comprehensive local LLM provider guides and context length warning (#4294)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "0240baa3",
+      "message": "fix: strip orphaned think/reasoning tags from user-facing responses",
+      "author": "arasovic"
+    },
+    {
+      "sha": "c1606aed",
+      "message": "fix(cli): allow empty strings and falsy values in config set",
+      "author": "Dakota Secula-Rosell"
+    },
+    {
+      "sha": "84a541b6",
+      "message": "feat: support * wildcard in platform allowlists and improve WhatsApp docs",
+      "author": "Teknium"
+    },
+    {
+      "sha": "cca0996a",
+      "message": "fix(browser): skip SSRF check for local backends (Camofox, headless Chromium) (#4292)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "fad3f338",
+      "message": "fix: patch _REDACT_ENABLED in test fixture for module-level snapshot",
+      "author": "Teknium"
+    },
+    {
+      "sha": "289df5dd",
+      "message": "Merge branch 'NousResearch:main' into docker-optimization",
+      "author": "Bryan Cross"
+    },
+    {
+      "sha": "344239c2",
+      "message": "feat: auto-detect models from server probe in custom endpoint setup (#4218)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "79b2694b",
+      "message": "fix: _allow_private_urls name collision + stale OPENAI_BASE_URL test (#4217)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "8d59881a",
+      "message": "feat(auth): same-provider credential pools with rotation, custom endpoint support, and interactive CLI (#2647)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "2ae50bdd",
+      "message": "fix(telegram): enforce 32-char limit on command names with collision avoidance (#4211)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "50302ed7",
+      "message": "fix(tools): make browser SSRF check configurable via browser.allow_private_urls (#4198)",
+      "author": "Nils"
+    },
+    {
+      "sha": "086ec559",
+      "message": "fix: gate Claude Code credentials behind explicit Hermes config in wizard trigger (#4210)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "c53a296d",
+      "message": "feat: add MiniMax M2.7 to hermes model picker and opencode-go (#4208)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "1bca6f39",
+      "message": "fix: save API key to model config for custom endpoints (#4182)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "a994cf5e",
+      "message": "docs: update adding-providers guide for unified setup flow",
+      "author": "Teknium"
+    },
+    {
+      "sha": "ff78ad4c",
+      "message": "feat: add discord.reactions config option to disable message reactions (#4199)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "491e79bc",
+      "message": "refactor: unify setup wizard provider selection with hermes model",
+      "author": "Teknium"
+    },
+    {
+      "sha": "89d81277",
+      "message": "fix: setup wizard overwrites custom endpoint config (#4172)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "f890a94c",
+      "message": "refactor: make config.yaml the single source of truth for endpoint URLs (#4165)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "4d7e3c71",
+      "message": "fix(tests): provide model name in Codex 401 refresh tests for CI (#4166)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "1bd206ea",
+      "message": "feat: add /btw command for ephemeral side questions (#4161)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "f8e1ee10",
+      "message": "Fix profile list model display (#4160)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "c1ef9b22",
+      "message": "fix(cli): ensure on_session_end hook fires on interrupted exits (#4159)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "3a68ec31",
+      "message": "feat: add Fireworks context length detection support (#4158)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "d30ea65c",
+      "message": "fix: URL-based auth for third-party Anthropic endpoints + CI test fixes (#4148)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "fb4b87f4",
+      "message": "chore: add claude-sonnet-4.6 to OpenRouter and Nous model lists (#4157)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "5b0243e6",
+      "message": "docs: deep quality pass \u2014 expand 10 thin pages, fix specific issues (#4134)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "54b876a5",
+      "message": "fix: add actionable guidance to context-exceeded error messages (#4155)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "83e5249b",
+      "message": "fix(gateway): use setsid instead of systemd-run --user for /update (salvage #4024) (#4104)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "fb2af3bd",
+      "message": "docs: document tool progress streaming in API server and Open WebUI (#4138)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "cc63b2d1",
+      "message": "fix(gateway): remove user-facing compression warnings (#4139)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "45396aaa",
+      "message": "fix(alibaba): use standard DashScope international endpoint (#4133)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "04367e2f",
+      "message": "fix(cron): stop truncating job IDs in list view (#4132)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "cdb64a86",
+      "message": "fix(security): reject private and loopback IPs in Telegram DoH fallback (#4129)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "1e59d481",
+      "message": "feat(api_server): stream tool progress to Open WebUI (#4092)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "f7761916",
+      "message": "fix: persist compressed context to gateway session after mid-run compression",
+      "author": "Teknium"
+    },
+    {
+      "sha": "44d02f35",
+      "message": "docs: restructure site navigation \u2014 promote features and platforms to top-level (#4116)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "b2e1a095",
+      "message": "fix(anthropic): write scopes field to Claude Code credentials on token refresh (#4126)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "ffd5d37f",
+      "message": "fix: treat non-sk-ant- keys as regular API keys, not OAuth tokens (#4093)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "720507ef",
+      "message": "feat: add post-migration cleanup for OpenClaw directories (#4100)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "8a794d02",
+      "message": "fix(ci): add repo conditionals to prevent fork workflow failures (#4107)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "e64b0476",
+      "message": "chore: prepare Hermes for Homebrew packaging (#4099)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "1b7473e7",
+      "message": "Fixes and refactors enabled by recent updates to main.",
+      "author": "Robin Fernandes"
+    },
+    {
+      "sha": "1126284c",
+      "message": "Merge branch 'main' into rewbs/tool-use-charge-to-subscription",
+      "author": "Robin Fernandes"
+    },
+    {
+      "sha": "11aa44d3",
+      "message": "docs(telegram): add webhook mode documentation (#4089)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "07746dca",
+      "message": "fix(matrix): E2EE decryption \u2014 request keys, auto-trust devices, retry buffered events (#4083)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "7e0c2c3c",
+      "message": "docs: comprehensive documentation audit \u2014 fix 9 HIGH, 20+ MEDIUM gaps (#4087)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "3c8f9109",
+      "message": "feat: respect NO_COLOR env var and TERM=dumb (#4079)",
+      "author": "SHL0MS"
+    },
+    {
+      "sha": "13f3e671",
+      "message": "ux: show 'Initializing agent...' on first message (#4086)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "4a7c17fc",
+      "message": "fix(gateway): read custom_providers context_length in hygiene compression (#4085)",
+      "author": "Teknium"
+    }
+  ],
+  "2026-03-30": [
+    {
+      "sha": "a97641b9",
+      "message": "fix(security): reject path traversal in credential file registration",
+      "author": "maymuneth"
+    },
+    {
+      "sha": "08171c1c",
+      "message": "fix: allow voice mode in WSL when PulseAudio bridge is configured",
+      "author": "0xbyt4"
+    },
+    {
+      "sha": "49d7210f",
+      "message": "fix(gateway): parse thread_id from delivery target format",
+      "author": "MacroAnarchy"
+    },
+    {
+      "sha": "6dcc3330",
+      "message": "fix(security): add missing GitHub OAuth token patterns and snapshot redact flag",
+      "author": "Dilee"
+    },
+    {
+      "sha": "6e4598ce",
+      "message": "Merge branch 'main' into rewbs/tool-use-charge-to-subscription",
+      "author": "Robin Fernandes"
+    },
+    {
+      "sha": "f007284d",
+      "message": "fix: rate-limit pairing rejection messages to prevent spam (#4081)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "3d47af01",
+      "message": "fix(honcho): write config to instance-local path for profile isolation (#4037)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "275fcc66",
+      "message": "Merge pull request #4054 from NousResearch/ascii-video/text-readability-and-layout-oracle",
+      "author": "SHL0MS"
+    },
+    {
+      "sha": "ab62614a",
+      "message": "ascii-video: add text readability techniques and external layout oracle pattern",
+      "author": "SHL0MS"
+    },
+    {
+      "sha": "0287597d",
+      "message": "Optimize Playwright install",
+      "author": "Bryan Cross"
+    },
+    {
+      "sha": "de368cac",
+      "message": "fix(tools): show browser and TTS in reconfigure menu (#4041)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "3a1e489d",
+      "message": "Add build-essential to Dockerfile dependencies",
+      "author": "Bryan Cross"
+    },
+    {
+      "sha": "0d100355",
+      "message": "refactor: simplify web backend priority detection (#4036)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "4f4d7c4e",
+      "message": "Merge branch 'NousResearch:main' into docker-optimization",
+      "author": "Bryan Cross"
+    },
+    {
+      "sha": "5de312c9",
+      "message": "Simplify dockerignore",
+      "author": "Bryan Cross"
+    },
+    {
+      "sha": "48942c89",
+      "message": "Further npm optimizations",
+      "author": "Bryan Cross"
+    },
+    {
+      "sha": "eba8d52d",
+      "message": "fix: show correct shell config path for macOS/zsh in install script (#4025)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "72104eb0",
+      "message": "fix(gateway): honor default for invalid bool-like config values (#4029)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "fdef0456",
+      "message": "Merge branch 'NousResearch:main' into docker-optimization",
+      "author": "Bryan Cross"
+    },
+    {
+      "sha": "4b35836b",
+      "message": "fix(auth): use bearer auth for MiniMax Anthropic endpoints (#4028)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "bd376fe9",
+      "message": "fix(docs): improve mobile sidebar navigation",
+      "author": "Teknium"
+    },
+    {
+      "sha": "f93637b3",
+      "message": "feat: add /profile slash command to show active profile (#4027)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "8210e7ab",
+      "message": "Optimize Dockerfile: combine RUN commands, clear caches, add .dockerignore",
+      "author": "Bryan Cross"
+    },
+    {
+      "sha": "7b4fe052",
+      "message": "fix(auth): use bearer auth for MiniMax Anthropic endpoints (#4028)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "950f6947",
+      "message": "feat(browser): add Camofox local anti-detection browser backend (#4008)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "7dac75f2",
+      "message": "fix: prevent context pressure warning spam after compression (#4012)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "ed9af6e5",
+      "message": "fix: create AsyncOpenAI lazily in trajectory_compressor to avoid closed event loop (#4013)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "158f49f1",
+      "message": "fix: enforce priority order in Telegram menu \u2014 core > plugins > skills (#4023)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "86250a3e",
+      "message": "docs: expand terminal backends section + fix docs build (#4016)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "ea342f23",
+      "message": "Fix banner alignment in installer script (#4011)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "60ecde8a",
+      "message": "fix: fit all 100 commands in Telegram menu with 40-char descriptions (#4010)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "f3069c64",
+      "message": "fix(cli): add missing subprocess.run() timeouts in doctor and status (#4009)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "0976bf6c",
+      "message": "feat: add /yolo slash command to toggle dangerous command approvals (#3990)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "da3e22bc",
+      "message": "fix: cap Telegram menu at 50 commands \u2014 API rejects above ~60 (#4006)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "9fd78c7a",
+      "message": "fix: use SKILLS_DIR not repo path for Telegram menu skill filter (#4005)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "5ceed021",
+      "message": "feat(gateway): skill-aware slash commands, paginated /commands, Telegram 100-cap (#3934)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "97d6813f",
+      "message": "fix(cache): use deterministic call_id fallbacks instead of random UUIDs (#3991)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "37825189",
+      "message": "fix(skills): validate hub bundle paths before install (#3986)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "e08778fa",
+      "message": "chore: release v0.6.0 (2026.3.30) (#3985)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "fb634068",
+      "message": "fix(security): extend secret redaction to ElevenLabs, Tavily and Exa API keys (#3920)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "74181fe7",
+      "message": "fix: add TTY guard to interactive CLI commands to prevent CPU spin (#3933)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "1e896b02",
+      "message": "fix: resolve 7 failing CI tests (#3936)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "0b0c1b32",
+      "message": "fix: openclaw migration overwrites model config dict with string (#3924)",
+      "author": "0xbyt4"
+    },
+    {
+      "sha": "b4496b33",
+      "message": "fix: background task media delivery + vision download timeout (#3919)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "d028a94b",
+      "message": "fix(whatsapp): skip reply prefix in bot mode \u2014 only needed for self-chat (#3931)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "0e592aa5",
+      "message": "fix(cli): remove input() from /tools disable that freezes the terminal (#3918)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "efae525d",
+      "message": "feat(plugins): add inject_message interface for remote message injection (#3778)",
+      "author": "Wing Lian"
+    },
+    {
+      "sha": "5148682b",
+      "message": "feat: mount skills directory into all remote backends with live sync (#3890)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "791f4e94",
+      "message": "feat(slack): multi-workspace support via OAuth token file (#3903)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "a4b06476",
+      "message": "fix(cron): tighten [SILENT] instruction to prevent report-with-silent-prefix (#3901)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "138ea3fb",
+      "message": "fix(docs): escape angle-bracket URLs in feishu.md breaking MDX build (#3902)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "ee61485c",
+      "message": "feat(matrix): support native voice messages via MSC3245 (#3877)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "947faed3",
+      "message": "feat(approvals): make dangerous command approval timeout configurable (#3886)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "c288bbfb",
+      "message": "fix(cli): prevent status bar wrapping into duplicate rows (#3883)",
+      "author": "kshitij"
+    },
+    {
+      "sha": "a3479213",
+      "message": "docs: comprehensive OpenClaw migration guide (#3900)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "09def65e",
+      "message": "fix(migration): expand OpenClaw migration to cover full data footprint (#3869)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "649d1494",
+      "message": "feat(telegram): add webhook mode as alternative to polling (#3880)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "56024587",
+      "message": "security: harden dangerous command detection and add file tool path guards (#3872)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "1c900c45",
+      "message": "fix(agent): support full context length resolution for direct Gemini API endpoints (#3876)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "227601c2",
+      "message": "feat(discord): add message processing reactions (salvage #1980) (#3871)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "fd29933a",
+      "message": "fix: use argparse entrypoint in top-level launcher (#3874)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "839f798b",
+      "message": "feat(telegram): add group mention gating and regex triggers (#3870)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "366bfc3c",
+      "message": "fix(setup): auto-install matrix-nio during hermes setup (#3873)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "b4ceb541",
+      "message": "fix(terminal): preserve partial output when command times out (#3868)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "ccf7bb11",
+      "message": "fix(nous): use curated model list instead of full API dump for Nous Portal (#3867)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "ce2841f3",
+      "message": "feat(gateway): add WeCom (Enterprise WeChat) platform support (#3847)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "e296efbf",
+      "message": "fix: add INFO-level logging for auxiliary provider resolution (#3866)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "1cbb1b99",
+      "message": "Gate tool-gateway behind an env var, so it's not in users' faces until we're ready. Even if users enable it, it'll be bl",
+      "author": "Robin Fernandes"
+    },
+    {
+      "sha": "2ff2cd3a",
+      "message": "add .aac audio file format support to transcription tool (#3865)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "f39ca81b",
+      "message": "docs: comprehensive hermes claw migrate reference (#3864)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "3fad1e7c",
+      "message": "fix(cron): resolve human-friendly delivery labels via channel directory (#3860)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "86ac23c8",
+      "message": "fix(auth): stop silently falling back to OpenRouter when no provider is configured (#3862)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "3cc50532",
+      "message": "fix: auxiliary client uses placeholder key for local servers without auth (#3842)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "2d607d36",
+      "message": "fix(security): catch sensitive path writes in approval checks (#3859)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "aa389924",
+      "message": "fix: prefer curated model list when live probe returns fewer models (#3856)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "5e67fc8c",
+      "message": "fix(vision): reject non-image files and enforce website policy (salvage #1940) (#3845)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "b60cfd6c",
+      "message": "fix(telegram): gracefully handle deleted reply targets (#3858)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "981e1400",
+      "message": "fix: clear api_mode on provider switch instead of hardcoding chat_completions (#3857)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "9d28f4ab",
+      "message": "fix: add gpt-5.4-mini to Codex fallback catalog (#3855)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "3e203de1",
+      "message": "fix(skills): block category path traversal in skill manager (#3844)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "2d264a45",
+      "message": "fix(tests): resolve 10 CI failures across hooks, tiktoken, plugins (#3848)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "3e2c8c52",
+      "message": "fix(whatsapp): resolve LID\u2194phone aliases in allowlist matching (#3830)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "e4d575e5",
+      "message": "fix: report subagent status as completed when summary exists (#3829)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "2a0e8b00",
+      "message": "fix(cli): handle closed stdout ValueError in safe print paths (#3843)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "ca4907df",
+      "message": "feat(gateway): add Feishu/Lark platform support (#3817)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "e314833c",
+      "message": "feat(display): configurable tool preview length -- show full paths by default (#3841)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "59f2b228",
+      "message": "fix(paths): respect HERMES_HOME for protected .env write-deny path (#3840)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "d6b78362",
+      "message": "fix: update session_log_file during context compression (#3835)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "17b6000e",
+      "message": "feat(skills): add songwriting-and-ai-music creative skill (salvage #1901) (#3834)",
+      "author": "Teknium"
+    }
+  ],
+  "2026-03-29": [
+    {
+      "sha": "45c8d3da",
+      "message": "fix(banner): show lazy-initialized tools in yellow instead of red (salvage #1854) (#3822)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "5ca6d681",
+      "message": "feat(skills): add memento-flashcards optional skill (#3827)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "df806bdb",
+      "message": "feat(cron): add cron.wrap_response config to disable delivery wrapping (#3807)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "0ef80c5f",
+      "message": "fix(whatsapp): reuse persistent aiohttp session across requests (#3818)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "c4cf20f5",
+      "message": "fix: clear __pycache__ during update to prevent stale bytecode ImportError (#3819)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "68d54728",
+      "message": "fix: omit tools param entirely when empty instead of sending None (#3820)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "252fbea0",
+      "message": "feat(providers): add ordered fallback provider chain (salvage #1761) (#3813)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "c7748336",
+      "message": "fix(banner): show honcho tools as available when configured (#3810)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "d5d22fe7",
+      "message": "feat(mcp): dynamic tool discovery via notifications/tools/list_changed (#3812)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "bf84cdfa",
+      "message": "fix: ensure tool schema always includes name field in get_definitions (#3811)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "38d694f5",
+      "message": "fix(gateway): apply home channel env overrides consistently (#3808)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "ed6427e0",
+      "message": "fix(agent): user-friendly 429 rate limit messages with Retry-After support (#3809)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "0fd3b59b",
+      "message": "feat(cli): add Ctrl+Z process suspend support (#3802)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "6716e66e",
+      "message": "feat: add MCP server mode \u2014 hermes mcp serve (#3795)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "d02561af",
+      "message": "feat: add Gemini 3.1 preview models to OpenRouter and Nous catalogs (#3803)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "8eb70a68",
+      "message": "fix(email): close SMTP and IMAP connections on failure (#3804)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "ee3d2941",
+      "message": "feat: show estimated tool token context in hermes tools checklist (#3805)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "475205e3",
+      "message": "fix: restore terminalbench2_env.py from patch-tool redaction corruption (#3801)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "61232163",
+      "message": "fix(gateway): use atomic writes for config.yaml to prevent data loss (#3800)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "83cbf7b5",
+      "message": "fix(gateway): use atomic writes for config.yaml to prevent data loss (#3800)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "563101e2",
+      "message": "feat: add Canvas LMS skill for fetching courses and assignments (#3799)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "fe6a9162",
+      "message": "feat(skills): add one-three-one-rule communication skill (#3797)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "57481c8a",
+      "message": "fix(tools): implement send_message routing for Matrix, Mattermost, HomeAssistant, DingTalk (#3796)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "c62cadb7",
+      "message": "fix: make display_hermes_home imports lazy to prevent ImportError during hermes update (#3776)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "442888a0",
+      "message": "fix: store token lock identity at acquire time for Slack and Discord",
+      "author": "Teknium"
+    },
+    {
+      "sha": "b151d5f7",
+      "message": "docs: fix profile alias naming and improve quick start",
+      "author": "Teknium"
+    },
+    {
+      "sha": "f6db1b27",
+      "message": "feat: add profiles \u2014 run multiple isolated Hermes instances (#3681)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "0df4d127",
+      "message": "feat(plugins): add enable/disable commands + interactive toggle UI (#3747)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "95f99ea4",
+      "message": "feat: built-in boot-md hook \u2014 run BOOT.md on gateway startup (#3733)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "811adca2",
+      "message": "feat(skills): add SiYuan Note and Scrapling as optional skills (#3742)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "aafe3701",
+      "message": "docs: update skills catalog \u2014 add red-teaming and optional skills (#3745)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "909de724",
+      "message": "fix: set api_mode when switching providers via hermes model (#3726)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "ba1b600b",
+      "message": "fix(tests): align skill/setup and platform mocks with current behavior (#3721)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "fcd16452",
+      "message": "feat(skills): support external skill directories via config (#3678)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "253a9adc",
+      "message": "docs(skills): clarify DuckDuckGo runtime requirements (#3680)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "30096417",
+      "message": "docs: document credential file passthrough and env var forwarding for remote backends (#3677)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "7a3682ac",
+      "message": "feat: mount skill credential files + fix env passthrough for remote backends (#3671)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "9f012441",
+      "message": "fix: replace user-facing hardcoded ~/.hermes paths with display_hermes_home()",
+      "author": "Teknium"
+    },
+    {
+      "sha": "0a80dd9c",
+      "message": "fix(discord): clean up deferred \"thinking...\" after slash commands complete (#3674)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "4764e06f",
+      "message": "fix(acp): complete session management surface for editor clients (salvage #3501) (#3675)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "4c532c15",
+      "message": "fix: URL-encode Signal phone numbers and correct attachment RPC parameter (#3670)",
+      "author": "kshitij"
+    },
+    {
+      "sha": "a99c0478",
+      "message": "fix(skills): move parallel-cli to optional-skills (#3673)",
+      "author": "kshitij"
+    },
+    {
+      "sha": "c6e3084b",
+      "message": "fix(gateway): replace print() with logger calls in BasePlatformAdapter (#3669)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "dcbdfdbb",
+      "message": "feat(docker): add Docker container for the agent (salvage #1841) (#3668)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "91b881f9",
+      "message": "feat(mattermost): configurable mention behavior \u2014 respond without @mention (#3664)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "3e115708",
+      "message": "fix(tools): use non-deprecated streamable_http_client for MCP HTTP transport (#3646)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "1a032ccf",
+      "message": "fix(skills): stop marking persisted env vars missing on remote backends (#3650)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "0bd7e95d",
+      "message": "fix(honcho): allow self-hosted local instances without API key (#3644)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "d35567c6",
+      "message": "feat(web): add Exa as a web search and extract backend (#3648)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "bea49e02",
+      "message": "fix: route /bg spinner through TUI widget to prevent status bar collision (#3643)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "c6e2e486",
+      "message": "fix: add download retry to cache_audio_from_url matching cache_image_from_url (#3401)",
+      "author": "nguyen binh"
+    },
+    {
+      "sha": "973deb4f",
+      "message": "fix(browser): guard LLM response content against None in snapshot and vision (#3642)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "dc749987",
+      "message": "fix(sessions): support stdout (-) in session and snapshot export (salvage #3617) (#3641)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "17617e43",
+      "message": "feat(discord): DISCORD_IGNORE_NO_MENTION \u2014 skip messages that @mention others but not the bot (#3640)",
+      "author": "Teknium"
+    }
+  ],
+  "2026-03-28": [
+    {
+      "sha": "ffdfeb91",
+      "message": "fix(nix): unify directory and file permissions across all three layers (#3619)",
+      "author": "Siddharth Balyan"
+    },
+    {
+      "sha": "857a5d7b",
+      "message": "fix: sanitize surrogate characters from clipboard paste to prevent UnicodeEncodeError (#3624)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "b0297420",
+      "message": "fix(cli): strengthen paste collapse fallback for terminals without bracketed paste (#3625)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "02fb7c4a",
+      "message": "docs: comprehensive docs audit \u2014 fix 12 stale/missing items across 10 pages (#3618)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "1e924e99",
+      "message": "refactor: consolidate ~/.hermes directory layout with backward compat (#3610)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "614e43d3",
+      "message": "feat(skills): add garrytan/gstack as default Skills Hub tap (#3605)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "e4480ff4",
+      "message": "fix(config): accept 'model' key as alias for 'default' in model config (#3603)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "9a364f28",
+      "message": "fix: cap percentage displays at 100% in stats, gateway, and memory tool (#3599)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "1b2d4f21",
+      "message": "feat(cli): show resume-by-title command in exit summary (#3607)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "9009169e",
+      "message": "fix: recover updater when venv pip is missing (#3608)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "0f042f39",
+      "message": "fix(email): filter automated/noreply senders to prevent reply loops (salvage #3461) (#3606)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "7a9e45e5",
+      "message": "fix: regenerate uv.lock to match v0.5.0 in pyproject.toml (#3594)",
+      "author": "Siddharth Balyan"
+    },
+    {
+      "sha": "a641f20c",
+      "message": "fix(gateway): self-heal missing launchd plist on start (#3601)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "ee066b7b",
+      "message": "fix: use placeholder api_key for custom providers without credentials (#3604)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "a6bc13ce",
+      "message": "fix(github-auth): check ~/.hermes/.env before ~/.git-credentials for token extraction (#3466)",
+      "author": "Mibay"
+    },
+    {
+      "sha": "f803f663",
+      "message": "fix(terminal): avoid merging heredoc EOF with fence wrapper (#3598)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "839d9d74",
+      "message": "feat(agent): configurable timeouts for auxiliary LLM calls via config.yaml (#3597)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "404a0b82",
+      "message": "fix: add self-termination guard for pkill/killall targeting hermes/gateway (#3593)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "dabe3c34",
+      "message": "feat(webhook): hermes webhook CLI + skill for event-driven subscriptions (#3578)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "82d6c28b",
+      "message": "fix(skills): cache-aware /skills install and uninstall in TUI (#3586)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "dc7d504a",
+      "message": "Remove incorrect docker alternative for signal-cli (#3545)",
+      "author": "Islandman93"
+    },
+    {
+      "sha": "9e411f7d",
+      "message": "fix(update): skip config migration prompts in non-interactive sessions (#3584)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "708f1875",
+      "message": "fix(gateway): exit with failure when all platforms fail with retryable errors (#3592)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "d7c41f3c",
+      "message": "fix(telegram): honor proxy env vars in fallback transport (salvage #3411) (#3591)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "6893c3be",
+      "message": "fix(gateway): inject PATH + VIRTUAL_ENV into launchd plist for macOS service (#3585)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "5cdc24c2",
+      "message": "docs(slack): add missing Messages Tab setup step (#3590)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "2dd286c1",
+      "message": "fix: write models.dev disk cache atomically (#3588)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "924857c3",
+      "message": "fix: prevent tool name/arg concatenation for Ollama-compatible endpoints (#3582)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "ba3bbf5b",
+      "message": "fix: add missing mattermost/matrix/dingtalk toolsets + platform consistency tests (salvage #3512) (#3583)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "d6b4fa2e",
+      "message": "fix: strip @botname from commands so /new@TigerNanoBot resolves correctly (#3581)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "df1bf0a2",
+      "message": "feat(api-server): add basic security headers (#3576)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "49a49983",
+      "message": "feat(api-server): add Access-Control-Max-Age to CORS preflight responses (#3580)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "e97c0cb5",
+      "message": "fix: replace hardcoded ~/.hermes paths with get_hermes_home() for profile support",
+      "author": "Teknium"
+    },
+    {
+      "sha": "c0aa06f3",
+      "message": "fix(test): update streaming test to match PR #3566 behavior change (#3574)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "32737328",
+      "message": "fix(api-server): add CORS headers to streaming SSE responses (#3573)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "09ebf8b2",
+      "message": "feat(api-server): add /v1/health alias for OpenAI compatibility (#3572)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "33c89e52",
+      "message": "fix(whatsapp): add **kwargs to media sending methods to accept metadata (#3571)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "558cc14a",
+      "message": "chore: release v0.5.0 (v2026.3.28) (#3568)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "1d0a1193",
+      "message": "fix(display): show reasoning before response when tool calls suppress content (#3566)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "901494d7",
+      "message": "feat: make tool-use enforcement configurable via agent.tool_use_enforcement (#3551)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "d26ee206",
+      "message": "docs(discord): fix Public Bot setting for Discord-provided invite link (#3519)",
+      "author": "Osman Mehmood"
+    },
+    {
+      "sha": "39392983",
+      "message": "fix(gateway): preserve transcript on /compress and hygiene compression (salvage #3516) (#3556)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "be322efd",
+      "message": "fix(matrix): harden e2ee access-token handling (#3562)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "be392926",
+      "message": "fix(cli): guard .strip() against None values from YAML config (#3552)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "df6ce848",
+      "message": "fix(provider): remove MiniMax /v1\u2192/anthropic auto-correction to allow user override (#3553)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "735ca9df",
+      "message": "refactor: replace swe-rex with native Modal SDK for Modal backend (#3538)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "455bf2e8",
+      "message": "feat: activate plugin lifecycle hooks (pre/post_llm_call, session start/end) (#3542)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "411e3c15",
+      "message": "fix(api-server): allow Idempotency-Key in CORS headers (#3530)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "d313a3b7",
+      "message": "fix: auto-repair jobs.json with invalid control characters (#3537)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "80a899a8",
+      "message": "fix: enable fine-grained tool streaming for Claude/OpenRouter + retry SSE errors (#3497)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "e295a221",
+      "message": "fix(gateway): include user-local bin paths in systemd unit PATH (#3527)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "831e8ba0",
+      "message": "feat: tool-use enforcement + strip budget warnings from history (#3528)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "9d4b3e54",
+      "message": "fix: harden hermes update against diverged history, non-main branches, and gateway edge cases (salvage #3489) (#3492)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "6ed97404",
+      "message": "fix: prevent unbounded growth of _seen_uids in EmailAdapter (#3490)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "290c71a7",
+      "message": "fix(gateway): scope progress thread fallback to Slack only (salvage #3414) (#3488)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "09796b18",
+      "message": "fix: alibaba provider default endpoint and model list (#3484)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "15cfd208",
+      "message": "fix: cap context pressure percentage at 100% in display (#3480)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "03f24c1e",
+      "message": "fix: session_search fallback preview on summarization failure (salvage #3413) (#3478)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "388fa529",
+      "message": "fix(matrix): add missing matrix entry in PLATFORMS dict (#3473)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "83043e9a",
+      "message": "fix: add timeout to subprocess calls in context_references (#3469)",
+      "author": "Teknium"
+    }
+  ],
+  "2026-03-27": [
+    {
+      "sha": "b6b87ded",
+      "message": "fix: discover plugins before reading plugin toolsets in tools_config (#3457)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "8fdfc4b0",
+      "message": "fix(agent): detect thinking-budget exhaustion on truncation, skip useless retries (#3444)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "65869279",
+      "message": "fix: guard aux LLM calls against None content + reasoning fallback + retry (salvage #3389) (#3449)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "ab09f6b5",
+      "message": "feat: curate HF model picker with OpenRouter analogues (#3440)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "e4e04c20",
+      "message": "fix: make tirith block verdicts approvable instead of hard-blocking (#3428)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "6f11ff53",
+      "message": "fix(anthropic): use model-native output limits instead of hardcoded 16K (#3426)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "fb46a900",
+      "message": "fix: increase API timeout default from 900s to 1800s for slow-thinking models (#3431)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "fd8c465e",
+      "message": "feat: add Hugging Face as a first-class inference provider (#3419)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "f57ebf52",
+      "message": "fix(api-server): cancel orphaned agent + true interrupt on SSE disconnect (salvage #3399) (#3427)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "5127567d",
+      "message": "perf(ttft): cache skills prompt with shared skill_utils module (salvage #3366) (#3421)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "cc451407",
+      "message": "feat(nix): add suffix PATHs during nix build for more agent-friendliness (#3274)",
+      "author": "Siddharth Balyan"
+    },
+    {
+      "sha": "8ecd7aed",
+      "message": "fix: prevent reasoning box from rendering 3x during tool-calling loops (#3405)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "e0dbbdb2",
+      "message": "fix: eliminate 'Event loop is closed' / 'Press ENTER to continue' during idle (#3398)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "eb2127c1",
+      "message": "fix(cron): prevent recurring job re-fire on gateway crash/restart loop (#3396)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "5a1e2a30",
+      "message": "perf(ttft): salvage easy-win startup optimizations from #3346 (#3395)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "41d9d080",
+      "message": "fix(telegram): fall back to no thread_id on 'Message thread not found' (#3390)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "b7bcae49",
+      "message": "fix: SQLite WAL write-lock contention causing 15-20s TUI freeze (#3385)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "915df02b",
+      "message": "fix(streaming): stale stream detector race causing spurious RemoteProtocolError",
+      "author": "Teknium"
+    },
+    {
+      "sha": "75fcbc44",
+      "message": "feat(telegram): auto-discover fallback IPs via DoH when api.telegram.org is unreachable (#3376)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "be416cdf",
+      "message": "fix: guard config.get() against YAML null values to prevent AttributeError (#3377)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "b8b1f24f",
+      "message": "fix: handle addition-only hunks in V4A patch parser (#3325)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "a2847ea7",
+      "message": "fix(gateway): add media download retry to Mattermost, Slack, and base cache (#3323)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "58ca875e",
+      "message": "feat(gateway): surface session config on /new, /reset, and auto-reset (#3321)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "3f95e741",
+      "message": "fix: validate empty user messages to prevent Anthropic API 400 errors (#3322)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "03396627",
+      "message": "fix(ci): pin acp <0.9 and update retry-exhaust test (#3320)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "22cfad15",
+      "message": "fix: gateway token double-counting \u2014 use absolute set instead of increment (#3317)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "867eefdd",
+      "message": "fix(signal): track SSE keepalive comments as connection activity (#3316)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "a8df7f99",
+      "message": "fix: gateway token double-counting with cached agents (#3306)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "1519c4d4",
+      "message": "fix(session): add /resume CLI handler, session log truncation guard, reopen_session API (#3315)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "005786c5",
+      "message": "fix(gateway): include per-platform ALLOW_ALL and SIGNAL_GROUP in startup allowlist check (#3313)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "ad764d35",
+      "message": "fix(auxiliary): catch ImportError from build_anthropic_client in vision auto-detection (#3312)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "f008ee10",
+      "message": "fix(session): preserve reasoning fields in rewrite_transcript (#3311)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "60fdb58c",
+      "message": "fix(agent): update context compressor limits after fallback activation (#3305)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "18d28c63",
+      "message": "fix: add explicit hermes-api-server toolset for API server platform (#3304)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "3c57eaf7",
+      "message": "fix: YAML boolean handling for tool_progress config (#3300)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "2d232c99",
+      "message": "feat(cli): configurable busy input mode + fix /queue always working (#3298)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "0375b2a0",
+      "message": "fix(gateway): silence background agent terminal output (#3297)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "08fa326b",
+      "message": "feat(gateway): deliver background review notifications to user chat (#3293)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "bde45f5a",
+      "message": "fix(gateway): retry transient send failures and notify user on exhaustion (#3288)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "716e616d",
+      "message": "fix(tui): status bar duplicates and degrades during long sessions (#3291)",
+      "author": "Teknium"
+    }
+  ],
+  "2026-03-26": [
+    {
+      "sha": "bdccdd67",
+      "message": "fix: OpenClaw migration overwrites defaults and setup wizard skips imported sections (#3282)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "148f4662",
+      "message": "fix(matrix): add backoff for SyncError in sync loop (#3280)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "e95965d7",
+      "message": "Merge branch 'main' into rewbs/tool-use-charge-to-subscription",
+      "author": "Robin Fernandes"
+    },
+    {
+      "sha": "95dc9aaa",
+      "message": "feat: add managed tool gateway and Nous subscription support",
+      "author": "Robin Fernandes"
+    },
+    {
+      "sha": "6610c377",
+      "message": "fix(telegram): self-reschedule reconnect when start_polling fails (#3268)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "e5d14445",
+      "message": "fix(security): restrict subagent toolsets to parent's enabled set (#3269)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "72250b5f",
+      "message": "feat: config-gated /verbose command for messaging gateway (#3262)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "243ee675",
+      "message": "fix: store asyncio task references to prevent GC mid-execution (#3267)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "3a863288",
+      "message": "fix(gateway): add request timeouts to HA, Email, Mattermost, SMS adapters (#3258)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "db241ae6",
+      "message": "feat(sessions): add --source flag for third-party session isolation (#3255)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "41ee207a",
+      "message": "fix: catch KeyboardInterrupt in exit cleanup handlers (#3257)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "e9e7fb06",
+      "message": "fix(gateway): track background task references in GatewayRunner (#3254)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "76ed15dd",
+      "message": "fix(security): normalize input before dangerous command detection (#3260)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "a8e02c7d",
+      "message": "fix: align Nous Portal model slugs with OpenRouter naming (#3253)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "b81d49dc",
+      "message": "fix(state): SQLite concurrency hardening + session transcript integrity (#3249)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "3a7907b2",
+      "message": "fix(security): prevent zip-slip path traversal in self-update (#3250)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "b7b3294c",
+      "message": "fix(skills): preserve trust for skills-sh identifiers + reduce resolution churn (#3251)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "62f8aa9b",
+      "message": "fix: MCP toolset resolution for runtime and config (#3252)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "2c719f07",
+      "message": "fix(auth): migrate OAuth token refresh to platform.claude.com with fallback (#3246)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "c6fe75e9",
+      "message": "fix(gateway): fingerprint full auth token in agent cache signature (#3247)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "36af1f3b",
+      "message": "feat(telegram): Private Chat Topics with functional skill binding (#2598)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "43af094a",
+      "message": "fix(agent): include tool tokens in preflight estimate, guard context probe persistence (#3164)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "9989e579",
+      "message": "fix: add request timeouts to send_message_tool HTTP calls (#3162)",
+      "author": "memosr.eth"
+    },
+    {
+      "sha": "4a56e2cd",
+      "message": "fix(display): show tool progress for substantive tools, not just \"preparing\"",
+      "author": "Teknium"
+    },
+    {
+      "sha": "26bfdc22",
+      "message": "feat: add godmode jailbreaking skill + docs (#3157)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "0426bb74",
+      "message": "fix: reset default SOUL.md to baseline identity text (#3159)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "c511e087",
+      "message": "fix(agent): always prefer streaming for API calls to prevent hung subagents (#3120)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "c07c17f5",
+      "message": "feat(agent): surface all retry/fallback/compression lifecycle events (#3153)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "cbf195e8",
+      "message": "chore: fix 154 f-strings, simplify getattr/URL patterns, remove dead code (#3119)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "08d3be04",
+      "message": "fix: graceful return on max retries instead of crashing thread",
+      "author": "Teknium"
+    },
+    {
+      "sha": "156b5035",
+      "message": "fix(reasoning): skip duplicate callback for <think>-extracted reasoning during streaming (#3116)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "59575d6a",
+      "message": "fix(gateway): recover from hung agents \u2014 /stop force-unlocks session (#3104)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "f46542b6",
+      "message": "fix(cli): read root-level provider and base_url from config.yaml into model config (#3112)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "5b29ff50",
+      "message": "fix(logging): extract useful info from HTML error pages, dump debug on max retries",
+      "author": "Teknium"
+    },
+    {
+      "sha": "72583117",
+      "message": "fix: stop recursive AGENTS.md walk, load top-level only (#3110)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "910ec7eb",
+      "message": "chore: remove unused Hermes-native PKCE OAuth flow (#3107)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "4b45f658",
+      "message": "fix: update api_key in _try_activate_fallback for subagent auth (#3103)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "b374f520",
+      "message": "fix(session): clear compressor summary and turn counter on /clear and /new (#3102)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "bd43a43f",
+      "message": "fix(cli): handle EOFError in sessions delete/prune confirmation prompts (#3101)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "432ba3b7",
+      "message": "fix: use sys.executable for pip in update commands to fix PEP 668 (#3099)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "712cebc4",
+      "message": "fix(logging): show HTTP status code and 400 body in API error output (#3096)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "45f57c20",
+      "message": "feat(models): add glm-5-turbo to zai provider model list (#3095)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "41081d71",
+      "message": "fix(cli): prevent update crash in non-TTY environments (#3094)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "281100e2",
+      "message": "fix(agent): prevent AsyncOpenAI/httpx cross-loop deadlock in gateway mode (#2701)",
+      "author": "ctlst"
+    },
+    {
+      "sha": "0d7f7396",
+      "message": "fix(setup): use explicit key mapping for returning-user menu dispatch instead of positional index (#3083)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "9783c9d5",
+      "message": "refactor: remove /model slash command from CLI and gateway (#3080)",
+      "author": "Teknium"
+    }
+  ],
+  "2026-03-25": [
+    {
+      "sha": "0cfc1f88",
+      "message": "fix: add MCP tool name collision protection (#3077)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "3bc953a6",
+      "message": "fix(security): bump dependencies to fix CVEs + regenerate uv.lock (#3073)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "bd6b138e",
+      "message": "fix: clean up HTML error messages in CLI display (#3069)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "9792bde3",
+      "message": "fix(agent): count compression restarts toward retry limit (#3070)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "9d1e1301",
+      "message": "fix(cli): prevent TypeError on startup when base_url is None (#3068)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "37cabc47",
+      "message": "test(skills): add regression tests for null metadata frontmatter",
+      "author": "Teknium"
+    },
+    {
+      "sha": "f7f30aaa",
+      "message": "fix(streaming): detect and kill stale SSE connections",
+      "author": "Teknium"
+    },
+    {
+      "sha": "d218cf91",
+      "message": "fix(skills): handle null metadata in skill frontmatter",
+      "author": "Teknium"
+    },
+    {
+      "sha": "841401f5",
+      "message": "feat(cli): preserve user input on multiline paste (#3065)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "77bcaba2",
+      "message": "refactor: consolidate get_hermes_home() and parse_reasoning_effort() (#3062)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "e0cfc089",
+      "message": "fix(gateway/slack): send progress messages to correct thread (#3063)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "7126524e",
+      "message": "remove config drift check for nix (#3061)",
+      "author": "Siddharth Balyan"
+    },
+    {
+      "sha": "f83c27e2",
+      "message": "feat(skills): add Docker management skill to optional-skills (#3060)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "ab548a9b",
+      "message": "fix(security): add SSRF protection to browser_navigate (#3058)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "73e66eb3",
+      "message": "fix(gateway): thread-safe SessionStore \u2014 protect _entries with threading.Lock (#3052)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "14cf2d85",
+      "message": "fix(display): guard isatty() against closed streams via _is_tty property (#3056)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "8bb1d15d",
+      "message": "chore: remove ~100 unused imports across 55 files (#3016)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "861624d4",
+      "message": "fix(cli): refresh TUI before background task output to prevent status bar overlap (#3048)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "e4033b2b",
+      "message": "fix(cli): catch KeyboardInterrupt during flush_memories on exit (#3025)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "94e3d9ad",
+      "message": "fix(agent): restore safe non-streaming fallback after stream failures (#3020)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "0dcd6ab2",
+      "message": "fix: status bar shows 26K instead of 260K for token counts with trailing zeros (#3024)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "b6461903",
+      "message": "feat: nix flake \u2014 uv2nix build, NixOS module, persistent container mode (#20)",
+      "author": "Siddharth Balyan"
+    },
+    {
+      "sha": "8f6ef042",
+      "message": "fix(cli): buffer reasoning preview chunks and fix duplicate display (#3013)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "099dfca6",
+      "message": "fix: GLM reasoning-only and max-length handling (#3010)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "68ab37e8",
+      "message": "fix(delegate): give subagents independent iteration budgets (#3004)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "65dace1b",
+      "message": "fix(discord): stop phantom typing indicator after agent turn completes (#3003)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "650b400c",
+      "message": "fix(cron): mark session as ended after job completes (#2998)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "61949f0a",
+      "message": "Fix (#2997)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "52c5e491",
+      "message": "fix(session): surface silent SessionDB failures that cause session data loss (#2999)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "f6653517",
+      "message": "fix(shell): exponential backoff for persistent shell polling (#2996)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "fba73a60",
+      "message": "fix(skills): use Git Trees API to prevent silent subdirectory loss during install (#2995)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "114e636b",
+      "message": "fix(display): suppress KawaiiSpinner animation under patch_stdout (#2994)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "20cc1731",
+      "message": "perf(prompt_builder): avoid redundant file re-read for skill conditions (#2992)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "b2a6b012",
+      "message": "fix(api_server): streaming breaks when agent makes tool calls (#2985)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "42fec191",
+      "message": "feat: persist reasoning across gateway session turns (schema v6) (#2974)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "5dbe2d9d",
+      "message": "fix: skills-sh install fails for deeply nested repo structures (#2980)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "c6f4515f",
+      "message": "fix(whatsapp): download documents, audio, and video media from messages (#2978)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "fd292e67",
+      "message": "fix: skip KawaiiSpinner when TUI handles tool progress (#2973)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "e5691eed",
+      "message": "feat(gateway): configurable Telegram reply threading mode (#2907)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "ab4ba816",
+      "message": "feat(migration): comprehensive OpenClaw migration v2 \u2014 17 new modules, terminal recap (#2906)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "80cc27eb",
+      "message": "feat(api-server): Idempotency-Key support, body size limit, OpenAI error envelope (#2903)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "1b24a226",
+      "message": "fix(skills): agent-created skills were incorrectly treated as untrusted community content",
+      "author": "Teknium"
+    },
+    {
+      "sha": "9b32f846",
+      "message": "fix: browser_vision ignores auxiliary.vision.timeout config (#2901)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "7ca22ea1",
+      "message": "fix(compression): restore sane defaults and cap summary at 12K tokens",
+      "author": "Teknium"
+    },
+    {
+      "sha": "ef475316",
+      "message": "docs: unify hooks documentation \u2014 add plugin hooks to hooks page, add session:end event",
+      "author": "Teknium"
+    },
+    {
+      "sha": "b36fe928",
+      "message": "feat(session_search): add recent sessions mode when query is omitted (#2533)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "1e9ff53a",
+      "message": "docs: clarify two-mode behavior in session_search schema description",
+      "author": "Teknium"
+    },
+    {
+      "sha": "27c023e0",
+      "message": "feat(config): expose compression target_ratio, protect_last_n, and threshold in DEFAULT_CONFIG",
+      "author": "Teknium"
+    },
+    {
+      "sha": "9231a335",
+      "message": "fix(compression): replace dead summary_target_tokens with ratio-based scaling (#2554)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "7efaa596",
+      "message": "Merge pull request #2891 from NousResearch/hermes/hermes-gateway-context",
+      "author": "Teknium"
+    },
+    {
+      "sha": "8ee4f328",
+      "message": "fix(gateway): use TERMINAL_CWD for context file discovery, not process cwd",
+      "author": "Teknium"
+    }
+  ],
+  "2026-03-24": [
+    {
+      "sha": "68934443",
+      "message": "chore: gitignore orphaned mini-swe-agent directory",
+      "author": "Teknium"
+    },
+    {
+      "sha": "618f15dd",
+      "message": "fix: reorder setup wizard providers \u2014 OpenRouter first",
+      "author": "Teknium"
+    },
+    {
+      "sha": "48191558",
+      "message": "fix: update context pressure warnings and token estimates after compaction",
+      "author": "Teknium"
+    },
+    {
+      "sha": "0b993c1e",
+      "message": "docs: quote pip install extras to fix zsh glob errors (#2815)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "97183349",
+      "message": "docs: fix api-server response storage \u2014 SQLite, not in-memory (#2819)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "ebcb81b6",
+      "message": "docs: document 9 previously undocumented features",
+      "author": "Teknium"
+    },
+    {
+      "sha": "ac5b8a47",
+      "message": "ci: add supply chain audit workflow for PR scanning (#2816)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "624e4a8e",
+      "message": "chore: regenerate uv.lock with hashes, use lockfile in setup (#2812)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "177e4325",
+      "message": "refactor: update mini_swe_runner to use Hermes built-in backends",
+      "author": "Teknium"
+    },
+    {
+      "sha": "c9b76057",
+      "message": "chore: pin all dependency version ranges (supply chain hardening) (#2810)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "745859ba",
+      "message": "feat: env var passthrough for skills and user config (#2807)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "ad1bf16f",
+      "message": "chore: remove all remaining mini-swe-agent references",
+      "author": "Teknium"
+    },
+    {
+      "sha": "e2c81c6e",
+      "message": "docs: add missing skills, CLI commands, and messaging env vars",
+      "author": "Teknium"
+    },
+    {
+      "sha": "677b11d8",
+      "message": "fix: reject relative cwd paths for container terminal backends",
+      "author": "Teknium"
+    },
+    {
+      "sha": "ee3f3e75",
+      "message": "docs: fix stale and incorrect documentation across 18 files",
+      "author": "Teknium"
+    },
+    {
+      "sha": "02b38b93",
+      "message": "refactor: remove mini-swe-agent dependency \u2014 inline Docker/Modal backends (#2804)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "2233f764",
+      "message": "fix(tools): handle 402 insufficient credits error in vision tool (#2802)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "98b55709",
+      "message": "fix: make browser command timeout configurable via config.yaml (#2801)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "773d3bb4",
+      "message": "docs: update all docs for /model command overhaul and custom provider support",
+      "author": "Teknium"
+    },
+    {
+      "sha": "a312ee7b",
+      "message": "fix(agent): ensure first delta is fired during reasoning updates",
+      "author": "Teknium"
+    },
+    {
+      "sha": "2e524272",
+      "message": "refactor(model): extract shared switch_model() from CLI and gateway handlers",
+      "author": "Teknium"
+    },
+    {
+      "sha": "ce39f9cc",
+      "message": "fix(gateway): detect virtualenv path instead of hardcoding venv/ (#2797)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "18cbd18f",
+      "message": "fix: remove litellm/typer/platformdirs from hermes-agent deps (supply chain compromise) (#2796)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "b641ee88",
+      "message": "feat(model): /model command overhaul \u2014 Phases 2, 3, 5",
+      "author": "Teknium"
+    },
+    {
+      "sha": "2f1c4fb0",
+      "message": "fix(auth): preserve 'custom' provider instead of silently remapping to 'openrouter'",
+      "author": "Teknium"
+    },
+    {
+      "sha": "4313b8af",
+      "message": "fix(cli): ensure single closure of streaming boxes during tool generation",
+      "author": "Teknium"
+    },
+    {
+      "sha": "87e2626c",
+      "message": "feat(cli, agent): add tool generation callback for streaming updates",
+      "author": "Teknium"
+    },
+    {
+      "sha": "1345e933",
+      "message": "fix: add macOS Homebrew paths to browser and terminal PATH resolution",
+      "author": "Teknium"
+    },
+    {
+      "sha": "6e97a3b3",
+      "message": "docs: revise v0.4.0 changelog \u2014 fix feature attribution, reorder sections",
+      "author": "Teknium"
+    },
+    {
+      "sha": "8416bc21",
+      "message": "chore: release v0.4.0 (v2026.3.23)",
+      "author": "Teknium"
+    }
+  ],
+  "2026-03-23": [
+    {
+      "sha": "48b5bc60",
+      "message": "fix(gateway): prevent stale memory overwrites by flush agent (#2670)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "4ff73fb3",
+      "message": "feat(config): support ${ENV_VAR} substitution in config.yaml (#2684)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "73a88a02",
+      "message": "fix(security): prevent shell injection in _expand_path via ~user path suffix (#2047)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "f9c2565a",
+      "message": "fix(config): log warning instead of silently swallowing config.yaml errors (#2683)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "ad5f973a",
+      "message": "fix(vision): make SSRF redirect guard async for httpx.AsyncClient",
+      "author": "Teknium"
+    },
+    {
+      "sha": "0791efe2",
+      "message": "fix(security): add SSRF protection to vision_tools and web_tools (hardened)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "934fbe3c",
+      "message": "fix: strip ANSI at the source \u2014 clean terminal output before it reaches the model",
+      "author": "Teknium"
+    },
+    {
+      "sha": "6302e56e",
+      "message": "fix(gateway): add all missing platform allowlist env vars to startup warning check (#2628)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "868b3c07",
+      "message": "fix: platform default toolsets silently override tool deselection in hermes tools (#2624)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "9d614831",
+      "message": "fix: media delivery fails for file paths containing spaces (#2621)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "7da08224",
+      "message": "fix(approval): honor bare YAML approvals.mode: off (#2620)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "d35df0db",
+      "message": "fix(discord): ignore system messages in on_message handler (#2618)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "93dc5dee",
+      "message": "fix: prevent agents from starting gateway outside systemd management (#2617)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "2d8fad82",
+      "message": "fix(context): restrict @ references to safe workspace paths (#2601)",
+      "author": "Guts"
+    },
+    {
+      "sha": "ca2958ff",
+      "message": "fix: normalize repeat<=0 to None to prevent cron jobs deleting after first run (#2612)",
+      "author": "Mibay"
+    },
+    {
+      "sha": "f60ebc7b",
+      "message": "fix: move activated skills line below welcome text",
+      "author": "Teknium"
+    },
+    {
+      "sha": "b0727371",
+      "message": "fix: expand tilde (~) in vision_analyze local file paths (#2585)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "3b509da5",
+      "message": "feat: auto-reconnect failed gateway platforms with exponential backoff (#2584)",
+      "author": "Teknium"
+    }
+  ],
+  "2026-03-22": [
+    {
+      "sha": "5ddb6a19",
+      "message": "Merge pull request #2556 from NousResearch/hermes/hermes-fdcb4c4a",
+      "author": "Teknium"
+    },
+    {
+      "sha": "1b5fb36c",
+      "message": "fix(cli): allow custom/local endpoints without API key",
+      "author": "Teknium"
+    },
+    {
+      "sha": "942f6eac",
+      "message": "fix(run_agent): ensure proper cleanup of OpenAI client in background review",
+      "author": "Teknium"
+    },
+    {
+      "sha": "2b3c1d81",
+      "message": "Merge pull request #2555 from NousResearch/hermes/hermes-fdcb4c4a",
+      "author": "Teknium"
+    },
+    {
+      "sha": "1f21ef74",
+      "message": "fix(cli): prevent 'Press ENTER to continue...' on exit",
+      "author": "Teknium"
+    },
+    {
+      "sha": "b799bca7",
+      "message": "refactor(gateway): remove broken 1.4x hygiene multiplier entirely",
+      "author": "Teknium"
+    },
+    {
+      "sha": "b2b4a9ee",
+      "message": "fix(gateway): hygiene compression ignores config context_length and 1.4x exceeds model limit",
+      "author": "Teknium"
+    },
+    {
+      "sha": "ed805f57",
+      "message": "fix(mcp-oauth): port mismatch, path traversal, and shared handler state (salvage #2521) (#2552)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "e93b539a",
+      "message": "feat(session_search): add recent sessions mode when query is omitted",
+      "author": "Teknium"
+    },
+    {
+      "sha": "fa6f0695",
+      "message": "fix(file_tools): strip ANSI escape codes from write_file and patch content (#2532)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "cd2280d1",
+      "message": "feat(gateway): notify users when session auto-resets (#2519)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "5e5ad634",
+      "message": "fix(matrix): duplicate messages, image caching for vision support (#2520)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "55a27a3f",
+      "message": "Merge pull request #2517 from NousResearch/hermes/hermes-31d7db3b",
+      "author": "Teknium"
+    },
+    {
+      "sha": "8587cddd",
+      "message": "chore: remove unused imports, dead code, and stale comments (#2509)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "2bd8e5cb",
+      "message": "fix(telegram): auto-reconnect polling after network interruption",
+      "author": "Teknium"
+    },
+    {
+      "sha": "bfe4baa6",
+      "message": "chore: remove unused imports, dead code, and stale comments",
+      "author": "Teknium"
+    },
+    {
+      "sha": "72a6d7df",
+      "message": "fix(model_metadata): skip endpoint probe for known providers (Copilot context bug) (#2507)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "afe2f0ab",
+      "message": "feat(discord): add document caching and text-file injection (#2503)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "09fd007c",
+      "message": "Merge pull request #2482 from NousResearch/hermes/hermes-5d6932ba",
+      "author": "Teknium"
+    },
+    {
+      "sha": "24cf2a79",
+      "message": "Merge pull request #2488 from NousResearch/hermes/hermes-31d7db3b",
+      "author": "Teknium"
+    },
+    {
+      "sha": "be3eb620",
+      "message": "fix(tests): resolve all consistently failing tests",
+      "author": "Teknium"
+    },
+    {
+      "sha": "9c32fed1",
+      "message": "feat(cli): Claude Code-style @ context completions",
+      "author": "Teknium"
+    },
+    {
+      "sha": "6435d69a",
+      "message": "fix: make vision_analyze timeout configurable via config.yaml (#2480)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "a2276177",
+      "message": "Merge pull request #2475 from NousResearch/hermes/hermes-31d7db3b",
+      "author": "Teknium"
+    },
+    {
+      "sha": "ebd0291e",
+      "message": "docs(honcho): add self-hosted / Docker configuration section",
+      "author": "Teknium"
+    },
+    {
+      "sha": "0510ee05",
+      "message": "chore: add minimax-m2.7 to model catalogs (#2474)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "44b572a9",
+      "message": "fix: defer streaming iteration linebreak to prevent blank line stacking (#2473)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "f9c2ad48",
+      "message": "fix: defer streaming iteration linebreak to prevent blank line stacking",
+      "author": "MacroAnarchy"
+    },
+    {
+      "sha": "c275aa47",
+      "message": "Merge pull request #2465 from NousResearch/hermes/hermes-31d7db3b",
+      "author": "Teknium"
+    },
+    {
+      "sha": "ff071fc7",
+      "message": "fix(gateway): process /queue'd messages after agent completion (#2469)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "8d528e00",
+      "message": "fix(api_server): persist ResponseStore to SQLite across restarts (#2472)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "fd32e3d6",
+      "message": "revert: remove trailing empty assistant message stripping (#2471)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "34be3f8b",
+      "message": "revert: remove trailing empty assistant message stripping",
+      "author": "Teknium"
+    },
+    {
+      "sha": "3037450c",
+      "message": "Merge pull request #2468 from NousResearch/hermes/hermes-5d6932ba",
+      "author": "Teknium"
+    },
+    {
+      "sha": "b7091f93",
+      "message": "feat(cli): MCP server management CLI + OAuth 2.1 PKCE auth",
+      "author": "Teknium"
+    },
+    {
+      "sha": "ab3cbfc9",
+      "message": "feat(discord): persistent typing indicator for DMs",
+      "author": "Teknium"
+    },
+    {
+      "sha": "26030266",
+      "message": "docs: Gemini OAuth provider implementation plan (#2467)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "edda0e32",
+      "message": "fix: batch of 5 small contributor fixes (#2466)",
+      "author": "Teknium"
+    },
+    {
+      "sha": "e6a708aa",
+      "message": "fix(io): catch ValueError in _SafeWriter for closed file handles (#2428)",
+      "author": "Bartok Moltbot"
+    },
+    {
+      "sha": "e8048913",
+      "message": "fix: improve error message when PortAudio system library is missing",
+      "author": "Ivelin Tenev"
+    },
+    {
+      "sha": "a53db44d",
+      "message": "fix(compression): remove hardcoded gemini-3-flash-preview as default summary model (#2464)",
+      "author": "Teknium"
+    }
+  ],
+  "2026-03-20": [
+    {
+      "sha": "5407d12b",
+      "message": "fix(agent): strip trailing empty assistant messages before API calls to prevent prefill rejection",
+      "author": "ygd58"
+    }
+  ],
+  "2026-03-21": [
+    {
+      "sha": "2de42ba6",
+      "message": "fix(state): add missing thread lock to session_count() and message_count()",
+      "author": "Hermes"
+    },
+    {
+      "sha": "f3301a31",
+      "message": "fix(email): guard against IndexError when IMAP search returns empty list",
+      "author": "Hermes"
+    }
+  ]
+}

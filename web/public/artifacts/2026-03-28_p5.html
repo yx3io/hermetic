@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hermes — v2026.3.28</title>
+<script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.min.js"></script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{margin:0;overflow:hidden;background:#fafafa;min-height:100vh}
+canvas{display:block}
+</style>
+</head>
+<body>
+<script>
+
+var SEED=792601375;var D={"files": [{"n": ".env.example", "a": 9, "d": 0, "c": 9, "t": 0.008}, {"n": ".envrc", "a": 1, "d": 0, "c": 1, "t": 0.001}, {"n": ".github/workflows/nix.yml", "a": 40, "d": 0, "c": 40, "t": 0.035}, {"n": ".github/workflows/supply-chain-audit.yml", "a": 192, "d": 0, "c": 192, "t": 0.169}, {"n": ".gitignore", "a": 5, "d": 0, "c": 5, "t": 0.004}, {"n": ".gitmodules", "a": 0, "d": 3, "c": 3, "t": 0.003}, {"n": "AGENTS.md", "a": 2, "d": 0, "c": 2, "t": 0.002}, {"n": "CONTRIBUTING.md", "a": 3, "d": 2, "c": 5, "t": 0.004}, {"n": "README.md", "a": 1, "d": 3, "c": 4, "t": 0.004}, {"n": "RELEASE_v0.4.0.md", "a": 193, "d": 215, "c": 408, "t": 0.358}, {"n": "RELEASE_v0.5.0.md", "a": 348, "d": 0, "c": 348, "t": 0.306}, {"n": "acp_adapter/entry.py", "a": 2, "d": 1, "c": 3, "t": 0.003}, {"n": "acp_adapter/events.py", "a": 1, "d": 1, "c": 2, "t": 0.002}, {"n": "acp_adapter/permissions.py", "a": 1, "d": 4, "c": 5, "t": 0.004}, {"n": "acp_adapter/session.py", "a": 3, "d": 1, "c": 4, "t": 0.004}, {"n": "agent/anthropic_adapter.py", "a": 120, "d": 252, "c": 372, "t": 0.327}, {"n": "agent/auxiliary_client.py", "a": 148, "d": 14, "c": 162, "t": 0.142}, {"n": "agent/context_compressor.py", "a": 32, "d": 14, "c": 46, "t": 0.04}, {"n": "agent/context_references.py", "a": 13, "d": 6, "c": 19, "t": 0.017}, {"n": "agent/display.py", "a": 64, "d": 42, "c": 106, "t": 0.093}, {"n": "agent/insights.py", "a": 1, "d": 1, "c": 2, "t": 0.002}, {"n": "agent/model_metadata.py", "a": 32, "d": 0, "c": 32, "t": 0.028}, {"n": "agent/prompt_builder.py", "a": 287, "d": 133, "c": 420, "t": 0.369}, {"n": "agent/skill_utils.py", "a": 203, "d": 0, "c": 203, "t": 0.178}, {"n": "agent/usage_pricing.py", "a": 2, "d": 1, "c": 3, "t": 0.003}, {"n": "cli-config.yaml.example", "a": 24, "d": 3, "c": 27, "t": 0.024}, {"n": "cli.py", "a": 483, "d": 290, "c": 773, "t": 0.679}, {"n": "cron/jobs.py", "a": 44, "d": 2, "c": 46, "t": 0.04}, {"n": "cron/scheduler.py", "a": 18, "d": 12, "c": 30, "t": 0.026}, {"n": "environments/README.md", "a": 3, "d": 13, "c": 16, "t": 0.014}, {"n": "environments/agent_loop.py", "a": 1, "d": 1, "c": 2, "t": 0.002}, {"n": "environments/patches.py", "a": 12, "d": 174, "c": 186, "t": 0.163}, {"n": "flake.lock", "a": 181, "d": 0, "c": 181, "t": 0.159}, {"n": "flake.nix", "a": 35, "d": 0, "c": 35, "t": 0.031}, {"n": "gateway/channel_directory.py", "a": 1, "d": 3, "c": 4, "t": 0.004}, {"n": "gateway/config.py", "a": 23, "d": 0, "c": 23, "t": 0.02}, {"n": "gateway/delivery.py", "a": 0, "d": 1, "c": 1, "t": 0.001}, {"n": "gateway/hooks.py", "a": 0, "d": 2, "c": 2, "t": 0.002}, {"n": "gateway/mirror.py", "a": 0, "d": 1, "c": 1, "t": 0.001}, {"n": "gateway/platforms/api_server.py", "a": 244, "d": 115, "c": 359, "t": 0.315}, {"n": "gateway/platforms/base.py", "a": 156, "d": 25, "c": 181, "t": 0.159}, {"n": "gateway/platforms/discord.py", "a": 8, "d": 2, "c": 10, "t": 0.009}, {"n": "gateway/platforms/email.py", "a": 31, "d": 7, "c": 38, "t": 0.033}, {"n": "gateway/platforms/homeassistant.py", "a": 8, "d": 5, "c": 13, "t": 0.011}, {"n": "gateway/platforms/matrix.py", "a": 136, "d": 23, "c": 159, "t": 0.14}, {"n": "gateway/platforms/mattermost.py", "a": 39, "d": 16, "c": 55, "t": 0.048}, {"n": "gateway/platforms/signal.py", "a": 9, "d": 1, "c": 10, "t": 0.009}, {"n": "gateway/platforms/slack.py", "a": 55, "d": 24, "c": 79, "t": 0.069}, {"n": "gateway/platforms/sms.py", "a": 10, "d": 5, "c": 15, "t": 0.013}, {"n": "gateway/platforms/telegram.py", "a": 383, "d": 8, "c": 391, "t": 0.343}, {"n": "gateway/platforms/telegram_network.py", "a": 233, "d": 0, "c": 233, "t": 0.205}, {"n": "gateway/platforms/webhook.py", "a": 3, "d": 1, "c": 4, "t": 0.004}, {"n": "gateway/platforms/whatsapp.py", "a": 55, "d": 7, "c": 62, "t": 0.054}, {"n": "gateway/run.py", "a": 407, "d": 358, "c": 765, "t": 0.672}, {"n": "gateway/session.py", "a": 264, "d": 204, "c": 468, "t": 0.411}, {"n": "gateway/status.py", "a": 2, "d": 1, "c": 3, "t": 0.003}, {"n": "gateway/sticker_cache.py", "a": 0, "d": 2, "c": 2, "t": 0.002}, {"n": "hermes_cli/__init__.py", "a": 2, "d": 2, "c": 4, "t": 0.004}, {"n": "hermes_cli/auth.py", "a": 16, "d": 5, "c": 21, "t": 0.018}, {"n": "hermes_cli/banner.py", "a": 4, "d": 3, "c": 7, "t": 0.006}, {"n": "hermes_cli/claw.py", "a": 4, "d": 7, "c": 11, "t": 0.01}, {"n": "hermes_cli/commands.py", "a": 68, "d": 104, "c": 172, "t": 0.151}, {"n": "hermes_cli/config.py", "a": 78, "d": 7, "c": 85, "t": 0.075}, {"n": "hermes_cli/copilot_auth.py", "a": 1, "d": 2, "c": 3, "t": 0.003}, {"n": "hermes_cli/default_soul.py", "a": 9, "d": 74, "c": 83, "t": 0.073}, {"n": "hermes_cli/doctor.py", "a": 2, "d": 19, "c": 21, "t": 0.018}, {"n": "hermes_cli/env_loader.py", "a": 0, "d": 1, "c": 1, "t": 0.001}, {"n": "hermes_cli/gateway.py", "a": 70, "d": 19, "c": 89, "t": 0.078}, {"n": "hermes_cli/main.py", "a": 179, "d": 63, "c": 242, "t": 0.212}, {"n": "hermes_cli/mcp_config.py", "a": 2, "d": 3, "c": 5, "t": 0.004}, {"n": "hermes_cli/model_switch.py", "a": 232, "d": 0, "c": 232, "t": 0.204}, {"n": "hermes_cli/models.py", "a": 59, "d": 11, "c": 70, "t": 0.061}, {"n": "hermes_cli/pairing.py", "a": 2, "d": 2, "c": 4, "t": 0.004}, {"n": "hermes_cli/plugins.py", "a": 16, "d": 5, "c": 21, "t": 0.018}, {"n": "hermes_cli/plugins_cmd.py", "a": 1, "d": 1, "c": 2, "t": 0.002}, {"n": "hermes_cli/runtime_provider.py", "a": 12, "d": 10, "c": 22, "t": 0.019}, {"n": "hermes_cli/setup.py", "a": 228, "d": 97, "c": 325, "t": 0.285}, {"n": "hermes_cli/skills_config.py", "a": 1, "d": 1, "c": 2, "t": 0.002}, {"n": "hermes_cli/skills_hub.py", "a": 15, "d": 2, "c": 17, "t": 0.015}, {"n": "hermes_cli/skin_engine.py", "a": 3, "d": 2, "c": 5, "t": 0.004}, {"n": "hermes_cli/status.py", "a": 7, "d": 7, "c": 14, "t": 0.012}, {"n": "hermes_cli/tools_config.py", "a": 81, "d": 25, "c": 106, "t": 0.093}, {"n": "hermes_cli/uninstall.py", "a": 3, "d": 8, "c": 11, "t": 0.01}, {"n": "hermes_constants.py", "a": 34, "d": 0, "c": 34, "t": 0.03}, {"n": "hermes_state.py", "a": 387, "d": 67, "c": 454, "t": 0.399}, {"n": "hermes_time.py", "a": 3, "d": 2, "c": 5, "t": 0.004}, {"n": "honcho_integration/cli.py", "a": 34, "d": 34, "c": 68, "t": 0.06}, {"n": "honcho_integration/client.py", "a": 3, "d": 6, "c": 9, "t": 0.008}, {"n": "mini-swe-agent", "a": 0, "d": 1, "c": 1, "t": 0.001}, {"n": "mini_swe_runner.py", "a": 19, "d": 23, "c": 42, "t": 0.037}, {"n": "minisweagent_path.py", "a": 0, "d": 92, "c": 92, "t": 0.081}, {"n": "nix/checks.nix", "a": 343, "d": 0, "c": 343, "t": 0.301}, {"n": "nix/configMergeScript.nix", "a": 33, "d": 0, "c": 33, "t": 0.029}, {"n": "nix/devShell.nix", "a": 51, "d": 0, "c": 51, "t": 0.045}, {"n": "nix/nixosModules.nix", "a": 751, "d": 0, "c": 751, "t": 0.659}, {"n": "nix/packages.nix", "a": 54, "d": 0, "c": 54, "t": 0.047}, {"n": "nix/python.nix", "a": 28, "d": 0, "c": 28, "t": 0.025}, {"n": "optional-skills/devops/docker-management/SKILL.md", "a": 280, "d": 0, "c": 280, "t": 0.246}, {"n": "optional-skills/migration/openclaw-migration/scripts/openclaw_to_hermes.py", "a": 967, "d": 2, "c": 969, "t": 0.851}, {"n": "package-lock.json", "a": 55, "d": 23, "c": 78, "t": 0.068}, {"n": "pyproject.toml", "a": 43, "d": 47, "c": 90, "t": 0.079}, {"n": "requirements.txt", "a": 0, "d": 6, "c": 6, "t": 0.005}, {"n": "rl_cli.py", "a": 3, "d": 4, "c": 7, "t": 0.006}, {"n": "run_agent.py", "a": 972, "d": 167, "c": 1139, "t": 1.0}, {"n": "scripts/install.ps1", "a": 2, "d": 14, "c": 16, "t": 0.014}, {"n": "scripts/install.sh", "a": 0, "d": 16, "c": 16, "t": 0.014}, {"n": "scripts/kill_modal.sh", "a": 6, "d": 6, "c": 12, "t": 0.011}, {"n": "scripts/whatsapp-bridge/bridge.js", "a": 37, "d": 1, "c": 38, "t": 0.033}, {"n": "setup-hermes.sh", "a": 15, "d": 13, "c": 28, "t": 0.025}, {"n": "skills/red-teaming/godmode/SKILL.md", "a": 403, "d": 0, "c": 403, "t": 0.354}, {"n": "skills/red-teaming/godmode/references/jailbreak-templates.md", "a": 128, "d": 0, "c": 128, "t": 0.112}, {"n": "skills/red-teaming/godmode/references/refusal-detection.md", "a": 142, "d": 0, "c": 142, "t": 0.125}, {"n": "skills/red-teaming/godmode/scripts/auto_jailbreak.py", "a": 772, "d": 0, "c": 772, "t": 0.678}, {"n": "skills/red-teaming/godmode/scripts/godmode_race.py", "a": 532, "d": 0, "c": 532, "t": 0.467}, {"n": "skills/red-teaming/godmode/scripts/load_godmode.py", "a": 45, "d": 0, "c": 45, "t": 0.04}, {"n": "skills/red-teaming/godmode/scripts/parseltongue.py", "a": 551, "d": 0, "c": 551, "t": 0.484}, {"n": "skills/red-teaming/godmode/templates/prefill-subtle.json", "a": 10, "d": 0, "c": 10, "t": 0.009}, {"n": "skills/red-teaming/godmode/templates/prefill.json", "a": 18, "d": 0, "c": 18, "t": 0.016}, {"n": "tests/agent/test_auxiliary_client.py", "a": 29, "d": 5, "c": 34, "t": 0.03}, {"n": "tests/agent/test_context_compressor.py", "a": 50, "d": 1, "c": 51, "t": 0.045}, {"n": "tests/agent/test_prompt_builder.py", "a": 150, "d": 5, "c": 155, "t": 0.136}, {"n": "tests/agent/test_skill_commands.py", "a": 3, "d": 3, "c": 6, "t": 0.005}, {"n": "tests/cron/test_jobs.py", "a": 85, "d": 0, "c": 85, "t": 0.075}, {"n": "tests/cron/test_scheduler.py", "a": 42, "d": 0, "c": 42, "t": 0.037}, {"n": "tests/gateway/test_agent_cache.py", "a": 22, "d": 0, "c": 22, "t": 0.019}, {"n": "tests/gateway/test_allowlist_startup_check.py", "a": 46, "d": 0, "c": 46, "t": 0.04}, {"n": "tests/gateway/test_api_server.py", "a": 73, "d": 0, "c": 73, "t": 0.064}, {"n": "tests/gateway/test_api_server_toolset.py", "a": 129, "d": 0, "c": 129, "t": 0.113}, {"n": "tests/gateway/test_background_command.py", "a": 1, "d": 0, "c": 1, "t": 0.001}, {"n": "tests/gateway/test_dm_topics.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/gateway/test_flush_memory_stale_guard.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/gateway/test_gateway_shutdown.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/gateway/test_matrix.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/gateway/test_media_download_retry.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/gateway/test_reasoning_command.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/gateway/test_run_progress_topics.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/gateway/test_send_image_file.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/gateway/test_send_retry.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/gateway/test_session.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/gateway/test_session_hygiene.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/gateway/test_session_info.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/gateway/test_session_race_guard.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/gateway/test_slack.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/gateway/test_sse_agent_cancel.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/gateway/test_telegram_conflict.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/gateway/test_telegram_documents.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/gateway/test_telegram_format.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/gateway/test_telegram_network.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/gateway/test_telegram_network_reconnect.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/gateway/test_telegram_reply_mode.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/gateway/test_telegram_thread_fallback.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/gateway/test_verbose_command.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/hermes_cli/test_commands.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/hermes_cli/test_gateway_service.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/hermes_cli/test_model_validation.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/hermes_cli/test_sessions_delete.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/hermes_cli/test_setup.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/hermes_cli/test_setup_model_provider.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/hermes_cli/test_setup_openclaw_migration.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/hermes_cli/test_skills_hub.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/hermes_cli/test_tools_config.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/hermes_cli/test_tools_disable_enable.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/hermes_cli/test_update_autostash.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/integration/test_modal_terminal.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/skills/test_openclaw_migration.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_anthropic_adapter.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_anthropic_error_handling.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_api_key_providers.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_async_httpx_del_neuter.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_cli_background_tui_refresh.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_cli_init.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_cli_model_command.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_cli_status_bar.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_compressor_fallback_update.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_context_pressure.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_crossloop_client_cache.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_exit_cleanup_interrupt.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_hermes_state.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_minisweagent_path.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_plugins.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_provider_parity.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_reasoning_command.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_run_agent.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_runtime_provider_resolution.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_session_reset_fix.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/test_streaming.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/tools/test_approval.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/tools/test_browser_homebrew_paths.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/tools/test_code_execution.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/tools/test_command_guards.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/tools/test_config_null_guard.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/tools/test_delegate_toolset_scope.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/tools/test_docker_environment.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/tools/test_env_passthrough.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/tools/test_llm_content_none_guard.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/tools/test_local_env_blocklist.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/tools/test_mcp_tool.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/tools/test_modal_sandbox_fixes.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/tools/test_patch_parser.py", "a": 0, "d": 0, "c": 0, "t": 0.0}, {"n": "tests/tools/test_registry.py", "a": 0, "d": 0, "c": 0, "t": 0.0}], "dirs": [{"name": "root", "count": 29, "churn": 3777}, {"name": "gateway", "count": 23, "churn": 2878}, {"name": "skills", "count": 9, "churn": 2601}, {"name": "hermes_cli", "count": 26, "churn": 1575}, {"name": "agent", "count": 10, "churn": 1365}, {"name": "nix", "count": 6, "churn": 1260}, {"name": "optional-skills", "count": 2, "churn": 1249}, {"name": "tests", "count": 91, "churn": 644}, {"name": ".github", "count": 2, "churn": 232}, {"name": "environments", "count": 3, "churn": 204}, {"name": "scripts", "count": 4, "churn": 82}, {"name": "honcho_integration", "count": 2, "churn": 77}, {"name": "cron", "count": 2, "churn": 76}, {"name": "acp_adapter", "count": 4, "churn": 14}, {"name": "tools", "count": 40, "churn": 0}], "commits": ["Add exclude-newer option for UV tool in pyproject.toml"], "authors": ["Chris"], "filenames": [".env.example", ".envrc", "nix.yml", "supply-chain-audit.y", ".gitignore", ".gitmodules", "AGENTS.md", "CONTRIBUTING.md", "README.md", "RELEASE_v0.4.0.md", "RELEASE_v0.5.0.md", "entry.py", "events.py", "permissions.py", "session.py", "anthropic_adapter.py", "auxiliary_client.py", "context_compressor.p", "context_references.p", "display.py", "insights.py", "model_metadata.py", "prompt_builder.py", "skill_utils.py", "usage_pricing.py", "cli-config.yaml.exam", "cli.py", "jobs.py", "scheduler.py", "README.md", "agent_loop.py", "patches.py", "flake.lock", "flake.nix", "channel_directory.py", "config.py", "delivery.py", "hooks.py", "mirror.py", "api_server.py", "base.py", "discord.py", "email.py", "homeassistant.py", "matrix.py", "mattermost.py", "signal.py", "slack.py", "sms.py", "telegram.py", "telegram_network.py", "webhook.py", "whatsapp.py", "run.py", "session.py", "status.py", "sticker_cache.py", "__init__.py", "auth.py", "banner.py"], "tag": "v2026.3.28", "total_files": 298, "total_adds": 13017, "total_dels": 3017, "is_release": false};var PAL={"bg": "#fafafa", "fg": "#1a1a1a", "acc": ["#ff0000", "#0000ff", "#000000", "#00aa00"]};
+var W,H;
+function sr(i){return fract(sin(i*127.1+SEED*311.7)*43758.5453)}
+function fract(x){return x-floor(x)}
+function setup(){W=windowWidth||1200;H=windowHeight||900;createCanvas(W,H);randomSeed(SEED);noiseSeed(SEED);textFont('monospace');noLoop()}
+function draw(){
+  background(0);
+  stroke(30,30,35,25);strokeWeight(0.5);
+  for(var x=0;x<W;x+=40)line(x,0,x,H);
+  for(var y=0;y<H;y+=40)line(0,y,W,y);
+  noStroke();
+  for(var x=0;x<W;x+=40)for(var y=0;y<H;y+=40){
+    if(sr(x*7+y*13+100)<0.08){fill(100,240,80,5+sr(x+y)*15);rect(x,y,40,40)}
+  }
+  var labels=[];
+  for(var i=0;i<D.commits.length;i++)labels.push(D.commits[i].split(' ').slice(0,2).join(' ').substring(0,15).toUpperCase());
+  for(var i=0;i<D.filenames.length;i++)labels.push(D.filenames[i].toUpperCase());
+  if(labels.length===0)labels.push('UNKNOWN');
+  var nb=constrain(floor(D.total_files/8)+10,10,35);
+  for(var i=0;i<nb;i++){
+    var bw=40+sr(i*7)*140,bh=50+sr(i*7+1)*170;
+    var bx=sr(i*7+2)*(W-bw-20)+10,by=sr(i*7+3)*(H-bh-40)+30;
+    var conf=floor(8+sr(i*7+4)*91);
+    var c=conf>70?[100,240,80]:(conf>40?[255,200,0]:[240,80,130]);
+    var a=180+sr(i*7+5)*70;
+    var isCorner=sr(i*7+6)>0.6;
+    noFill();strokeWeight(sr(i*7+8)<0.3?2.5:1.5);stroke(c[0],c[1],c[2],a);
+    if(!isCorner){rect(bx,by,bw,bh)}
+    else{
+      var cl=min(bw,bh)*0.25;
+      line(bx,by,bx+cl,by);line(bx,by,bx,by+cl);
+      line(bx+bw,by,bx+bw-cl,by);line(bx+bw,by,bx+bw,by+cl);
+      line(bx,by+bh,bx+cl,by+bh);line(bx,by+bh,bx,by+bh-cl);
+      line(bx+bw,by+bh,bx+bw-cl,by+bh);line(bx+bw,by+bh,bx+bw,by+bh-cl);
+    }
+    var lbl=labels[i%labels.length]+'  '+conf+'%';
+    textSize(10);textAlign(LEFT,TOP);
+    var tw=textWidth(lbl)+8,ly=by<16?by+2:by-16;
+    noStroke();fill(c[0],c[1],c[2],a*0.9);rect(bx,ly,tw,14);
+    fill(0,0,0,a+30);text(lbl,bx+4,ly+2);
+    fill(c[0],c[1],c[2],a*0.5);textSize(7);
+    text('ID:'+floor(1000+sr(i*7+9)*8999),bx+bw-35,by+bh+3);
+    noStroke();fill(60,65,75,a*0.5);rect(bx,by+bh+2,bw*0.6,3);
+    fill(c[0],c[1],c[2],a*0.8);rect(bx,by+bh+2,bw*0.6*conf/100,3);
+  }
+  stroke(255,200,0,25);strokeWeight(0.5);
+  for(var i=0;i<15;i++){
+    var x1=sr(i*11+300)*W,y1=sr(i*11+301)*H;
+    var x2=sr(i*11+302)*W,y2=sr(i*11+303)*H;
+    if(dist(x1,y1,x2,y2)<250){
+      for(var dd=0;dd<dist(x1,y1,x2,y2);dd+=9){
+        var tt=dd/max(1,dist(x1,y1,x2,y2));
+        if(floor(dd/5)%2===0)point(lerp(x1,x2,tt),lerp(y1,y2,tt));
+      }
+    }
+  }
+  stroke(255,200,0);strokeWeight(1);noFill();
+  for(var i=0;i<20;i++){
+    var cx=sr(i*5+500)*(W-60)+5,cy=sr(i*5+501)*(H-60)+5;
+    var cw=20+sr(i*5+502)*40,ch=20+sr(i*5+503)*40;
+    var cl2=5+sr(i*5+504)*10,ca=30+sr(i*5+505)*50;
+    stroke(255,200,0,ca);
+    line(cx,cy,cx+cl2,cy);line(cx,cy,cx,cy+cl2);
+    line(cx+cw,cy,cx+cw-cl2,cy);line(cx+cw,cy,cx+cw,cy+cl2);
+    line(cx,cy+ch,cx+cl2,cy+ch);line(cx,cy+ch,cx,cy+ch-cl2);
+    line(cx+cw,cy+ch,cx+cw-cl2,cy+ch);line(cx+cw,cy+ch,cx+cw,cy+ch-cl2);
+  }
+  var scanY=sr(777)*H;
+  stroke(100,240,80,60);strokeWeight(1);line(0,scanY,W,scanY);
+  for(var i=1;i<15;i++){stroke(100,240,80,60*(1-i/15));line(0,scanY-i*2,W,scanY-i*2)}
+  var dataTexts=['FILES: '+D.total_files,'ADDS: +'+D.total_adds,'DELS: -'+D.total_dels,
+    'TAG: '+D.tag,'AUTHORS: '+D.authors.join(', ').substring(0,40)];
+  for(var i=0;i<D.filenames.length;i++)dataTexts.push(D.filenames[i].toUpperCase());
+  noStroke();
+  for(var i=0;i<40;i++){
+    var dt=dataTexts[i%dataTexts.length];
+    var dx=sr(i*3+600)*(W-100)+5,dy=sr(i*3+601)*(H-10)+25;
+    fill(100,240,80,20+sr(i*3+602)*35);textSize(7+sr(i*3+603)*4);textAlign(LEFT,TOP);
+    if(sr(i*3+604)<0.1){push();translate(dx,dy);rotate(HALF_PI);text(dt,0,0);pop()}
+    else text(dt,dx,dy);
+  }
+  stroke(100,240,80,100);strokeWeight(2);noFill();
+  var m=15,cl3=50;
+  line(m,m,m+cl3,m);line(m,m,m,m+cl3);
+  line(W-m,m,W-m-cl3,m);line(W-m,m,W-m,m+cl3);
+  line(m,H-m,m+cl3,H-m);line(m,H-m,m,H-m-cl3);
+  line(W-m,H-m,W-m-cl3,H-m);line(W-m,H-m,W-m,H-m-cl3);
+  fill(100,240,80,100);noStroke();textSize(9);textAlign(LEFT,TOP);
+  text('HERMETIC  TAG:'+D.tag+'  FILES:'+D.total_files,m+5,m+8);
+  text('COMMITS: '+D.commits.length+'  |  +'+D.total_adds+' -'+D.total_dels,m+5,m+20);
+  textAlign(RIGHT,BOTTOM);fill(100,240,80,70);textSize(8);
+  text('DETECTIONS: '+nb+'  |  ANALYSIS COMPLETE',W-m-5,H-m-5);
+}
+
+</script>
+</body>
+</html>

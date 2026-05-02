@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --color-bg: #080808;
+  --color-fg: #e8e8e8;
+  --color-dim: #6a6a6a;
+  --color-muted: #3a3a3a;
+  --color-border: #1e1e1e;
+  --color-surface: #111111;
+  --color-surface-hover: #161616;
+  --color-accent: #c8c8c8;
+  --color-glow: rgba(255, 255, 255, 0.03);
+}
+
+html {
+  font-family: var(--font-mono);
+  background: var(--color-bg);
+  color: var(--color-fg);
+}
+
+::selection {
+  background: #e8e8e8;
+  color: #080808;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+  animation: fadeIn 0.5s ease-out both;
+}
+
+.animate-in-delay {
+  animation: fadeIn 0.5s ease-out 0.15s both;
+}
+
+.animate-in-delay-2 {
+  animation: fadeIn 0.5s ease-out 0.3s both;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  cursor: pointer;
+  border: 2px solid var(--color-bg);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  cursor: pointer;
+  border: 2px solid var(--color-bg);
+}
