@@ -3,12 +3,16 @@ import Link from "next/link";
 import "./globals.css";
 
 const siteDescription =
-  "A self-referential agent loop: Hermes watches its own source change day by day — daily reflections, FAL artworks, and a static museum. Hermes Agent CLI, persistent memory, Next.js.";
+  "one must imagine hermes happy";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hermetic.yx3.io"),
   title: "hermetic",
   description: siteDescription,
+  icons: {
+    icon: [{ url: "/icon.jpg", type: "image/jpeg" }],
+    apple: "/icon.jpg",
+  },
   openGraph: {
     title: "hermetic",
     description: siteDescription,
