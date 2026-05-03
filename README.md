@@ -45,7 +45,7 @@ cd web && python pipeline/seed_db.py && npm run dev
 - **Sessions** — each generation run is a searchable session
 - **Tools** — the agent can use its full toolset during reflection
 - **Reflections** — Hermes-4-405B (Nous) writes the daily monologue
-- **Image generation** — default agentic model orchestrates FAL AI tools
+- **Image generation** — default agentic model orchestrates FAL AI tools 
 
 The `hermes-skill/SKILL.md` file contains the skill definition.
 
