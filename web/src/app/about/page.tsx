@@ -23,7 +23,7 @@ export default function AboutPage() {
 
       <div className="mt-8 animate-in-delay-2">
         <a
-          href="https://github.com/NousResearch/hermes-agent"
+          href="https://github.com/yx3io/hermetic"
           target="_blank"
           rel="noopener"
           className="font-mono text-[10px] text-[var(--color-muted)] hover:text-[var(--color-dim)] transition-colors"

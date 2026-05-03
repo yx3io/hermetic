@@ -155,20 +155,23 @@ export default async function ArtifactPage({
             </div>
 
             {/* Memory state at time of creation */}
-            {memoryEntries.length > 0 && (
-              <div className="bg-[var(--color-surface)] border border-[var(--color-border)] p-5">
-                <div className="text-[9px] tracking-[0.2em] uppercase text-[var(--color-muted)] mb-1">
-                  Memory state
-                </div>
-                <div className="text-[9px] text-[var(--color-muted)] mb-4 font-mono">
-                  {memoryCapacity}% capacity &middot; {memoryEntries.length} entries
-                </div>
-                <div className="mb-3 h-1 bg-[var(--color-border)] overflow-hidden">
-                  <div
-                    className="h-full bg-[var(--color-accent)] transition-all"
-                    style={{ width: `${Math.min(100, memoryCapacity)}%` }}
-                  />
-                </div>
+            <div className="bg-[var(--color-surface)] border border-[var(--color-border)] p-5">
+              <div className="text-[9px] tracking-[0.2em] uppercase text-[var(--color-muted)] mb-2">
+                Agent Memory State
+              </div>
+              <div className="text-[8px] text-[var(--color-muted)] mb-3 leading-relaxed">
+                cumulative memory at time of creation — oldest entries evicted at 2200 char capacity
+              </div>
+              <div className="text-[9px] text-[var(--color-muted)] mb-4 font-mono">
+                {memoryCapacity}% capacity &middot; {memoryEntries.length} entries
+              </div>
+              <div className="mb-3 h-1 bg-[var(--color-border)] overflow-hidden">
+                <div
+                  className="h-full bg-[var(--color-accent)] transition-all"
+                  style={{ width: `${Math.min(100, memoryCapacity)}%` }}
+                />
+              </div>
+              {memoryEntries.length > 0 ? (
                 <div className="font-mono text-[10px] text-[var(--color-dim)] space-y-2">
                   {memoryEntries.slice(-5).map((entry, i) => (
                     <div key={i} className="text-[var(--color-muted)] leading-relaxed">
@@ -182,8 +185,12 @@ export default async function ArtifactPage({
                     </div>
                   )}
                 </div>
-              </div>
-            )}
+              ) : (
+                <div className="font-mono text-[10px] text-[var(--color-muted)] italic">
+                  no memory accumulated yet
+                </div>
+              )}
+            </div>
 
             {/* Autopsy notes */}
             {dossierData && (
@@ -193,16 +200,23 @@ export default async function ArtifactPage({
                 </div>
                 <div className="font-mono text-[10px] text-[var(--color-dim)] space-y-2">
                   <div>specimens consumed: {dossierData.commitsRead.length}</div>
-                  <div className="flex flex-wrap gap-1.5 mt-2">
-                    {dossierData.skillsUsed.map((s) => (
-                      <span
-                        key={s}
-                        className="text-[9px] px-2 py-1 bg-[var(--color-bg)] border border-[var(--color-border)] text-[var(--color-muted)]"
-                      >
-                        {s}
-                      </span>
-                    ))}
-                  </div>
+                  {dossierData.skillsUsed.length > 0 && (
+                    <div className="mt-3 pt-3 border-t border-[var(--color-border)]">
+                      <div className="text-[9px] uppercase tracking-wider text-[var(--color-muted)] mb-2">
+                        skills loaded
+                      </div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {dossierData.skillsUsed.map((s) => (
+                          <span
+                            key={s}
+                            className="text-[9px] px-2 py-1 bg-[var(--color-bg)] border border-[var(--color-border)] text-[var(--color-muted)]"
+                          >
+                            {s}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             )}

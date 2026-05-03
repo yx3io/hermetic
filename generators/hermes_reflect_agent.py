@@ -13,6 +13,7 @@ Usage:
     python generators/hermes_reflect_agent.py                 # all days
     python generators/hermes_reflect_agent.py --day 2025-03-15  # single day
     python generators/hermes_reflect_agent.py --retry-garbage   # re-run bad outputs
+    python generators/hermes_reflect_agent.py --backfill-memory # fix memory from existing data
 """
 
 import argparse
@@ -54,6 +55,48 @@ def capture_memory_snapshot():
     except Exception:
         pass
     return ""
+
+
+def build_memory_entry(day, title, reflection, author_names):
+    """Distill one day into a concise memory entry for cumulative tracking."""
+    date = day["date"]
+    tag = day["tag"]
+    commit_count = day.get("commit_count", 0)
+    is_release = day.get("is_release", False)
+
+    parts = [f"{date}"]
+    if is_release:
+        parts.append(f"release {tag}")
+    if title:
+        parts.append(f'"{title}"')
+    parts.append(f"{commit_count} commits")
+    if author_names:
+        parts.append(f"by {', '.join(author_names[:3])}")
+
+    first_line = reflection.strip().splitlines()[0] if reflection.strip() else ""
+    if first_line and len(first_line) > 120:
+        first_line = first_line[:117] + "..."
+    if first_line:
+        parts.append(f"— {first_line}")
+
+    return " ".join(parts)
+
+
+def write_memory_file(memory_text):
+    """Write cumulative memory to MEMORY.md so the agent can read it."""
+    MEMORY_PATH.parent.mkdir(parents=True, exist_ok=True)
+    MEMORY_PATH.write_text(memory_text)
+
+
+def build_cumulative_memory(entries):
+    """Join memory entries with § delimiter, trimmed to fit capacity."""
+    if not entries:
+        return ""
+    joined = "§".join(entries)
+    while len(joined) > MEMORY_CAPACITY and len(entries) > 1:
+        entries = entries[1:]
+        joined = "§".join(entries)
+    return joined
 
 
 def _scale_word(n):
@@ -301,6 +344,53 @@ def invoke_hermes_agent(prompt, provider="nous", model="Hermes-4-405B"):
         raise RuntimeError("hermes timed out after 120 seconds")
 
 
+# ── Memory backfill ────────────────────────────────────────────
+
+def backfill_memory():
+    """Retroactively synthesize cumulative memory snapshots from existing results.
+
+    Iterates hermes_output.json in chronological order, builds a growing memory
+    string from each day's title/date/themes, and rewrites memory_md / memory_chars /
+    memory_capacity_pct in place. No Hermes API calls needed.
+    """
+    with open(DAILY_FILE) as f:
+        dataset = json.load(f)
+    days_by_date = {d["date"]: d for d in dataset["days"]}
+
+    results = load_existing_results()
+    if not results:
+        print("No results to backfill.")
+        return
+
+    results.sort(key=lambda r: r.get("date", ""))
+
+    memory_entries = []
+    updated = 0
+
+    for r in results:
+        date = r["date"]
+        day = days_by_date.get(date, {"date": date, "tag": r.get("tag", ""), "commits": [], "files": []})
+        author_names, _ = _summarize_themes(day.get("commits", []), day.get("files", []))
+
+        entry = build_memory_entry(day, r.get("title", ""), r.get("reflection", ""), author_names)
+        memory_entries.append(entry)
+
+        snapshot = build_cumulative_memory(list(memory_entries))
+        old_md = r.get("memory_md", "")
+        r["memory_md"] = snapshot
+        r["memory_chars"] = len(snapshot)
+        r["memory_capacity_pct"] = min(100, round(len(snapshot) / MEMORY_CAPACITY * 100))
+
+        if snapshot != old_md:
+            updated += 1
+
+    save_results(results)
+    print(f"Backfilled memory for {len(results)} days ({updated} changed).")
+    print(f"  Final memory: {len(memory_entries)} entries, {len(build_cumulative_memory(list(memory_entries)))} chars")
+    print(f"  Output: {OUTPUT_FILE}")
+    print(f"\n  Now re-run seed_db.py to push into SQLite.")
+
+
 # ── Main runner ────────────────────────────────────────────────
 
 def run(max_days=None, single_day=None, provider="nous", model="Hermes-4-405B",
@@ -349,6 +439,16 @@ def run(max_days=None, single_day=None, provider="nous", model="Hermes-4-405B",
         print(f"  Mode: RETRY GARBAGE (max {MAX_RETRIES} attempts per day)")
     print()
 
+    # Build cumulative memory from already-completed results (chronological)
+    sorted_results = sorted(results, key=lambda r: r.get("date", ""))
+    all_days_by_date = {d["date"]: d for d in dataset["days"]}
+    memory_entries = []
+    for r in sorted_results:
+        rd = all_days_by_date.get(r["date"], {"date": r["date"], "tag": r.get("tag", ""), "commits": []})
+        author_names, _ = _summarize_themes(rd.get("commits", []), rd.get("files", []))
+        entry = build_memory_entry(rd, r.get("title", ""), r.get("reflection", ""), author_names)
+        memory_entries.append(entry)
+
     for i, day in enumerate(days):
         day_index = next((j for j, d in enumerate(dataset["days"]) if d["date"] == day["date"]), i)
 
@@ -361,9 +461,14 @@ def run(max_days=None, single_day=None, provider="nous", model="Hermes-4-405B",
         print(f"\n  [{day_index+1}/{total}] {day['date']} ({day['tag']})")
         print(f"    commits: {day.get('commit_count', 0)}, files: {len(day.get('files', []))}")
 
+        # Write accumulated memory to disk before invoking Hermes
+        cumulative_md = build_cumulative_memory(list(memory_entries))
+        write_memory_file(cumulative_md)
+
         if dry_run:
             prompt = build_agent_prompt(day, day_index, previous_titles)
             print(f"    [DRY RUN] prompt length: {len(prompt)} chars")
+            print(f"    [DRY RUN] memory entries: {len(memory_entries)}, chars: {len(cumulative_md)}")
             print(f"    --- prompt ---")
             print(prompt)
             print(f"    --- end ---")
@@ -404,7 +509,11 @@ def run(max_days=None, single_day=None, provider="nous", model="Hermes-4-405B",
                     continue
                 break
 
-        memory_snapshot = capture_memory_snapshot()
+        # Append this day's memory entry and snapshot the cumulative state
+        author_names, _ = _summarize_themes(day.get("commits", []), day.get("files", []))
+        new_entry = build_memory_entry(day, title, reflection, author_names)
+        memory_entries.append(new_entry)
+        memory_snapshot = build_cumulative_memory(list(memory_entries))
         mem_chars = len(memory_snapshot)
 
         result = {
@@ -454,13 +563,18 @@ if __name__ == "__main__":
                         help="Print prompts without calling the agent")
     parser.add_argument("--retry-garbage", action="store_true",
                         help="Find and retry all garbage outputs")
+    parser.add_argument("--backfill-memory", action="store_true",
+                        help="Retroactively synthesize memory from existing reflections (no API calls)")
     args = parser.parse_args()
 
-    run(
-        max_days=args.days,
-        single_day=args.day,
-        provider=args.provider,
-        model=args.model,
-        dry_run=args.dry_run,
-        retry_garbage=args.retry_garbage,
-    )
+    if args.backfill_memory:
+        backfill_memory()
+    else:
+        run(
+            max_days=args.days,
+            single_day=args.day,
+            provider=args.provider,
+            model=args.model,
+            dry_run=args.dry_run,
+            retry_garbage=args.retry_garbage,
+        )

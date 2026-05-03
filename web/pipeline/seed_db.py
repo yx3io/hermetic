@@ -59,22 +59,53 @@ def fallback_reflection(day):
     return f"{date}.\n{commit_count} changes arrived.\ni read through them.\npending."
 
 
-def build_dossier(day):
+SKILLS_JSON = ROOT / "src" / "data" / "skills.json"
+
+def _load_skills_by_date():
+    """Build a map: date -> list of skill names available by that date."""
+    if not SKILLS_JSON.exists():
+        return {}
+    data = json.loads(SKILLS_JSON.read_text())
+    categories = data.get("categories", [])
+    result = {}
+    for cat in categories:
+        first_date = cat.get("firstDate", "")
+        skills = cat.get("skills", [])
+        if first_date and skills:
+            result[first_date] = skills
+    return result
+
+_SKILLS_BY_DATE = _load_skills_by_date()
+
+def get_skills_available_on(date: str) -> list[str]:
+    """Return all skill names that existed by a given date."""
+    available = ["archaeology-museum"]
+    for first_date, skills in _SKILLS_BY_DATE.items():
+        if first_date <= date:
+            available.extend(skills[:2])
+    return list(dict.fromkeys(available))
+
+
+def build_dossier(day, date: str):
     commits = day.get("commits", [])
     commits_read = [
         {"sha": c.get("sha", ""), "message": c.get("message", ""), "author": c.get("author", "")}
         for c in commits[:20]
     ]
     themes = day.get("themes", []) or ["daily"]
+
+    skills_used = get_skills_available_on(date)
+
     process_notes = (
         f"consumed {len(commits_read)} specimens. "
         f"dominant signals: {', '.join(themes)}. "
+        f"skills loaded: {', '.join(skills_used[:4])}. "
         f"rendered in one pass."
     )
     return {
         "commits_read": commits_read,
         "skills_invented": [],
-        "skills_used": [],
+        "skills_used": skills_used,
         "references_pulled": [],
         "process_notes": process_notes,
         "iterations": 1,
@@ -116,7 +147,7 @@ def seed():
             capacity = 0
             entries_count = 0
 
-        dossier = build_dossier(day)
+        dossier = build_dossier(day, date)
         commits = day.get("commits", [])
         stats = day.get("stats", {})
 

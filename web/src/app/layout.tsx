@@ -59,7 +59,7 @@ export default function RootLayout({
               hermetic
             </span>
             <a
-              href="https://github.com/NousResearch/hermes-agent"
+              href="https://github.com/yx3io/hermetic"
               target="_blank"
               rel="noopener"
               className="text-[10px] text-[var(--color-muted)] hover:text-[var(--color-dim)] transition-colors"
