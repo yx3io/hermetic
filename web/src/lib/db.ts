@@ -119,3 +119,25 @@ export function getAllMemorySnapshots(): (MemorySnapshot & { date: string; tag: 
     `)
     .all() as (MemorySnapshot & { date: string; tag: string })[];
 }
+
+export interface Subvocal {
+  id: number;
+  sha: string;
+  date: string;
+  timestamp: string;
+  author: string;
+  commit_message: string;
+  thought: string;
+}
+
+export function getAllSubvocals(): Subvocal[] {
+  return getDb()
+    .prepare("SELECT * FROM subvocals ORDER BY date ASC, timestamp ASC")
+    .all() as Subvocal[];
+}
+
+export function getSubvocalsByDate(date: string): Subvocal[] {
+  return getDb()
+    .prepare("SELECT * FROM subvocals WHERE date = ? ORDER BY timestamp ASC")
+    .all(date) as Subvocal[];
+}

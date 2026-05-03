@@ -72,7 +72,7 @@ def generate(release):
         lines.append("  └─────────────────────────────────────────────────────────────────┘")
 
     lines.append("")
-    lines.append(f"  hermes-archaeology-museum // generated {date_str}")
+    lines.append(f"  hermes-hermetic-museum // generated {date_str}")
     lines.append(f"  $ _")
 
     terminal_content = "\n".join(lines)

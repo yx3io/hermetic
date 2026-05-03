@@ -21,7 +21,7 @@ TOKEN = os.environ.get("GITHUB_TOKEN")
 if TOKEN:
     SESSION.headers["Authorization"] = f"token {TOKEN}"
 SESSION.headers["Accept"] = "application/vnd.github.v3+json"
-SESSION.headers["User-Agent"] = "hermes-archaeology-museum"
+SESSION.headers["User-Agent"] = "hermes-hermetic-museum"
 
 
 def _get(url, params=None):

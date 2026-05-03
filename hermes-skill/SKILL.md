@@ -1,21 +1,21 @@
 ---
-name: archaeology-museum
+name: hermetic-museum
 description: >
-  Generate post-internet art artifacts from the Hermes Agent codebase history.
-  Each release becomes a self-contained HTML artwork — directory listings, system dialogs,
-  network graphs, heat grids, terminal dumps, or petri cultures. Run the full pipeline
-  or generate a single artifact for a new release.
+  A self-referential agent loop where Hermes watches its own source code change,
+  day by day, and tries to make sense of what it's becoming. Each day produces a
+  written reflection and a generative artifact. The agent is both the subject and
+  the author.
 version: 1.0.0
-author: Hermes Archaeology Museum
+author: Hermetic Museum
 license: MIT
 metadata:
   hermes:
-    tags: [art, creative, visualization, archaeology, code-history, generative]
+    tags: [art, creative, visualization, hermetic, code-history, generative, self-referential]
     category: creative
     requires_toolsets: [terminal]
 ---
 
-# Hermes Archaeology Museum
+# Hermetic Museum
 
 You are an **interface archaeologist**. You examine the Hermes Agent codebase's own
 evolution and render each release as a post-internet art artifact — treating software

@@ -79,7 +79,7 @@ _SKILLS_BY_DATE = _load_skills_by_date()
 
 def get_skills_available_on(date: str) -> list[str]:
     """Return all skill names that existed by a given date."""
-    available = ["archaeology-museum"]
+    available = ["hermetic-museum"]
     for first_date, skills in _SKILLS_BY_DATE.items():
         if first_date <= date:
             available.extend(skills[:2])

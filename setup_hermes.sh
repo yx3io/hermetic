@@ -8,9 +8,9 @@ set -e
 
 PROJECT_DIR="$(cd "$(dirname "$0")" && pwd)"
 HERMES_SKILLS_DIR="${HOME}/.hermes/skills"
-SKILL_NAME="archaeology-museum"
+SKILL_NAME="hermetic-museum"
 
-echo "=== Hermes Archaeology Museum Setup ==="
+echo "=== Hermetic Museum Setup ==="
 echo ""
 
 # 1. Install the skill
@@ -39,7 +39,7 @@ echo '  new Hermes Agent releases without artifacts. If NEW_RELEASES_DETECTED, n
 echo '  the project directory shown in the output, delete data/releases.json, and run'
 echo '  python3 generators/orchestrator.py to generate new artifacts. If [SILENT], do nothing."'
 echo "  --script ${HERMES_SKILLS_DIR}/${SKILL_NAME}/scripts/check_new_releases.py"
-echo '  --skill archaeology-museum --name "archaeology-museum-daily"'
+echo '  --skill hermetic-museum --name "hermetic-museum-daily"'
 echo ""
 echo "Or to test immediately:"
 echo ""

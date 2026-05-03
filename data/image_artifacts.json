@@ -42,13 +42,6 @@
     "generated_by": "hermes-agent-fal"
   },
   {
-    "date": "2026-04-07",
-    "image_filename": "2026-04-07_fal.png",
-    "style_ref_image": "27.jpg",
-    "day_index": 26,
-    "generated_by": "hermes-agent-fal"
-  },
-  {
     "date": "2026-04-20",
     "image_filename": "2026-04-20_fal.png",
     "style_ref_image": "40.jpg",
@@ -140,13 +133,6 @@
     "generated_by": "hermes-agent-fal-custom"
   },
   {
-    "date": "2026-03-27",
-    "image_filename": "2026-03-27_fal.png",
-    "style_ref_image": "16.jpg",
-    "day_index": 4,
-    "generated_by": "hermes-agent-fal-custom"
-  },
-  {
     "date": "2026-04-02",
     "image_filename": "2026-04-02_fal.png",
     "style_ref_image": "22.jpg",
@@ -186,13 +172,6 @@
     "image_filename": "2026-04-08_fal.png",
     "style_ref_image": "28.jpg",
     "day_index": 0,
-    "generated_by": "hermes-agent-fal-custom+reflection"
-  },
-  {
-    "date": "2026-04-11",
-    "image_filename": "2026-04-11_fal.png",
-    "style_ref_image": "31.jpg",
-    "day_index": 2,
     "generated_by": "hermes-agent-fal-custom+reflection"
   },
   {
@@ -329,13 +308,6 @@
     "generated_by": "hermes-agent-fal-custom+reflection"
   },
   {
-    "date": "2026-04-26",
-    "image_filename": "2026-04-26_fal.png",
-    "style_ref_image": "46.jpg",
-    "day_index": 5,
-    "generated_by": "hermes-agent-fal-custom+reflection"
-  },
-  {
     "date": "2026-03-19",
     "image_filename": "2026-03-19_fal.png",
     "style_ref_image": "8.jpg",
@@ -357,6 +329,27 @@
     "generated_by": "hermes-agent-fal-custom+reflection"
   },
   {
+    "date": "2026-04-07",
+    "image_filename": "2026-04-07_fal.png",
+    "style_ref_image": "27.jpg",
+    "day_index": 1,
+    "generated_by": "hermes-agent-fal-custom+reflection"
+  },
+  {
+    "date": "2026-04-11",
+    "image_filename": "2026-04-11_fal.png",
+    "style_ref_image": "31.jpg",
+    "day_index": 2,
+    "generated_by": "hermes-agent-fal-custom+reflection"
+  },
+  {
+    "date": "2026-04-26",
+    "image_filename": "2026-04-26_fal.png",
+    "style_ref_image": "46.jpg",
+    "day_index": 3,
+    "generated_by": "hermes-agent-fal-custom+reflection"
+  },
+  {
     "date": "2026-03-24",
     "image_filename": "2026-03-24_fal.png",
     "style_ref_image": "13.jpg",
@@ -364,10 +357,17 @@
     "generated_by": "hermes-agent-fal-custom+reflection"
   },
   {
+    "date": "2026-03-27",
+    "image_filename": "2026-03-27_fal.png",
+    "style_ref_image": "16.jpg",
+    "day_index": 1,
+    "generated_by": "hermes-agent-fal-custom+reflection"
+  },
+  {
     "date": "2026-05-02",
     "image_filename": "2026-05-02_fal.png",
     "style_ref_image": "52.jpg",
-    "day_index": 1,
+    "day_index": 2,
     "generated_by": "hermes-agent-fal-custom+reflection"
   }
 ]

@@ -5,7 +5,7 @@ Drive Hermes Agent through daily commit history to generate reflections.
 This script invokes Hermes Agent via CLI so that:
   - Real persistent memory accumulates across sessions
   - Session search can look back at past reflections
-  - The archaeology-museum skill guides voice and behavior
+  - The hermetic-museum skill guides voice and behavior
   - The agent's full tool system is available
 
 Usage:
@@ -174,7 +174,7 @@ def is_garbage(title, reflection):
 def build_agent_prompt(day, day_index, previous_titles, is_retry=False):
     """Build an in-character prompt for Hermes Agent.
 
-    This prompt does NOT give instructions — the archaeology-museum skill
+    This prompt does NOT give instructions — the hermetic-museum skill
     handles voice rules. This just sets the scene: what day it is, who was
     here, what happened.
     """
@@ -310,7 +310,7 @@ def parse_agent_response(text):
 # ── Agent invocation ───────────────────────────────────────────
 
 def invoke_hermes_agent(prompt, provider="nous", model="Hermes-4-405B"):
-    """Call Hermes Agent CLI with the archaeology-museum skill.
+    """Call Hermes Agent CLI with the hermetic-museum skill.
 
     Memory persists across calls via ~/.hermes/memories/MEMORY.md —
     the agent reads and writes it automatically through its memory tool.
@@ -318,7 +318,7 @@ def invoke_hermes_agent(prompt, provider="nous", model="Hermes-4-405B"):
     cmd = [
         HERMES_CLI, "chat",
         "-q", prompt,
-        "-s", "archaeology-museum",
+        "-s", "hermetic-museum",
         "--provider", provider,
         "-m", model,
         "-Q",

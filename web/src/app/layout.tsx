@@ -26,6 +26,12 @@ function Nav() {
             timeline
           </Link>
           <Link
+            href="/monologue"
+            className="text-[var(--color-dim)] hover:text-[var(--color-fg)] transition-colors"
+          >
+            monologue
+          </Link>
+          <Link
             href="/about"
             className="text-[var(--color-dim)] hover:text-[var(--color-fg)] transition-colors"
           >

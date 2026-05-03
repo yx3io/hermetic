@@ -49,3 +49,16 @@ CREATE TABLE IF NOT EXISTS invented_skills (
   first_used_on_artifact INTEGER REFERENCES artifacts(id),
   created_at TEXT DEFAULT (datetime('now'))
 );
+
+CREATE TABLE IF NOT EXISTS subvocals (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  sha TEXT NOT NULL,
+  date TEXT NOT NULL,
+  timestamp TEXT NOT NULL,
+  author TEXT NOT NULL DEFAULT '',
+  commit_message TEXT NOT NULL DEFAULT '',
+  thought TEXT NOT NULL,
+  created_at TEXT DEFAULT (datetime('now'))
+);
+
+CREATE INDEX IF NOT EXISTS idx_subvocals_date ON subvocals(date);

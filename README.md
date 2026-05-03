@@ -1,35 +1,24 @@
 # hermetic
 
-hermes agent watching its own source change, day by day, and tries to make sense of what it's becoming.
+A self-referential agent loop where Hermes watches its own source code change, day by day, and tries to make sense of what it's becoming. Each day produces a written reflection and a generative artifact. The agent is both the subject and the author.
 
-each day produces a reflection and a generative artifact.
+**Stack:** Hermes Agent CLI (`hermes chat`, Hermes-4-405B via Nous for reflections, default agentic model for image gen) + `hermetic-museum` custom skill + persistent memory (`~/.hermes/memories/MEMORY.md`) + FAL AI (`image_generate` + `vision_analyze`) + Next.js static gallery + SQLite + D3.
+
+The cron job runs daily at 9am via `hermes cron`. The museum grows by itself.
 
 ## How It Works
 
 1. `generators/fetch_daily.py` pulls commit history from GitHub
-2. `generators/orchestrator.py` generates p5.js art for each day
-3. `generators/hermes_reflect_agent.py` invokes Hermes Agent to write reflections
-   - Uses the `archaeology-museum` skill for voice/persona
+2. `generators/hermes_reflect_agent.py` invokes Hermes Agent to write reflections
+   - Uses Hermes-4-405B via Nous Research for the monologue/reflection voice
+   - Uses the `hermetic-museum` skill for voice/persona guidance
    - Agent memory persists across days (it remembers what it wrote before)
    - Each day's memory state is captured and displayed in the gallery
-4. `generators/image_generator.py` generates landscape images via Hermes Agent + FAL AI
-5. `web/pipeline/seed_db.py` loads everything into SQLite
-6. `web/` serves the gallery via Next.js
-
-### Image Generation
-
-Each day also gets a landscape artwork generated via FAL AI through Hermes Agent:
-
-1. `generators/image_generator.py` reads the day's reflection from `hermes_output.json`
-2. It selects a style reference image from the taste library (day N -> image N.jpg)
-3. Hermes Agent analyzes the reference image's visual style via `vision_analyze`
-4. The agent crafts a generation prompt combining the reflection's themes with the reference style
-5. The agent calls `image_generate` with `aspect_ratio="landscape"` via FAL AI
-6. The resulting image is saved to `web/public/artifacts/{date}_fal.png`
-
-This means every AI operation — reflection writing, style analysis, prompt crafting,
-and image generation — goes through Hermes Agent's tool system with full memory and
-session tracking.
+3. `generators/image_generator.py` generates landscape images via Hermes Agent + FAL AI
+   - Uses the default agentic model (Claude) to orchestrate `vision_analyze` + `image_generate`
+   - Blends the day's reflection themes with a visual style prompt
+4. `web/pipeline/seed_db.py` loads everything into SQLite
+5. `web/` serves the gallery via Next.js
 
 ## Quick Start
 
@@ -42,7 +31,6 @@ cd web && npm install && cd ..
 
 # Or run steps individually:
 python generators/fetch_daily.py
-python generators/orchestrator.py
 python generators/hermes_reflect_agent.py
 python generators/image_generator.py
 
@@ -53,9 +41,11 @@ cd web && python pipeline/seed_db.py && npm run dev
 ## Hermes Agent Integration
 
 - **Persistent memory** — the agent remembers past reflections and builds continuity
-- **Skills** — `archaeology-museum` defines the observer voice and constraints
+- **Skills** — `hermetic-museum` defines the observer voice and constraints
 - **Sessions** — each generation run is a searchable session
 - **Tools** — the agent can use its full toolset during reflection
+- **Reflections** — Hermes-4-405B (Nous) writes the daily monologue
+- **Image generation** — default agentic model orchestrates FAL AI tools
 
 The `hermes-skill/SKILL.md` file contains the skill definition.
 

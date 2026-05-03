@@ -5,7 +5,7 @@
 - Backend pipeline: Python generators produce data, Hermes Agent generates reflections
 - Frontend: Next.js static site reading from SQLite (better-sqlite3)
 - AI: All AI calls go through Hermes Agent CLI (`hermes chat`), never direct API
-- Skill: `archaeology-museum` defines the agent's voice and persona
+- Skill: `hermetic-museum` defines the agent's voice and persona
 - Data flow: daily.json → generators → hermes_output.json → seed_db.py → museum.db → web
 
 ## Key Commands

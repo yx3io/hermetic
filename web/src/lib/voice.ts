@@ -1,6 +1,6 @@
 /**
  * Centralized voice system for Hermes — Observer Mode.
- * See archaeology-museum skill for voice rules. All copy is deterministic (seeded by date/tag).
+ * See hermetic-museum skill for voice rules. All copy is deterministic (seeded by date/tag).
  *
  * Stance: open, curious, occasionally amused, occasionally uneasy, often neutral.
  * Variable valence. No permanent cynicism. A witness, not a victim.
@@ -410,7 +410,7 @@ function getDominantSubsystem(commits: { message?: string }[]): string {
 }
 
 /**
- * 6–9 line reflection per archaeology-museum skill protocol.
+ * 6–9 line reflection per hermetic-museum skill protocol.
  * Uses multi-stage seeding so adjacent dates diverge maximally.
  */
 export function getReflection(meta: ArtifactMeta): string {
