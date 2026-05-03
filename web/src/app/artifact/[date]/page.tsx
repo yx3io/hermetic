@@ -3,10 +3,10 @@ import Link from "next/link";
 import {
   getAllArtifacts,
   getArtifactByDate,
+  getArtifactImageUrl,
   getMemorySnapshot,
   getDossier,
 } from "@/lib/db";
-import { SourceViewer } from "@/components/SourceViewer";
 import { getSpecimenTitle } from "@/lib/voice";
 
 
@@ -63,11 +63,13 @@ export default async function ArtifactPage({
     <div>
       {/* Full-width artwork */}
       <section className="w-full h-[65vh] min-h-[450px] bg-[#050508] relative">
-        <iframe
-          src={`/artifacts/${artifact.filename}`}
-          className="w-full h-full border-0"
-          sandbox="allow-scripts"
-        />
+        {getArtifactImageUrl(artifact) && (
+          <img
+            src={getArtifactImageUrl(artifact)!}
+            alt={`${artifact.title || artifact.date} — generated artwork`}
+            className="w-full h-full object-cover"
+          />
+        )}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[var(--color-bg)] to-transparent" />
       </section>
 
@@ -124,10 +126,6 @@ export default async function ArtifactPage({
             </section>
 
 
-            {/* Source */}
-            <section className="animate-in-delay-2">
-              <SourceViewer code={artifact.source_code} filename={artifact.filename} />
-            </section>
           </div>
 
           {/* Right column: Context + Autopsy */}

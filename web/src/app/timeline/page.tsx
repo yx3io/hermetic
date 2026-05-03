@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getAllArtifacts } from "@/lib/db";
+import { getAllArtifacts, getArtifactImageUrl } from "@/lib/db";
 import { getSpecimenTitle, getVerdictLine } from "@/lib/voice";
 
 export const dynamic = "force-static";
@@ -36,14 +36,14 @@ export default function TimelinePage() {
             >
               {/* Artwork preview */}
               <div className="relative w-full aspect-[16/10] bg-[#050508] overflow-hidden">
-                <iframe
-                  src={`/artifacts/${art.filename}`}
-                  className="w-[300%] h-[300%] origin-top-left pointer-events-none"
-                  style={{ transform: "scale(0.3333)" }}
-                  loading="lazy"
-                  sandbox="allow-scripts"
-                  tabIndex={-1}
-                />
+                {getArtifactImageUrl(art) && (
+                  <img
+                    src={getArtifactImageUrl(art)!}
+                    alt={art.title || art.date}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-surface)] via-transparent to-transparent opacity-60" />
               </div>
 

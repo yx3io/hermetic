@@ -85,6 +85,30 @@ Every agent invocation creates a searchable session. The agent can use `session_
 to look back at its own past reflections — giving it continuity beyond what fits
 in its memory store.
 
+### 6. Image Generation (`generators/image_generator.py`)
+
+Each day's reflection is turned into a landscape artwork via Hermes Agent:
+
+```python
+# The agent is given the reflection text + a style reference image
+# It uses vision_analyze to read the reference style, then image_generate to create
+subprocess.run([
+    "hermes", "chat",
+    "-q", prompt,           # contains reflection + style ref path
+    "--provider", "nous",
+    "-m", "Hermes-4-405B",
+    "-Q",
+], capture_output=True, text=True, timeout=180)
+```
+
+The agent uses THREE of its built-in tools in a single invocation:
+- `vision_analyze` — reads the style reference image
+- Internal reasoning — combines reflection themes with visual style
+- `image_generate` — generates a 16:9 landscape via FAL AI
+
+This demonstrates multi-tool agent orchestration: one `hermes chat` call triggers
+a vision analysis, creative reasoning, and image generation pipeline.
+
 ## Architecture
 
 ```
@@ -97,6 +121,7 @@ generators/
 data/
   daily.json               — commit history by day
   hermes_output.json       — agent-generated reflections
+  image_artifacts.json     — generated image metadata
 
 web/
   src/                     — Next.js gallery (static, reads JSON)
@@ -118,6 +143,8 @@ in the Hermes Agent pipeline.
 - Self-contained HTML/SVG/Canvas artifacts with zero external dependencies
 - Brutalist gallery website (Next.js, static export)
 - Hermes Agent CLI for all AI-powered generation
+- FAL AI image generation via Hermes Agent's image_generate tool
+- Vision analysis via Hermes Agent's vision_analyze tool
 - GitHub Actions for CI/CD and daily generation
 - GitHub Pages for hosting
 

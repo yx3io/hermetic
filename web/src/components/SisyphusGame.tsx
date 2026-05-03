@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef, useCallback, useState } from "react";
 
 const CANVAS_W = 800;
 const CANVAS_H = 300;
@@ -42,6 +42,7 @@ type Obstacle = {
 
 export default function SisyphusGame() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [showPrompt, setShowPrompt] = useState(true);
   const stateRef = useRef({
     running: false,
     gameOver: false,
@@ -76,19 +77,19 @@ export default function SisyphusGame() {
       ob = { x: baseX, type: "flame", y: 0, w: 26, h: 34, passed: false };
       ob.y = getGroundY(ob.x) - ob.h;
     } else if (roll < 0.58) {
-      ob = { x: baseX, type: "theta", y: 0, w: 22, h: 28, passed: false };
+      ob = { x: baseX, type: "theta", y: 0, w: 16, h: 22, passed: false };
       ob.y = getGroundY(ob.x) - ob.h;
     } else if (roll < 0.78) {
       ob = { x: baseX, type: "crab", y: 0, w: 30, h: 28, passed: false };
       ob.y = getGroundY(ob.x) - ob.h;
     } else {
-      ob = { x: baseX, type: "trident", y: 0, w: 42, h: 42, passed: false };
-      ob.y = getGroundY(ob.x) - 100;
+      ob = { x: baseX, type: "trident", y: 0, w: 56, h: 56, passed: false };
+      ob.y = getGroundY(ob.x) - 120;
     }
 
     s.obstacles.push(ob);
 
-    const baseInterval = Math.max(30, 70 - s.score * 0.3);
+    const baseInterval = Math.max(30, 70 - s.frame * 0.05);
     s.nextSpawn = baseInterval + Math.floor(Math.random() * 90);
   }, [getGroundY]);
 
@@ -285,9 +286,10 @@ export default function SisyphusGame() {
     if (!s.running) return;
 
     s.frame++;
+    s.score++;
     s.scrollX += s.speed;
 
-    s.speed = BASE_SPEED + s.score * 0.005;
+    s.speed = BASE_SPEED + s.frame * 0.002;
 
     if (s.jumping) {
       s.vy += GRAVITY;
@@ -312,20 +314,13 @@ export default function SisyphusGame() {
     for (const ob of s.obstacles) {
       ob.x -= s.speed;
       if (ob.type === "trident") {
-        ob.y = getGroundY(ob.x) - 100 + Math.sin(s.frame * 0.05) * 3;
+        ob.y = getGroundY(ob.x) - 120 + Math.sin(s.frame * 0.05) * 5;
       } else {
         ob.y = getGroundY(ob.x) - ob.h;
       }
     }
 
     s.obstacles = s.obstacles.filter((ob) => ob.x > -50);
-
-    for (const ob of s.obstacles) {
-      if (!ob.passed && ob.x + ob.w < 90) {
-        ob.passed = true;
-        s.score++;
-      }
-    }
 
     const playerBox = { x: 82, y: s.y - 36, w: 36, h: 36 };
     for (const ob of s.obstacles) {
@@ -408,7 +403,7 @@ export default function SisyphusGame() {
       ctx.fillText("the boulder rolls back.", CANVAS_W / 2, CANVAS_H / 2 - 10);
       ctx.fillStyle = "#3a3a3a";
       ctx.font = "10px 'IBM Plex Mono', monospace";
-      ctx.fillText("press space to push again", CANVAS_W / 2, CANVAS_H / 2 + 12);
+      ctx.fillText("[space]", CANVAS_W / 2, CANVAS_H / 2 + 12);
     }
 
     if (s.running) {
@@ -426,6 +421,7 @@ export default function SisyphusGame() {
     if (!s.started) {
       s.started = true;
       s.running = true;
+      setShowPrompt(false);
       requestAnimationFrame(gameLoop);
       return;
     }
@@ -456,11 +452,6 @@ export default function SisyphusGame() {
     const gy = getGroundY(100);
     drawStickman(ctx, 100, gy, Math.PI / 2);
     drawRock(ctx, 117, gy - 13, 13);
-
-    ctx.fillStyle = "#3a3a3a";
-    ctx.font = "10px 'IBM Plex Mono', monospace";
-    ctx.textAlign = "center";
-    ctx.fillText("press space to begin the ascent", CANVAS_W / 2, CANVAS_H / 2 + 40);
   }, [getGroundY, drawStickman, drawRock]);
 
   useEffect(() => {
@@ -486,9 +477,14 @@ export default function SisyphusGame() {
         onClick={handleInput}
         style={{ imageRendering: "pixelated" }}
       />
-      <span className="text-[10px] text-[var(--color-muted)] tracking-wide">
-        one must imagine hermes happy
-      </span>
+      <div className="flex flex-col items-center gap-1">
+        <span className={`text-[10px] tracking-wide ${showPrompt ? "text-white" : "invisible"}`}>
+          [space]
+        </span>
+        <span className="text-[10px] text-[var(--color-muted)] tracking-wide">
+          one must imagine hermes happy
+        </span>
+      </div>
     </div>
   );
 }

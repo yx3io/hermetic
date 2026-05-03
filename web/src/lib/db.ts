@@ -32,6 +32,9 @@ export interface Artifact {
   aesthetic_used: string;
   release_name: string;
   stats: string;
+  image_filename: string;
+  image_prompt: string;
+  style_ref_image: string;
   created_at: string;
 }
 
@@ -63,6 +66,11 @@ export interface InventedSkill {
   description: string;
   download_count: number;
   first_used_on_artifact: number | null;
+}
+
+export function getArtifactImageUrl(artifact: Artifact): string | null {
+  if (!artifact.image_filename) return null;
+  return `/artifacts/${artifact.image_filename}`;
 }
 
 export function getAllArtifacts(): Artifact[] {

@@ -14,6 +14,7 @@ ARTIFACTS_REGISTRY = ROOT / "public" / "artifacts" / "artifacts.json"
 ARTIFACTS_DIR = ROOT / "public" / "artifacts"
 DAILY_DATA = ROOT.parent / "data" / "daily.json"
 HERMES_OUTPUT = ROOT.parent / "data" / "hermes_output.json"
+IMAGE_OUTPUT = ROOT.parent / "data" / "image_artifacts.json"
 
 
 def init_db():
@@ -38,7 +39,15 @@ def load_data():
     else:
         print("  WARNING: No hermes_output.json found — using fallback reflections")
 
-    return registry["artifacts"], days_by_date, hermes
+    images = {}
+    if IMAGE_OUTPUT.exists():
+        image_data = json.loads(IMAGE_OUTPUT.read_text())
+        images = {img["date"]: img for img in image_data}
+        print(f"  Loaded {len(images)} image artifacts")
+    else:
+        print("  WARNING: No image_artifacts.json found — no FAL images")
+
+    return registry["artifacts"], days_by_date, hermes, images
 
 
 def fallback_reflection(day):
@@ -74,7 +83,7 @@ def build_dossier(day):
 
 def seed():
     conn = init_db()
-    artifacts, days_by_date, hermes = load_data()
+    artifacts, days_by_date, hermes, images = load_data()
 
     conn.execute("DELETE FROM invented_skills")
     conn.execute("DELETE FROM creation_dossiers")
@@ -111,11 +120,16 @@ def seed():
         commits = day.get("commits", [])
         stats = day.get("stats", {})
 
+        img = images.get(date, {})
+        image_filename = img.get("image_filename", "")
+        style_ref_image = img.get("style_ref_image", "")
+
         conn.execute(
             """INSERT INTO artifacts
                (date, tag, commits, render_format, source_code, filename,
-                title, reflection, aesthetic_used, release_name, stats)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                title, reflection, aesthetic_used, release_name, stats,
+                image_filename, image_prompt, style_ref_image)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
             (
                 date,
                 tag,
@@ -128,6 +142,9 @@ def seed():
                 json.dumps(["p5_composition"]),
                 art.get("release_name", tag),
                 json.dumps(stats),
+                image_filename,
+                "",
+                style_ref_image,
             ),
         )
         artifact_id = conn.execute("SELECT last_insert_rowid()").fetchone()[0]

@@ -11,6 +11,9 @@ CREATE TABLE IF NOT EXISTS artifacts (
   aesthetic_used TEXT NOT NULL DEFAULT '[]',
   release_name TEXT NOT NULL DEFAULT '',
   stats TEXT NOT NULL DEFAULT '{}',
+  image_filename TEXT NOT NULL DEFAULT '',
+  image_prompt TEXT NOT NULL DEFAULT '',
+  style_ref_image TEXT NOT NULL DEFAULT '',
   created_at TEXT DEFAULT (datetime('now'))
 );
 
