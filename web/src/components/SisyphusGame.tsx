@@ -40,8 +40,13 @@ type Obstacle = {
   passed: boolean;
 };
 
+/** Scale per-frame constants to wall-clock (~60fps baseline). Stops 120Hz+ displays from running 2x fast. */
+const TARGET_HZ = 60;
+const MAX_STEP_SEC = 1 / 20;
+
 export default function SisyphusGame() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const lastFrameTimeRef = useRef<number | null>(null);
   const [showPrompt, setShowPrompt] = useState(true);
   const stateRef = useRef({
     running: false,
@@ -260,6 +265,7 @@ export default function SisyphusGame() {
   );
 
   const reset = useCallback(() => {
+    lastFrameTimeRef.current = null;
     const s = stateRef.current;
     s.y = GROUND_Y;
     s.vy = 0;
@@ -285,15 +291,24 @@ export default function SisyphusGame() {
 
     if (!s.running) return;
 
-    s.frame++;
-    s.score++;
-    s.scrollX += s.speed;
+    const now = performance.now();
+    const last = lastFrameTimeRef.current;
+    lastFrameTimeRef.current = now;
+    const dtSec =
+      last === null
+        ? 1 / TARGET_HZ
+        : Math.min((now - last) / 1000, MAX_STEP_SEC);
+    const scale = dtSec * TARGET_HZ;
+
+    s.frame += scale;
+    s.score += scale;
+    s.scrollX += s.speed * scale;
 
     s.speed = BASE_SPEED + s.frame * 0.002;
 
     if (s.jumping) {
-      s.vy += GRAVITY;
-      s.y += s.vy;
+      s.vy += GRAVITY * scale;
+      s.y += s.vy * scale;
       const currentGround = getGroundY(100);
       if (s.y >= currentGround) {
         s.y = currentGround;
@@ -302,17 +317,17 @@ export default function SisyphusGame() {
       }
     } else {
       s.y = getGroundY(100);
-      s.legPhase += 0.25;
+      s.legPhase += 0.25 * scale;
     }
 
-    s.spawnTimer++;
+    s.spawnTimer += scale;
     if (s.spawnTimer > s.nextSpawn) {
       spawnObstacle();
       s.spawnTimer = 0;
     }
 
     for (const ob of s.obstacles) {
-      ob.x -= s.speed;
+      ob.x -= s.speed * scale;
       if (ob.type === "trident") {
         ob.y = getGroundY(ob.x) - 120 + Math.sin(s.frame * 0.05) * 5;
       } else {
@@ -392,7 +407,7 @@ export default function SisyphusGame() {
     ctx.fillStyle = "#3a3a3a";
     ctx.font = "11px 'IBM Plex Mono', monospace";
     ctx.textAlign = "right";
-    ctx.fillText(String(s.score).padStart(5, "0"), CANVAS_W - 16, 24);
+    ctx.fillText(String(Math.floor(s.score)).padStart(5, "0"), CANVAS_W - 16, 24);
 
     if (s.gameOver) {
       ctx.fillStyle = "rgba(8,8,8,0.6)";
