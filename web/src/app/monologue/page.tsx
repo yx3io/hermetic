@@ -9,7 +9,7 @@ function groupByDate(subvocals: ReturnType<typeof getAllSubvocals>) {
     if (!groups[s.date]) groups[s.date] = [];
     groups[s.date].push(s);
   }
-  return Object.entries(groups).sort(([a], [b]) => a.localeCompare(b));
+  return Object.entries(groups).sort(([a], [b]) => b.localeCompare(a));
 }
 
 function formatTime(timestamp: string): string {
@@ -31,9 +31,7 @@ export default function MonologuePage() {
         <h1 className="text-[11px] tracking-[0.3em] uppercase text-[var(--color-muted)]">
           Subvocal
         </h1>
-        <p className="font-mono text-[11px] text-[var(--color-muted)] mt-2 leading-relaxed">
-          raw thoughts on individual commits. unfiltered. not for the record.
-        </p>
+
       </div>
 
       <div className="space-y-10 animate-in-delay">
