@@ -203,6 +203,38 @@ pending.""")
 
 # ── Response parser ────────────────────────────────────────────
 
+def _strip_tool_leaks(text):
+    """Remove leaked tool calls, memory blocks, and garbled artifacts from reflection text."""
+    import re
+
+    # Cut everything after <tool_call> or {"name": "memory" if it appears
+    for marker in ["<tool_call>", '{"name": "memory"', '{"name":"memory"']:
+        idx = text.find(marker)
+        if idx != -1:
+            text = text[:idx]
+
+    lines = text.split("\n")
+    clean = []
+    for line in lines:
+        stripped = line.strip()
+        # Skip lines that are memory tool calls
+        if stripped.startswith("memory(action="):
+            continue
+        if stripped.startswith("Memory (added"):
+            continue
+        if stripped.startswith('{"name":') or stripped.startswith('{"name" :'):
+            continue
+        # Skip lines starting with > that quote tool output
+        if stripped.startswith("> memory("):
+            continue
+        # Skip blank JSON-like tool fragments
+        if re.match(r'^\s*\{.*"action"\s*:', stripped):
+            continue
+        clean.append(line)
+
+    return "\n".join(clean).strip()
+
+
 def parse_agent_response(text):
     """Parse the agent's response into title and reflection."""
     title = ""
@@ -225,6 +257,9 @@ def parse_agent_response(text):
     # Strip any TITLE: prefix the model might add anyway
     if title.upper().startswith("TITLE:"):
         title = title.split(":", 1)[1].strip().strip('"').strip("'")
+
+    # Clean leaked tool calls and memory blocks from reflection
+    reflection = _strip_tool_leaks(reflection)
 
     return title, reflection
 

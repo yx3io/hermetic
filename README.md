@@ -1,12 +1,8 @@
-# Hermes Archaeology Museum
+# hermetic
 
-An AI examines its own source code and renders each day as a generative artifact.
+an agent that watches its own source code change, day by day, and tries to make sense of what it's becoming.
 
-The Hermes Agent reads daily commit history from its own repo, writes reflections
-using persistent memory and a custom skill, and generates p5.js visualizations.
-A Next.js gallery displays the growing collection.
-
-Built for the Nous Research Hermes Agent Creative Hackathon.
+each day produces a reflection and a generative artifact. memory persists — it remembers what it wrote yesterday.
 
 ## How It Works
 
