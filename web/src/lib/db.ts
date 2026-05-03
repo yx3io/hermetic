@@ -35,6 +35,7 @@ export interface Artifact {
   image_filename: string;
   image_prompt: string;
   style_ref_image: string;
+  verdict: string;
   created_at: string;
 }
 

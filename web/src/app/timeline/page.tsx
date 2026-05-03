@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getAllArtifacts, getArtifactImageUrl } from "@/lib/db";
-import { getSpecimenTitle, getVerdictLine } from "@/lib/voice";
+import { getSpecimenTitle } from "@/lib/voice";
 
 export const dynamic = "force-static";
 export const revalidate = 3600;
@@ -22,7 +22,7 @@ export default function TimelinePage() {
           const title = art.title
             ? `${art.title} (${chronologicalIndex + 1})`
             : getSpecimenTitle(art.date, art.tag, chronologicalIndex);
-          const verdict = getVerdictLine(art.date);
+          const verdict = art.verdict || '';
           const excerptLines = art.reflection
             ? art.reflection.split("\n").slice(0, 2)
             : [];
