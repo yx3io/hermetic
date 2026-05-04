@@ -2,8 +2,8 @@
 """
 Generate landscape images for each day using Hermes Agent + FAL AI.
 
-Invokes Hermes Agent via CLI, which uses its image_generate tool internally.
-Each day gets a unique style reference image from the tastyyy folder.
+Picks a visual style prompt from data/style_prompts.json, blends it with the
+day's reflection, and has Hermes Agent call image_generate.
 
 Usage:
     python generators/image_generator.py                    # all days
@@ -22,8 +22,8 @@ from pathlib import Path
 PROJECT_DIR = Path(__file__).resolve().parent.parent
 HERMES_OUTPUT = PROJECT_DIR / "data" / "hermes_output.json"
 IMAGE_OUTPUT = PROJECT_DIR / "data" / "image_artifacts.json"
+STYLE_PROMPTS = PROJECT_DIR / "data" / "style_prompts.json"
 ARTIFACTS_DIR = PROJECT_DIR / "web" / "public" / "artifacts"
-TASTE_DIR = Path("/Users/yyy/Documents/tastyyy")
 
 HERMES_CLI = os.environ.get("HERMES_CLI", "hermes")
 MAX_RETRIES = 2
@@ -39,6 +39,18 @@ def load_reflections():
     return {entry["date"]: entry for entry in data}
 
 
+def load_style_prompts():
+    if not STYLE_PROMPTS.exists():
+        print(f"ERROR: {STYLE_PROMPTS} not found.")
+        sys.exit(1)
+    with open(STYLE_PROMPTS) as f:
+        prompts = json.load(f)
+    if not prompts:
+        print("ERROR: style_prompts.json is empty.")
+        sys.exit(1)
+    return prompts
+
+
 def load_existing_images():
     if IMAGE_OUTPUT.exists():
         with open(IMAGE_OUTPUT) as f:
@@ -51,53 +63,33 @@ def save_images(results):
         json.dump(results, f, indent=2)
 
 
-def get_style_ref_image(day_index):
-    """Map day number (0-indexed) to a style reference image.
-    Day 0 -> 1.jpg, Day 1 -> 2.jpg, etc.
-    Wraps around if we exceed available images.
-    """
-    available = sorted(
-        [f for f in TASTE_DIR.iterdir() if f.suffix.lower() in ('.jpg', '.jpeg', '.png')],
-        key=lambda p: int(p.stem) if p.stem.isdigit() else 999
-    )
-    if not available:
-        return None
-    idx = day_index % len(available)
-    return available[idx]
+def get_style_prompt(day_index, prompts):
+    """Deterministic prompt selection: day_index mod len(prompts)."""
+    return day_index % len(prompts), prompts[day_index % len(prompts)]
 
 
-def build_image_prompt(reflection_entry, day_index, style_ref_path):
-    """Build a prompt for Hermes Agent to generate an image."""
+def build_image_prompt(reflection_entry, style_prompt):
+    """Build a prompt that blends the day's reflection with a visual style."""
     date = reflection_entry["date"]
     title = reflection_entry.get("title", "")
     reflection = reflection_entry.get("reflection", "")
 
-    if len(reflection) > 600:
-        reflection = reflection[:600] + "..."
+    if len(reflection) > 500:
+        reflection = reflection[:500] + "..."
 
-    prompt = f"""You are generating a landscape artwork for day {day_index + 1} ({date}).
-
-REFLECTION TITLE: "{title}"
-REFLECTION TEXT:
-{reflection}
-
-STYLE REFERENCE IMAGE: {style_ref_path}
-
-INSTRUCTIONS:
-1. First, analyze the style reference image using vision_analyze to understand its specific visual style (colors, composition, textures, techniques).
-2. Then craft a detailed image generation prompt that:
-   - Captures the EMOTIONAL CONTENT and THEMES from the reflection text above
-   - Uses the VISUAL STYLE (colors, composition, textures, techniques) from the reference image
-   - Is a landscape (16:9) digital artwork
-   - Incorporates these aesthetic elements: cyberpunk, neo-futurist, digital brutalism, glitch art, neon accents, geometric grids, clean vector style
-   - Does NOT include any text or words in the image
-   - Is abstract/atmospheric, not literal
-3. Call image_generate with your crafted prompt and aspect_ratio="landscape"
-4. After generating, respond with ONLY the image URL or file path on a single line, nothing else.
-
-IMPORTANT: Your entire response should be ONLY the URL or file path of the generated image. Nothing else."""
-
-    return prompt
+    return (
+        f"You are generating a landscape artwork for a digital museum ({date}).\n"
+        f"The artwork should capture the emotional essence of this day's reflection "
+        f"while following the visual style described.\n\n"
+        f"=== TODAY'S REFLECTION (use its emotional tone, themes, and imagery as inspiration) ===\n"
+        f'Title: "{title}"\n'
+        f"{reflection}\n\n"
+        f"=== VISUAL STYLE (follow this closely for colors, composition, texture) ===\n"
+        f"{style_prompt}\n\n"
+        f"Blend the reflection's emotional themes into the visual style. "
+        f'Then call image_generate with your blended prompt and aspect_ratio="landscape". '
+        f"Respond with ONLY the image URL, nothing else."
+    )
 
 
 def invoke_hermes_for_image(prompt):
@@ -105,13 +97,7 @@ def invoke_hermes_for_image(prompt):
     Uses the default agentic model (configured in hermes config)
     since image_generate requires tool-calling capability.
     """
-    cmd = [
-        HERMES_CLI, "chat",
-        "-q", prompt,
-        "-Q",
-    ]
-
-    env = os.environ.copy()
+    cmd = [HERMES_CLI, "chat", "-q", prompt, "-Q"]
 
     try:
         result = subprocess.run(
@@ -119,7 +105,7 @@ def invoke_hermes_for_image(prompt):
             capture_output=True,
             text=True,
             timeout=180,
-            env=env,
+            env=os.environ.copy(),
             cwd=str(PROJECT_DIR),
         )
         if result.returncode != 0:
@@ -136,18 +122,13 @@ def extract_image_location(raw_output):
         line = line.strip()
         if not line:
             continue
-        # Check for URLs (FAL returns https://... URLs)
         if line.startswith("http://") or line.startswith("https://"):
             if any(ext in line.lower() for ext in [".png", ".jpg", ".jpeg", ".webp"]):
                 return line
-        # Check for local file paths
         if line.startswith("/") and any(line.endswith(ext) for ext in [".png", ".jpg", ".jpeg", ".webp"]):
             return line
-        # Extract from mixed text
         for part in line.split():
             if part.startswith("http") and any(ext in part.lower() for ext in [".png", ".jpg", ".jpeg", ".webp"]):
-                return part
-            if "/" in part and any(part.endswith(ext) for ext in [".png", ".jpg", ".jpeg", ".webp"]):
                 return part
     return None
 
@@ -160,9 +141,8 @@ def save_image_to_artifacts(location, date):
     ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
 
     if location.startswith("http://") or location.startswith("https://"):
-        ext_map = {".png": ".png", ".jpg": ".jpg", ".jpeg": ".jpeg", ".webp": ".webp"}
         ext = ".png"
-        for candidate in ext_map:
+        for candidate in [".png", ".jpg", ".jpeg", ".webp"]:
             if candidate in location.lower():
                 ext = candidate
                 break
@@ -178,8 +158,7 @@ def save_image_to_artifacts(location, date):
         src = Path(location)
         if not src.exists():
             return None
-        ext = src.suffix
-        dest_name = f"{date}_fal{ext}"
+        dest_name = f"{date}_fal{src.suffix}"
         dest = ARTIFACTS_DIR / dest_name
         shutil.copy2(src, dest)
         return dest_name
@@ -187,6 +166,7 @@ def save_image_to_artifacts(location, date):
 
 def run(max_days=None, single_day=None, dry_run=False):
     reflections = load_reflections()
+    style_prompts = load_style_prompts()
     results = load_existing_images()
     completed_dates = {r["date"] for r in results}
 
@@ -200,9 +180,8 @@ def run(max_days=None, single_day=None, dry_run=False):
     elif max_days:
         dates = dates[:max_days]
 
-    print(f"Image generator (uses default agentic model from hermes config)")
+    print(f"Image generator (prompt bank: {len(style_prompts)} styles)")
     print(f"  Days to process: {len(dates)}, Already done: {len(completed_dates)}")
-    print(f"  Style refs: {TASTE_DIR}")
     print(f"  Output: {IMAGE_OUTPUT}")
     print()
 
@@ -212,17 +191,12 @@ def run(max_days=None, single_day=None, dry_run=False):
             continue
 
         entry = reflections[date]
-        day_index = i
+        prompt_idx, style_prompt = get_style_prompt(i, style_prompts)
 
-        style_ref = get_style_ref_image(day_index)
-        if not style_ref:
-            print(f"  [{i+1}/{len(dates)}] {date} — ERROR: no style reference images found")
-            continue
-
-        print(f"  [{i+1}/{len(dates)}] {date} — style ref: {style_ref.name}")
+        print(f"  [{i+1}/{len(dates)}] {date} — style prompt #{prompt_idx}")
 
         if dry_run:
-            prompt = build_image_prompt(entry, day_index, style_ref)
+            prompt = build_image_prompt(entry, style_prompt)
             print(f"    [DRY RUN] prompt length: {len(prompt)} chars")
             continue
 
@@ -230,7 +204,7 @@ def run(max_days=None, single_day=None, dry_run=False):
 
         for attempt in range(1, MAX_RETRIES + 1):
             try:
-                prompt = build_image_prompt(entry, day_index, style_ref)
+                prompt = build_image_prompt(entry, style_prompt)
                 raw = invoke_hermes_for_image(prompt)
 
                 location = extract_image_location(raw)
@@ -263,8 +237,8 @@ def run(max_days=None, single_day=None, dry_run=False):
         result = {
             "date": date,
             "image_filename": image_filename or "",
-            "style_ref_image": style_ref.name if style_ref else "",
-            "day_index": day_index,
+            "style_ref_image": f"prompt_{prompt_idx}",
+            "day_index": i,
             "generated_by": "hermes-agent-fal",
         }
 
