@@ -1,0 +1,94 @@
+name: Hermetic Museum Daily Pipeline
+
+on:
+  schedule:
+    # Run at 10:00 UTC every day
+    - cron: '0 10 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: |
+          pip install requests tweepy python-dotenv
+
+      - name: Step 1 — Fetch latest commits
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python generators/fetch_daily.py
+
+      - name: Step 2 — Generate reflections for new days
+        env:
+          NOUS_API_KEY: ${{ secrets.NOUS_API_KEY }}
+          NOUS_API_BASE: https://inference-api.nousresearch.com/v1
+          NOUS_MODEL: Hermes-4-405B
+        run: |
+          python generators/hermes_reflect_agent.py
+
+      - name: Step 3 — Generate images for new days
+        env:
+          NOUS_API_KEY: ${{ secrets.NOUS_API_KEY }}
+          NOUS_API_BASE: https://inference-api.nousresearch.com/v1
+          FAL_KEY: ${{ secrets.FAL_KEY }}
+        run: |
+          python generators/image_generator.py
+
+      - name: Step 4 — Generate subvocals for new days
+        env:
+          NOUS_API_KEY: ${{ secrets.NOUS_API_KEY }}
+          NOUS_API_BASE: https://inference-api.nousresearch.com/v1
+          NOUS_MODEL: Hermes-4-405B
+        run: |
+          python generators/subvocal_generator.py
+
+      - name: Step 5 — Seed database
+        run: |
+          pip install better-sqlite3 2>/dev/null || true
+          cd web && python pipeline/seed_db.py && python pipeline/seed_subvocal.py
+
+      - name: Step 6 — Generate verdicts
+        env:
+          NOUS_API_KEY: ${{ secrets.NOUS_API_KEY }}
+          NOUS_API_BASE: https://inference-api.nousresearch.com/v1
+          NOUS_MODEL: Hermes-4-405B
+        run: |
+          python scripts/daily_pipeline.py --verdicts-only 2>/dev/null || echo "Verdict step skipped (not yet separated)"
+
+      - name: Step 7 — Post tweets
+        env:
+          NOUS_API_KEY: ${{ secrets.NOUS_API_KEY }}
+          NOUS_API_BASE: https://inference-api.nousresearch.com/v1
+          NOUS_MODEL: Hermes-4-405B
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+        run: |
+          python generators/tweet_poster.py --max 3
+
+      - name: Commit & push all changes
+        run: |
+          git config user.name "hermes-bot"
+          git config user.email "hermes-bot@users.noreply.github.com"
+          git add -A data/ web/db/ web/public/artifacts/
+          git diff --staged --quiet || git commit -m "hermes: daily pipeline $(date -u +%Y-%m-%d)"
+          git push
+
+      - name: Trigger Vercel deploy (if configured)
+        if: ${{ secrets.VERCEL_DEPLOY_HOOK != '' }}
+        run: |
+          curl -s -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}" || true

@@ -93,10 +93,19 @@ def build_image_prompt(reflection_entry, style_prompt):
 
 
 def invoke_hermes_for_image(prompt):
-    """Call Hermes Agent CLI to generate an image.
-    Uses the default agentic model (configured in hermes config)
-    since image_generate requires tool-calling capability.
-    """
+    """Call Hermes Agent CLI or FAL API (in CI) to generate an image."""
+    from generators.nous_api import use_direct_api, generate_image
+
+    if use_direct_api():
+        # Strip the agent instruction — FAL just needs the descriptive prompt
+        clean_prompt = prompt.split("Then call image_generate")[0].strip()
+        # Also strip the "Blend the reflection's" instruction if present
+        clean_prompt = clean_prompt.split("Blend the reflection's")[0].strip()
+        if not clean_prompt:
+            clean_prompt = prompt[:500]
+        url = generate_image(clean_prompt, aspect_ratio="landscape")
+        return url  # Returns URL directly
+
     cmd = [HERMES_CLI, "chat", "-q", prompt, "-Q"]
 
     try:

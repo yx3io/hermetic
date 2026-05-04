@@ -302,11 +302,18 @@ def parse_agent_response(text):
 # ── Agent invocation ───────────────────────────────────────────
 
 def invoke_hermes_agent(prompt, provider="nous", model="Hermes-4-405B"):
-    """Call Hermes Agent CLI with the hermetic-museum skill.
+    """Call Hermes Agent CLI or direct API (in CI).
 
     Memory persists across calls via ~/.hermes/memories/MEMORY.md —
     the agent reads and writes it automatically through its memory tool.
+    In CI mode, memory is managed externally by the pipeline.
     """
+    from generators.nous_api import use_direct_api, chat, clean_response
+
+    if use_direct_api():
+        raw = chat(prompt, model=model)
+        return clean_response(raw)
+
     cmd = [
         HERMES_CLI, "chat",
         "-q", prompt,

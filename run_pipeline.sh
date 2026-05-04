@@ -20,7 +20,11 @@ echo "=== Step 4: Generate images via Hermes Agent + FAL ==="
 python3 generators/image_generator.py "$@"
 
 echo ""
-echo "=== Step 5: Seed database ==="
+echo "=== Step 5: Tweet new subvocals ==="
+python3 generators/tweet_poster.py
+
+echo ""
+echo "=== Step 6: Seed database ==="
 cd web && python3 pipeline/seed_db.py
 
 echo ""

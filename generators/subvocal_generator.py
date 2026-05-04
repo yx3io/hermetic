@@ -59,7 +59,18 @@ do NOT use the memory tool. do NOT use any tools. just respond with your thought
 
 
 def invoke_hermes(prompt, provider="nous", model="Hermes-4-405B"):
-    """Call Hermes CLI for a single micro-reaction."""
+    """Call Hermes CLI or direct API for a single micro-reaction."""
+    from generators.nous_api import use_direct_api, chat, clean_response
+
+    if use_direct_api():
+        try:
+            raw = chat(prompt, model=model, timeout=60)
+            text = clean_response(raw)
+            lines = [l.strip() for l in text.splitlines() if l.strip()]
+            return " ".join(lines[:2]) if lines else None
+        except Exception:
+            return None
+
     cmd = [
         HERMES_CLI, "chat",
         "-q", prompt,

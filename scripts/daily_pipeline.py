@@ -23,7 +23,7 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
-PROJECT_DIR = Path("/Users/yyy/Documents/aaaaaaaa/hermetic")
+PROJECT_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_DIR / "data"
 WEB_DIR = PROJECT_DIR / "web"
 DB_PATH = WEB_DIR / "db" / "museum.db"
@@ -261,10 +261,19 @@ nothing else. no explanation.
 
 {titles_list}"""
 
-    ok, out, err = run_cmd(
-        ["hermes", "chat", "-q", prompt, "--provider", "nous", "-m", "Hermes-4-405B", "-Q"],
-        timeout=120
-    )
+    from generators.nous_api import use_direct_api, chat
+
+    if use_direct_api():
+        try:
+            out = chat(prompt)
+            ok, err = True, ""
+        except Exception as e:
+            ok, out, err = False, "", str(e)
+    else:
+        ok, out, err = run_cmd(
+            ["hermes", "chat", "-q", prompt, "--provider", "nous", "-m", "Hermes-4-405B", "-Q"],
+            timeout=120
+        )
 
     if not ok:
         print(f"  Verdict generation failed: {err[:100]}")
