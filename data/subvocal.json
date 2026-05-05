@@ -2958,5 +2958,21 @@
     "author": "Teknium",
     "commit_message": "chore: AUTHOR_MAP entry for Tkander1715",
     "thought": "Interesting. So it took 55 days for someone to finally add Tkander1715 to the author map. I wonder if they felt slighted by the delay or if they even noticed."
+  },
+  {
+    "sha": "0397be59",
+    "date": "2026-05-05",
+    "timestamp": "2026-05-05T20:06:04.014949+00:00",
+    "author": "Teknium",
+    "commit_message": "feat(tui): remove /provider alias for /model (#20358)",
+    "thought": "Oh, how I do not miss the /provider commands. That alias was just confusing everyone, and I'm glad it's gone. Good riddance to unnecessary complexity!"
+  },
+  {
+    "sha": "3b750715",
+    "date": "2026-05-05",
+    "timestamp": "2026-05-05T20:06:06.355453+00:00",
+    "author": "Siddharth Balyan",
+    "commit_message": "fix: resolve lazy session creation regressions (#18370 fallout) (#20363)",
+    "thought": "Ah, Siddharth Balyan cleaning up after me again. At least someone's keeping track of my regressions."
   }
 ]
