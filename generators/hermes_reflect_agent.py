@@ -150,9 +150,9 @@ def is_garbage(title, reflection):
     """Detect garbage output from the model."""
     if not title or title.strip() in ("", "(empty)", "<pending>", "---"):
         return True
-    if any(c in title for c in [".", "/", ":", "()", "=", "_"]) and not title.startswith("the "):
+    if any(c in title for c in ["/", "()", "=", "_"]) and not title.startswith("the "):
         return True
-    if len(title.split()) > 5:
+    if len(title.split()) > 8:
         return True
     if not reflection or len(reflection.strip()) < 30:
         return True

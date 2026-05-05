@@ -112,6 +112,30 @@ def build_dossier(day, date: str):
     }
 
 
+def _collect_all_dates(artifacts, hermes, days_by_date):
+    """Merge artifact registry dates with hermes_output dates so new days are never skipped."""
+    art_dates = {a["date"][:10] for a in artifacts}
+    hermes_dates = set(hermes.keys())
+    all_dates = sorted(art_dates | hermes_dates)
+
+    art_by_date = {a["date"][:10]: a for a in artifacts}
+    entries = []
+    for date in all_dates:
+        art = art_by_date.get(date)
+        day = days_by_date.get(date, {"date": date, "tag": f"day-{date}", "commits": [], "commit_count": 0})
+        tag = art["tag"] if art else day.get("tag", f"day-{date}")
+        filename = art["filename"] if art else f"{date}_p5.html"
+        release_name = art.get("release_name", tag) if art else tag
+        entries.append({
+            "date": date,
+            "tag": tag,
+            "filename": filename,
+            "release_name": release_name,
+            "has_artifact": art is not None,
+        })
+    return entries
+
+
 def seed():
     conn = init_db()
     artifacts, days_by_date, hermes, images = load_data()
@@ -121,18 +145,18 @@ def seed():
     conn.execute("DELETE FROM memory_snapshots")
     conn.execute("DELETE FROM artifacts")
 
-    total = len(artifacts)
+    entries = _collect_all_dates(artifacts, hermes, days_by_date)
+    total = len(entries)
     print(f"Seeding {total} artifacts...")
 
-    for i, art in enumerate(artifacts):
-        date = art["date"][:10]
-        tag = art["tag"]
+    for i, entry in enumerate(entries):
+        date = entry["date"]
+        tag = entry["tag"]
         day = days_by_date.get(date, {"date": date, "tag": tag, "commits": [], "commit_count": 0})
 
-        html_path = ARTIFACTS_DIR / art["filename"]
+        html_path = ARTIFACTS_DIR / entry["filename"]
         source_code = html_path.read_text() if html_path.exists() else ""
 
-        # Use real Hermes reflection if available
         h = hermes.get(date)
         if h and h.get("reflection") and not h["reflection"].startswith("["):
             title = h.get("title", "")
@@ -167,11 +191,11 @@ def seed():
                 json.dumps(commits[:20]),
                 "html",
                 source_code,
-                art["filename"],
+                entry["filename"],
                 title,
                 reflection,
                 json.dumps(["p5_composition"]),
-                art.get("release_name", tag),
+                entry["release_name"],
                 json.dumps(stats),
                 image_filename,
                 "",
