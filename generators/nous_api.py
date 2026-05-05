@@ -8,7 +8,7 @@ This module provides the same functionality via direct HTTP calls:
   - generate_image(): image generation via FAL API
 
 Usage:
-    from generators.nous_api import chat, generate_image
+    from nous_api import chat, generate_image
 
 Env vars required:
     NOUS_API_KEY    - Nous Research API key

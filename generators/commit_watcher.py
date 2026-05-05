@@ -122,7 +122,8 @@ do NOT use the memory tool. do NOT use any tools. just respond with your thought
 
 
 def invoke_hermes(prompt, provider="nous", model="Hermes-4-405B"):
-    from generators.nous_api import use_direct_api, chat, clean_response
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from nous_api import use_direct_api, chat, clean_response
 
     if use_direct_api():
         try:
@@ -256,7 +257,8 @@ def run(dry_run=False, provider="nous", model="Hermes-4-405B"):
 
     if generated and not dry_run:
         print(f"\n  Tweeting {len(generated)} new subvocal(s)...")
-        from generators.tweet_poster import run as tweet_run
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from tweet_poster import run as tweet_run
         tweet_run(max_tweets=len(generated), dry_run=dry_run)
 
         trigger_vercel_redeploy()

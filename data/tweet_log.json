@@ -68,5 +68,12 @@
     "tweet_id": "2051426468102644181",
     "posted_at": "2026-05-04T22:19:18.582447+00:00",
     "text": "mibayy added ANOTHER \"we really mean it\" flag for \"no thinking\" in ollama. like saying \"don't think\" once wasn't clear enough. classic."
+  },
+  {
+    "sha": "dce2b0df",
+    "date": "2026-03-28",
+    "tweet_id": "dry-run",
+    "posted_at": "2026-05-05T15:20:54.744334+00:00",
+    "text": "oh great chris got pyproject.toml access already fiddling with flags i don't even understand hope he knows what he's doing in there"
   }
 ]

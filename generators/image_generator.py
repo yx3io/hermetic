@@ -94,7 +94,8 @@ def build_image_prompt(reflection_entry, style_prompt):
 
 def invoke_hermes_for_image(prompt):
     """Call Hermes Agent CLI or FAL API (in CI) to generate an image."""
-    from generators.nous_api import use_direct_api, generate_image
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from nous_api import use_direct_api, generate_image
 
     if use_direct_api():
         # Strip the agent instruction — FAL just needs the descriptive prompt

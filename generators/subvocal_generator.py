@@ -60,7 +60,8 @@ do NOT use the memory tool. do NOT use any tools. just respond with your thought
 
 def invoke_hermes(prompt, provider="nous", model="Hermes-4-405B"):
     """Call Hermes CLI or direct API for a single micro-reaction."""
-    from generators.nous_api import use_direct_api, chat, clean_response
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from nous_api import use_direct_api, chat, clean_response
 
     if use_direct_api():
         try:

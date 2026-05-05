@@ -308,7 +308,8 @@ def invoke_hermes_agent(prompt, provider="nous", model="Hermes-4-405B"):
     the agent reads and writes it automatically through its memory tool.
     In CI mode, memory is managed externally by the pipeline.
     """
-    from generators.nous_api import use_direct_api, chat, clean_response
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from nous_api import use_direct_api, chat, clean_response
 
     if use_direct_api():
         raw = chat(prompt, model=model)
