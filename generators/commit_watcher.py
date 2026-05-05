@@ -114,7 +114,8 @@ def get_recent_thoughts(n=5):
 
 
 def first_name(full_name):
-    return full_name.split()[0] if full_name else "someone"
+    name = full_name.split()[0] if full_name else "someone"
+    return name.replace(".", "")
 
 
 def build_subvocal_prompt(commit_info, day_index, date_str):

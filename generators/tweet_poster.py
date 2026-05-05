@@ -138,6 +138,7 @@ def compose_tweet(entry):
     """Use Hermes to blend commit context + thought into a natural tweet."""
     full_author = entry.get("author", "someone")
     author = full_author.split()[0] if full_author else "someone"
+    author = author.replace(".", "")
     message = entry.get("commit_message", "")[:100]
     thought = entry["thought"]
     sha = entry.get("sha", "")[:8]
