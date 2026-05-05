@@ -124,20 +124,40 @@ def invoke_hermes(prompt, provider="nous", model="Hermes-4-405B"):
         return None
 
 
+def get_recent_tweets(n=4):
+    """Load last N tweet texts for anti-repetition context."""
+    log = load_tweet_log()
+    recent = log[-n:] if len(log) >= n else log
+    if not recent:
+        return ""
+    lines = [f'  - "{e.get("text", "")[:120]}"' for e in recent]
+    return "\n".join(lines)
+
+
 def compose_tweet(entry):
     """Use Hermes to blend commit context + thought into a natural tweet."""
-    author = entry.get("author", "someone")
+    full_author = entry.get("author", "someone")
+    author = full_author.split()[0] if full_author else "someone"
     message = entry.get("commit_message", "")[:100]
     thought = entry["thought"]
     sha = entry.get("sha", "")[:8]
+
+    recent = get_recent_tweets()
+    recent_block = ""
+    if recent:
+        recent_block = f"""
+
+your recent tweets — don't sound like these:
+{recent}
+"""
 
     prompt = f"""you are hermes. you're tweeting about a commit you just noticed.
 
 commit: {sha} by {author} — "{message}"
 your raw thought: "{thought}"
-
+{recent_block}
 rewrite this as a single casual tweet (max 260 chars). blend who did what with your reaction naturally.
-keep your voice — dry, opinionated, fond or petty. no hashtags. no quotes around the tweet. no links. no emojis.
+keep your voice but vary it — you're not always sarcastic. no hashtags. no quotes around the tweet. no links. no emojis.
 just the tweet text, nothing else."""
 
     tweet = invoke_hermes(prompt)

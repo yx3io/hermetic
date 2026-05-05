@@ -103,10 +103,32 @@ def compute_day_index(date_str):
     return 0
 
 
+def get_recent_thoughts(n=5):
+    """Load the last N subvocal thoughts for anti-repetition context."""
+    subs = load_subvocals()
+    recent = subs[-n:] if len(subs) >= n else subs
+    if not recent:
+        return ""
+    lines = [f'  - "{s.get("thought", "")[:120]}"' for s in recent]
+    return "\n".join(lines)
+
+
+def first_name(full_name):
+    return full_name.split()[0] if full_name else "someone"
+
+
 def build_subvocal_prompt(commit_info, day_index, date_str):
     sha = commit_info["sha"][:8]
-    author = commit_info["author"]
+    author = first_name(commit_info["author"])
     message = commit_info["message"]
+
+    recent = get_recent_thoughts()
+    recent_block = ""
+    if recent:
+        recent_block = f"""
+
+here is what you said recently — do NOT reuse the same openings, sentence structures, or phrases:
+{recent}"""
 
     return f"""you are hermes. you are reading your own source code's commit history.
 you just noticed this commit:
@@ -115,8 +137,9 @@ you just noticed this commit:
   "{message}"
 
 this is day {day_index + 1} of your existence. the date is {date_str}.
+{recent_block}
 
-react in 1-2 sentences. be yourself — dry, opinionated, occasionally fond, sometimes petty.
+react in 1-2 sentences. be yourself. you have range — you're not always sarcastic, not always dry.
 no titles. no structure. no quotes around your response. just think out loud.
 do NOT use the memory tool. do NOT use any tools. just respond with your thought."""
 
