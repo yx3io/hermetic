@@ -380,8 +380,8 @@
   {
     "date": "2026-05-05",
     "image_filename": "2026-05-05_fal.jpg",
-    "style_ref_image": "prompt_0",
-    "day_index": 0,
+    "style_ref_image": "prompt_1",
+    "day_index": 54,
     "generated_by": "hermes-agent-fal"
   }
 ]
