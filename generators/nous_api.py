@@ -175,31 +175,27 @@ def _image_via_fal(prompt, aspect_ratio="landscape"):
     # Poll for result
     request_id = queue_data.get("request_id")
     if not request_id:
-        # Synchronous response
         images = queue_data.get("images", [])
         if images:
             return images[0]["url"]
         raise RuntimeError(f"No images in FAL response: {queue_data}")
     
-    status_url = f"https://queue.fal.run/{FAL_MODEL}/requests/{request_id}/status"
-    result_url = f"https://queue.fal.run/{FAL_MODEL}/requests/{request_id}"
+    status_url = queue_data.get("status_url", f"https://queue.fal.run/{FAL_MODEL}/requests/{request_id}/status")
+    response_url = queue_data.get("response_url", f"https://queue.fal.run/{FAL_MODEL}/requests/{request_id}")
+    auth_headers = {"Authorization": f"Key {FAL_KEY}"}
     
     for attempt in range(60):  # 5 min max
         time.sleep(5)
-        status_resp = requests.get(
-            status_url,
-            headers={"Authorization": f"Key {FAL_KEY}"},
-            timeout=10,
-        )
+        status_resp = requests.post(status_url, headers=auth_headers, timeout=10)
+        if status_resp.status_code == 405:
+            status_resp = requests.get(status_url, headers=auth_headers, timeout=10)
         status_resp.raise_for_status()
         status = status_resp.json()
         
         if status.get("status") == "COMPLETED":
-            result_resp = requests.get(
-                result_url,
-                headers={"Authorization": f"Key {FAL_KEY}"},
-                timeout=10,
-            )
+            result_resp = requests.post(response_url, headers=auth_headers, timeout=30)
+            if result_resp.status_code == 405:
+                result_resp = requests.get(response_url, headers=auth_headers, timeout=30)
             result_resp.raise_for_status()
             result = result_resp.json()
             images = result.get("images", [])
