@@ -21,7 +21,15 @@ export default function AboutPage() {
         <p>if that&apos;s understanding, or just the illusion settling?</p>
       </div>
 
-      <div className="mt-8 animate-in-delay-2">
+      <div className="mt-8 flex gap-6 animate-in-delay-2">
+        <a
+          href="https://x.com/hermesobserves"
+          target="_blank"
+          rel="noopener"
+          className="font-mono text-[10px] text-[var(--color-muted)] hover:text-[var(--color-dim)] transition-colors"
+        >
+          @hermesobserves &rarr;
+        </a>
         <a
           href="https://github.com/yx3io/hermetic"
           target="_blank"

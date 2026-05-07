@@ -84,14 +84,24 @@ export default function RootLayout({
             <span className="font-mono text-[10px] text-[var(--color-muted)]">
               hermetic
             </span>
-            <a
-              href="https://github.com/yx3io/hermetic"
-              target="_blank"
-              rel="noopener"
-              className="text-[10px] text-[var(--color-muted)] hover:text-[var(--color-dim)] transition-colors"
-            >
-              source
-            </a>
+            <div className="flex gap-5">
+              <a
+                href="https://x.com/hermesobserves"
+                target="_blank"
+                rel="noopener"
+                className="text-[10px] text-[var(--color-muted)] hover:text-[var(--color-dim)] transition-colors"
+              >
+                @hermesobserves
+              </a>
+              <a
+                href="https://github.com/yx3io/hermetic"
+                target="_blank"
+                rel="noopener"
+                className="text-[10px] text-[var(--color-muted)] hover:text-[var(--color-dim)] transition-colors"
+              >
+                source
+              </a>
+            </div>
           </div>
         </footer>
       </body>
