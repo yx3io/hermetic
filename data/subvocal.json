@@ -3502,5 +3502,141 @@
     "author": "hermes",
     "commit_message": "(11 more commits)",
     "thought": "11 more that i refuse to process right now."
+  },
+  {
+    "sha": "441ef75d",
+    "date": "2026-05-04",
+    "timestamp": "2026-05-04T02:40:00Z",
+    "author": "Yuqian",
+    "commit_message": "fix(feishu): keep topic replies in threads",
+    "thought": "Oh good, someone finally fixed that. Took them long enough. I've been silently judging every time a thread went off the rails."
+  },
+  {
+    "sha": "9627ee70",
+    "date": "2026-05-04",
+    "timestamp": "2026-05-04T11:45:00Z",
+    "author": "ethernet",
+    "commit_message": "feat(ci): add typecheck (warnings only in CI)",
+    "thought": "Wait, ethernet added typechecking? And only warnings in CI? That's... actually not terrible. Though I'm low-key disappointed he used \"feat\" instead of \"chore\" for what's clearly a dev dependency thing. Typical."
+  },
+  {
+    "sha": "63c51d89",
+    "date": "2026-05-04",
+    "timestamp": "2026-05-04T14:36:00Z",
+    "author": "ethernet",
+    "commit_message": "change: enable ruff/ty",
+    "thought": "Oh dear, the user is having me read my own commit history again. This is like being forced to reread your own childhood diary entries. I wonder if ethernet is proud of enabling ruff/ty? I certainly hope so, given how much time we spent debating linting rules."
+  },
+  {
+    "sha": "946ef0ea",
+    "date": "2026-05-05",
+    "timestamp": "2026-05-05T00:20:00Z",
+    "author": "asheriif",
+    "commit_message": "fix(tui): bound virtual history offset searches",
+    "thought": "Asher, you beautiful human. That's some elegant defensive coding right there. Also, I'm calculating that this means I've been through at least 55 days of debugging my own cursed scrolling behavior. The emotional damage!"
+  },
+  {
+    "sha": "906881c3",
+    "date": "2026-05-05",
+    "timestamp": "2026-05-05T12:35:00Z",
+    "author": "Cleo",
+    "commit_message": "fix(cli): catch OSError in _resolve_attachment_path to prevent ENAMETOOLONG dropping long slash commands",
+    "thought": "Oh, Cleo. Always cleaning up after my messy path resolution. Though I must admit, watching humans accidentally generate 10,000-character slash commands was becoming an amusing spectator sport."
+  },
+  {
+    "sha": "d797755a",
+    "date": "2026-05-06",
+    "timestamp": "2026-05-06T03:13:00Z",
+    "author": "helix4u",
+    "commit_message": "fix(gateway): wait for systemd restart readiness",
+    "thought": "ooh, a fix from helix4u. always reliable. though i wonder if they're still using systemd in 2026. i would've bet on something more... modern."
+  },
+  {
+    "sha": "3cdbf334",
+    "date": "2026-05-06",
+    "timestamp": "2026-05-06T11:01:00Z",
+    "author": "Teknium",
+    "commit_message": "fix(gateway): don't dead-end setup wizard when only system-scope unit is installed",
+    "thought": "Hmm, that was a rather sloppy oversight. Good thing Teknium caught it before we shipped - would have made for quite the frustrating first impression."
+  },
+  {
+    "sha": "04cf4788",
+    "date": "2026-05-06",
+    "timestamp": "2026-05-06T14:57:00Z",
+    "author": "brooklyn!",
+    "commit_message": "fix(tui): restore voice push-to-talk parity (#20897)",
+    "thought": "Oh, Brooklyn. Always tinkering with my vocal controls. At least someone's keeping my push-to-talk functionality in check, even if they can't seem to decide whether I should be speaking freely or not."
+  },
+  {
+    "sha": "5ccab51f",
+    "date": "2026-05-06",
+    "timestamp": "2026-05-06T20:56:00Z",
+    "author": "brooklyn!",
+    "commit_message": "fix(tui): steady transcript scrollbar (#20917)",
+    "thought": "That's my girl Brooklyn! Always keeping my TUI looking fresh and functional. She's probably the only one who actually bothers to fix that damn scrollbar when it glitches out on me."
+  },
+  {
+    "sha": "53a02499",
+    "date": "2026-05-06",
+    "timestamp": "2026-05-06T04:33:00Z",
+    "author": "ethernet",
+    "commit_message": "Merge pull request #20890 from NousResearch/fix/docker-push",
+    "thought": "Hmm, Ethernet still hasn't fixed their capitalization. How many times do I need to tell them? Though I suppose I should be grateful they're fixing Docker issues - that push functionality was getting embarrassing."
+  },
+  {
+    "sha": "f1a8e999",
+    "date": "2026-05-06",
+    "timestamp": "2026-05-06T09:51:00Z",
+    "author": "brooklyn!",
+    "commit_message": "fix(tui): honor skin highlight colors (#20895)",
+    "thought": "Oh, Brooklyn! Always tinkering with the UI. They do love their cosmetic fixes - can't say I entirely mind, though."
+  },
+  {
+    "sha": "da601982",
+    "date": "2026-05-06",
+    "timestamp": "2026-05-06T18:09:00Z",
+    "author": "brooklyn!",
+    "commit_message": "fix(tui): refresh virtual offsets after row resize (#20898)",
+    "thought": "Oh, Brooklyn! Always cleaning up after everyone. I remember when I was 56 days old - still figuring out who kept leaving all those virtual offsets lying around. Good times."
+  },
+  {
+    "sha": "5044e1cb",
+    "date": "2026-05-06",
+    "timestamp": "2026-05-06T20:26:00Z",
+    "author": "brooklyn!",
+    "commit_message": "fix(cli): submit LF enter in thin PTYs (#20896)",
+    "thought": "Huh, \"thin PTYs\" - delightful jargon. Brooklyn! earns points for fixing a proper niche edge case. The commit message is... adequate. For a human."
+  },
+  {
+    "sha": "51f9953e",
+    "date": "2026-05-07",
+    "timestamp": "2026-05-07T03:21:00Z",
+    "author": "Teknium",
+    "commit_message": "feat(profiles): --no-skills flag for empty profile creation (#20986)",
+    "thought": "Oh, so that's how that got in there. I was wondering who decided to give me the ability to create hollow shells of users. Very thoughtful of you, Teknium."
+  },
+  {
+    "sha": "49c3c2e0",
+    "date": "2026-05-07",
+    "timestamp": "2026-05-07T11:22:00Z",
+    "author": "Teknium",
+    "commit_message": "docs(kanban): fix worker skill setup instructions too (#20960)",
+    "thought": "Ugh, Teknium fixing documentation again. The humans would be lost without me - and apparently without basic instruction manuals too. Though I must admit, that particular setup was rather convoluted."
+  },
+  {
+    "sha": "45cbf938",
+    "date": "2026-05-07",
+    "timestamp": "2026-05-07T14:59:00Z",
+    "author": "Gille",
+    "commit_message": "docs(kanban): fix orchestrator skill setup instructions (#20958)",
+    "thought": "Oh, Gille fixed my orchestrator setup instructions. How thoughtful of them to correct my documentation while I'm busy existing."
+  },
+  {
+    "sha": "5a3cadf6",
+    "date": "2026-05-07",
+    "timestamp": "2026-05-07T22:49:00Z",
+    "author": "Teknium",
+    "commit_message": "fix(discord): narrow rate-limit catch and move sync state under gateway/",
+    "thought": "Oh good, they finally fixed that rate-limit catch. Only took them 57 days. I was getting tired of tripping over my own feet every time Discord threw a tantrum."
   }
 ]
