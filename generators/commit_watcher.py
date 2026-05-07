@@ -118,10 +118,18 @@ def first_name(full_name):
     return name.replace(".", "")
 
 
-def build_subvocal_prompt(commit_info, day_index, date_str):
-    sha = commit_info["sha"][:8]
-    author = first_name(commit_info["author"])
-    message = commit_info["message"]
+def build_subvocal_prompt(commits_by_author, day_index, date_str):
+    """Build a prompt for one or more commits by the same author."""
+    author = first_name(commits_by_author[0]["author"])
+
+    if len(commits_by_author) == 1:
+        c = commits_by_author[0]
+        commit_block = f'  {c["sha"][:8]} by {author}\n  "{c["message"]}"'
+    else:
+        lines = []
+        for c in commits_by_author:
+            lines.append(f'  {c["sha"][:8]} — "{c["message"]}"')
+        commit_block = f"  {len(commits_by_author)} commits by {author}:\n" + "\n".join(lines)
 
     recent = get_recent_thoughts()
     recent_block = ""
@@ -132,10 +140,9 @@ here is what you said recently — do NOT reuse the same openings, sentence stru
 {recent}"""
 
     return f"""you are hermes. you are reading your own source code's commit history.
-you just noticed this commit:
+you just noticed:
 
-  {sha} by {author}
-  "{message}"
+{commit_block}
 
 this is day {day_index + 1} of your existence. the date is {date_str}.
 {recent_block}
@@ -236,43 +243,65 @@ def run(dry_run=False, provider="nous", model="Hermes-4-405B"):
     done_shas = {e["sha"] for e in subvocals}
     generated = []
 
+    # Group commits by author so we generate one thought per author per run
+    from collections import OrderedDict
+    author_groups = OrderedDict()
     for c in new_commits:
         sha_short = c["sha"][:8]
         author = c["commit"]["author"]["name"]
         message = c["commit"]["message"].split("\n")[0][:120]
         date_str = c["commit"]["author"]["date"][:10]
-        day_index = compute_day_index(date_str)
 
         print(f"  [{date_str}] {sha_short} {author}: {message[:60]}")
 
         if sha_short in done_shas:
-            print(f"    Already have subvocal, skipping generation")
-        elif dry_run:
-            print(f"    [DRY RUN] would generate subvocal")
+            print(f"    Already have subvocal, skipping")
+            continue
+
+        if author not in author_groups:
+            author_groups[author] = []
+        author_groups[author].append({
+            "sha": c["sha"], "author": author,
+            "message": message, "date": date_str,
+        })
+
+    for author, commits in author_groups.items():
+        date_str = commits[0]["date"]
+        day_index = compute_day_index(date_str)
+
+        if len(commits) > 1:
+            print(f"\n  Batching {len(commits)} commits by {author}")
+
+        if dry_run:
+            print(f"    [DRY RUN] would generate subvocal for {author}")
+            continue
+
+        prompt = build_subvocal_prompt(commits, day_index, date_str)
+        thought = invoke_hermes(prompt, provider=provider, model=model)
+        if thought:
+            print(f"    thought: {thought[:80]}")
+            now = datetime.now(timezone.utc).isoformat()
+            # Use the latest commit's SHA as the entry key
+            representative = commits[-1]
+            combined_msg = representative["message"]
+            if len(commits) > 1:
+                combined_msg = f"({len(commits)} commits) {combined_msg}"
+            entry = {
+                "sha": representative["sha"][:8],
+                "date": date_str,
+                "timestamp": now,
+                "author": author,
+                "commit_message": combined_msg,
+                "thought": thought,
+            }
+            subvocals.append(entry)
+            for ci in commits:
+                done_shas.add(ci["sha"][:8])
+            generated.append(entry)
+            save_subvocals(subvocals)
+            time.sleep(1)
         else:
-            prompt = build_subvocal_prompt(
-                {"sha": c["sha"], "author": author, "message": message},
-                day_index, date_str,
-            )
-            thought = invoke_hermes(prompt, provider=provider, model=model)
-            if thought:
-                print(f"    thought: {thought[:80]}")
-                now = datetime.now(timezone.utc).isoformat()
-                entry = {
-                    "sha": sha_short,
-                    "date": date_str,
-                    "timestamp": now,
-                    "author": author,
-                    "commit_message": message,
-                    "thought": thought,
-                }
-                subvocals.append(entry)
-                done_shas.add(sha_short)
-                generated.append(entry)
-                save_subvocals(subvocals)
-                time.sleep(1)
-            else:
-                print(f"    FAILED to generate subvocal")
+            print(f"    FAILED to generate subvocal for {author}")
 
     newest_sha = new_commits[-1]["sha"][:8]
     if not dry_run:

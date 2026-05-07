@@ -46,27 +46,21 @@ def main():
 
     scheduler.add_job(commit_tick, "interval", minutes=15, id="watcher")
 
-    # two daily thoughts at semi-random hours (morning-ish and evening-ish UTC)
-    morning_hour = random.randint(8, 12)
-    evening_hour = random.randint(18, 23)
-    morning_min = random.randint(0, 59)
-    evening_min = random.randint(0, 59)
+    # 5 daily thoughts spread across the day at random-ish times
+    windows = [(6, 9), (10, 13), (14, 16), (17, 19), (20, 23)]
+    times = []
+    for i, (lo, hi) in enumerate(windows):
+        h = random.randint(lo, hi)
+        m = random.randint(0, 59)
+        times.append((h, m))
+        scheduler.add_job(
+            thought_tick,
+            CronTrigger(hour=h, minute=m),
+            id=f"thought_{i}",
+        )
 
-    scheduler.add_job(
-        thought_tick,
-        CronTrigger(hour=morning_hour, minute=morning_min),
-        id="thought_morning",
-    )
-    scheduler.add_job(
-        thought_tick,
-        CronTrigger(hour=evening_hour, minute=evening_min),
-        id="thought_evening",
-    )
-
-    log.info(
-        f"daily thoughts scheduled at {morning_hour:02d}:{morning_min:02d} "
-        f"and {evening_hour:02d}:{evening_min:02d} UTC"
-    )
+    schedule_str = ", ".join(f"{h:02d}:{m:02d}" for h, m in times)
+    log.info(f"daily thoughts scheduled at {schedule_str} UTC")
 
     commit_tick()
 

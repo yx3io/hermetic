@@ -36,7 +36,7 @@ ENV_FILE = PROJECT_DIR / ".env"
 
 HERMES_CLI = os.environ.get("HERMES_CLI", "hermes")
 MAX_TWEET_LEN = 280
-MAX_THOUGHTS_PER_DAY = 3
+MAX_THOUGHTS_PER_DAY = 5
 
 
 def init_env():
