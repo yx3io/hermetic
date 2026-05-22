@@ -1,8 +1,8 @@
 {
   "repo": "NousResearch/hermes-agent",
-  "generated_at": "2026-05-21",
-  "total_days": 71,
-  "active_days": 52,
+  "generated_at": "2026-05-22",
+  "total_days": 72,
+  "active_days": 53,
   "release_days": 11,
   "days": [
     {
@@ -579,16 +579,11 @@
           "sha": "cd3ef685",
           "message": "feat(slack): add allowed_channels whitelist config",
           "author": "Cash Williams"
-        },
-        {
-          "sha": "a0fe73ba",
-          "message": "fix(cli): strip leaked bracketed-paste wrappers",
-          "author": "romanornr"
         }
       ],
-      "commit_count": 3,
+      "commit_count": 2,
       "stats": {
-        "commits": 3
+        "commits": 2
       },
       "themes": [],
       "body_summary": "",
@@ -631,6 +626,16 @@
       "is_release": false,
       "commits": [
         {
+          "sha": "2e509422",
+          "message": "fix(security): hash gateway pairing codes instead of storing plaintext",
+          "author": "Tom Qiao"
+        },
+        {
+          "sha": "9c90b3a5",
+          "message": "fix(security): validate secret in _reload_dynamic_routes to prevent HMAC bypass",
+          "author": "memosr"
+        },
+        {
           "sha": "a11234dd",
           "message": "docs(browser): document WSL-to-Windows Chrome MCP bridge",
           "author": "liuyuqi"
@@ -656,9 +661,9 @@
           "author": "Sami Rusani"
         }
       ],
-      "commit_count": 5,
+      "commit_count": 7,
       "stats": {
-        "commits": 5
+        "commits": 7
       },
       "themes": [],
       "body_summary": "",
@@ -820,16 +825,11 @@
           "sha": "32b78578",
           "message": "fix(matrix): strip only explicit @mentions in _strip_mention",
           "author": "Angel Claw"
-        },
-        {
-          "sha": "898ccfd6",
-          "message": "fix(skills): honor scope query from Google OAuth redirect URL",
-          "author": "xiahu88988"
         }
       ],
-      "commit_count": 10,
+      "commit_count": 9,
       "stats": {
-        "commits": 10
+        "commits": 9
       },
       "themes": [
         "bugfix",
@@ -1015,16 +1015,11 @@
           "sha": "528e7dc1",
           "message": "fix(cli): exclude profiles/ from profile create --clone-all",
           "author": "hejuntt1014"
-        },
-        {
-          "sha": "a32b325d",
-          "message": "fix(tools): invalidate read_file dedup cache on write_file and patch",
-          "author": "voidborne-d"
         }
       ],
-      "commit_count": 7,
+      "commit_count": 6,
       "stats": {
-        "commits": 7
+        "commits": 6
       },
       "themes": [],
       "body_summary": "",
@@ -1157,6 +1152,11 @@
       "is_release": false,
       "commits": [
         {
+          "sha": "1f5219fd",
+          "message": "fix(security): protect Hermes control-plane files from prompt injection",
+          "author": "Pratik Rai"
+        },
+        {
           "sha": "c28c2a23",
           "message": "docs(tts): document per-provider max_text_length caps",
           "author": "r266-tech"
@@ -1182,9 +1182,9 @@
           "author": "Andrew Ho"
         }
       ],
-      "commit_count": 5,
+      "commit_count": 6,
       "stats": {
-        "commits": 5
+        "commits": 6
       },
       "themes": [],
       "body_summary": "",
@@ -1196,6 +1196,11 @@
       "name": "Hermes Agent v0.11.0 (2026.4.23)",
       "is_release": true,
       "commits": [
+        {
+          "sha": "d3f62c69",
+          "message": "fix(cli): clamp curses color 8 for 8-color terminals (Docker)",
+          "author": "Tranquil-Flow"
+        },
         {
           "sha": "850413f1",
           "message": "feat(computer-use): cua-driver backend, universal any-model schema",
@@ -1257,7 +1262,7 @@
           "author": "Teknium"
         }
       ],
-      "commit_count": 12,
+      "commit_count": 13,
       "stats": {
         "commits": 1556,
         "merged_prs": 761,
@@ -1432,9 +1437,9 @@
           "author": "Alexander Yususpov"
         }
       ],
-      "commit_count": 37,
+      "commit_count": 33,
       "stats": {
-        "commits": 37
+        "commits": 33
       },
       "themes": [],
       "body_summary": "",
@@ -1535,21 +1540,11 @@
           "sha": "500774e3",
           "message": "fix(gateway): pass session messages to shutdown_memory_provider (#15165)",
           "author": "briandevans"
-        },
-        {
-          "sha": "2e6699b3",
-          "message": "fix: strip leaked declare-x env dump from terminal output on macOS (#15459)",
-          "author": "vominh1919"
-        },
-        {
-          "sha": "419535f0",
-          "message": "Update maps_client.py",
-          "author": "0z!"
         }
       ],
-      "commit_count": 20,
+      "commit_count": 18,
       "stats": {
-        "commits": 20
+        "commits": 18
       },
       "themes": [],
       "body_summary": "",
@@ -1712,9 +1707,9 @@
           "author": "xyiy001"
         }
       ],
-      "commit_count": 57,
+      "commit_count": 48,
       "stats": {
-        "commits": 57
+        "commits": 48
       },
       "themes": [],
       "body_summary": "",
@@ -1877,9 +1872,9 @@
           "author": "sprmn24"
         }
       ],
-      "commit_count": 166,
+      "commit_count": 119,
       "stats": {
-        "commits": 166
+        "commits": 119
       },
       "themes": [],
       "body_summary": "",
@@ -3552,6 +3547,11 @@
       "is_release": false,
       "commits": [
         {
+          "sha": "2ea7cf28",
+          "message": "fix(tui): pass --expose-gc as node argv instead of NODE_OPTIONS",
+          "author": "YarrowQiao"
+        },
+        {
           "sha": "697d38a3",
           "message": "feat: auto-launch Chromium-family browser for CDP",
           "author": "H-Ali13381"
@@ -3695,16 +3695,11 @@
           "sha": "758c4013",
           "message": "ci: add blocking uv.lock check",
           "author": "ethernet"
-        },
-        {
-          "sha": "0a51863f",
-          "message": "fix(ci): update uv.lock",
-          "author": "ethernet"
         }
       ],
-      "commit_count": 102,
+      "commit_count": 103,
       "stats": {
-        "commits": 102
+        "commits": 103
       },
       "themes": [],
       "body_summary": "",
@@ -3716,6 +3711,21 @@
       "name": "",
       "is_release": false,
       "commits": [
+        {
+          "sha": "70d53d8b",
+          "message": "fix: run computer use post-setup when enabling tool",
+          "author": "sgtworkman"
+        },
+        {
+          "sha": "fbdca64f",
+          "message": "fix(computer-use): skip capture_after when action failed (ok=False)",
+          "author": "Rodrigo"
+        },
+        {
+          "sha": "c52cd48e",
+          "message": "fix(computer-use): add set_value to ComputerUseBackend ABC and _NoopBackend stub",
+          "author": "Rodrigo"
+        },
         {
           "sha": "be0728ca",
           "message": "fix: handle Discord typing indicator 429 gracefully",
@@ -3850,26 +3860,11 @@
           "sha": "6ddc48b0",
           "message": "fix(fallback): resolve api_key_env in fallback chain entries (carve-out of #22665)",
           "author": "Wesley Simplicio"
-        },
-        {
-          "sha": "246c676c",
-          "message": "fix(gateway): degrade gracefully when all platform adapters are missing",
-          "author": "Wesley Simplicio"
-        },
-        {
-          "sha": "116a1446",
-          "message": "fix(terminal): bridge docker_env config to TERMINAL_DOCKER_ENV",
-          "author": "Wesley Simplicio"
-        },
-        {
-          "sha": "53ec3281",
-          "message": "fix(process_registry): kill orphaned Popen on post-spawn setup failure",
-          "author": "Wesley Simplicio"
         }
       ],
-      "commit_count": 132,
+      "commit_count": 135,
       "stats": {
-        "commits": 132
+        "commits": 135
       },
       "themes": [],
       "body_summary": "",
@@ -3881,6 +3876,11 @@
       "name": "",
       "is_release": false,
       "commits": [
+        {
+          "sha": "bb694bad",
+          "message": "fix(computer-use): cap AX `elements` array to prevent context blowup (#22865)",
+          "author": "briandevans"
+        },
         {
           "sha": "5af4b73f",
           "message": "fix(xai): align migrate retirement map with docs",
@@ -4025,16 +4025,11 @@
           "sha": "c0bbdec8",
           "message": "chore: AUTHOR_MAP entry for Freeman-Consulting",
           "author": "teknium1"
-        },
-        {
-          "sha": "121bbe03",
-          "message": "test(stream-consumer): add UTF-16 overflow regression tests for #11170",
-          "author": "teknium1"
         }
       ],
-      "commit_count": 97,
+      "commit_count": 98,
       "stats": {
-        "commits": 97
+        "commits": 98
       },
       "themes": [],
       "body_summary": "",
@@ -4046,6 +4041,21 @@
       "name": "",
       "is_release": false,
       "commits": [
+        {
+          "sha": "9d614088",
+          "message": "refactor: extract 7 helpers from convert_messages_to_anthropic",
+          "author": "kshitijk4poor"
+        },
+        {
+          "sha": "eb51fb6f",
+          "message": "fix(ssh): keep bulk sync extraction scoped to .hermes",
+          "author": "Stark-X"
+        },
+        {
+          "sha": "280dd451",
+          "message": "fix(computer-use): address Copilot review on max_elements cap",
+          "author": "briandevans"
+        },
         {
           "sha": "c42edd80",
           "message": "fix(tui): clipboard copy on linux/wayland",
@@ -4180,26 +4190,11 @@
           "sha": "cc9e788c",
           "message": "fix(cli): defensive _slash_confirm_state access + AUTHOR_MAP",
           "author": "Teknium1"
-        },
-        {
-          "sha": "054f5685",
-          "message": "fix: use TUI modal for slash confirmations",
-          "author": "zhengyuna"
-        },
-        {
-          "sha": "e155f2ac",
-          "message": "rebuild model catalog",
-          "author": "rob-maron"
-        },
-        {
-          "sha": "283381b1",
-          "message": "fix(dashboard): validate dist exists when --skip-build is set",
-          "author": "Teknium1"
         }
       ],
-      "commit_count": 76,
+      "commit_count": 79,
       "stats": {
-        "commits": 76
+        "commits": 79
       },
       "themes": [],
       "body_summary": "",
@@ -4211,6 +4206,46 @@
       "name": "",
       "is_release": false,
       "commits": [
+        {
+          "sha": "4a2fa77c",
+          "message": "fix(cli): pre-check CUA release asset for Intel macOS before install",
+          "author": "liuhao1024"
+        },
+        {
+          "sha": "bec2250d",
+          "message": "test(computer_use): end-to-end regression for capture routing (#24015)",
+          "author": "xxxigm"
+        },
+        {
+          "sha": "e02a7e5e",
+          "message": "fix(computer_use): route SOM/vision captures via auxiliary.vision (#24015)",
+          "author": "xxxigm"
+        },
+        {
+          "sha": "5ce5fe31",
+          "message": "test(computer_use): cover capture vision-routing helper",
+          "author": "xxxigm"
+        },
+        {
+          "sha": "531efe72",
+          "message": "fix(computer_use): add helper to decide capture vision routing",
+          "author": "xxxigm"
+        },
+        {
+          "sha": "5aa4727f",
+          "message": "fix(computer-use): surface app=\u2026 filter no-match instead of silently using frontmost (#24170 bug 1)",
+          "author": "briandevans"
+        },
+        {
+          "sha": "4cc18877",
+          "message": "fix(computer_use): preserve app context for capture_after; fix element label parsing (#24170 bugs 2 & 5)",
+          "author": "Bartok9"
+        },
+        {
+          "sha": "18cd1e5c",
+          "message": "fix(computer_use): correct type_text MCP tool name and implement drag action",
+          "author": "liuhao1024"
+        },
         {
           "sha": "a9c38c7c",
           "message": "chore(deps): bump python-dotenv from 1.2.1 to 1.2.2",
@@ -4320,51 +4355,11 @@
           "sha": "b3ca6362",
           "message": "chore(release): add AUTHOR_MAP entry for hookinglau",
           "author": "Teknium"
-        },
-        {
-          "sha": "d68a0ec3",
-          "message": "fix(auxiliary): pass cfg_base_url and cfg_api_key when resolving task provider",
-          "author": "hookinglau"
-        },
-        {
-          "sha": "389c707e",
-          "message": "chore(release): add AUTHOR_MAP entry for ryptotalent",
-          "author": "Teknium"
-        },
-        {
-          "sha": "9b2488af",
-          "message": "fix: include arg-taking commands in Telegram menu",
-          "author": "ryptotalent"
-        },
-        {
-          "sha": "29d7c244",
-          "message": "feat(gateway): wire clarify tool with inline keyboard buttons on Telegram (#24199)",
-          "author": "Teknium"
-        },
-        {
-          "sha": "76bbb94b",
-          "message": "chore: AUTHOR_MAP entry for AhmetArif0 (PR #24600)",
-          "author": "teknium"
-        },
-        {
-          "sha": "f9559c39",
-          "message": "fix(gateway): consult lock record argv when cmdline unreadable in scoped-lock stale check",
-          "author": "EloquentBrush"
-        },
-        {
-          "sha": "24e2151c",
-          "message": "chore(release): add AUTHOR_MAP entries for zccyman and Osraka",
-          "author": "Teknium"
-        },
-        {
-          "sha": "88ede807",
-          "message": "fix(pricing): add deepseek-v4-pro to official docs pricing table",
-          "author": "zccyman"
         }
       ],
-      "commit_count": 62,
+      "commit_count": 70,
       "stats": {
-        "commits": 62
+        "commits": 70
       },
       "themes": [],
       "body_summary": "",
@@ -5202,6 +5197,11 @@
       "is_release": false,
       "commits": [
         {
+          "sha": "3ac21251",
+          "message": "refactor(image_gen): port FAL backend to plugins/image_gen/fal",
+          "author": "0xDevNinja"
+        },
+        {
           "sha": "c4981167",
           "message": "chore(actions)(deps): bump actions/checkout from 4.3.1 to 6.0.2",
           "author": "dependabot[bot]"
@@ -5345,16 +5345,11 @@
           "sha": "d9331eec",
           "message": "fix(minimax-oauth): quarantine dead tokens on terminal refresh failure",
           "author": "EloquentBrush0x"
-        },
-        {
-          "sha": "b570e0fd",
-          "message": "fix(codex-oauth): quarantine terminal refresh errors so dead tokens are not replayed across sessions",
-          "author": "EloquentBrush0x"
         }
       ],
-      "commit_count": 58,
+      "commit_count": 59,
       "stats": {
-        "commits": 58
+        "commits": 59
       },
       "themes": [],
       "body_summary": "",
@@ -5532,6 +5527,11 @@
       "is_release": false,
       "commits": [
         {
+          "sha": "6dbbf20f",
+          "message": "perf(termux): speed up non-tui cli startup",
+          "author": "adybag14-cyber"
+        },
+        {
           "sha": "a9db0e2c",
           "message": "Observe unmentioned Telegram group messages",
           "author": "Markus"
@@ -5550,6 +5550,11 @@
           "sha": "f7441f9c",
           "message": "fix(nix): add xclip and wl-copy",
           "author": "ethernet"
+        },
+        {
+          "sha": "8ad34db5",
+          "message": "chore(tui): remove unused Babel build deps",
+          "author": "cresslank"
         },
         {
           "sha": "c6a380eb",
@@ -5670,21 +5675,11 @@
           "sha": "b6c6f650",
           "message": "test(session-log): pin no-session_json regression + drop trailing whitespace",
           "author": "yoniebans"
-        },
-        {
-          "sha": "6f1a5f85",
-          "message": "refactor(session-log): delete dead _clean_session_content helper",
-          "author": "yoniebans"
-        },
-        {
-          "sha": "9d793e8e",
-          "message": "docs(session-log): state.db is canonical; ~/.hermes/sessions/ is legacy",
-          "author": "yoniebans"
         }
       ],
-      "commit_count": 48,
+      "commit_count": 51,
       "stats": {
-        "commits": 48
+        "commits": 51
       },
       "themes": [],
       "body_summary": "",
@@ -5696,6 +5691,66 @@
       "name": "",
       "is_release": false,
       "commits": [
+        {
+          "sha": "2d587c56",
+          "message": "fix(openviking): store memories via content/write API instead of session messages",
+          "author": "Christian de la Cruz"
+        },
+        {
+          "sha": "b5c6d9ac",
+          "message": "fix: wire STT lazy-install into transcription_tools.py",
+          "author": "CipherFrame"
+        },
+        {
+          "sha": "f6f25b94",
+          "message": "fix(agent): fail fast on small Ollama runtime context",
+          "author": "helix4u"
+        },
+        {
+          "sha": "3fde8c15",
+          "message": "fix(skills): prune dependency/venv dirs from all skill scanners (#30042)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "3462b097",
+          "message": "fix(voice): chunk oversized CLI recordings",
+          "author": "helix4u"
+        },
+        {
+          "sha": "552e9c78",
+          "message": "feat(secrets): Bitwarden Secrets Manager integration with lazy bws install (#30035)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "0ce12a92",
+          "message": "fix(nix): auto-refresh npm lockfile hashes",
+          "author": "github-actions[bot]"
+        },
+        {
+          "sha": "56b79f12",
+          "message": "fix(dashboard): remove country flags from language picker (#29997)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "3d2f1464",
+          "message": "fix(tui): also pass --expose-gc on the wheel-bundled launch path",
+          "author": "teknium1"
+        },
+        {
+          "sha": "2e3f5762",
+          "message": "chore(release): map yichengqiao21 to YarrowQiao",
+          "author": "teknium1"
+        },
+        {
+          "sha": "ba9964ff",
+          "message": "fix(custom): pass custom provider extra body",
+          "author": "helix4u"
+        },
+        {
+          "sha": "2fdefca5",
+          "message": "Merge pull request #28269 from cresslank/chore/tui-remove-unused-babel-deps",
+          "author": "ethernet"
+        },
         {
           "sha": "48be2e0e",
           "message": "test: use subprocesses for each test file (#29016)",
@@ -5762,13 +5817,173 @@
           "author": "ethernet"
         }
       ],
-      "commit_count": 13,
+      "commit_count": 25,
       "stats": {
-        "commits": 13
+        "commits": 25
       },
       "themes": [],
       "body_summary": "",
       "index": 70
+    },
+    {
+      "date": "2026-05-22",
+      "tag": "day-2026-05-22",
+      "name": "",
+      "is_release": false,
+      "commits": [
+        {
+          "sha": "1e71b718",
+          "message": "infographic: PR #14157 control-plane write-deny salvage",
+          "author": "Teknium"
+        },
+        {
+          "sha": "42104218",
+          "message": "fix(file-safety): also write-deny <root>/control-files in profile mode",
+          "author": "Teknium"
+        },
+        {
+          "sha": "6f436a46",
+          "message": "infographic: PR #27784 anthropic adapter refactor salvage",
+          "author": "Teknium"
+        },
+        {
+          "sha": "ec2ab5bf",
+          "message": "infographic: PR #8056 hash pairing codes salvage",
+          "author": "Teknium"
+        },
+        {
+          "sha": "82c20358",
+          "message": "fix(pairing): handle legacy plaintext pending entries during upgrade",
+          "author": "Teknium"
+        },
+        {
+          "sha": "7dea3330",
+          "message": "infographic: PR #30373 aux model picker parity salvage",
+          "author": "Teknium"
+        },
+        {
+          "sha": "d246f9a2",
+          "message": "fix(aux-picker): drop stale session_search slot",
+          "author": "Teknium"
+        },
+        {
+          "sha": "c1e93aa3",
+          "message": "fix: add missing aux model slots to model picker",
+          "author": "flooryyyy"
+        },
+        {
+          "sha": "8b49012a",
+          "message": "infographic: PR #8306 webhook HMAC bypass salvage",
+          "author": "Teknium"
+        },
+        {
+          "sha": "3fc715dd",
+          "message": "test(webhook): regression cases for empty-secret HMAC bypass",
+          "author": "Teknium"
+        },
+        {
+          "sha": "22b0d6dc",
+          "message": "test(tools): centralize disable_lazy_stt_install fixture in conftest",
+          "author": "briandevans"
+        },
+        {
+          "sha": "5dc232a6",
+          "message": "test(tools): disarm lazy-install probe so _HAS_FASTER_WHISPER patches work",
+          "author": "briandevans"
+        },
+        {
+          "sha": "c25f9d1d",
+          "message": "feat(secrets): label detected credentials with their source (Bitwarden) (#30364)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "d6178588",
+          "message": "fix(openviking): target-aware mirror subdir, drop private-attr access, dedupe URI builder",
+          "author": "teknium1"
+        },
+        {
+          "sha": "caf0f30e",
+          "message": "chore(release): add sgtworkman to AUTHOR_MAP",
+          "author": "Teknium"
+        },
+        {
+          "sha": "07b7cf6f",
+          "message": "chore(release): add rodrigoeqnit to AUTHOR_MAP",
+          "author": "Teknium"
+        },
+        {
+          "sha": "c769be34",
+          "message": "fix(agent): recover from providers rejecting list-type tool content (#27344) (#30259)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "372e9a18",
+          "message": "fixup: log lazy-install errors at debug + AUTHOR_MAP for CipherFrame",
+          "author": "teknium1"
+        },
+        {
+          "sha": "e77f1ed5",
+          "message": "fix(agent): widen toolset gate to context engine tools (#5544 sibling)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "4c61fb6c",
+          "message": "fix(agent): gate memory tool injection on enabled_toolsets (#5544)",
+          "author": "lempkey"
+        },
+        {
+          "sha": "1264fab1",
+          "message": "fix(tui): surface verbose tool details (#30225)",
+          "author": "brooklyn!"
+        },
+        {
+          "sha": "4e2c66a0",
+          "message": "chore(release): add AUTHOR_MAP entry for Stark-X",
+          "author": "Teknium"
+        },
+        {
+          "sha": "9896e43d",
+          "message": "fix(skills): load Linux-tagged skills on Termux (android sys.platform)",
+          "author": "teknium1"
+        },
+        {
+          "sha": "d08c2a01",
+          "message": "fix(tui): termux-gate composer rendering tweaks for Ink TUI",
+          "author": "adybag14-cyber"
+        },
+        {
+          "sha": "0e2873a7",
+          "message": "fix(computer_use): build summary once before aux-vision routing branch",
+          "author": "Teknium"
+        },
+        {
+          "sha": "9e30ef22",
+          "message": "fix(tui): preserve scrollback when branching sessions (#30162)",
+          "author": "brooklyn!"
+        },
+        {
+          "sha": "a7cd254c",
+          "message": "feat(tui): mouse_tracking DEC mode presets (salvage of #26681) (#30084)",
+          "author": "brooklyn!"
+        },
+        {
+          "sha": "4d58e48c",
+          "message": "Merge pull request #29387 from NousResearch/fix/no-docker-tag",
+          "author": "Ben Barclay"
+        },
+        {
+          "sha": "2a474bcf",
+          "message": "fix(termux): resolve packed-refs and worktree refs in skill-sync fingerprint",
+          "author": "Teknium"
+        }
+      ],
+      "commit_count": 29,
+      "stats": {
+        "commits": 29
+      },
+      "themes": [],
+      "body_summary": "",
+      "index": 71
     }
   ]
 }
