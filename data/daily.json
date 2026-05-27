@@ -1,8 +1,8 @@
 {
   "repo": "NousResearch/hermes-agent",
-  "generated_at": "2026-05-25",
-  "total_days": 75,
-  "active_days": 58,
+  "generated_at": "2026-05-27",
+  "total_days": 77,
+  "active_days": 60,
   "release_days": 11,
   "days": [
     {
@@ -621,26 +621,11 @@
           "sha": "961e34a1",
           "message": "fix: show recap after in-session resume",
           "author": "Samuel Zhang"
-        },
-        {
-          "sha": "457128d4",
-          "message": "fix: wire PII redaction + token empty warnings for plugin platforms",
-          "author": "Teknium"
-        },
-        {
-          "sha": "2e20f6ae",
-          "message": "feat: complete plugin platform parity \u2014 all 12 integration points",
-          "author": "Teknium"
-        },
-        {
-          "sha": "8f144fe3",
-          "message": "feat: pluggable platform adapter registry + IRC reference implementation",
-          "author": "Teknium"
         }
       ],
-      "commit_count": 4,
+      "commit_count": 1,
       "stats": {
-        "commits": 4
+        "commits": 1
       },
       "themes": [],
       "body_summary": "",
@@ -666,21 +651,11 @@
           "sha": "a11234dd",
           "message": "docs(browser): document WSL-to-Windows Chrome MCP bridge",
           "author": "liuyuqi"
-        },
-        {
-          "sha": "52d9e578",
-          "message": "feat: dynamic toolset generation for plugin platforms",
-          "author": "Teknium"
-        },
-        {
-          "sha": "e464cde5",
-          "message": "feat: final platform plugin parity \u2014 webhook delivery, platform hints, docs",
-          "author": "Teknium"
         }
       ],
-      "commit_count": 5,
+      "commit_count": 3,
       "stats": {
-        "commits": 5
+        "commits": 3
       },
       "themes": [],
       "body_summary": "",
@@ -897,21 +872,11 @@
           "sha": "d1d0ef6d",
           "message": "fix(gateway): persist user message on transient agent failures (#7100)",
           "author": "konsisumer"
-        },
-        {
-          "sha": "ec27f0a3",
-          "message": "fix(cron): fall back gracefully when HERMES_CRON_TIMEOUT is invalid",
-          "author": "yeyitech"
-        },
-        {
-          "sha": "23f5fc67",
-          "message": "feat(gateway/signal): native formatting, reply quotes, and reactions",
-          "author": "exiao"
         }
       ],
-      "commit_count": 10,
+      "commit_count": 8,
       "stats": {
-        "commits": 10
+        "commits": 8
       },
       "themes": [],
       "body_summary": "",
@@ -997,26 +962,11 @@
           "sha": "868bc1c2",
           "message": "feat(irc): add interactive setup",
           "author": "Ari Lotter"
-        },
-        {
-          "sha": "6e42daf7",
-          "message": "fix(nix): bundle plugins/ and expose it via HERMES_BUNDLED_PLUGINS",
-          "author": "Ari Lotter"
-        },
-        {
-          "sha": "1f160806",
-          "message": "feat(gateway): unify setup flows, load platforms dynamically from registry",
-          "author": "Ari Lotter"
-        },
-        {
-          "sha": "528e7dc1",
-          "message": "fix(cli): exclude profiles/ from profile create --clone-all",
-          "author": "hejuntt1014"
         }
       ],
-      "commit_count": 6,
+      "commit_count": 3,
       "stats": {
-        "commits": 6
+        "commits": 3
       },
       "themes": [],
       "body_summary": "",
@@ -1307,31 +1257,11 @@
           "sha": "2b3923ff",
           "message": "fix(gateway): coerce scalar free_response_channels to str before split",
           "author": "YAMAGUCHI Seiji"
-        },
-        {
-          "sha": "eafa6372",
-          "message": "docs: document MiniMax OAuth login flow",
-          "author": "Adam Manning"
-        },
-        {
-          "sha": "f3aa989b",
-          "message": "test(cli): cover minimax-oauth resolution, refresh, menu wiring",
-          "author": "Adam Manning"
-        },
-        {
-          "sha": "0b2f1bb2",
-          "message": "feat(agent): wire MiniMax-M2.7 for minimax-oauth provider",
-          "author": "Adam Manning"
-        },
-        {
-          "sha": "9eb16025",
-          "message": "feat(cli): add minimax-oauth provider with PKCE browser flow",
-          "author": "Adam Manning"
         }
       ],
-      "commit_count": 18,
+      "commit_count": 14,
       "stats": {
-        "commits": 18
+        "commits": 14
       },
       "themes": [],
       "body_summary": "",
@@ -1754,9 +1684,9 @@
           "author": "sprmn24"
         }
       ],
-      "commit_count": 32,
+      "commit_count": 30,
       "stats": {
-        "commits": 32
+        "commits": 30
       },
       "themes": [],
       "body_summary": "",
@@ -1912,16 +1842,11 @@
           "sha": "718e4e2e",
           "message": "fix(plugins): register dynamically-loaded modules in sys.modules before exec",
           "author": "emozilla"
-        },
-        {
-          "sha": "fd5479a4",
-          "message": "fix: preserve DeepSeek thinking blocks on Anthropic replay (#16748)",
-          "author": "vominh1919"
         }
       ],
-      "commit_count": 37,
+      "commit_count": 29,
       "stats": {
-        "commits": 37
+        "commits": 29
       },
       "themes": [],
       "body_summary": "",
@@ -2047,46 +1972,11 @@
           "sha": "d2536a72",
           "message": "fix(acp): replay session history on load",
           "author": "Henkey"
-        },
-        {
-          "sha": "a7fb79ef",
-          "message": "fix(agent): spawn OpenRouter pre-warm thread only once per process",
-          "author": "Vlad Ra"
-        },
-        {
-          "sha": "ffa65291",
-          "message": "fix(cron): clear auto-delivery thread context between jobs",
-          "author": "simbam99"
-        },
-        {
-          "sha": "d69a0b2c",
-          "message": "fix(security): apply ACL checks to QQBot guild messages and guild DMs to prevent allowlist bypass",
-          "author": "memosr"
-        },
-        {
-          "sha": "7966560f",
-          "message": "feat(skills): /reload-skills slash command + skills_reload agent tool",
-          "author": "Shannon Sands"
-        },
-        {
-          "sha": "7d48a16f",
-          "message": "remove relaunch_chat",
-          "author": "ethernet"
-        },
-        {
-          "sha": "95f2802f",
-          "message": "feat(cli): preserve --tui and other flags across internal relaunches",
-          "author": "ethernet"
-        },
-        {
-          "sha": "98f5be13",
-          "message": "fix(tui): word-wrap composer input (#17651)",
-          "author": "brooklyn!"
         }
       ],
-      "commit_count": 114,
+      "commit_count": 23,
       "stats": {
-        "commits": 114
+        "commits": 23
       },
       "themes": [],
       "body_summary": "",
@@ -2249,7 +2139,7 @@
           "author": "Austin Pickett"
         }
       ],
-      "commit_count": 154,
+      "commit_count": 125,
       "stats": {
         "commits": 1096,
         "merged_prs": 550,
@@ -3744,9 +3634,9 @@
           "author": "Wesley Simplicio"
         }
       ],
-      "commit_count": 135,
+      "commit_count": 137,
       "stats": {
-        "commits": 135
+        "commits": 137
       },
       "themes": [],
       "body_summary": "",
@@ -4254,6 +4144,11 @@
       "is_release": false,
       "commits": [
         {
+          "sha": "b1a46b30",
+          "message": "fix(codex): drop transient rs_tmp reasoning replay state",
+          "author": "Krishna"
+        },
+        {
           "sha": "ab42658d",
           "message": "feat: configurable paste collapse thresholds (TUI + CLI)",
           "author": "kylekahraman"
@@ -4397,16 +4292,11 @@
           "sha": "31fcde87",
           "message": "feat(web): tavily plugin \u2014 first three-capability plugin (search + extract + crawl)",
           "author": "kshitijk4poor"
-        },
-        {
-          "sha": "48166461",
-          "message": "feat(web): parallel plugin \u2014 first async-extract plugin",
-          "author": "kshitijk4poor"
         }
       ],
-      "commit_count": 94,
+      "commit_count": 95,
       "stats": {
-        "commits": 94
+        "commits": 95
       },
       "themes": [],
       "body_summary": "",
@@ -4594,6 +4484,11 @@
           "author": "Soju"
         },
         {
+          "sha": "ec641d49",
+          "message": "chore: ignore local Hermes runtime files",
+          "author": "slowtokki0409"
+        },
+        {
           "sha": "b10b7832",
           "message": "chore(actions)(deps): bump actions/setup-python from 5.3.0 to 6.2.0",
           "author": "dependabot[bot]"
@@ -4727,16 +4622,11 @@
           "sha": "c1ae18ee",
           "message": "fix(gateway): add trust_env=True to aiohttp sessions in SMS, Slack, Teams, Google Chat adapters",
           "author": "EloquentBrush0x"
-        },
-        {
-          "sha": "a52f014a",
-          "message": "fix(tests): mock keychain in TestReadClaudeCodeCredentials to prevent credential leakage",
-          "author": "Rahul"
         }
       ],
-      "commit_count": 127,
+      "commit_count": 128,
       "stats": {
-        "commits": 127
+        "commits": 128
       },
       "themes": [],
       "body_summary": "",
@@ -4748,6 +4638,36 @@
       "name": "",
       "is_release": false,
       "commits": [
+        {
+          "sha": "5b1c75d6",
+          "message": "refactor: simplify Telegram DM topic refresh",
+          "author": "stepanov1975"
+        },
+        {
+          "sha": "c394e791",
+          "message": "fix: refresh stale Telegram DM topic threads",
+          "author": "stepanov1975"
+        },
+        {
+          "sha": "dcd504ce",
+          "message": "fix: auto-create Telegram DM topics for delivery",
+          "author": "stepanov1975"
+        },
+        {
+          "sha": "96c71d8c",
+          "message": "fix: require anchors for Telegram DM topic deliveries",
+          "author": "stepanov1975"
+        },
+        {
+          "sha": "6b7da117",
+          "message": "test: isolate API server env in gateway tests",
+          "author": "stepanov1975"
+        },
+        {
+          "sha": "415be553",
+          "message": "fix: route Telegram DM topic deliveries directly",
+          "author": "stepanov1975"
+        },
         {
           "sha": "d948de39",
           "message": "fix(gateway): harden Windows gateway install lifecycle",
@@ -4867,41 +4787,11 @@
           "sha": "cb53c40e",
           "message": "fix(xai-oauth): echo code_challenge in token POST so PKCE exchange succeeds",
           "author": "xxxigm"
-        },
-        {
-          "sha": "280c63ce",
-          "message": "fix(mcp): prevent parallel-safe prefix collisions",
-          "author": "soynchux"
-        },
-        {
-          "sha": "874dad5c",
-          "message": "test(delegation): add regression test for runtime missing 'provider' key",
-          "author": "Mind-Dragon"
-        },
-        {
-          "sha": "84667cbc",
-          "message": "fix(delegation): preserve configured_provider name when runtime returns 'custom'",
-          "author": "Mind-Dragon"
-        },
-        {
-          "sha": "2f28b60a",
-          "message": "fix(send_message): preserve Slack and Matrix thread targets resolved from channel directory",
-          "author": "QuenVix"
-        },
-        {
-          "sha": "d5a0815c",
-          "message": "fix(transports): use monotonic deadlines in codex app-server turn loop",
-          "author": "QuenVix"
-        },
-        {
-          "sha": "c9298bba",
-          "message": "fix(doctor): SSH check ignores TERMINAL_SSH_USER, TERMINAL_SSH_PORT, TERMINAL_SSH_KEY",
-          "author": "carryzuo00"
         }
       ],
-      "commit_count": 104,
+      "commit_count": 110,
       "stats": {
-        "commits": 104
+        "commits": 110
       },
       "themes": [],
       "body_summary": "",
@@ -4913,6 +4803,11 @@
       "name": "",
       "is_release": false,
       "commits": [
+        {
+          "sha": "0a83247e",
+          "message": "feat: add TUI session orchestrator",
+          "author": "Nick"
+        },
         {
           "sha": "d33c99bb",
           "message": "fix(security): validate Nous Portal inference_base_url against host allowlist",
@@ -5057,16 +4952,11 @@
           "sha": "f27416dc",
           "message": "fix(cli): include send in _BUILTIN_SUBCOMMANDS for plugin discovery gating",
           "author": "teknium1"
-        },
-        {
-          "sha": "dfc6ea72",
-          "message": "test(gateway): include direct_messages_topic_id in telegram DM metadata assertions",
-          "author": "teknium1"
         }
       ],
-      "commit_count": 137,
+      "commit_count": 138,
       "stats": {
-        "commits": 137
+        "commits": 138
       },
       "themes": [],
       "body_summary": "",
@@ -5244,6 +5134,11 @@
       "is_release": false,
       "commits": [
         {
+          "sha": "a699de83",
+          "message": "fix(xai-oauth): strip service_tier and add safety-net sanitization for slash enums",
+          "author": "Nami4D"
+        },
+        {
           "sha": "80ad1609",
           "message": "fix(kanban): refuse to rmtree workspace_path outside managed scratch root (#28818)",
           "author": "briandevans"
@@ -5387,16 +5282,11 @@
           "sha": "b0af1d09",
           "message": "Merge pull request #28829 from NousResearch/bb/tui-no-history-truncation",
           "author": "brooklyn!"
-        },
-        {
-          "sha": "5a331769",
-          "message": "fix(discord): define view classes after lazy discord.py install",
-          "author": "EloquentBrush0x"
         }
       ],
-      "commit_count": 218,
+      "commit_count": 219,
       "stats": {
-        "commits": 218
+        "commits": 219
       },
       "themes": [],
       "body_summary": "",
@@ -5408,6 +5298,21 @@
       "name": "",
       "is_release": false,
       "commits": [
+        {
+          "sha": "f7527b0f",
+          "message": "feat: add API server session controls",
+          "author": "Bailey Dixon"
+        },
+        {
+          "sha": "bbc8f2f9",
+          "message": "chore(models): drop retired grok-4-1-fast from metadata, tests, docs",
+          "author": "ronhi"
+        },
+        {
+          "sha": "1d73d5fa",
+          "message": "fix(tts): prevent double [pause] in xAI auto speech tags for multi-paragraph text",
+          "author": "EloquentBrush0x"
+        },
         {
           "sha": "5cb21e3f",
           "message": "fix(gateway): edit streamed message instead of sending duplicate when response_transformed",
@@ -5542,26 +5447,11 @@
           "sha": "31a01001",
           "message": "feat(state.db): persist platform_message_id; restore yuanbao exact-id recall",
           "author": "Teknium"
-        },
-        {
-          "sha": "0cc1a1d2",
-          "message": "refactor(yuanbao): drop dead branch A1 message_id loop + pin missing fixture",
-          "author": "yoniebans"
-        },
-        {
-          "sha": "c634c07b",
-          "message": "test(gateway): pin DEFAULT_DB_PATH in fixtures to prevent real state.db writes",
-          "author": "yoniebans"
-        },
-        {
-          "sha": "33a3cf53",
-          "message": "docs(sessions): state.db is canonical for gateway messages",
-          "author": "yoniebans"
         }
       ],
-      "commit_count": 65,
+      "commit_count": 68,
       "stats": {
-        "commits": 65
+        "commits": 68
       },
       "themes": [],
       "body_summary": "",
@@ -5573,6 +5463,116 @@
       "name": "",
       "is_release": false,
       "commits": [
+        {
+          "sha": "b3dc5393",
+          "message": "feat(dashboard-auth): Nous plugin always-on; default portal URL; specific error messages",
+          "author": "Ben"
+        },
+        {
+          "sha": "af3d4a68",
+          "message": "fix(dashboard-auth): ChatPage cleanup closes WS via wsRef.current",
+          "author": "Ben"
+        },
+        {
+          "sha": "7c9cdbc0",
+          "message": "docs(dashboard-auth): Phase 7 \u2014 OAuth Authentication section in web-dashboard.md",
+          "author": "Ben"
+        },
+        {
+          "sha": "2fc4615f",
+          "message": "feat(dashboard-auth): Phase 7 \u2014 SPA AuthWidget + /api/status auth fields",
+          "author": "Ben"
+        },
+        {
+          "sha": "5e9308b5",
+          "message": "feat(dashboard-auth): Phase 6 \u2014 401 re-auth envelope + next= propagation",
+          "author": "Ben"
+        },
+        {
+          "sha": "8971e948",
+          "message": "feat(dashboard-auth): SPA WS auth \u2014 getWsTicket() + buildWsAuthParam()",
+          "author": "Ben"
+        },
+        {
+          "sha": "b2360ba4",
+          "message": "feat(dashboard-auth): _ws_auth_ok helper + ticket auth on all 4 WS endpoints",
+          "author": "Ben"
+        },
+        {
+          "sha": "b69fce9c",
+          "message": "feat(dashboard-auth): single-use WS tickets + POST /api/auth/ws-ticket",
+          "author": "Ben"
+        },
+        {
+          "sha": "848baeb0",
+          "message": "feat(dashboard-auth): plugins/dashboard_auth/nous \u2014 contract-compliant Nous OAuth provider",
+          "author": "Ben"
+        },
+        {
+          "sha": "53999b9e",
+          "message": "docs(dashboard-auth): plan v2 \u2014 incorporate Portal OAuth contract (PR #180)",
+          "author": "Ben"
+        },
+        {
+          "sha": "53736b39",
+          "message": "feat(dashboard-auth): fail-closed on no providers; proxy_headers when gated; suppress _SESSION_TOKEN injection",
+          "author": "Ben"
+        },
+        {
+          "sha": "5b17eab6",
+          "message": "feat(dashboard-auth): auth gate middleware + /auth/* routes + /login HTML",
+          "author": "Ben"
+        },
+        {
+          "sha": "a30c4d8e",
+          "message": "feat(dashboard-auth): cookie helpers for session_at/session_rt/pkce",
+          "author": "Ben"
+        },
+        {
+          "sha": "628a52fc",
+          "message": "test(dashboard-auth): stub auth provider for E2E gate testing",
+          "author": "Ben"
+        },
+        {
+          "sha": "865cae4f",
+          "message": "feat(dashboard-auth): json-lines audit log at $HERMES_HOME/logs/dashboard-auth.log",
+          "author": "Ben"
+        },
+        {
+          "sha": "c32b17f5",
+          "message": "feat(plugins): add register_dashboard_auth_provider hook on PluginContext",
+          "author": "Ben"
+        },
+        {
+          "sha": "1bbfed70",
+          "message": "test(dashboard-auth): cover registry register/get/list/clear semantics",
+          "author": "Ben"
+        },
+        {
+          "sha": "2dc6d03a",
+          "message": "feat(dashboard-auth): define DashboardAuthProvider ABC + Session dataclass",
+          "author": "Ben"
+        },
+        {
+          "sha": "949ad95e",
+          "message": "feat(dashboard): stash auth_required flag on app.state",
+          "author": "Ben"
+        },
+        {
+          "sha": "8773bbf1",
+          "message": "feat(dashboard): add should_require_auth predicate for OAuth gate",
+          "author": "Ben"
+        },
+        {
+          "sha": "f2b479e7",
+          "message": "test(dashboard): pin current loopback auth behavior as regression harness",
+          "author": "Ben"
+        },
+        {
+          "sha": "9d10c45e",
+          "message": "fix(telegram): tighten table row-group spacing and drop redundant first bullet",
+          "author": "Krisli Dimo"
+        },
         {
           "sha": "a36221ed",
           "message": "docs(s6): document container supervision; doctor + skill + user-guide updates",
@@ -5612,121 +5612,11 @@
           "sha": "a18f69eb",
           "message": "test(docker): apply 180s timeout to docker harness tests",
           "author": "Ben"
-        },
-        {
-          "sha": "6e6acdea",
-          "message": "test(docker): lock baseline behavior for Phase 0 harness",
-          "author": "Ben"
-        },
-        {
-          "sha": "08302135",
-          "message": "test(docker): add conftest fixtures for docker harness",
-          "author": "Ben"
-        },
-        {
-          "sha": "d36461d8",
-          "message": "docs(plans): add s6-overlay supervision plan (v3)",
-          "author": "Ben"
-        },
-        {
-          "sha": "dbf73e90",
-          "message": "fix: fail closed for webhook routes without secrets",
-          "author": "m0n3r0"
-        },
-        {
-          "sha": "6a1aa420",
-          "message": "Fix CLI verbose tool progress config fallback",
-          "author": "honor2030"
-        },
-        {
-          "sha": "dcbcdd65",
-          "message": "fix(compressor): propagate api_mode and fix root logger calls",
-          "author": "0z1-ghb"
-        },
-        {
-          "sha": "5b6f0b69",
-          "message": "test(tls-fd-recycle): pin shutdown-only + thread-aware close contract (#29507)",
-          "author": "xxxigm"
-        },
-        {
-          "sha": "30c22f11",
-          "message": "fix(api-call): defer client.close() to owning worker thread on interrupt (#29507)",
-          "author": "xxxigm"
-        },
-        {
-          "sha": "e2a7d73a",
-          "message": "fix(force_close_tcp_sockets): shutdown only, do not release FD (#29507)",
-          "author": "xxxigm"
-        },
-        {
-          "sha": "4a91e364",
-          "message": "fix(gateway): separate observed Telegram group context",
-          "author": "Markus"
-        },
-        {
-          "sha": "b689624a",
-          "message": "feat(ci): 4-way matrix slicing with LPT duration-balanced distribution",
-          "author": "ethernet"
-        },
-        {
-          "sha": "2d587c56",
-          "message": "fix(openviking): store memories via content/write API instead of session messages",
-          "author": "Christian de la Cruz"
-        },
-        {
-          "sha": "b5c6d9ac",
-          "message": "fix: wire STT lazy-install into transcription_tools.py",
-          "author": "CipherFrame"
-        },
-        {
-          "sha": "f6f25b94",
-          "message": "fix(agent): fail fast on small Ollama runtime context",
-          "author": "helix4u"
-        },
-        {
-          "sha": "3fde8c15",
-          "message": "fix(skills): prune dependency/venv dirs from all skill scanners (#30042)",
-          "author": "Teknium"
-        },
-        {
-          "sha": "3462b097",
-          "message": "fix(voice): chunk oversized CLI recordings",
-          "author": "helix4u"
-        },
-        {
-          "sha": "552e9c78",
-          "message": "feat(secrets): Bitwarden Secrets Manager integration with lazy bws install (#30035)",
-          "author": "Teknium"
-        },
-        {
-          "sha": "0ce12a92",
-          "message": "fix(nix): auto-refresh npm lockfile hashes",
-          "author": "github-actions[bot]"
-        },
-        {
-          "sha": "56b79f12",
-          "message": "fix(dashboard): remove country flags from language picker (#29997)",
-          "author": "Teknium"
-        },
-        {
-          "sha": "3d2f1464",
-          "message": "fix(tui): also pass --expose-gc on the wheel-bundled launch path",
-          "author": "teknium1"
-        },
-        {
-          "sha": "2e3f5762",
-          "message": "chore(release): map yichengqiao21 to YarrowQiao",
-          "author": "teknium1"
-        },
-        {
-          "sha": "ba9964ff",
-          "message": "fix(custom): pass custom provider extra body",
-          "author": "helix4u"
         }
       ],
-      "commit_count": 44,
+      "commit_count": 68,
       "stats": {
-        "commits": 44
+        "commits": 68
       },
       "themes": [],
       "body_summary": "",
@@ -5738,6 +5628,21 @@
       "name": "",
       "is_release": false,
       "commits": [
+        {
+          "sha": "464b51d4",
+          "message": "Support media in session chat API",
+          "author": "Jonathan"
+        },
+        {
+          "sha": "737ee811",
+          "message": "test(gateway): regression tests for #30170 subagent interrupt protection",
+          "author": "xxxigm"
+        },
+        {
+          "sha": "99d62f6b",
+          "message": "fix(gateway): protect in-flight subagents from busy-mode interrupts (#30170)",
+          "author": "xxxigm"
+        },
         {
           "sha": "2cd952e1",
           "message": "feat(stt): add register_transcription_provider() plugin hook",
@@ -5872,26 +5777,11 @@
           "sha": "09afafb8",
           "message": "fix(xai): resolve Grok Build context for OAuth",
           "author": "Julien Talbot"
-        },
-        {
-          "sha": "1e71b718",
-          "message": "infographic: PR #14157 control-plane write-deny salvage",
-          "author": "Teknium"
-        },
-        {
-          "sha": "42104218",
-          "message": "fix(file-safety): also write-deny <root>/control-files in profile mode",
-          "author": "Teknium"
-        },
-        {
-          "sha": "6f436a46",
-          "message": "infographic: PR #27784 anthropic adapter refactor salvage",
-          "author": "Teknium"
         }
       ],
-      "commit_count": 56,
+      "commit_count": 60,
       "stats": {
-        "commits": 56
+        "commits": 60
       },
       "themes": [],
       "body_summary": "",
@@ -5903,6 +5793,26 @@
       "name": "",
       "is_release": false,
       "commits": [
+        {
+          "sha": "60f84c6c",
+          "message": "gateway: quiet Telegram operational chatter",
+          "author": "houenyang-momo"
+        },
+        {
+          "sha": "efa95253",
+          "message": "fix: ignore Telegram start pings",
+          "author": "Robert DaSilva"
+        },
+        {
+          "sha": "a4984856",
+          "message": "feat(dashboard-auth-nous): surface token iss/aud in verification-failure error",
+          "author": "Ben"
+        },
+        {
+          "sha": "42729775",
+          "message": "fix(dashboard): trigger plugin discovery in cmd_dashboard before start_server",
+          "author": "Ben"
+        },
         {
           "sha": "af973e40",
           "message": "refactor(gateway): migrate Mattermost adapter to bundled plugin",
@@ -6032,31 +5942,11 @@
           "sha": "21db2500",
           "message": "fix(wecom-callback): retry send with fresh token on errcode 40001/42001",
           "author": "AhmetArif0"
-        },
-        {
-          "sha": "421ab810",
-          "message": "fix(cli): reuse canonical root model key normalization in load_cli_config",
-          "author": "novax635"
-        },
-        {
-          "sha": "39b8d1d3",
-          "message": "fix(dingtalk): finalize open streaming cards before disconnect",
-          "author": "AhmetArif0"
-        },
-        {
-          "sha": "7a4dc8e8",
-          "message": "chore: map edison@mcclean.codes for PR #29817 salvage",
-          "author": "Teknium"
-        },
-        {
-          "sha": "e8fa415a",
-          "message": "fix(cli): validate runtime token refresh capability in Qwen auth status",
-          "author": "soynchux"
         }
       ],
-      "commit_count": 87,
+      "commit_count": 92,
       "stats": {
-        "commits": 87
+        "commits": 92
       },
       "themes": [],
       "body_summary": "",
@@ -6199,6 +6089,11 @@
           "author": "Teknium"
         },
         {
+          "sha": "1579a6f4",
+          "message": "docs: clarify xurl auth HOME in Docker",
+          "author": "Stellar\u9c7c"
+        },
+        {
           "sha": "186bf25c",
           "message": "test(guardrail): assert halt message reaches stream_delta_callback",
           "author": "Teknium"
@@ -6212,16 +6107,11 @@
           "sha": "3bace071",
           "message": "fix(state): restrict sensitive store file permissions",
           "author": "Hinotoi-agent"
-        },
-        {
-          "sha": "f378f00b",
-          "message": "fix(feishu): validate verification token before reflecting url_verification challenge",
-          "author": "m0n3r0"
         }
       ],
-      "commit_count": 68,
+      "commit_count": 69,
       "stats": {
-        "commits": 68
+        "commits": 69
       },
       "themes": [],
       "body_summary": "",
@@ -6233,6 +6123,141 @@
       "name": "",
       "is_release": false,
       "commits": [
+        {
+          "sha": "8807b1c7",
+          "message": "fix(gateway): hide telegram compaction status noise",
+          "author": "sir-ad"
+        },
+        {
+          "sha": "e2a92ce6",
+          "message": "chore: gitignore .hermes/ working directory; drop tracked plan artifact",
+          "author": "Ben"
+        },
+        {
+          "sha": "b26d81d5",
+          "message": "feat(dashboard-auth): honour X-Forwarded-Prefix + __Host-/__Secure- cookies",
+          "author": "Ben"
+        },
+        {
+          "sha": "034ad95f",
+          "message": "fix(dashboard-auth): propagate next= through login page + PKCE cookie",
+          "author": "Ben"
+        },
+        {
+          "sha": "c3104195",
+          "message": "fix(dashboard-auth): bypass loopback WS peer check in gated mode",
+          "author": "Ben"
+        },
+        {
+          "sha": "866cc988",
+          "message": "fix(dashboard-auth): use fixed-length sig suffix in stub token framing",
+          "author": "Ben"
+        },
+        {
+          "sha": "c598076b",
+          "message": "test(dashboard-auth): strip HERMES_DASHBOARD_OAUTH_* env vars in hermetic fixture",
+          "author": "Ben"
+        },
+        {
+          "sha": "5744b175",
+          "message": "harden: restrict markdown link schemes; parse untrusted XML with defusedxml",
+          "author": "TheOnlyMika"
+        },
+        {
+          "sha": "f4953bc6",
+          "message": "fix(subdirectory_hints): prevent loading AGENTS.md outside workspace",
+          "author": "dearmayo"
+        },
+        {
+          "sha": "e3236e99",
+          "message": "fix(anthropic): API-key path skips OAuth autodiscovery + prunes stale entries",
+          "author": "Teknium"
+        },
+        {
+          "sha": "2c6bbaf3",
+          "message": "fix(gateway): coerce scalar `model:` to dict before /model --global persist (#32272)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "de76f4db",
+          "message": "fix(secrets): only apply external secrets once per HERMES_HOME per process (#32271)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "6bd0be30",
+          "message": "feat(patch): indentation preservation, CRLF preservation, per-file failure escalation (#507) (#32273)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "c2aa2353",
+          "message": "fix(agent): log outer-loop exceptions at ERROR with traceback (#32264)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "30928f94",
+          "message": "fix(dashboard): suffix-allowlist plugin assets + denylist subprocess-influencing env vars (#32277)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "27df4b38",
+          "message": "fix(telegram): exempt reply_to_mode=off DM topic sends from anchor-required guard",
+          "author": "teknium1"
+        },
+        {
+          "sha": "926da69b",
+          "message": "test(telegram): switch transient-flake retry test to group chat",
+          "author": "teknium1"
+        },
+        {
+          "sha": "0dee92df",
+          "message": "feat(security): promptware defense \u2014 shared threat patterns + memory load-time scan + tool-result delimiters (#32269)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "b6ce7a45",
+          "message": "chore(release): add ronhi for PR #29523 salvage",
+          "author": "Teknium"
+        },
+        {
+          "sha": "263e008d",
+          "message": "feat(skills): add web-pentest optional skill (#32265)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "386f245d",
+          "message": "feat(skills): add optional openhands skill \u2014 closes #477",
+          "author": "teknium1"
+        },
+        {
+          "sha": "5671461c",
+          "message": "feat(skills): add code-wiki skill \u2014 closes #486 (#32240)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "5caeb65a",
+          "message": "test(tts): regression coverage for #29417 double-[pause] fix",
+          "author": "Teknium"
+        },
+        {
+          "sha": "b62af47d",
+          "message": "chore: drop stale line-number reference in PRIORITY path comment",
+          "author": "alt-glitch"
+        },
+        {
+          "sha": "50aaf0c4",
+          "message": "fix(tui): delineate assistant responses from details (#31087)",
+          "author": "brooklyn!"
+        },
+        {
+          "sha": "0ec0cafd",
+          "message": "Merge pull request #31084 from NousResearch/bb/tui-right-click-copy-selection",
+          "author": "brooklyn!"
+        },
+        {
+          "sha": "95cee443",
+          "message": "docs: add Docker audio bridge notes",
+          "author": "Stellar\u9c7c"
+        },
         {
           "sha": "8f19485f",
           "message": "chore(release): map kylekahraman email to GitHub login",
@@ -6247,150 +6272,300 @@
           "sha": "3b9b9a7a",
           "message": "fix(skills): guard uninstall lock paths",
           "author": "\u5cef\u5cb8 \u4eae"
-        },
-        {
-          "sha": "0d137f10",
-          "message": "feat(errors): actionable guidance for Nous OAuth 401s (#32082)",
-          "author": "Teknium"
-        },
-        {
-          "sha": "dbe5d849",
-          "message": "fix(auxiliary): universal main-model fallback for aux tasks (#31845)",
-          "author": "wysie"
-        },
-        {
-          "sha": "46c1ae8b",
-          "message": "fix(tests): four pre-existing flakes from the security cluster merge (#32072)",
-          "author": "Teknium"
-        },
-        {
-          "sha": "f5bb595d",
-          "message": "chore(release): map 8bit64k + hclsys in AUTHOR_MAP",
-          "author": "alt-glitch"
-        },
-        {
-          "sha": "85a0b342",
-          "message": "test(tui): regression test for /q alias resolving to queue (#31983)",
-          "author": "alt-glitch"
-        },
-        {
-          "sha": "8191f663",
-          "message": "feat(mcp-oauth): accept 'skip' at paste prompt to bypass auth without disabling server (#32069)",
-          "author": "Teknium"
-        },
-        {
-          "sha": "bdf36967",
-          "message": "docs(mcp-oauth): document paste-back flow and SSH options for remote MCP OAuth (#32067)",
-          "author": "Teknium"
-        },
-        {
-          "sha": "1c3c3642",
-          "message": "feat(cli): show live background terminal-process count in status bar (#32061)",
-          "author": "Teknium"
-        },
-        {
-          "sha": "2b16de0e",
-          "message": "chore(release): map adam91holt for PR #31984 salvage",
-          "author": "teknium1"
-        },
-        {
-          "sha": "8601c4d4",
-          "message": "fix(codex): add time-to-first-byte watchdog for stalled Codex streams",
-          "author": "adam91holt"
-        },
-        {
-          "sha": "a989a79c",
-          "message": "fix(gateway): allow native delivery of freshly-produced agent files (#32060)",
-          "author": "Teknium"
-        },
-        {
-          "sha": "0ff7c09e",
-          "message": "feat(mcp-oauth): stdin paste-back fallback for headless OAuth flow (#32053)",
-          "author": "Teknium"
-        },
-        {
-          "sha": "e9119e0e",
-          "message": "chore(release): map dsr-restyn + WuKongAI-CMU + codeblackhole1024 for S04 cluster",
-          "author": "teknium1"
-        },
-        {
-          "sha": "bd2756dd",
-          "message": "fix(update): reject symlink members in update ZIP",
-          "author": "codeblackhole1024"
-        },
-        {
-          "sha": "5f20322d",
-          "message": "fix(tts): reject '..' traversal in output_path",
-          "author": "aaronlab"
-        },
-        {
-          "sha": "ac5359a3",
-          "message": "fix(streaming): route mid-tool-call partial-stream-stub through length continuation (#31998) (#32012)",
-          "author": "daimon-nous[bot]"
-        },
-        {
-          "sha": "46d8b5da",
-          "message": "fix(profile): reject symlinks in distributions (#25292)",
-          "author": "nguyen binh"
-        },
-        {
-          "sha": "0d55315c",
-          "message": "fix(backup): skip symlinked files in zip archives (#25289)",
-          "author": "nguyen binh"
-        },
-        {
-          "sha": "79799c80",
-          "message": "test(approval): patch _YOLO_MODE_FROZEN directly in test_yolo_overrides_cron_deny",
-          "author": "Teknium"
-        },
-        {
-          "sha": "95848b1c",
-          "message": "fix(transcription): reject symlinked audio inputs (#10082)",
-          "author": "Peter"
-        },
-        {
-          "sha": "ee59ef19",
-          "message": "fix: reject read_file symlinks to blocking devices (#10133)",
-          "author": "Peter"
-        },
-        {
-          "sha": "b7b8bec8",
-          "message": "fix(security): block /proc/*/environ, cmdline, maps from file read (#4609)",
-          "author": "Dakota Secula-Rosell"
-        },
-        {
-          "sha": "4909dd84",
-          "message": "chore(release): map 66773372+Tranquil-Flow@users.noreply.github.com to Tranquil-Flow (PR #27518)",
-          "author": "Teknium"
-        },
-        {
-          "sha": "1b12cd52",
-          "message": "fix(cli): bracketed-paste timeout prevents permanent input freeze (#16263)",
-          "author": "Evi Nova"
-        },
-        {
-          "sha": "86974714",
-          "message": "test(cli): cover KeyboardInterrupt guard around slash command dispatch",
-          "author": "Teknium"
-        },
-        {
-          "sha": "63d6b9e6",
-          "message": "fix(cli): catch KeyboardInterrupt during slash commands to prevent session exit",
-          "author": "ygd58"
-        },
-        {
-          "sha": "ee7789e5",
-          "message": "chore(release): map simo.kiihamaki@gmail.com to SimoKiihamaki (PR #30773)",
-          "author": "Teknium"
         }
       ],
-      "commit_count": 89,
+      "commit_count": 116,
       "stats": {
-        "commits": 89
+        "commits": 116
       },
       "themes": [],
       "body_summary": "",
       "index": 74
+    },
+    {
+      "date": "2026-05-26",
+      "tag": "day-2026-05-26",
+      "name": "",
+      "is_release": false,
+      "commits": [
+        {
+          "sha": "458a94e4",
+          "message": "fix(cli): keep destructive slash modal on Linux",
+          "author": "LeonSGP43"
+        },
+        {
+          "sha": "b4eea187",
+          "message": "fix(xai-oauth): gate slash-enum strip on model name + add regression tests (#28490)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "a890389b",
+          "message": "feat(dashboard-auth): HERMES_DASHBOARD_PUBLIC_URL / dashboard.public_url override",
+          "author": "Ben"
+        },
+        {
+          "sha": "0af37ff2",
+          "message": "style(dashboard-auth): redesign /login page to match Nous design system",
+          "author": "Ben"
+        },
+        {
+          "sha": "61dcc338",
+          "message": "feat(dashboard-auth): config.yaml as canonical surface for dashboard.oauth",
+          "author": "Ben"
+        },
+        {
+          "sha": "2fc77c53",
+          "message": "feat(opencode-go): route qwen3.7-max via anthropic_messages",
+          "author": "beardthelion"
+        },
+        {
+          "sha": "bb4703c7",
+          "message": "docs(auth): replace stale 'hermes login' references with 'hermes auth add'",
+          "author": "Teknium"
+        },
+        {
+          "sha": "f05a4730",
+          "message": "fix(gateway): refresh cached agent tools on /reload-mcp",
+          "author": "teknium1"
+        },
+        {
+          "sha": "556bf7c5",
+          "message": "test(cron): guard schedule-required description text on CRONJOB_SCHEMA",
+          "author": "teknium1"
+        },
+        {
+          "sha": "51013268",
+          "message": "fix(cron): clarify schedule is required for create in tool schema",
+          "author": "ygd58"
+        },
+        {
+          "sha": "ccd3d04f",
+          "message": "chore(models): swap qwen3.6-plus \u2192 qwen3.7-max in openrouter+nous lists (#32809)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "8b69ec03",
+          "message": "feat(mcp): Nous-approved MCP catalog with interactive picker (#30870)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "2517917d",
+          "message": "fix(cli): restore fallback paste collapse + handle long single-line pastes (#32447)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "31c8d5ff",
+          "message": "chore(wecom): make defusedxml dep acquireable and tolerant of absence",
+          "author": "Teknium"
+        },
+        {
+          "sha": "66851dc4",
+          "message": "chore: add krislidimo to AUTHOR_MAP for PR #29775 (#32434)",
+          "author": "kshitij"
+        },
+        {
+          "sha": "d8703e27",
+          "message": "feat(skills-hub): health checks, freshness badge, and a watchdog cron (#32345)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "29c71e97",
+          "message": "fix(docker): propagate container env through s6 to cont-init and main CMD",
+          "author": "John Paul Soliva"
+        },
+        {
+          "sha": "cea87d91",
+          "message": "fix(skills-hub): show every catalog source on /docs/skills (skills.sh, ClawHub, browse.sh, OpenAI, \u2026) (#32336)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "c26af468",
+          "message": "fix(skills): reject symlinks in skill bundles before install",
+          "author": "MorAlekss"
+        },
+        {
+          "sha": "fe9744cb",
+          "message": "chore(release): map ffr31mr + TheOnlyMika in AUTHOR_MAP",
+          "author": "Teknium"
+        },
+        {
+          "sha": "ccd89931",
+          "message": "fix(cron): split scanner into two tiers so skill prose stops false-positiving (#32339)",
+          "author": "Teknium"
+        }
+      ],
+      "commit_count": 21,
+      "stats": {
+        "commits": 21
+      },
+      "themes": [],
+      "body_summary": "",
+      "index": 75
+    },
+    {
+      "date": "2026-05-27",
+      "tag": "day-2026-05-27",
+      "name": "",
+      "is_release": false,
+      "commits": [
+        {
+          "sha": "f0de3cd0",
+          "message": "fix(agent): roll back switch_model() state when client rebuild fails (#33228)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "825948ed",
+          "message": "ci(docker): simplify tagging \u2014 push both :main and :latest on main push",
+          "author": "ethernet"
+        },
+        {
+          "sha": "0325e18f",
+          "message": "fix(gateway): keep Telegram heartbeat + interim commentary on; edit heartbeat in place (#33187)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "69dfcdcc",
+          "message": "fix(auth): codex chat path falls back to credential_pool when singleton is empty",
+          "author": "Teknium"
+        },
+        {
+          "sha": "3e33e143",
+          "message": "fix(docker): discover agent-browser Chromium binary at boot",
+          "author": "Ben"
+        },
+        {
+          "sha": "ea349250",
+          "message": "fix(discord): recover Windows voice opus decoding",
+          "author": "helix4u"
+        },
+        {
+          "sha": "bb65bebe",
+          "message": "Merge pull request #30504 from ilonagaja509-glitch/fix/30394-docker-anthropic-package",
+          "author": "Ben Barclay"
+        },
+        {
+          "sha": "0b6ace64",
+          "message": "test(verbose): align with telegram tier-1 inbox default",
+          "author": "Teknium"
+        },
+        {
+          "sha": "f1422ffd",
+          "message": "fix(gateway): classify Codex 429 quota as rate-limit, not missing credentials",
+          "author": "konsisumer"
+        },
+        {
+          "sha": "2bbd5349",
+          "message": "fix(cli): sync credential_pool on Codex re-auth",
+          "author": "konsisumer"
+        },
+        {
+          "sha": "4feb181e",
+          "message": "chore(release): map sir-ad + rdasilva1016-ui in AUTHOR_MAP",
+          "author": "Teknium"
+        },
+        {
+          "sha": "2f7ba51b",
+          "message": "refactor(gateway): drop try/except wrappers around resolve_display_setting",
+          "author": "Teknium"
+        },
+        {
+          "sha": "581b0215",
+          "message": "chore(release): map chaconne67 noreply for #31629 salvage",
+          "author": "Teknium"
+        },
+        {
+          "sha": "9c69204d",
+          "message": "fix(codex_responses_adapter): drop foreign-issuer reasoning on replay",
+          "author": "chaconne67"
+        },
+        {
+          "sha": "c819bc57",
+          "message": "chore(release): map kpadilha noreply for #11038 salvage",
+          "author": "Teknium"
+        },
+        {
+          "sha": "187cf0f2",
+          "message": "tools(terminal): nudge homebrewed CI pollers at the tool surface (#33142)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "249534e4",
+          "message": "plugins: add security-guidance \u2014 pattern-matched warnings on dangerous code writes (#33131)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "c7522056",
+          "message": "chore(release): map superearn-fisher noreply for #33122 salvage",
+          "author": "Teknium"
+        },
+        {
+          "sha": "4920f843",
+          "message": "test(codex): cover null output stream terminal events",
+          "author": "SuperEarn"
+        },
+        {
+          "sha": "f0fdb5e6",
+          "message": "feat(catalog): add qwen3.7-max to alibaba + alibaba-coding-plan model lists",
+          "author": "orcool"
+        },
+        {
+          "sha": "96223265",
+          "message": "chore(api-server): mark skills_api capability True now that /v1/skills shipped",
+          "author": "Teknium"
+        },
+        {
+          "sha": "f0be3223",
+          "message": "chore(release): map EvilHumphrey noreply for #33034 salvage",
+          "author": "Teknium"
+        },
+        {
+          "sha": "4243b6dc",
+          "message": "fix(codex): update silent-hang workaround hint",
+          "author": "EvilHumphrey"
+        },
+        {
+          "sha": "97697948",
+          "message": "feat(nix): add #messaging and #full package variants (#33108)",
+          "author": "Siddharth Balyan"
+        },
+        {
+          "sha": "25f43d38",
+          "message": "feat(api-server): add GET /v1/skills and /v1/toolsets (#33016)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "febc4cfe",
+          "message": "remove Vercel AI Gateway and Vercel Sandbox (#33067)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "cb38ce28",
+          "message": "refactor(codex): drop SDK responses.stream() helper; consume events directly (#33042)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "fb298a95",
+          "message": "fix(docker): mkdir HERMES_HOME as root in stage2 before chown / privilege drop (#18488)",
+          "author": "Ben"
+        },
+        {
+          "sha": "c3bdb2af",
+          "message": "ci(docker): add shellcheck shell=sh directive to main-wrapper.sh",
+          "author": "Ben"
+        },
+        {
+          "sha": "27a29ee5",
+          "message": "feat(docker): upgrade Node to 22 LTS via multi-stage from node:22-bookworm-slim (#4977)",
+          "author": "Ben"
+        }
+      ],
+      "commit_count": 47,
+      "stats": {
+        "commits": 47
+      },
+      "themes": [],
+      "body_summary": "",
+      "index": 76
     }
   ]
 }
