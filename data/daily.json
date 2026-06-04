@@ -1,8 +1,8 @@
 {
   "repo": "NousResearch/hermes-agent",
-  "generated_at": "2026-06-03",
-  "total_days": 84,
-  "active_days": 63,
+  "generated_at": "2026-06-04",
+  "total_days": 85,
+  "active_days": 64,
   "release_days": 11,
   "days": [
     {
@@ -710,16 +710,11 @@
           "sha": "9575bce6",
           "message": "fix(mcp): clear stale thread interrupt before MCP discovery",
           "author": "AJV20"
-        },
-        {
-          "sha": "7137cccb",
-          "message": "fix(memory): support OpenViking local resource uploads",
-          "author": "nan"
         }
       ],
-      "commit_count": 3,
+      "commit_count": 2,
       "stats": {
-        "commits": 3
+        "commits": 2
       },
       "themes": [],
       "body_summary": "",
@@ -1203,16 +1198,11 @@
           "sha": "b349ae1e",
           "message": "fix(acp): honor task cwd for foreground terminal commands",
           "author": "Henkey"
-        },
-        {
-          "sha": "103e1192",
-          "message": "feat(cli): show context compression count in status bar",
-          "author": "Sofia Yang"
         }
       ],
-      "commit_count": 7,
+      "commit_count": 6,
       "stats": {
-        "commits": 7
+        "commits": 6
       },
       "themes": [],
       "body_summary": "",
@@ -1243,46 +1233,11 @@
           "sha": "13b474c5",
           "message": "fix: send correct resolution param to xAI image generation API",
           "author": "Ayman Kamal"
-        },
-        {
-          "sha": "f5a232af",
-          "message": "refactor: replace 'cmp' text with \ud83d\udddc\ufe0f emoji in status bar",
-          "author": "Sofia Yang"
-        },
-        {
-          "sha": "8a96fa48",
-          "message": "fix(gateway): avoid duplicated responses history",
-          "author": "thelumiereguy"
-        },
-        {
-          "sha": "7c0766e0",
-          "message": "fix(gateway): translate inbound document host paths to container paths for Docker backend",
-          "author": "ambition0802"
-        },
-        {
-          "sha": "1f27ca63",
-          "message": "test(update): teach restart-mocks about the post-update survivor sweep",
-          "author": "Sanjay Santhanam"
-        },
-        {
-          "sha": "595bcc89",
-          "message": "test(update): patch isatty on real streams to fix xdist-flaky --yes tests",
-          "author": "Sanjay Santhanam"
-        },
-        {
-          "sha": "033e533d",
-          "message": "test(docker): align Dockerfile contract tests with simplified TUI flow",
-          "author": "Sanjay Santhanam"
-        },
-        {
-          "sha": "bd0c54d1",
-          "message": "fix: route Telegram image documents through photo handling",
-          "author": "mrcoferland"
         }
       ],
-      "commit_count": 11,
+      "commit_count": 4,
       "stats": {
-        "commits": 11
+        "commits": 4
       },
       "themes": [],
       "body_summary": "",
@@ -1445,9 +1400,9 @@
           "author": "CCClelo"
         }
       ],
-      "commit_count": 49,
+      "commit_count": 31,
       "stats": {
-        "commits": 49
+        "commits": 31
       },
       "themes": [],
       "body_summary": "",
@@ -1533,61 +1488,11 @@
           "sha": "8ad117a3",
           "message": "fix(models): add alibaba-coding-plan to _PROVIDER_MODELS curated list",
           "author": "TakeshiSawaguchi"
-        },
-        {
-          "sha": "61d9e336",
-          "message": "fix(model_tools): log plugin hook exceptions instead of silently swallowing them",
-          "author": "sprmn24"
-        },
-        {
-          "sha": "d8d57fb2",
-          "message": "fix(install): remove uv exclude-newer cutoff",
-          "author": "LeonSGP43"
-        },
-        {
-          "sha": "2b6345ce",
-          "message": "fix(memory): harden OpenViking local path uploads",
-          "author": "Hao Zhe"
-        },
-        {
-          "sha": "187951ec",
-          "message": "test(memory): harden OpenViking local upload coverage",
-          "author": "Hao Zhe"
-        },
-        {
-          "sha": "4f364c4e",
-          "message": "fix(mcp): give 'mcp add --command' a distinct argparse dest",
-          "author": "badfriend"
-        },
-        {
-          "sha": "a5c9c83b",
-          "message": "fix(web): force light color-scheme on docs iframe",
-          "author": "Harish Kukreja"
-        },
-        {
-          "sha": "441ef75d",
-          "message": "fix(feishu): keep topic replies in threads",
-          "author": "Yuqian"
-        },
-        {
-          "sha": "9627ee70",
-          "message": "feat(ci): add typecheck (warnings only in CI)",
-          "author": "ethernet"
-        },
-        {
-          "sha": "63c51d89",
-          "message": "change: enable ruff/ty",
-          "author": "ethernet"
-        },
-        {
-          "sha": "395dbcc8",
-          "message": "feat(browser): add Lightpanda engine support with automatic Chrome fallback",
-          "author": "kshitijk4poor"
         }
       ],
-      "commit_count": 25,
+      "commit_count": 15,
       "stats": {
-        "commits": 25
+        "commits": 15
       },
       "themes": [],
       "body_summary": "",
@@ -1638,61 +1543,11 @@
           "sha": "526c0e01",
           "message": "feat(api-server): expose run approval events",
           "author": "Zhicheng Han"
-        },
-        {
-          "sha": "8d363f8d",
-          "message": "fix(bedrock): preserve reasoningContent across converse normalization",
-          "author": "Molvikar"
-        },
-        {
-          "sha": "176b9357",
-          "message": "fix(gateway): preserve thread routing from cached live session sources",
-          "author": "Zyproth"
-        },
-        {
-          "sha": "6e8f1e09",
-          "message": "fix(gateway): use monotonic deadlines in QR onboarding flows",
-          "author": "Zyproth"
-        },
-        {
-          "sha": "a84e56d4",
-          "message": "fix(auth): sync shared Nous refresh tokens",
-          "author": "Michael Nguyen"
-        },
-        {
-          "sha": "946ef0ea",
-          "message": "fix(tui): bound virtual history offset searches",
-          "author": "asheriif"
-        },
-        {
-          "sha": "906881c3",
-          "message": "fix(cli): catch OSError in _resolve_attachment_path to prevent ENAMETOOLONG dropping long slash commands",
-          "author": "Cleo"
-        },
-        {
-          "sha": "76074d9e",
-          "message": "fix(cli): recover classic CLI output after resize",
-          "author": "helix4u"
-        },
-        {
-          "sha": "e45df2e8",
-          "message": "fix(ui): reduce status-line jitter while scrolling",
-          "author": "adybag14-cyber"
-        },
-        {
-          "sha": "043a118d",
-          "message": "fix: harden install.sh against inherited Python env leakage",
-          "author": "adybag14-cyber"
-        },
-        {
-          "sha": "39f451f5",
-          "message": "fix: add Turkish locale references in config, tests, and docs",
-          "author": "etherman-os"
         }
       ],
-      "commit_count": 18,
+      "commit_count": 8,
       "stats": {
-        "commits": 18
+        "commits": 8
       },
       "themes": [],
       "body_summary": "",
@@ -1773,91 +1628,11 @@
           "sha": "c3be6ec1",
           "message": "feat: add transform_llm_output plugin hook",
           "author": "BarnacleBoy"
-        },
-        {
-          "sha": "647f95b4",
-          "message": "docs(contributing): align tool discovery and test runner with AGENTS.md",
-          "author": "xxxigm"
-        },
-        {
-          "sha": "36ad9733",
-          "message": "fix(kanban): treat dashboard event-stream cancellation as normal shutdown",
-          "author": "SandroHub013"
-        },
-        {
-          "sha": "6b9f7140",
-          "message": "fix(curator): make manual runs synchronous",
-          "author": "LeonSGP43"
-        },
-        {
-          "sha": "961a3535",
-          "message": "fix(gateway): preserve resume marker on interrupted restart",
-          "author": "Kevin Yan"
-        },
-        {
-          "sha": "fad684b1",
-          "message": "feat(gateway): auto-resume interrupted sessions after restart",
-          "author": "Kevin Yan"
-        },
-        {
-          "sha": "411cfa26",
-          "message": "fix: auto-block repeated kanban retries",
-          "author": "mwnickerson"
-        },
-        {
-          "sha": "d797755a",
-          "message": "fix(gateway): wait for systemd restart readiness",
-          "author": "helix4u"
-        },
-        {
-          "sha": "65c762b2",
-          "message": "fix(tui): preserve session when switching personality",
-          "author": "Austin Pickett"
-        },
-        {
-          "sha": "3cdbf334",
-          "message": "fix(gateway): don't dead-end setup wizard when only system-scope unit is installed",
-          "author": "Teknium"
-        },
-        {
-          "sha": "04cf4788",
-          "message": "fix(tui): restore voice push-to-talk parity (#20897)",
-          "author": "brooklyn!"
-        },
-        {
-          "sha": "5ccab51f",
-          "message": "fix(tui): steady transcript scrollbar (#20917)",
-          "author": "brooklyn!"
-        },
-        {
-          "sha": "53a02499",
-          "message": "Merge pull request #20890 from NousResearch/fix/docker-push",
-          "author": "ethernet"
-        },
-        {
-          "sha": "f1a8e999",
-          "message": "fix(tui): honor skin highlight colors (#20895)",
-          "author": "brooklyn!"
-        },
-        {
-          "sha": "da601982",
-          "message": "fix(tui): refresh virtual offsets after row resize (#20898)",
-          "author": "brooklyn!"
-        },
-        {
-          "sha": "5044e1cb",
-          "message": "fix(cli): submit LF enter in thin PTYs (#20896)",
-          "author": "brooklyn!"
-        },
-        {
-          "sha": "d8b85bfd",
-          "message": "chore: add guillaumemeyer to AUTHOR_MAP",
-          "author": "Teknium"
         }
       ],
-      "commit_count": 70,
+      "commit_count": 14,
       "stats": {
-        "commits": 70
+        "commits": 14
       },
       "themes": [],
       "body_summary": "",
@@ -2020,9 +1795,9 @@
           "author": "hllqkb"
         }
       ],
-      "commit_count": 148,
+      "commit_count": 108,
       "stats": {
-        "commits": 148
+        "commits": 108
       },
       "themes": [],
       "body_summary": "",
@@ -5005,6 +4780,11 @@
       "is_release": false,
       "commits": [
         {
+          "sha": "40fbb0f3",
+          "message": "fix(constants): use windows native default hermes home",
+          "author": "LeonSGP43"
+        },
+        {
           "sha": "0036c729",
           "message": "fix(gateway): upgrade plugin/bundle error logging and fix O(n^2) watcher recovery",
           "author": "ErnestHysa"
@@ -5148,16 +4928,11 @@
           "sha": "c26af468",
           "message": "fix(skills): reject symlinks in skill bundles before install",
           "author": "MorAlekss"
-        },
-        {
-          "sha": "fe9744cb",
-          "message": "chore(release): map ffr31mr + TheOnlyMika in AUTHOR_MAP",
-          "author": "Teknium"
         }
       ],
-      "commit_count": 31,
+      "commit_count": 32,
       "stats": {
-        "commits": 31
+        "commits": 32
       },
       "themes": [],
       "body_summary": "",
@@ -5500,6 +5275,11 @@
       "is_release": false,
       "commits": [
         {
+          "sha": "2059707f",
+          "message": "fix(gateway-windows): anchor detached/startup cwd at HERMES_HOME",
+          "author": "Dusk1e"
+        },
+        {
           "sha": "a429a2a0",
           "message": "ci(nix): fold package+devShell builds into flake check",
           "author": "ethernet"
@@ -5643,16 +5423,11 @@
           "sha": "689ef5e2",
           "message": "feat(cli): warn on unsupported pip installs + fix stale update-check cache (#34491) (#34846)",
           "author": "Teknium"
-        },
-        {
-          "sha": "bb508257",
-          "message": "chore(release): map annguyenNous to AUTHOR_MAP",
-          "author": "teknium1"
         }
       ],
-      "commit_count": 145,
+      "commit_count": 146,
       "stats": {
-        "commits": 145
+        "commits": 146
       },
       "themes": [],
       "body_summary": "",
@@ -5830,6 +5605,11 @@
       "is_release": false,
       "commits": [
         {
+          "sha": "4ae3c988",
+          "message": "fix(gateway): bridge shared-key loop to nested platform config blocks",
+          "author": "AhmetArif0"
+        },
+        {
           "sha": "a51a7b9b",
           "message": "fix(node/nix): consolidate workspace lockfile + update all consumers",
           "author": "ethernet"
@@ -5973,16 +5753,11 @@
           "sha": "087be007",
           "message": "fix(cli): migrate setup model/provider pickers off simple_term_menu to curses",
           "author": "kshitijk4poor"
-        },
-        {
-          "sha": "4ccd141b",
-          "message": "Merge pull request #35776 from kshitijk4poor/fix/curses-arrow-key-decode",
-          "author": "kshitij"
         }
       ],
-      "commit_count": 48,
+      "commit_count": 49,
       "stats": {
-        "commits": 48
+        "commits": 49
       },
       "themes": [],
       "body_summary": "",
@@ -5994,6 +5769,16 @@
       "name": "",
       "is_release": false,
       "commits": [
+        {
+          "sha": "9756dff5",
+          "message": "fix(model_metadata): drop stale \u2264256,000 cache entries for Grok-4.3",
+          "author": "AhmetArif0"
+        },
+        {
+          "sha": "a6a4e6f9",
+          "message": "fix(approval): gate perl/ruby -i in-place edits of Hermes config/env",
+          "author": "AhmetArif0"
+        },
         {
           "sha": "f45d7dee",
           "message": "fix(desktop): add @testing-library/dom as explicit dev dependency",
@@ -6133,21 +5918,11 @@
           "sha": "ec6261ae",
           "message": "chore(release): add VinciZhu to AUTHOR_MAP for #16721 salvage",
           "author": "kshitijk4poor"
-        },
-        {
-          "sha": "fb1b681b",
-          "message": "fix(gateway): keep JSON-embedded MEDIA: text verbatim in cleaned output",
-          "author": "kshitijk4poor"
-        },
-        {
-          "sha": "e8827ef7",
-          "message": "fix(gateway): skip MEDIA: inside serialized JSON string values",
-          "author": "liuhao1024"
         }
       ],
-      "commit_count": 56,
+      "commit_count": 58,
       "stats": {
-        "commits": 56
+        "commits": 58
       },
       "themes": [],
       "body_summary": "",
@@ -6159,6 +5934,31 @@
       "name": "",
       "is_release": false,
       "commits": [
+        {
+          "sha": "b6206020",
+          "message": "fix(desktop): remove session search aux model",
+          "author": "scubamount"
+        },
+        {
+          "sha": "34a29035",
+          "message": "fix(auth): set active_provider after hermes auth add google-gemini-cli",
+          "author": "AhmetArif0"
+        },
+        {
+          "sha": "eb9cde73",
+          "message": "fix(cron): decouple job dispatch from completion in tick()",
+          "author": "Vynxe Vainglory"
+        },
+        {
+          "sha": "0b46c416",
+          "message": "fix(vision): convert video_url blocks to Anthropic input_video format for MiniMax providers",
+          "author": "kyssta-exe"
+        },
+        {
+          "sha": "de60bf40",
+          "message": "fix(memory): register parent packages for user-installed provider imports",
+          "author": "Sol Aitken"
+        },
         {
           "sha": "19202099",
           "message": "fix(cli): exclude desktop-managed backend from stale-dashboard kill",
@@ -6283,36 +6083,11 @@
           "sha": "bb0619db",
           "message": "fix(auth): align Codex OAuth persistence paths (#37517)",
           "author": "brooklyn!"
-        },
-        {
-          "sha": "3e6b6825",
-          "message": "Merge pull request #37518 from NousResearch/bb/desktop-installer-running-instances",
-          "author": "ethernet"
-        },
-        {
-          "sha": "091ef7d3",
-          "message": "Merge pull request #37484 from NousResearch/ethie/gui-docs",
-          "author": "ethernet"
-        },
-        {
-          "sha": "0c29cfd1",
-          "message": "Clarify desktop install retry guidance",
-          "author": "Brooklyn Nicholson"
-        },
-        {
-          "sha": "6d14a24b",
-          "message": "feat(dashboard): nous-blue theme, bulk sessions, schedule picker (#37383)",
-          "author": "Austin Pickett"
-        },
-        {
-          "sha": "7450bee8",
-          "message": "fix(docs): update desktop app docs",
-          "author": "ethernet"
         }
       ],
-      "commit_count": 91,
+      "commit_count": 96,
       "stats": {
-        "commits": 91
+        "commits": 96
       },
       "themes": [],
       "body_summary": "",
@@ -6325,163 +6100,328 @@
       "is_release": false,
       "commits": [
         {
-          "sha": "12ea7fc7",
-          "message": "Merge pull request #38255 from NousResearch/bb/installer-desktop-build-logging",
+          "sha": "bf590c81",
+          "message": "fix(desktop): hide gateway auth control until probe resolves the scheme",
+          "author": "Ben"
+        },
+        {
+          "sha": "9d07927a",
+          "message": "desktop: OAuth-aware remote gateway connection",
+          "author": "Ben"
+        },
+        {
+          "sha": "5a22cd42",
+          "message": "fix(desktop): configure local/custom endpoint without an API key or UI changes",
+          "author": "xxxigm"
+        },
+        {
+          "sha": "ca067157",
+          "message": "feat(web): wire local/custom endpoints into model assignment",
+          "author": "xxxigm"
+        },
+        {
+          "sha": "a6e47314",
+          "message": "fix(dashboard): sanction plugin WS/upload auth via SDK helpers (gated mode)",
+          "author": "Ben"
+        },
+        {
+          "sha": "1c88360f",
+          "message": "Merge pull request #38546 from NousResearch/bb/disable-provider-key-validation",
           "author": "brooklyn!"
         },
         {
-          "sha": "7fb8a6b5",
-          "message": "feat(dashboard): enrich profiles dashboard and de-dupe channel env vars (#37872)",
-          "author": "Austin Pickett"
+          "sha": "475ecea3",
+          "message": "fix(install): cap requires-python at <3.14 and pin UV_PYTHON to the venv (#38535)",
+          "author": "Teknium"
         },
         {
-          "sha": "1dca7c62",
-          "message": "fix(install): require Node >=20.19/22.12 for the desktop build",
+          "sha": "e8c3ac2f",
+          "message": "fix: strip extra_content from tool_calls for strict APIs (Fireworks, Mistral)",
+          "author": "Nate George"
+        },
+        {
+          "sha": "ec69c767",
+          "message": "docs(desktop): point Chat section to remote-backend + dashboard doc (#38545)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "2f523a46",
+          "message": "fix(tui): cgroup-aware V8 heap cap so memory-limited containers stop dying silently (#38541)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "8a19884b",
+          "message": "fix(update): stop stash/restore from clobbering desktop source on managed clones (#38542)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "7ea37cd0",
+          "message": "fix(desktop): stop validating provider keys in launch setup",
           "author": "Brooklyn Nicholson"
         },
         {
-          "sha": "214b7e07",
-          "message": "fix(install.ps1): handle dirty worktree on Windows update (#38239)",
+          "sha": "1927ff21",
+          "message": "Merge pull request #38517 from NousResearch/bb/desktop-yolo-statusbar-toggle",
+          "author": "brooklyn!"
+        },
+        {
+          "sha": "63727f32",
+          "message": "docs(dashboard): document connecting Hermes Desktop to a remote backend (#38534)",
           "author": "Teknium"
         },
         {
-          "sha": "6ee046a7",
-          "message": "fix(doctor): detect + repair stale HERMES_MAX_ITERATIONS .env ghost shadowing config.yaml (#38222)",
+          "sha": "5c0a1fec",
+          "message": "fix(desktop): surface skill & quick-command slash commands in the palette (#38531)",
           "author": "Teknium"
         },
         {
-          "sha": "de26b178",
-          "message": "test: stub has_hook in transform_tool_result hook tests",
-          "author": "teknium1"
+          "sha": "96f0ddc6",
+          "message": "fix(docker): bake hindsight-client into the image (#38128) (#38530)",
+          "author": "Ben Barclay"
         },
         {
-          "sha": "827f2514",
-          "message": "perf(observability): gate tool-hook emit on has_hook; slim per-tool footprint",
-          "author": "teknium1"
+          "sha": "51a2c070",
+          "message": "fix(skills): document xurl X Article ingestion",
+          "author": "helix4u"
         },
         {
-          "sha": "43232593",
-          "message": "test: restore unrelated trailing newlines in cwd/tool-search tests",
+          "sha": "e223503b",
+          "message": "fix(packaging): modernize project.license to PEP 639 SPDX string (#38353)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "6fff7441",
+          "message": "Merge pull request #38465 from kshitijk4poor/portal-quick-setup-model",
+          "author": "kshitij"
+        },
+        {
+          "sha": "26a57467",
+          "message": "fix(cli): harden `hermes portal` SystemExit handling + finish model-pick doc sweep",
           "author": "kshitijk4poor"
         },
         {
-          "sha": "0d9b7132",
-          "message": "feat(observability): observer-grade telemetry hooks + NeMo-Relay plugin",
-          "author": "Bryan Bednarski"
+          "sha": "cd188b81",
+          "message": "feat(cli): make `hermes portal` run the full quick-setup Nous flow (model picker)",
+          "author": "kshitijk4poor"
         },
         {
-          "sha": "a78c73f3",
-          "message": "Merge pull request #38224 from NousResearch/hermes/hermes-79601e59",
-          "author": "brooklyn!"
-        },
-        {
-          "sha": "4c544b63",
-          "message": "fix(kanban): don't permanently block tasks that hit a provider rate limit (#38223)",
-          "author": "Teknium"
-        },
-        {
-          "sha": "60b6352f",
-          "message": "Merge pull request #38221 from NousResearch/hermes/hermes-45accc84",
-          "author": "brooklyn!"
-        },
-        {
-          "sha": "e76d8bf5",
-          "message": "fix(tui): stop persisting full tool output in trail lines (silent OOM death)",
-          "author": "teknium1"
-        },
-        {
-          "sha": "c5d199ea",
-          "message": "feat(dashboard): check-before-update flow on the System page (#38205)",
-          "author": "Teknium"
-        },
-        {
-          "sha": "c930a49c",
-          "message": "fix(desktop): honor upward wheel scroll in long threads",
-          "author": "Fermin Quant"
-        },
-        {
-          "sha": "3aa24e26",
-          "message": "fix(desktop): stop chat scroll backward-jump from content-growth interim scrolls (#37997)",
-          "author": "luyao618"
-        },
-        {
-          "sha": "ba57ebec",
-          "message": "fix(nix): bump npmDepsHash for refreshed lockfile",
-          "author": "teknium1"
-        },
-        {
-          "sha": "b98b645f",
-          "message": "chore: regenerate lockfile + map vladkvlchk for salvaged #36978",
-          "author": "teknium1"
-        },
-        {
-          "sha": "1b302a04",
-          "message": "feat(debug): include desktop.log in hermes debug share / /debug / hermes logs (#38203)",
-          "author": "Teknium"
-        },
-        {
-          "sha": "1d90b239",
-          "message": "fix(mcp): banner shows 'disabled' not 'failed' for enabled:false servers (#38204)",
-          "author": "Teknium"
-        },
-        {
-          "sha": "ef652981",
-          "message": "docs: make the Desktop App remote-backend section self-contained (#38194)",
-          "author": "Teknium"
-        },
-        {
-          "sha": "50ba36dc",
-          "message": "chore: add bbednarski9 to AUTHOR_MAP for #29722 salvage (#38189)",
+          "sha": "d4787d3e",
+          "message": "Merge pull request #38449 from kshitijk4poor/portal-login-alias",
           "author": "kshitij"
         },
         {
-          "sha": "5fca754e",
-          "message": "fix(desktop): pass live backend PID to in-app update so its own dashboard is spared",
-          "author": "teknium1"
+          "sha": "0caa2378",
+          "message": "fix(desktop): prevent IME Enter from splitting messages and viewport resize from disarming scroll anchor (#38333)",
+          "author": "stremtec"
         },
         {
-          "sha": "d833b1ef",
-          "message": "docs: add remote-backend section to the Desktop App page (#38180)",
-          "author": "Teknium"
+          "sha": "9ba7e5b1",
+          "message": "fix(setup): point Portal login-failure retry hints at `hermes portal`",
+          "author": "kshitijk4poor"
         },
         {
-          "sha": "a1264e99",
-          "message": "fix(matrix): make bang-command resolution robust + fix dead skill-command branch",
-          "author": "alt-glitch"
+          "sha": "da4f407e",
+          "message": "feat(cli): make `hermes portal` the human-readable Portal onboarding alias",
+          "author": "kshitijk4poor"
         },
         {
-          "sha": "6038bfb6",
-          "message": "docs: explain remote-gateway session token for Hermes Desktop (#38144)",
-          "author": "Teknium"
+          "sha": "39fee4f3",
+          "message": "test(installer): cover the post-update relaunch/install target derivation",
+          "author": "kshitijk4poor"
         },
         {
-          "sha": "047e7cf3",
-          "message": "fix(docs): remove remaining stale submodule references missed by #38089 (#38105)",
-          "author": "Teknium"
+          "sha": "d3b1e430",
+          "message": "fix(installer): never brick the install when a self-update swap fails",
+          "author": "kshitijk4poor"
         },
         {
-          "sha": "43fd63b4",
-          "message": "fix(windows): rip out unused submodule support in installer & docker & docs",
-          "author": "ethernet"
+          "sha": "c349eca8",
+          "message": "fix(packaging): ship locales/ i18n catalogs in wheel, sdist, and Nix (#38383)",
+          "author": "Siddharth Balyan"
         },
         {
-          "sha": "64202200",
-          "message": "chore: remove committed RELEASE_v*.md changelogs from repo root (#37855)",
-          "author": "Teknium"
+          "sha": "b91c3820",
+          "message": "Merge pull request #38393 from NousResearch/bb/desktop-session-fixes",
+          "author": "brooklyn!"
         },
         {
-          "sha": "f019a9c4",
-          "message": "Merge pull request #37975 from kshitijk4poor/fix/desktop-session-view-bleed",
-          "author": "kshitij"
+          "sha": "1b89715e",
+          "message": "fix(desktop): guard reconnect sockets and keep branch search precise",
+          "author": "Brooklyn Nicholson"
         }
       ],
-      "commit_count": 80,
+      "commit_count": 126,
       "stats": {
-        "commits": 80
+        "commits": 126
       },
       "themes": [],
       "body_summary": "",
       "index": 83
+    },
+    {
+      "date": "2026-06-04",
+      "tag": "day-2026-06-04",
+      "name": "",
+      "is_release": false,
+      "commits": [
+        {
+          "sha": "643181b3",
+          "message": "chore: add scubamount to AUTHOR_MAP for salvaged PR #37616",
+          "author": "teknium1"
+        },
+        {
+          "sha": "9fbfeb31",
+          "message": "fix(cron): make sequential jobs non-blocking too + sweep MCP after jobs finish",
+          "author": "Teknium"
+        },
+        {
+          "sha": "c14e6b4e",
+          "message": "chore(release): map ashishpatel26 author email for salvage",
+          "author": "teknium1"
+        },
+        {
+          "sha": "c9b62061",
+          "message": "fix(cli): launchd KeepAlive unconditional restart (#37388)",
+          "author": "ashishpatel26"
+        },
+        {
+          "sha": "153fe284",
+          "message": "fix(vision): use MiniMax type=\"video\" block (not input_video) + tests",
+          "author": "teknium"
+        },
+        {
+          "sha": "b04c6e95",
+          "message": "fix(approval): catch perl/ruby -i as a separate flag token",
+          "author": "Teknium"
+        },
+        {
+          "sha": "5f199e61",
+          "message": "chore(release): add AUTHOR_MAP entry for solaitken",
+          "author": "teknium1"
+        },
+        {
+          "sha": "d3fab549",
+          "message": "fix(cli): clear screen on exit so live chrome isn't stranded in scrollback (#38928)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "c0435f4f",
+          "message": "docs: remote desktop connect uses username/password, not --insecure + session token (#38926)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "df9fb8e5",
+          "message": "fix(tools): stop hermes tools reporting kanban as removed (#38918)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "616c0a36",
+          "message": "fix(dashboard-auth): don't abort verify chain on one provider's ProviderError",
+          "author": "Ben"
+        },
+        {
+          "sha": "f57ce341",
+          "message": "feat(dashboard-auth): add generic self-hosted OIDC provider",
+          "author": "Ben"
+        },
+        {
+          "sha": "cae6b548",
+          "message": "feat(dashboard): always enable embedded chat; remove dashboard --tui flag",
+          "author": "Ben"
+        },
+        {
+          "sha": "bf82a7f1",
+          "message": "fix(cli): erase live chrome on exit so it isn't stranded above the session summary",
+          "author": "Teknium"
+        },
+        {
+          "sha": "aeec88c7",
+          "message": "fix(installer): symlink bundled node/npm into command bin dir for FHS root installs",
+          "author": "alt-glitch"
+        },
+        {
+          "sha": "b1b0f4b6",
+          "message": "fix(desktop): surface command approval even when its tool is in a collapsed group (#38829)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "0175be3a",
+          "message": "chore(desktop): silence Vite chunk-size warning for intentional single bundle (#38888)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "928f1ac0",
+          "message": "fix(desktop): re-mint OAuth WS ticket on gateway reconnect (#38886)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "4ed63170",
+          "message": "fix(update): don't fail desktop rebuild / skills sync on mid-rebuild venv (#38885)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "bd12b3c2",
+          "message": "feat(desktop): username/password login for remote gateways (#38851)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "fe709a42",
+          "message": "fix(test): expect 4404 close code for disabled embedded chat (#38841)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "385a508e",
+          "message": "fix(desktop): don't fall back to a dead WS ticket on OAuth re-mint failure",
+          "author": "Ben"
+        },
+        {
+          "sha": "9cbc37e2",
+          "message": "feat(desktop): dedicated Providers settings + polished Accounts/API-keys UX (#38551)",
+          "author": "Austin Pickett"
+        },
+        {
+          "sha": "b36a30db",
+          "message": "docs(dashboard-auth): document the username/password provider",
+          "author": "Ben"
+        },
+        {
+          "sha": "3a25912c",
+          "message": "test(dashboard-auth): cover password login route, provider, and plugin",
+          "author": "Ben"
+        },
+        {
+          "sha": "acb0e2ba",
+          "message": "feat(dashboard-auth): add BasicAuthProvider username/password plugin",
+          "author": "Ben"
+        },
+        {
+          "sha": "ed9e8ba0",
+          "message": "feat(dashboard-auth): add pluggable password (non-redirect) login",
+          "author": "Ben"
+        },
+        {
+          "sha": "fe74a1ac",
+          "message": "fix(dashboard_auth): allow any http:// host in redirect_uri fast-fail (#38827)",
+          "author": "Ben Barclay"
+        },
+        {
+          "sha": "6717914e",
+          "message": "fix(dashboard): explain WHY a chat WS connection was refused (#38743)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "c2ca3f01",
+          "message": "fix(dashboard): honor --portal-url / HERMES_DASHBOARD_PORTAL_URL override in register",
+          "author": "Ben"
+        }
+      ],
+      "commit_count": 87,
+      "stats": {
+        "commits": 87
+      },
+      "themes": [],
+      "body_summary": "",
+      "index": 84
     }
   ]
 }
