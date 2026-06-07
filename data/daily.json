@@ -1,7 +1,7 @@
 {
   "repo": "NousResearch/hermes-agent",
-  "generated_at": "2026-06-06",
-  "total_days": 87,
+  "generated_at": "2026-06-07",
+  "total_days": 88,
   "active_days": 63,
   "release_days": 11,
   "days": [
@@ -982,16 +982,10 @@
       "tag": "day-2026-04-25",
       "name": "",
       "is_release": false,
-      "commits": [
-        {
-          "sha": "3adcc644",
-          "message": "fix(patch-tool): advertise per-mode required params in schema descriptions",
-          "author": "briandevans"
-        }
-      ],
-      "commit_count": 1,
+      "commits": [],
+      "commit_count": 0,
       "stats": {
-        "commits": 1
+        "commits": 0
       },
       "themes": [],
       "body_summary": "",
@@ -1190,21 +1184,11 @@
           "sha": "c844d15c",
           "message": "fix(update): stream npm install output so postinstall progress is visible (#18840)",
           "author": "briandevans"
-        },
-        {
-          "sha": "5b32c9fc",
-          "message": "chore: add A-kamal to AUTHOR_MAP for PR #18678",
-          "author": "Ayman Kamal"
-        },
-        {
-          "sha": "13b474c5",
-          "message": "fix: send correct resolution param to xAI image generation API",
-          "author": "Ayman Kamal"
         }
       ],
-      "commit_count": 4,
+      "commit_count": 2,
       "stats": {
-        "commits": 4
+        "commits": 2
       },
       "themes": [],
       "body_summary": "",
@@ -1290,16 +1274,11 @@
           "sha": "43802ef3",
           "message": "fix: add default base_url_override for ollama-cloud provider",
           "author": "falasi"
-        },
-        {
-          "sha": "dccf1fb6",
-          "message": "fix(gateway): cap adapter disconnect during stop",
-          "author": "LeonSGP43"
         }
       ],
-      "commit_count": 7,
+      "commit_count": 6,
       "stats": {
-        "commits": 7
+        "commits": 6
       },
       "themes": [],
       "body_summary": "",
@@ -1365,16 +1344,11 @@
           "sha": "236cbe16",
           "message": "feat(kanban): add orchestrator board tools",
           "author": "Eric Litovsky"
-        },
-        {
-          "sha": "24d32161",
-          "message": "fix(slack): enable writable app home DMs in manifest",
-          "author": "dante"
         }
       ],
-      "commit_count": 12,
+      "commit_count": 11,
       "stats": {
-        "commits": 12
+        "commits": 11
       },
       "themes": [],
       "body_summary": "",
@@ -1430,26 +1404,11 @@
           "sha": "b308dd7d",
           "message": "fix(kanban): preserve assignee casing in dashboard",
           "author": "princepal9120"
-        },
-        {
-          "sha": "3801825e",
-          "message": "fix(tests): pin UTF-8 encoding when reading source files on Windows",
-          "author": "obafemiferanmi1999"
-        },
-        {
-          "sha": "e5727372",
-          "message": "Fix cron dashboard rendering for partial jobs",
-          "author": "LeonSGP43"
-        },
-        {
-          "sha": "f5b635f6",
-          "message": "feat(cli): recognise Shift+Enter as a newline key",
-          "author": "Syed Abdur Rehman Ali"
         }
       ],
-      "commit_count": 12,
+      "commit_count": 9,
       "stats": {
-        "commits": 12
+        "commits": 9
       },
       "themes": [],
       "body_summary": "",
@@ -1510,111 +1469,11 @@
           "sha": "8954537f",
           "message": "fix(kanban): request default board explicitly (#21819)",
           "author": "Tranquil-Flow"
-        },
-        {
-          "sha": "cd712b17",
-          "message": "feat(transports/codex): pass reasoning.effort to xAI Responses API",
-          "author": "Julien Talbot"
-        },
-        {
-          "sha": "55f518e5",
-          "message": "feat(gateway): add Telegram guest mention mode",
-          "author": "Nikita Nosov"
-        },
-        {
-          "sha": "1ac8deb3",
-          "message": "feat(gateway): stream Telegram edits safely",
-          "author": "Nikita Nosov"
-        },
-        {
-          "sha": "cca2869d",
-          "message": "fix(banner): resolve update-check repo from running code, not profile-scoped path",
-          "author": "fahdad"
-        },
-        {
-          "sha": "93e25ceb",
-          "message": "feat(plugins): add standalone_sender_fn for out-of-process cron delivery",
-          "author": "GodsBoy"
-        },
-        {
-          "sha": "7e578f02",
-          "message": "feat(feishu): add native update prompt cards",
-          "author": "heathley"
-        },
-        {
-          "sha": "c3864000",
-          "message": "fix(security): honor relay-declared sender_type in Google Chat adapter to prevent BOT filter bypass",
-          "author": "memosr"
-        },
-        {
-          "sha": "0f1d41a8",
-          "message": "fix(transports): use PEP 604 annotation for ToolCall.extra_content",
-          "author": "obafemiferanmi1999"
-        },
-        {
-          "sha": "2c8c48fb",
-          "message": "fix(webui): clarify MEDIA absolute-path hint",
-          "author": "qWaitCrypto"
-        },
-        {
-          "sha": "aad5490e",
-          "message": "fix(webui): add platform hint for MEDIA rendering",
-          "author": "qWaitCrypto"
-        },
-        {
-          "sha": "326ca754",
-          "message": "fix(delegate): accept JSON string batch tasks",
-          "author": "Bartok"
-        },
-        {
-          "sha": "8e4f3ba4",
-          "message": "test(patch-tool): collapse 9 schema-shape tests into 2 invariants",
-          "author": "Teknium"
-        },
-        {
-          "sha": "7c174e65",
-          "message": "fix: harden termux update path with uv bootstrap and env guard",
-          "author": "adybag14-cyber"
-        },
-        {
-          "sha": "6f7b698a",
-          "message": "fix: keep tui /quit behavior aligned with cli exit flow",
-          "author": "adybag14-cyber"
-        },
-        {
-          "sha": "0ec052ca",
-          "message": "perf(cli): cut ~19s from 'hermes' cold start (skills cache + lazy Feishu + no Nous HTTP) (#22138)",
-          "author": "Teknium"
-        },
-        {
-          "sha": "d606df81",
-          "message": "docs(cli): call out Ctrl+Enter for Windows Terminal users",
-          "author": "teknium1"
-        },
-        {
-          "sha": "cacb9847",
-          "message": "fix(google-chat): repair setup prompt imports",
-          "author": "helix4u"
-        },
-        {
-          "sha": "d10d19eb",
-          "message": "Merge pull request #22080 from NousResearch/fix/faster-docker",
-          "author": "ethernet"
-        },
-        {
-          "sha": "d971b26b",
-          "message": "fix(update): bypass systemd RestartSec after graceful drain (#22101)",
-          "author": "Teknium"
-        },
-        {
-          "sha": "50895966",
-          "message": "perf(cli): skip eager plugin discovery on known built-in subcommands (#22120)",
-          "author": "Teknium"
         }
       ],
-      "commit_count": 53,
+      "commit_count": 10,
       "stats": {
-        "commits": 53
+        "commits": 10
       },
       "themes": [],
       "body_summary": "",
@@ -1777,9 +1636,9 @@
           "author": "Wesley Simplicio"
         }
       ],
-      "commit_count": 139,
+      "commit_count": 64,
       "stats": {
-        "commits": 139
+        "commits": 64
       },
       "themes": [],
       "body_summary": "",
@@ -4432,6 +4291,16 @@
       "is_release": false,
       "commits": [
         {
+          "sha": "ef7e5168",
+          "message": "chore(gateway): drop plugin-migrated platforms from /update allowlist",
+          "author": "kshitijk4poor"
+        },
+        {
+          "sha": "c37c6eaf",
+          "message": "refactor(gateway): migrate Home Assistant adapter to bundled plugin",
+          "author": "kshitijk4poor"
+        },
+        {
           "sha": "40fbb0f3",
           "message": "fix(constants): use windows native default hermes home",
           "author": "LeonSGP43"
@@ -4570,21 +4439,11 @@
           "sha": "29c71e97",
           "message": "fix(docker): propagate container env through s6 to cont-init and main CMD",
           "author": "John Paul Soliva"
-        },
-        {
-          "sha": "cea87d91",
-          "message": "fix(skills-hub): show every catalog source on /docs/skills (skills.sh, ClawHub, browse.sh, OpenAI, \u2026) (#32336)",
-          "author": "Teknium"
-        },
-        {
-          "sha": "c26af468",
-          "message": "fix(skills): reject symlinks in skill bundles before install",
-          "author": "MorAlekss"
         }
       ],
-      "commit_count": 32,
+      "commit_count": 34,
       "stats": {
-        "commits": 32
+        "commits": 34
       },
       "themes": [],
       "body_summary": "",
@@ -5902,9 +5761,9 @@
           "author": "Nate George"
         }
       ],
-      "commit_count": 148,
+      "commit_count": 149,
       "stats": {
-        "commits": 148
+        "commits": 149
       },
       "themes": [],
       "body_summary": "",
@@ -5916,6 +5775,31 @@
       "name": "",
       "is_release": false,
       "commits": [
+        {
+          "sha": "591e6fb8",
+          "message": "fix(computer_use): honor custom vision routing",
+          "author": "helix4u"
+        },
+        {
+          "sha": "0e0d704f",
+          "message": "fix(tui): preserve remote cwd for ssh sessions",
+          "author": "zwcf5200"
+        },
+        {
+          "sha": "4bf52022",
+          "message": "fix(tui): correct --skip-build hint and add TUI workspace install test",
+          "author": "Zak B. Elep"
+        },
+        {
+          "sha": "0416f852",
+          "message": "fix(tui): scope TUI launch install and fix stale hints/test",
+          "author": "Zak B. Elep"
+        },
+        {
+          "sha": "1c0437df",
+          "message": "fix(install): scope npm installs/audits to avoid pulling in apps/desktop",
+          "author": "Zak B. Elep"
+        },
         {
           "sha": "f94363d1",
           "message": "feat(desktop): arrow up/down to navigate previous user messages",
@@ -6040,36 +5924,11 @@
           "sha": "48d8d807",
           "message": "feat(desktop): single-profile rail shows default icon + create",
           "author": "Brooklyn Nicholson"
-        },
-        {
-          "sha": "0c7def31",
-          "message": "feat(desktop): show \"+\" in the rail for single-profile users",
-          "author": "Brooklyn Nicholson"
-        },
-        {
-          "sha": "76b98f43",
-          "message": "fix(desktop): gate ALL-profiles grouping on multiProfile",
-          "author": "Brooklyn Nicholson"
-        },
-        {
-          "sha": "fb18bde8",
-          "message": "feat(desktop): fluid, haptic profile-rail reordering",
-          "author": "Brooklyn Nicholson"
-        },
-        {
-          "sha": "9915665e",
-          "message": "fix(desktop): step profile-rail drags cell-by-cell, clamp to strip",
-          "author": "Brooklyn Nicholson"
-        },
-        {
-          "sha": "3e4fa8ca",
-          "message": "fix(desktop): lock profile-rail drag to the x-axis",
-          "author": "Brooklyn Nicholson"
         }
       ],
-      "commit_count": 141,
+      "commit_count": 146,
       "stats": {
-        "commits": 141
+        "commits": 146
       },
       "themes": [],
       "body_summary": "",
@@ -6081,6 +5940,16 @@
       "name": "",
       "is_release": false,
       "commits": [
+        {
+          "sha": "675fb102",
+          "message": "fix(install): correct check_dir tautology and add --workspace web test",
+          "author": "Zak B. Elep"
+        },
+        {
+          "sha": "f18a9dbe",
+          "message": "feat: Add desktop language switching for Japanese and Traditional Chinese",
+          "author": "Jim Liu \u5b9d\u7389"
+        },
         {
           "sha": "da9425bf",
           "message": "test(desktop): cover IME-composed send-button visibility (Chinese/Japanese/Korean)",
@@ -6220,21 +6089,11 @@
           "sha": "72eb42d9",
           "message": "feat(update): stash/restore by default + settable discard for non-interactive updates (reverts #38542, #39568) (#39645)",
           "author": "Teknium"
-        },
-        {
-          "sha": "947e21b3",
-          "message": "fix(gateway): log silent file-delivery drops (#39767)",
-          "author": "Teknium"
-        },
-        {
-          "sha": "d4142750",
-          "message": "feat(delegation): uncap max_spawn_depth (floor 1, no ceiling) (#39772)",
-          "author": "Teknium"
         }
       ],
-      "commit_count": 83,
+      "commit_count": 85,
       "stats": {
-        "commits": 83
+        "commits": 85
       },
       "themes": [],
       "body_summary": "",
@@ -6247,148 +6106,328 @@
       "is_release": false,
       "commits": [
         {
-          "sha": "56236b16",
-          "message": "feat(dashboard): rehaul Skills hub browser \u2014 connected hubs, featured, preview + security scan (#40384)",
-          "author": "Teknium"
-        },
-        {
-          "sha": "5af899c7",
-          "message": "feat(cli): display custom profile alias names in profile list/show (#40371)",
-          "author": "kshitij"
-        },
-        {
-          "sha": "c79b6f23",
-          "message": "fix(credits): let the \"grant spent\" notice yield on the next prompt (#40367)",
-          "author": "Siddharth Balyan"
-        },
-        {
-          "sha": "fcb1944b",
-          "message": "feat(credits): usage-aware credits \u2014 in-session notices, /usage view, dev readout (#40011)",
-          "author": "Siddharth Balyan"
-        },
-        {
-          "sha": "b91aade1",
-          "message": "feat(desktop): warn when main-model switch leaves auxiliary tasks pinned to another provider (#40286)",
-          "author": "Teknium"
-        },
-        {
-          "sha": "f8a241e1",
-          "message": "fix(delegate): flatten content blocks in live overlay tail + AUTHOR_MAP",
-          "author": "Teknium"
-        },
-        {
-          "sha": "16beab42",
-          "message": "fix(desktop): About panel shows live Hermes version, not stale package.json",
+          "sha": "1a4010ed",
+          "message": "test(approval): regression for shell-escape denylist bypass (#36846, #36847)",
           "author": "teknium1"
         },
         {
-          "sha": "338c0743",
-          "message": "fix(send-message): treat ntfy topic targets as explicit",
+          "sha": "621bf3a8",
+          "message": "fix(security): strip shell escapes in denylist normalizer; fail-closed on missing approval module",
+          "author": "ashishpatel26"
+        },
+        {
+          "sha": "a216ff83",
+          "message": "fix(agent): honor model.default_headers for custom OpenAI-compatible providers (#40033)",
+          "author": "Sanidhya Singh"
+        },
+        {
+          "sha": "3c8f1dee",
+          "message": "fix(compression): don't overwrite the -1 post-compression sentinel in preflight seed (#36718)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "3289d4ad",
+          "message": "fix(transcription): handle ffmpeg TimeoutExpired in _prepare_local_audio",
+          "author": "Teknium"
+        },
+        {
+          "sha": "7223f22d",
+          "message": "fix: add timeout to subprocess.run() and proc.wait() calls",
+          "author": "annguyenNous"
+        },
+        {
+          "sha": "03392b67",
+          "message": "fix(opencode-go): gate thinking when reasoning_effort set to avoid HTTP 400",
+          "author": "teknium1"
+        },
+        {
+          "sha": "5dee40fc",
+          "message": "test(bootstrap-installer): cover PowerShell path layout cross-platform",
+          "author": "xxxigm"
+        },
+        {
+          "sha": "8720023e",
+          "message": "fix(bootstrap-installer): resolve powershell.exe by absolute path on Windows",
+          "author": "xxxigm"
+        },
+        {
+          "sha": "fe2942a5",
+          "message": "test(desktop): assert every theme typography carries an emoji font (#40364)",
+          "author": "xxxigm"
+        },
+        {
+          "sha": "bec07964",
+          "message": "fix(desktop): add color-emoji font fallback so emoji render (#40364)",
+          "author": "xxxigm"
+        },
+        {
+          "sha": "b08662b7",
+          "message": "fix(gateway): tolerate Unicode in stderr log handlers on Windows",
+          "author": "annguyenNous"
+        },
+        {
+          "sha": "40cea4d5",
+          "message": "fix(agent): import SimpleNamespace for hook payload sanitization",
+          "author": "Frowtek"
+        },
+        {
+          "sha": "bb53edc7",
+          "message": "fix(image_gen): use gpt-5.5 for Codex image host",
           "author": "helix4u"
         },
         {
-          "sha": "50f9ad70",
-          "message": "fix(dashboard): populate cron delivery dropdown from configured platforms (#40218)",
-          "author": "Teknium"
-        },
-        {
-          "sha": "15068744",
-          "message": "Merge pull request #40240 from NousResearch/bb/desktop-steer",
-          "author": "brooklyn!"
-        },
-        {
-          "sha": "5d4c93af",
-          "message": "refactor(desktop): hoist single draft.trim() in composer",
-          "author": "Brooklyn Nicholson"
-        },
-        {
-          "sha": "7cceead2",
-          "message": "fix(desktop): render steer note as a codicon, not an emoji",
-          "author": "Brooklyn Nicholson"
-        },
-        {
-          "sha": "efa53fb3",
-          "message": "feat(desktop): reserve Cmd/Ctrl+Enter strictly for steer",
-          "author": "Brooklyn Nicholson"
-        },
-        {
-          "sha": "0f45509d",
-          "message": "fix(agent): make mid-turn /steer trusted, not read as injection",
-          "author": "Brooklyn Nicholson"
-        },
-        {
-          "sha": "40aef6af",
-          "message": "feat(desktop): steer the live run from the composer",
-          "author": "Brooklyn Nicholson"
-        },
-        {
-          "sha": "e375c33f",
-          "message": "fix(tui): clean force-send of queued messages (#40235)",
-          "author": "brooklyn!"
-        },
-        {
-          "sha": "ac177cea",
-          "message": "Merge pull request #40234 from NousResearch/bb/desktop-queue-arrow-edit-v2",
-          "author": "brooklyn!"
-        },
-        {
-          "sha": "ce500306",
-          "message": "feat(desktop): integrate arrow history with the message queue",
-          "author": "Brooklyn Nicholson"
-        },
-        {
-          "sha": "0cbcc759",
-          "message": "fix(desktop): reliable composer message queue (#40221)",
-          "author": "brooklyn!"
-        },
-        {
-          "sha": "0c0a7077",
-          "message": "fix(desktop): repair macOS updater helper (#40217)",
+          "sha": "fda66c48",
+          "message": "docs(kanban): clarify decomposer profile roles",
           "author": "Gille"
         },
         {
-          "sha": "78122c52",
-          "message": "test(slack): drop /q alias assertion now displaced by /version cap clamp",
-          "author": "Teknium"
+          "sha": "d47f919e",
+          "message": "fix(cli): skip lazy-dep prompt when prompt_toolkit owns terminal (#40490)",
+          "author": "kyssta-exe"
         },
         {
-          "sha": "30340eae",
-          "message": "Include git SHA in /version output via banner label helper.",
-          "author": "Brooklyn Nicholson"
-        },
-        {
-          "sha": "9c1bb8d2",
-          "message": "Add /version slash command across CLI, gateway, TUI, and desktop.",
-          "author": "Brooklyn Nicholson"
-        },
-        {
-          "sha": "aa52cd3b",
-          "message": "test(desktop): unmount between IME composition repro cases",
+          "sha": "6701c611",
+          "message": "chore(release): map jiangkoumo author email for PR #40540 salvage",
           "author": "teknium1"
         },
         {
-          "sha": "be2c64be",
-          "message": "fix(desktop): wire serializeJsonBody into OAuth request path",
-          "author": "teknium1"
+          "sha": "b2b4d97b",
+          "message": "docs: document update local-change handling",
+          "author": "liuyuchen"
         },
         {
-          "sha": "3c231eb3",
-          "message": "chore: release v0.16.0 (2026.6.5) (#40206)",
+          "sha": "f2e82343",
+          "message": "test: update non-Termux workspace-scope fixtures for #38358 fix",
           "author": "Teknium"
         },
         {
-          "sha": "ea266f43",
-          "message": "fix(file-ops): make rg/grep search error guard reachable and preserve partial matches (#39858)",
+          "sha": "7db7a946",
+          "message": "fix: align test fixture arg order + add zakame to AUTHOR_MAP",
           "author": "Teknium"
+        },
+        {
+          "sha": "d165933c",
+          "message": "docs(desktop): add DESIGN.md design-system guide + close two consistency gaps (#40823)",
+          "author": "brooklyn!"
+        },
+        {
+          "sha": "1238d08e",
+          "message": "fix(desktop): cron overlay mutations sync the sidebar instantly",
+          "author": "Brooklyn Nicholson"
+        },
+        {
+          "sha": "66adeef1",
+          "message": "chore(desktop): drop dead cron i18n keys",
+          "author": "Brooklyn Nicholson"
+        },
+        {
+          "sha": "f993d768",
+          "message": "refactor(desktop): converge cron overlay onto profiles' split layout",
+          "author": "Brooklyn Nicholson"
+        },
+        {
+          "sha": "f4912603",
+          "message": "Merge remote-tracking branch 'origin/main' into bb/cron-sessions-sidebar",
+          "author": "Brooklyn Nicholson"
+        },
+        {
+          "sha": "f033b7db",
+          "message": "feat(desktop): unified overlay design system, BrandMark & onboarding redesign (#40708)",
+          "author": "brooklyn!"
+        },
+        {
+          "sha": "b2bd31c7",
+          "message": "style(desktop): drop all borders from cron overlay",
+          "author": "Brooklyn Nicholson"
+        },
+        {
+          "sha": "de0469e0",
+          "message": "style(desktop): flatten cron overlay to match the overlay design pass",
+          "author": "Brooklyn Nicholson"
+        },
+        {
+          "sha": "c79e3fd0",
+          "message": "refactor(image_gen): delegate cache-path mapping to shared helper",
+          "author": "kshitijk4poor"
+        },
+        {
+          "sha": "7c4aa3e4",
+          "message": "fix(image_gen): expose backend-visible artifact paths",
+          "author": "Gille"
         }
       ],
-      "commit_count": 27,
+      "commit_count": 99,
       "stats": {
-        "commits": 27
+        "commits": 99
       },
       "themes": [],
       "body_summary": "",
       "index": 86
+    },
+    {
+      "date": "2026-06-07",
+      "tag": "day-2026-06-07",
+      "name": "",
+      "is_release": false,
+      "commits": [
+        {
+          "sha": "9d72680c",
+          "message": "fix(desktop): make the running-turn timer per-session (#41182)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "1fb99b1f",
+          "message": "fix(stream+output-cap): guard empty streams and parse OpenRouter output-cap errors (#40589)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "02aad08a",
+          "message": "fix(desktop): bootstrap falls back to installed agent install.sh on GitHub 404",
+          "author": "teknium1"
+        },
+        {
+          "sha": "9e631095",
+          "message": "feat(dashboard): change UI font from the theme picker, independent of theme (#41145)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "136dae77",
+          "message": "fix(cli): return bool (not None) when a destructive-slash confirmation is cancelled (#40583)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "0507e463",
+          "message": "fix(desktop): preserve configured base_url on same-provider model switch (#41121)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "349a3f60",
+          "message": "fix(desktop): stop bare-URL autolinker swallowing trailing emphasis asterisks (#41093)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "ed81cfe3",
+          "message": "fix(cron): bound the desktop run-history query to one job (#41088)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "5a3092b6",
+          "message": "fix(desktop): scope in-session /model switch per-session, stop process-env leak (#41120)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "4b9862eb",
+          "message": "chore: map bmoore210 author email for PR #40550 salvage",
+          "author": "Teknium"
+        },
+        {
+          "sha": "b55ac452",
+          "message": "fix(desktop): scope session list to active profile + longer timeout",
+          "author": "bmoore210"
+        },
+        {
+          "sha": "330ca458",
+          "message": "fix: harden gateway startup and turn persistence",
+          "author": "bmoore210"
+        },
+        {
+          "sha": "ffe66527",
+          "message": "fix(aux): honor model.default_headers on auxiliary client too (#40033)",
+          "author": "kshitijk4poor"
+        },
+        {
+          "sha": "f5c3fc31",
+          "message": "docs(i18n): port deep-audit corrections to zh-Hans mirror (#41104)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "3763355f",
+          "message": "chore(release): map singhsanidhya741@gmail.com to sanidhyasin (#41094)",
+          "author": "kshitij"
+        },
+        {
+          "sha": "e18f14d9",
+          "message": "test(kimi): align stale parity/profile tests with thinking-xor-effort contract (#41095)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "0524c9b3",
+          "message": "feat(compression): raise compaction trigger to 85% for gpt-5.5 on Codex OAuth (#40957)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "2d099fed",
+          "message": "docs: deep audit \u2014 registry drift, stale claims, 2-week PR coverage, dashboard screenshot (#40952)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "ce4e74b3",
+          "message": "fix(kimi): send thinking xor reasoning_effort, never both",
+          "author": "teknium1"
+        },
+        {
+          "sha": "fe0b3f23",
+          "message": "fix(windows): retry watcher Popen without breakaway when parent job denies it, plus regression tests for the breakaway b",
+          "author": "Teknium"
+        },
+        {
+          "sha": "44c0c2d4",
+          "message": "refactor(inventory): make force_fresh_nous_tier keyword-only + pin contract",
+          "author": "kshitijk4poor"
+        },
+        {
+          "sha": "eb70ab89",
+          "message": "fix(inventory): avoid fresh Nous tier checks in picker payloads",
+          "author": "helix4u"
+        },
+        {
+          "sha": "846821d8",
+          "message": "Merge pull request #40684 from NousResearch/bb/cron-sessions-sidebar",
+          "author": "brooklyn!"
+        },
+        {
+          "sha": "210f4e70",
+          "message": "fix(desktop): resolve powershell.exe by absolute path in Electron bootstrap",
+          "author": "teknium1"
+        },
+        {
+          "sha": "fc086da8",
+          "message": "fix(gateway,windows): reliability \u2014 JOB breakaway + status --deep probes + test-leak fix (#40909)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "d17c953a",
+          "message": "docs(kanban): clarify orchestrator profile role in dashboard panel",
+          "author": "teknium1"
+        },
+        {
+          "sha": "fd4c8b40",
+          "message": "docs(signal): clarify tool progress support (#40774)",
+          "author": "Gille"
+        },
+        {
+          "sha": "3eeca461",
+          "message": "fix(qqbot): stop 100% CPU spin when WebSocket is closed but not None (#31193, #31771) (#40574)",
+          "author": "Teknium"
+        },
+        {
+          "sha": "5b55f4fe",
+          "message": "chore(deps): regenerate uv.lock for Pillow core promotion",
+          "author": "teknium1"
+        },
+        {
+          "sha": "b13ab0b9",
+          "message": "feat(deps): promote Pillow to a core dependency",
+          "author": "teknium1"
+        }
+      ],
+      "commit_count": 44,
+      "stats": {
+        "commits": 44
+      },
+      "themes": [],
+      "body_summary": "",
+      "index": 87
     }
   ]
 }
